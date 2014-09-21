@@ -1,0 +1,85 @@
+PODS:
+  - AFNetworking (2.4.1):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+    - AFNetworking/UIKit
+  - AFNetworking/NSURLConnection (2.4.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.4.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.4.1)
+  - AFNetworking/Security (2.4.1)
+  - AFNetworking/Serialization (2.4.1)
+  - AFNetworking/UIKit (2.4.1):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - Bolts (1.1.2)
+  - CocoaLumberjack (2.0.0-beta):
+    - CocoaLumberjack/CLI
+    - CocoaLumberjack/Core
+    - CocoaLumberjack/Extensions
+  - CocoaLumberjack/CLI (2.0.0-beta):
+    - CocoaLumberjack/Core
+  - CocoaLumberjack/Core (2.0.0-beta)
+  - CocoaLumberjack/Extensions (2.0.0-beta):
+    - CocoaLumberjack/Core
+  - Facebook-iOS-SDK (3.18.0):
+    - Bolts
+  - FlatUIKit (HEAD based on 1.4)
+  - FXBlurView (1.6.2)
+  - HexColors (2.2.1)
+  - Mantle (1.5):
+    - Mantle/extobjc
+  - Mantle/extobjc (1.5)
+  - Masonry (0.5.3)
+  - pop (1.0.6)
+  - ReactiveCocoa (2.3.1):
+    - ReactiveCocoa/UI
+  - ReactiveCocoa/Core (2.3.1):
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/no-arc (2.3.1)
+  - ReactiveCocoa/UI (2.3.1):
+    - ReactiveCocoa/Core
+  - Shimmer (1.0.1)
+  - TSMessages (0.9.10):
+    - HexColors
+  - Tweaks (1.1.0)
+
+DEPENDENCIES:
+  - AFNetworking
+  - CocoaLumberjack
+  - Facebook-iOS-SDK
+  - FlatUIKit (HEAD)
+  - FXBlurView
+  - Mantle
+  - Masonry
+  - pop
+  - ReactiveCocoa
+  - Shimmer
+  - TSMessages
+  - Tweaks
+
+SPEC CHECKSUMS:
+  AFNetworking: 0aabc6fae66d6e5d039eeb21c315843c7aae51ab
+  Bolts: 2635e8698a630774689441047f3465d78c48d485
+  CocoaLumberjack: aadc76d7bd6c839ca84b38ed50cbf89d7cf8c693
+  Facebook-iOS-SDK: fa12c51cc57bfb6f92e47793c9d4d2c65bc92741
+  FlatUIKit: edc1ed0c130687dc64a10e45851cc58925f6893d
+  FXBlurView: 47496afc9160097fa34af35fc4b310bd85d65dca
+  HexColors: 01384d2bbe8dc4ffa43c3b4135db6e976952d153
+  Mantle: c67a7e45e14196ed42b2a7cbb98ff6a9920e6b92
+  Masonry: 35368c2ca9577ca87722c12fc52c4bad9b1c1516
+  pop: e518794da38942c05255eb64b36d894e70cb4f00
+  ReactiveCocoa: dca75777b9d18990c8714a3a6f2149f29b4d1462
+  Shimmer: 35aa2a57b8fbc17f9e16706021665966fd93dbd1
+  TSMessages: 8598a0645e9d54847f6e5f3b070bef39c493bbf8
+  Tweaks: 05b197d4a1247288f576587546bc1932189d8c98
+
+COCOAPODS: 0.33.1
