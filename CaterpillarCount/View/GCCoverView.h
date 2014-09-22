@@ -1,5 +1,5 @@
 //
-//  GCWelcomeViewConViewController.h
+//  GCCoverView.h
 //  CaterpillarCount
 //
 //  Created by Golden Compass on 9/21/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GCWelcomeViewConViewController : UIViewController
+@interface GCCoverView : UIView
 
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "GCAppDelegate.h"
-#import "WelcomeViewController.h"
+#import "GCCoverViewController.h"
 
 @interface GCAppDelegate ()
 
@@ -22,9 +22,8 @@
     self.window.backgroundColor = [UIColor whiteColor];
     UINavigationController *navigationController = [[UINavigationController alloc] init];
     self.window.rootViewController = navigationController;
-    WelcomeViewController *welcomeViewController = [[WelcomeViewController alloc] init];
-    welcomeViewController.view.frame = [[UIScreen mainScreen] bounds];
-    [navigationController pushViewController:welcomeViewController animated:NO];
+    GCCoverViewController *coverViewController = [[GCCoverViewController alloc] init];
+    [navigationController pushViewController:coverViewController animated:NO];
     [self.window makeKeyAndVisible];
     return YES;
 }
