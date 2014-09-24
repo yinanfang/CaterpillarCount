@@ -26,7 +26,6 @@
     UINavigationController *navigationController = [[UINavigationController alloc] init];
     self.window.rootViewController = navigationController;
     GCCoverViewController *coverViewController = [[GCCoverViewController alloc] init];
-    coverViewController.view.frame = ScreenBounds;
     [navigationController pushViewController:coverViewController animated:NO];
     [self.window makeKeyAndVisible];
 

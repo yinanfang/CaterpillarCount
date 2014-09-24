@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+// Theme Color
+#define ThemeColor01 0x355D3DFF
+
 // Don't change this
 #pragma mark - CocoaLumberjack Logging Constant
 #import <CocoaLumberjack/CocoaLumberjack.h>

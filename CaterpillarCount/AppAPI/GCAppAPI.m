@@ -103,7 +103,7 @@
 }
 
 #pragma mark - Others
-- (UIColor *)colorWithRGBAinHex:(NSUInteger)color
+- (UIColor *)getColorWithRGBAinHex:(NSUInteger)color
 {
     DDLogVerbose(@"... Invoked UtilityClass.colorWithRGBAinHex ...");
     

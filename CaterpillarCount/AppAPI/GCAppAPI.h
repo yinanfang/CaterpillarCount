@@ -52,7 +52,7 @@
 
 #pragma mark - Basic Utilities
 - (NSString *)getCurrentDomain;
-- (UIColor *)colorWithRGBAinHex:(NSUInteger)color;
+- (UIColor *)getColorWithRGBAinHex:(NSUInteger)color;
 - (void)setHasShownTour:(BOOL)mode;
 - (UIImageView *)getFullScreenImageView:(NSString *)name;
 
