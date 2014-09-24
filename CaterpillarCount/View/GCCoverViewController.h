@@ -10,4 +10,7 @@
 
 @interface GCCoverViewController : UIViewController
 
+
+
+
 @end

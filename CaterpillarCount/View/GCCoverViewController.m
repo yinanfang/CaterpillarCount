@@ -10,6 +10,7 @@
 #import "GCCoverView.h"
 
 @interface GCCoverViewController ()
+@property GCCoverView *coverView;
 
 @end
 
@@ -18,25 +19,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.frame = [[UIScreen mainScreen] bounds];
-    
-    GCCoverView *coverView = [[GCCoverView alloc] init];
-    
-    
-    
-}
-
-
-
-
-
-
-
-
-
-- (void)viewWillAppear:(BOOL)animated
-{
     self.navigationController.navigationBar.hidden = YES;
+    self.coverView = [[GCCoverView alloc] initWithParentController:self];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {

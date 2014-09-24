@@ -8,7 +8,6 @@
 
 #import "GCAppDelegate.h"
 #import "GCCoverViewController.h"
-
 @interface GCAppDelegate ()
 
 @end
@@ -17,14 +16,20 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    GCAppAPI *AppAPI = [GCAppAPI sharedInstance];
+    [AppAPI setupApplicationWithProductionMode:YES];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.backgroundColor = [UIColor clearColor];
     UINavigationController *navigationController = [[UINavigationController alloc] init];
     self.window.rootViewController = navigationController;
     GCCoverViewController *coverViewController = [[GCCoverViewController alloc] init];
+    coverViewController.view.frame = ScreenBounds;
     [navigationController pushViewController:coverViewController animated:NO];
     [self.window makeKeyAndVisible];
+
     return YES;
 }
 

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0C132D68E9CD47009BC5D0E6"
+               BlueprintIdentifier = "B11D4A7D973E46E483852DED"
                BuildableName = "libPods-CaterpillarCount-pop.a"
                BlueprintName = "Pods-CaterpillarCount-pop"
                ReferencedContainer = "container:Pods.xcodeproj">

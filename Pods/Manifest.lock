@@ -32,7 +32,7 @@ PODS:
     - CocoaLumberjack/Core
   - Facebook-iOS-SDK (3.18.0):
     - Bolts
-  - FlatUIKit (HEAD based on 1.4)
+  - FlatUIKit (1.5)
   - FXBlurView (1.6.2)
   - HexColors (2.2.1)
   - Mantle (1.5):
@@ -56,7 +56,7 @@ DEPENDENCIES:
   - AFNetworking
   - CocoaLumberjack
   - Facebook-iOS-SDK
-  - FlatUIKit (HEAD)
+  - FlatUIKit
   - FXBlurView
   - Mantle
   - Masonry
@@ -71,7 +71,7 @@ SPEC CHECKSUMS:
   Bolts: 2635e8698a630774689441047f3465d78c48d485
   CocoaLumberjack: aadc76d7bd6c839ca84b38ed50cbf89d7cf8c693
   Facebook-iOS-SDK: fa12c51cc57bfb6f92e47793c9d4d2c65bc92741
-  FlatUIKit: edc1ed0c130687dc64a10e45851cc58925f6893d
+  FlatUIKit: 5452fa3fca41e6f04014cca6e81b4c2f961f623c
   FXBlurView: 47496afc9160097fa34af35fc4b310bd85d65dca
   HexColors: 01384d2bbe8dc4ffa43c3b4135db6e976952d153
   Mantle: c67a7e45e14196ed42b2a7cbb98ff6a9920e6b92

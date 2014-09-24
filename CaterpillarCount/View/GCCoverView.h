@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+@class GCCoverViewController;
 
 @interface GCCoverView : UIView
+
+
+- (id)initWithParentController:(GCCoverViewController *)controller;
+
 
 @end

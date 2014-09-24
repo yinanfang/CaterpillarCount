@@ -5,7 +5,7 @@ target "CaterpillarCount" do
     pod "AFNetworking"
     pod 'CocoaLumberjack'
     pod 'Facebook-iOS-SDK'
-    pod 'FlatUIKit', :head
+    pod 'FlatUIKit'
     pod 'FXBlurView'
     pod 'Mantle'
     pod 'Masonry'
