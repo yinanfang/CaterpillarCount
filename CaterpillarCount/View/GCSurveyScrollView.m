@@ -103,43 +103,36 @@
         [self.label_Temp mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.mas_top).with.offset(padding_large.top);
             make.left.equalTo(self.mas_left).with.offset(padding_large.left);
-//            make.bottom.equalTo(self.entry_Temp.mas_top);
-            make.right.equalTo(self.label_Time.mas_left);
         }];
         [self.label_Time mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.mas_top).with.offset(padding_large.top);
             make.left.equalTo(self.label_Temp.mas_right);
-//            make.bottom.equalTo(self.entry_Time.mas_top);
-            make.right.equalTo(self.label_Date.mas_left);
             make.width.equalTo(self.label_Temp.mas_width);
             make.centerX.equalTo(self.mas_centerX);
         }];
         [self.label_Date mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.mas_top).with.offset(padding_large.top);
             make.left.equalTo(self.label_Time.mas_right);
-//            make.bottom.equalTo(self.entry_Date.mas_top);
             make.right.equalTo(self.mas_right).with.offset(padding_large.right);
             make.width.equalTo(self.label_Time.mas_width);
         }];
+        
         // Temp, Time, Date Entry
         [self.entry_Temp mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.label_Temp.mas_bottom).with.offset(padding_small.top);
             make.left.equalTo(self.mas_left).with.offset(padding_large.left);
             make.bottom.equalTo(self.mas_bottom).with.offset(padding_large.bottom);
-            make.right.equalTo(self.entry_Time.mas_left);
         }];
         [self.entry_Time mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.label_Time.mas_bottom).with.offset(padding_small.top);
-            make.left.equalTo(self.entry_Temp.mas_right);//.with.offset(padding_small.left);
+            make.left.equalTo(self.entry_Temp.mas_right).with.offset(padding_small.left);
             make.bottom.equalTo(self.mas_bottom).with.offset(padding_large.bottom);
-            make.right.equalTo(self.entry_Date.mas_left);//.with.offset(padding_small.right);
+            make.right.equalTo(self.entry_Date.mas_left).with.offset(padding_small.right);
             make.width.equalTo(self.entry_Temp.mas_width);
             make.centerX.equalTo(self.mas_centerX);
         }];
         [self.entry_Date mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.label_Date.mas_bottom).with.offset(padding_small.top);
-            make.left.equalTo(self.entry_Time.mas_right);
-            make.bottom.equalTo(self.mas_bottom).with.offset(padding_large.bottom);
             make.right.equalTo(self.mas_right).with.offset(padding_large.right);
             make.width.equalTo(self.entry_Time.mas_width);
         }];
