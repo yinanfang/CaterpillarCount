@@ -35,11 +35,16 @@
 
 
 #pragma mark - Basic Setup
-- (void)setupApplicationWithProductionMode:(BOOL)mode
++ (void)setupApplicationWithProductionMode:(BOOL)mode
 {
+    // Logging
     [self setupLogging];
     DDLogInfo(@"====================  Application Setup Started  ====================");
     
+    // Cache
+    [self setCachePolicy];
+    
+    // Domain
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if (mode) {
         DDLogInfo(@"In PRODUCTION mode with domain: %@", ProductionDomain);
@@ -50,7 +55,7 @@
     }
 }
 
-- (void)setCachePolicy
++ (void)setCachePolicy
 {
     // Disable Cache for the networking methods
     [[NSURLCache sharedURLCache] removeAllCachedResponses];
@@ -58,7 +63,7 @@
     [[NSURLCache sharedURLCache] setMemoryCapacity:0];
 }
 
-- (void)setupLogging
++ (void)setupLogging
 {
     // DDTTYLogger
     [DDLog addLogger:[DDTTYLogger sharedInstance]];
@@ -95,7 +100,7 @@
     
 }
 
-- (NSString *)getCurrentDomain
++ (NSString *)getCurrentDomain
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *current_domain = [defaults objectForKey:@"current_domain"];
@@ -103,7 +108,7 @@
 }
 
 #pragma mark - Others
-- (UIColor *)getColorWithRGBAinHex:(NSUInteger)color
++ (UIColor *)getColorWithRGBAinHex:(NSUInteger)color
 {
     DDLogVerbose(@"... Invoked UtilityClass.colorWithRGBAinHex ...");
     
@@ -113,13 +118,13 @@
                            alpha:((color) & 0xFF) / 255.0f];
 }
 
-- (void)setHasShownTour:(BOOL)mode
++ (void)setHasShownTour:(BOOL)mode
 {
     [[NSUserDefaults standardUserDefaults] setBool:mode forKey:HasShownTour];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
-- (UIImageView *)getFullScreenImageView:(NSString *)name
++ (UIImageView *)getFullScreenImageView:(NSString *)name
 {
     UIImage *image;
     if (IS_IPHONE4S) {

@@ -48,13 +48,13 @@
 + (GCAppAPI *)sharedInstance;
 
 #pragma mark - Basic Setup
-- (void)setupApplicationWithProductionMode:(BOOL)mode;
++ (void)setupApplicationWithProductionMode:(BOOL)mode;
 
 #pragma mark - Basic Utilities
-- (NSString *)getCurrentDomain;
-- (UIColor *)getColorWithRGBAinHex:(NSUInteger)color;
-- (void)setHasShownTour:(BOOL)mode;
-- (UIImageView *)getFullScreenImageView:(NSString *)name;
++ (NSString *)getCurrentDomain;
++ (UIColor *)getColorWithRGBAinHex:(NSUInteger)color;
++ (void)setHasShownTour:(BOOL)mode;
++ (UIImageView *)getFullScreenImageView:(NSString *)name;
 
 
 

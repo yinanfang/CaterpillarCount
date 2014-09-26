@@ -33,9 +33,8 @@
     [label setText:@"CaterpillarCount"];
     self.navigationItem.titleView = label;
     [label sizeToFit];
-    
-    
-    
+
+    // Add Survey View
     self.surveyScrollView = [[GCSurveyScrollView alloc] initWithParentController:self];
     
     
@@ -46,7 +45,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    self.navigationController.navigationBar.barTintColor = [self.AppAPI getColorWithRGBAinHex:ThemeColor01];
+    self.navigationController.navigationBar.barTintColor = [GCAppAPI getColorWithRGBAinHex:ThemeColor01];
     self.navigationController.navigationBar.hidden = NO;
 }
 - (BOOL)prefersStatusBarHidden {

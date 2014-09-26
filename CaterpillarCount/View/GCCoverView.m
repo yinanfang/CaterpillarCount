@@ -33,7 +33,7 @@
 
         // Start Button
         self.btn_Start = [[FUIButton alloc] init];
-        self.btn_Start.buttonColor = [self.AppAPI getColorWithRGBAinHex:ThemeColor01];
+        self.btn_Start.buttonColor = [GCAppAPI getColorWithRGBAinHex:ThemeColor01];
 //        self.btn_Start.buttonColor = [UIColor grayColor];
         self.btn_Start.shadowColor = [UIColor greenSeaColor];
         self.btn_Start.shadowHeight = 1.0f;
@@ -54,6 +54,8 @@
             surveyViewController.view.frame = [[UIScreen mainScreen] bounds];
             [self.parentController.navigationController pushViewController:surveyViewController animated:YES];
         }];
+        
+        // Cover Image
     }
     return self;
 }

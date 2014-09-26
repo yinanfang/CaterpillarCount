@@ -17,8 +17,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    GCAppAPI *AppAPI = [GCAppAPI sharedInstance];
-    [AppAPI setupApplicationWithProductionMode:YES];
+    [GCAppAPI setupApplicationWithProductionMode:YES];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
