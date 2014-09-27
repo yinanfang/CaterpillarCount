@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		84ED24DE56DF4E3C914A449A /* libPods-CaterpillarCount.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4205C588FBF14A44971BF8BB /* libPods-CaterpillarCount.a */; };
 		D43A916319CF94D7009AA0C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D43A916219CF94D7009AA0C7 /* main.m */; };
-		D43A916819CF94D7009AA0C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D43A916719CF94D7009AA0C7 /* Images.xcassets */; };
 		D43A916B19CF94D7009AA0C7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D43A916919CF94D7009AA0C7 /* LaunchScreen.xib */; };
 		D43A917719CF94D7009AA0C7 /* CaterpillarCountTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D43A917619CF94D7009AA0C7 /* CaterpillarCountTests.m */; };
 		D43A918619CF964E009AA0C7 /* GCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D43A918519CF964E009AA0C7 /* GCAppDelegate.m */; };
@@ -21,6 +20,7 @@
 		D43A91A019CF9E1E009AA0C7 /* GCCoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = D43A919F19CF9E1E009AA0C7 /* GCCoverView.m */; };
 		D46E5F0919D2E4E9002FF1C1 /* GCSurveyScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D46E5F0819D2E4E9002FF1C1 /* GCSurveyScrollView.m */; };
 		D46E5F0C19D2E50C002FF1C1 /* GCSurveyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D46E5F0B19D2E50C002FF1C1 /* GCSurveyViewController.m */; };
+		D4FE8E8519D702E000E50E9C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4FE8E8419D702E000E50E9C /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +39,6 @@
 		D43A915D19CF94D7009AA0C7 /* CaterpillarCount.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CaterpillarCount.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D43A916119CF94D7009AA0C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D43A916219CF94D7009AA0C7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D43A916719CF94D7009AA0C7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D43A916A19CF94D7009AA0C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		D43A917019CF94D7009AA0C7 /* CaterpillarCountTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CaterpillarCountTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D43A917519CF94D7009AA0C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -63,6 +62,7 @@
 		D46E5F0819D2E4E9002FF1C1 /* GCSurveyScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCSurveyScrollView.m; path = View/GCSurveyScrollView.m; sourceTree = "<group>"; };
 		D46E5F0A19D2E50C002FF1C1 /* GCSurveyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GCSurveyViewController.h; path = View/GCSurveyViewController.h; sourceTree = "<group>"; };
 		D46E5F0B19D2E50C002FF1C1 /* GCSurveyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCSurveyViewController.m; path = View/GCSurveyViewController.m; sourceTree = "<group>"; };
+		D4FE8E8419D702E000E50E9C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,7 +122,7 @@
 				D43A918C19CF97C5009AA0C7 /* Model */,
 				D43A918D19CF97CC009AA0C7 /* AppAPI */,
 				D43A918E19CF97D3009AA0C7 /* Store */,
-				D43A916719CF94D7009AA0C7 /* Images.xcassets */,
+				D4FE8E8419D702E000E50E9C /* Images.xcassets */,
 				D43A916919CF94D7009AA0C7 /* LaunchScreen.xib */,
 				D43A916019CF94D7009AA0C7 /* Supporting Files */,
 			);
@@ -289,8 +289,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4FE8E8519D702E000E50E9C /* Images.xcassets in Resources */,
 				D43A916B19CF94D7009AA0C7 /* LaunchScreen.xib in Resources */,
-				D43A916819CF94D7009AA0C7 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,11 +465,13 @@
 			baseConfigurationReference = C19FA1D45FD34550A668DF08 /* Pods-CaterpillarCount.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PREFIX_HEADER = CaterpillarCount/PrefixHeader.pch;
 				INFOPLIST_FILE = CaterpillarCount/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -478,11 +480,13 @@
 			baseConfigurationReference = C19FA1D45FD34550A668DF08 /* Pods-CaterpillarCount.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PREFIX_HEADER = CaterpillarCount/PrefixHeader.pch;
 				INFOPLIST_FILE = CaterpillarCount/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

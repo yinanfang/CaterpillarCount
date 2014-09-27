@@ -30,9 +30,9 @@
 {
     self.navigationController.navigationBar.hidden = YES;
 }
-- (BOOL)prefersStatusBarHidden {
-    return YES;
-}
+//- (BOOL)prefersStatusBarHidden {
+//    return YES;
+//}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

@@ -49,7 +49,7 @@ FOUNDATION_EXPORT NSString *const ProductionDomain;
 @property CGFloat HeightDeterminant_FloatVSFullScreen;
 typedef NS_ENUM(NSInteger, DisplayStyleMode) {
     DisplayStyleModeFloat,
-    DisplayStyleModeFullScreen
+    DisplayStyleModeFullScreen,
 };
 //@property StoryDisplayStyleMode storyDisplayStyleMode;
 
