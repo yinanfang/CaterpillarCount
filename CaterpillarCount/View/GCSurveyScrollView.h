@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 @class GCSurveyViewController;
 
-@interface GCSurveyScrollView : UIScrollView <UIScrollViewDelegate, UITextFieldDelegate>
+@interface GCSurveyScrollView : UIScrollView <UIScrollViewDelegate, UITextFieldDelegate, FUIAlertViewDelegate>
 
 // Upper section
 @property UILabel *label_Temp, *label_Time, *label_Date;
@@ -23,8 +23,16 @@
 @property FUIButton *btn_NewOrderInfo;
 @property UITableView *orderTableView;
 // Plant Information
-@property UILabel *label_PlantInfo;
+@property UILabel *label_PlantInfo, *label_Herbivory;
 @property UITextField *entry_PlantSpecies;
+@property UIButton *entry_Herbivory;
+// Plant Photo
+@property UILabel *label_PlantPhoto;
+@property UIImageView *entry_PlantPhoto;
+@property UILabel *label_PhotoPlaceHolder;
+// Submit Button
+@property FUIButton *btn_Submit;
+
 
 - (id)initWithParentController:(GCSurveyViewController *)controller;
 

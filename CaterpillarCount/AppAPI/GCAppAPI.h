@@ -55,7 +55,7 @@
 + (UIColor *)getColorWithRGBAinHex:(NSUInteger)color;
 + (void)setHasShownTour:(BOOL)mode;
 + (UIImageView *)getFullScreenImageView:(NSString *)name;
-
++ (CGPoint)getCGPointZeroWithStatusbarAndNavigationBar:(UIViewController *)controller;
 
 
 

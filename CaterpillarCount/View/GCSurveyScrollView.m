@@ -40,7 +40,7 @@
 //        CGFloat FontSize_h2 = 16.0;
         CGFloat FontSize_p1 = 16.0;
         CGFloat WidthForEntryfieldBorder = 1.0;
-        CGFloat CornerRadiusForButton = 10.0;
+        CGFloat CornerRadius_General = 10.0;
         
 #pragma mark - Content Initialization
         // Temp, Time, Date Label
@@ -76,7 +76,7 @@
         self.entry_Temp.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
         [[self.entry_Temp layer] setBorderWidth:WidthForEntryfieldBorder];
         [[self.entry_Temp layer] setBorderColor:[UIColor lightGrayColor].CGColor];
-        self.entry_Temp.layer.cornerRadius = CornerRadiusForButton;
+        self.entry_Temp.layer.cornerRadius = CornerRadius_General;
         self.entry_Temp.clipsToBounds = YES;
         [self addSubview:self.entry_Temp];
 
@@ -87,7 +87,7 @@
         self.entry_Time.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
         [[self.entry_Time layer] setBorderWidth:WidthForEntryfieldBorder];
         [[self.entry_Time layer] setBorderColor:[UIColor lightGrayColor].CGColor];
-        self.entry_Time.layer.cornerRadius = CornerRadiusForButton;
+        self.entry_Time.layer.cornerRadius = CornerRadius_General;
         self.entry_Time.clipsToBounds = YES;
         [self addSubview:self.entry_Time];
         NSDate *currentTime = [NSDate date];
@@ -103,7 +103,7 @@
         self.entry_Date.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
         [[self.entry_Date layer] setBorderWidth:WidthForEntryfieldBorder];
         [[self.entry_Date layer] setBorderColor:[UIColor lightGrayColor].CGColor];
-        self.entry_Date.layer.cornerRadius = CornerRadiusForButton;
+        self.entry_Date.layer.cornerRadius = CornerRadius_General;
         self.entry_Date.clipsToBounds = YES;
         [self addSubview:self.entry_Date];
         
@@ -133,7 +133,7 @@
         self.entry_Site.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
         [[self.entry_Site layer] setBorderWidth:WidthForEntryfieldBorder];
         [[self.entry_Site layer] setBorderColor:[UIColor lightGrayColor].CGColor];
-        self.entry_Site.layer.cornerRadius = CornerRadiusForButton;
+        self.entry_Site.layer.cornerRadius = CornerRadius_General;
         self.entry_Site.clipsToBounds = YES;
         [self addSubview:self.entry_Site];
         
@@ -154,7 +154,7 @@
         self.entry_Circle.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
         [[self.entry_Circle layer] setBorderWidth:WidthForEntryfieldBorder];
         [[self.entry_Circle layer] setBorderColor:[UIColor lightGrayColor].CGColor];
-        self.entry_Circle.layer.cornerRadius = CornerRadiusForButton;
+        self.entry_Circle.layer.cornerRadius = CornerRadius_General;
         self.entry_Circle.clipsToBounds = YES;
         [self addSubview:self.entry_Circle];
         
@@ -175,7 +175,7 @@
         self.entry_Survey.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
         [[self.entry_Survey layer] setBorderWidth:WidthForEntryfieldBorder];
         [[self.entry_Survey layer] setBorderColor:[UIColor lightGrayColor].CGColor];
-        self.entry_Survey.layer.cornerRadius = CornerRadiusForButton;
+        self.entry_Survey.layer.cornerRadius = CornerRadius_General;
         self.entry_Survey.clipsToBounds = YES;
         [self addSubview:self.entry_Survey];
         
@@ -228,6 +228,78 @@
         self.entry_PlantSpecies.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
         self.entry_PlantSpecies.delegate = self;
         [self addSubview:self.entry_PlantSpecies];
+        // Herbivory label
+        self.label_Herbivory = [[UILabel alloc] init];
+        self.label_Herbivory.textAlignment = NSTextAlignmentLeft;
+        [self.label_Herbivory setFont:[UIFont fontWithName:@"Helvetica" size:FontSize_p1]];
+        [self.label_Herbivory setBackgroundColor:[UIColor clearColor]];
+        [self.label_Herbivory setTextColor:[GCAppAPI getColorWithRGBAinHex:ThemeColor01]];
+        [self.label_Herbivory setText:@"Herbivory"];
+        [self addSubview:self.label_Herbivory];
+        // Herbivory entry
+        self.entry_Herbivory = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        self.entry_Herbivory.contentEdgeInsets = Insets_Button;
+        [self.entry_Herbivory setTitle:@"Click to choose a herbivory" forState:UIControlStateNormal];
+        self.entry_Herbivory.titleLabel.font = [UIFont fontWithName:@"Helvetica" size:FontSize_p1];
+        [self.entry_Herbivory setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        self.entry_Herbivory.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+        [[self.entry_Herbivory layer] setBorderWidth:WidthForEntryfieldBorder];
+        [[self.entry_Herbivory layer] setBorderColor:[UIColor lightGrayColor].CGColor];
+        self.entry_Herbivory.layer.cornerRadius = CornerRadius_General;
+        self.entry_Herbivory.clipsToBounds = YES;
+        [self addSubview:self.entry_Herbivory];
+        
+        // Plant Photo
+        self.label_PlantPhoto = [[UILabel alloc] init];
+        self.label_PlantPhoto.textAlignment = NSTextAlignmentLeft;
+        [self.label_PlantPhoto setFont:[UIFont fontWithName:@"Helvetica-Bold" size:FontSize_h1]];
+        [self.label_PlantPhoto setBackgroundColor:[UIColor clearColor]];
+        [self.label_PlantPhoto setTextColor:[GCAppAPI getColorWithRGBAinHex:ThemeColor01]];
+        [self.label_PlantPhoto setText:@"Plant Photo"];
+        [self addSubview:self.label_PlantPhoto];
+        // Photo thumbnail
+        self.entry_PlantPhoto = [[UIImageView alloc] init];
+        [self addSubview:self.entry_PlantPhoto];
+        // Photo Place Holder
+        self.label_PhotoPlaceHolder = [[UILabel alloc] init];
+        self.label_PhotoPlaceHolder.textAlignment = NSTextAlignmentCenter;
+        [self.label_PhotoPlaceHolder setFont:[UIFont fontWithName:@"Helvetica" size:FontSize_p1]];
+        [self.label_PhotoPlaceHolder setBackgroundColor:[UIColor lightGrayColor]];
+        [self.label_PhotoPlaceHolder setTextColor:[GCAppAPI getColorWithRGBAinHex:ThemeColor01]];
+        [self.label_PhotoPlaceHolder setText:@"Capture"];
+        self.label_PhotoPlaceHolder.layer.cornerRadius = CornerRadius_General;
+        self.label_PhotoPlaceHolder.clipsToBounds = YES;
+        [self addSubview:self.label_PhotoPlaceHolder];
+        
+        // Submit button and alert view
+        self.btn_Submit = [[FUIButton alloc] init];
+        self.btn_Submit.buttonColor = [GCAppAPI getColorWithRGBAinHex:ThemeColor01];
+        self.btn_Submit.shadowColor = [UIColor greenSeaColor];
+        self.btn_Submit.shadowHeight = 1.0f;
+        self.btn_Submit.cornerRadius = 6.0f;
+        self.btn_Submit.titleLabel.font = [UIFont boldFlatFontOfSize:16];
+        [self.btn_Submit setTitle:@"Submit" forState:UIControlStateNormal];
+        [self.btn_Submit setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal];
+        [self.btn_Submit setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+        [self addSubview:self.btn_Submit];
+        [[self.btn_Submit rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+            NSLog(@"hit button submit");
+            FUIAlertView *alertView = [[FUIAlertView alloc] initWithTitle:@"Well Done!" message:@"Submitting the data..." delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil, nil];
+            alertView.alertViewStyle = FUIAlertViewStylePlainTextInput;
+            alertView.delegate = self;
+            alertView.titleLabel.textColor = [UIColor cloudsColor];
+            alertView.titleLabel.font = [UIFont boldFlatFontOfSize:16];
+            alertView.messageLabel.textColor = [UIColor cloudsColor];
+            alertView.messageLabel.font = [UIFont flatFontOfSize:14];
+            alertView.backgroundOverlay.backgroundColor = [[UIColor cloudsColor] colorWithAlphaComponent:0.8];
+            alertView.alertContainer.backgroundColor = [UIColor midnightBlueColor];
+            alertView.defaultButtonColor = [UIColor cloudsColor];
+            alertView.defaultButtonShadowColor = [UIColor asbestosColor];
+            alertView.defaultButtonFont = [UIFont boldFlatFontOfSize:16];
+            alertView.defaultButtonTitleColor = [UIColor asbestosColor];
+            [alertView show];
+        }];
+
         
 #pragma mark - Content Layout
         // Temp, Time, Date Label
@@ -342,10 +414,42 @@
             make.top.equalTo(self.label_PlantInfo.mas_bottom).with.offset(Padding_Page_Small.top);
             make.left.equalTo(self.mas_left).with.offset(Padding_Page_Large.left);
             make.right.equalTo(self.mas_right).with.offset(Padding_Page_Large.right);
-            make.bottom.equalTo(self.mas_bottom).with.offset(Padding_Page_Large.bottom);
+        }];
+        // Herbivory
+        [self.label_Herbivory mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.entry_PlantSpecies.mas_bottom).with.offset(Padding_Page_Small.top);
+            make.left.equalTo(self.mas_left).with.offset(Padding_Page_Large.left);
+            make.right.equalTo(self.mas_right).with.offset(Padding_Page_Large.right);
+        }];
+        [self.entry_Herbivory mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.label_Herbivory.mas_bottom).with.offset(Padding_Page_Small.top);
+            make.left.equalTo(self.mas_left).with.offset(Padding_Page_Large.left);
+            make.right.equalTo(self.mas_right).with.offset(Padding_Page_Large.right);
         }];
         
-        
+        // Plant Photo
+        [self.label_PlantPhoto mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.entry_Herbivory.mas_bottom).with.offset(Padding_Page_Large.top);
+            make.left.equalTo(self.mas_left).with.offset(Padding_Page_Large.left);
+            make.right.equalTo(self.mas_right).with.offset(Padding_Page_Large.right);
+        }];
+        [self.entry_PlantPhoto mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.label_PlantPhoto.mas_bottom).with.offset(Padding_Page_Small.top);
+            make.centerX.equalTo(self.mas_centerX);
+            make.size.mas_equalTo(CGSizeMake(100, 100));
+        }];
+        [self.label_PhotoPlaceHolder mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.label_PlantPhoto.mas_bottom).with.offset(Padding_Page_Small.top);
+            make.centerX.equalTo(self.mas_centerX);
+            make.size.mas_equalTo(CGSizeMake(100, 100));
+        }];
+        [self.btn_Submit mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.entry_PlantPhoto.mas_bottom).with.offset(Padding_Page_Large.top);
+            make.left.equalTo(self.mas_left).with.offset(Padding_Page_Large.left);
+            make.right.equalTo(self.mas_right).with.offset(Padding_Page_Large.right);
+            make.height.mas_equalTo(40);
+            make.bottom.equalTo(self.mas_bottom).with.offset(Padding_Page_Large.bottom);
+        }];
         
     }
     return self;
@@ -355,7 +459,8 @@
 #pragma mark - UITextField Delegate
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
 {
-    self.contentOffset = CGPointZero;
+//    self.contentOffset = [GCAppAPI getCGPointZeroWithStatusbarAndNavigationBar:self.parentController];
+    self.contentOffset = CGPointMake(0, 300);
     DDLogVerbose(@"textFieldShouldEndEditing");
     return YES;
 }

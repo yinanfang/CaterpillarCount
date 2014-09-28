@@ -136,4 +136,28 @@
     return imageView;
 }
 
++ (CGPoint)getCGPointZeroWithStatusbarAndNavigationBar:(UIViewController *)controller
+{
+    CGFloat statusBarHeight = 0.000000;
+    CGFloat navBarHeight = 0.000000;
+    UIInterfaceOrientation orientation_StatusBar = [[UIApplication sharedApplication] statusBarOrientation];
+    switch (orientation_StatusBar) {
+        case UIInterfaceOrientationPortrait:
+        case UIInterfaceOrientationPortraitUpsideDown:
+            NSLog(@"It's UIInterfaceOrientationPortrait");
+            statusBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
+            navBarHeight = controller.navigationController.navigationBar.frame.size.height;
+            break;
+        case UIInterfaceOrientationLandscapeLeft:
+        case UIInterfaceOrientationLandscapeRight:
+            NSLog(@"It's UIInterfaceOrientationLandscape");
+            statusBarHeight = [UIApplication sharedApplication].statusBarFrame.size.width;
+            navBarHeight = controller.navigationController.navigationBar.frame.size.height;
+            break;
+        default:
+            break;
+    }
+    return CGPointMake(0, -statusBarHeight-navBarHeight);
+}
+
 @end
