@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GCSurveyViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>
+@interface GCSurveyViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDelegate, UITableViewDataSource>
 
 @property UIPickerView *picker_Temp;
 @property NSMutableArray *pickerContentArray;

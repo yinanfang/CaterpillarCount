@@ -8,6 +8,7 @@
 
 #import "GCSurveyViewController.h"
 #import "GCSurveyScrollView.h"
+#import "OrderTableViewCell.h"
 
 @interface GCSurveyViewController ()
 @property GCAppAPI *AppAPI;
@@ -50,21 +51,20 @@
     
     // Configure the pickers
     self.picker_Temp = [[UIPickerView alloc] init];
+    self.picker_Temp.backgroundColor = [UIColor whiteColor];
     self.picker_Temp.delegate = self;
     self.picker_Temp.dataSource = self;
     [self.view addSubview:self.picker_Temp];
     [self.picker_Temp mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.view.mas_left);
         make.right.equalTo(self.view.mas_right);
-//        make.bottom.equalTo(self.view.mas_bottom);
         make.bottom.mas_equalTo(self.picker_Temp.frame.size.height);
     }];
     self.pickerContentArray = [[NSMutableArray alloc] init];
     self.pickerContentArray = [@[@"Below 40F", @"40F - 50F", @"50F - 60F", @"60F - 70F", @"70F - 80F", @"80F - 90F", @"90F - 100F", @"Above 100F"] mutableCopy];
     self.picker_Temp.delegate = self;
     self.picker_Temp.dataSource = self;
-    
-    
+    // Show and hide motion
     __block BOOL shouldDisplayPicker = NO;
     [[self.surveyScrollView.entry_Temp rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         NSLog(@"botton tapped");
@@ -80,22 +80,25 @@
             }];
             [self.view layoutIfNeeded];
         }completion:nil];
-        
+        // reload content for different options
 //        [self.picker_Temp reloadAllComponents]
-        
-        
     }];
+    
+    // Configure Order Table View
+    self.surveyScrollView.orderTableView.delegate = self;
+    self.surveyScrollView.orderTableView.dataSource = self;
+    
+    
     
 }
 
-#pragma mark - PickerView Delegate
+#pragma mark - UIPickerView Delegate
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
     [self.surveyScrollView.entry_Temp setTitle:self.pickerContentArray[row] forState:UIControlStateNormal];
 }
 
-#pragma mark -
-#pragma mark PickerView DataSource
+#pragma mark - UIPickerView DataSource
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
@@ -112,11 +115,31 @@
     return self.pickerContentArray[row];
 } 
 
+#pragma mark - UITableView Delegate
+
+
+#pragma mark - UITableView DataSource
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 0;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *OrderTableIdentifier = @"OrderTableCell";
+    OrderTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:OrderTableIdentifier];
+    if (cell == nil) {
+        cell = [[OrderTableViewCell alloc] init];
+    }
+    // Customize cell
+    
+    return cell;
+    
+}
 
 
 
-
-
+#pragma mark - Other View Methods
 - (void)viewWillAppear:(BOOL)animated
 {
     self.navigationController.navigationBar.barTintColor = [GCAppAPI getColorWithRGBAinHex:ThemeColor01];

@@ -20,6 +20,7 @@
 		D43A91A019CF9E1E009AA0C7 /* GCCoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = D43A919F19CF9E1E009AA0C7 /* GCCoverView.m */; };
 		D46E5F0919D2E4E9002FF1C1 /* GCSurveyScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D46E5F0819D2E4E9002FF1C1 /* GCSurveyScrollView.m */; };
 		D46E5F0C19D2E50C002FF1C1 /* GCSurveyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D46E5F0B19D2E50C002FF1C1 /* GCSurveyViewController.m */; };
+		D4CDE9AB19D786D3001E51EB /* OrderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D4CDE9AA19D786D3001E51EB /* OrderTableViewCell.m */; };
 		D4FE8E8519D702E000E50E9C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4FE8E8419D702E000E50E9C /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,8 @@
 		D46E5F0819D2E4E9002FF1C1 /* GCSurveyScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCSurveyScrollView.m; path = View/GCSurveyScrollView.m; sourceTree = "<group>"; };
 		D46E5F0A19D2E50C002FF1C1 /* GCSurveyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GCSurveyViewController.h; path = View/GCSurveyViewController.h; sourceTree = "<group>"; };
 		D46E5F0B19D2E50C002FF1C1 /* GCSurveyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCSurveyViewController.m; path = View/GCSurveyViewController.m; sourceTree = "<group>"; };
+		D4CDE9A919D786D3001E51EB /* OrderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OrderTableViewCell.h; path = View/OrderTableViewCell.h; sourceTree = "<group>"; };
+		D4CDE9AA19D786D3001E51EB /* OrderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OrderTableViewCell.m; path = View/OrderTableViewCell.m; sourceTree = "<group>"; };
 		D4FE8E8419D702E000E50E9C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -167,6 +170,8 @@
 				D46E5F0B19D2E50C002FF1C1 /* GCSurveyViewController.m */,
 				D46E5F0719D2E4E9002FF1C1 /* GCSurveyScrollView.h */,
 				D46E5F0819D2E4E9002FF1C1 /* GCSurveyScrollView.m */,
+				D4CDE9A919D786D3001E51EB /* OrderTableViewCell.h */,
+				D4CDE9AA19D786D3001E51EB /* OrderTableViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -344,6 +349,7 @@
 				D43A919A19CF9CD2009AA0C7 /* GCConstant.m in Sources */,
 				D43A919719CF9994009AA0C7 /* GCCustomLogFormatters.m in Sources */,
 				D43A919D19CF9D49009AA0C7 /* GCCoverViewController.m in Sources */,
+				D4CDE9AB19D786D3001E51EB /* OrderTableViewCell.m in Sources */,
 				D43A918619CF964E009AA0C7 /* GCAppDelegate.m in Sources */,
 				D46E5F0C19D2E50C002FF1C1 /* GCSurveyViewController.m in Sources */,
 				D43A91A019CF9E1E009AA0C7 /* GCCoverView.m in Sources */,

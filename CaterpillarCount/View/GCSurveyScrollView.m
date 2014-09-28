@@ -37,7 +37,7 @@
         UIEdgeInsets Padding_Page_Small = UIEdgeInsetsMake(5, 5, -5, -5);
         UIEdgeInsets Insets_Button = UIEdgeInsetsMake(8, 10, 8, 10);
         CGFloat FontSize_h1 = 18.0;
-        CGFloat FontSize_h2 = 16.0;
+//        CGFloat FontSize_h2 = 16.0;
         CGFloat FontSize_p1 = 16.0;
         CGFloat WidthForEntryfieldBorder = 1.0;
         CGFloat CornerRadiusForButton = 10.0;
@@ -47,7 +47,6 @@
         self.label_Temp = [[UILabel alloc] init];
         self.label_Temp.textAlignment = NSTextAlignmentCenter;
         [self.label_Temp setFont:[UIFont fontWithName:@"Helvetica" size:FontSize_p1]];
-//        [self.label_Temp setFont:[UIFont boldSystemFontOfSize:FontSize_h2]];
         [self.label_Temp setBackgroundColor:[UIColor clearColor]];
         [self.label_Temp setTextColor:[GCAppAPI getColorWithRGBAinHex:ThemeColor01]];
         [self.label_Temp setText:@"Temp"];
@@ -203,7 +202,32 @@
         [[self.btn_NewOrderInfo rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
             NSLog(@"add order button tapped");
         }];
+        // Order details table
+        self.orderTableView = [[UITableView alloc] init];
+        self.orderTableView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+        [self addSubview:self.orderTableView];
         
+        // Plant Information
+        self.label_PlantInfo = [[UILabel alloc] init];
+        self.label_PlantInfo.textAlignment = NSTextAlignmentLeft;
+        [self.label_PlantInfo setFont:[UIFont fontWithName:@"Helvetica-Bold" size:FontSize_h1]];
+        [self.label_PlantInfo setBackgroundColor:[UIColor clearColor]];
+        [self.label_PlantInfo setTextColor:[GCAppAPI getColorWithRGBAinHex:ThemeColor01]];
+        [self.label_PlantInfo setText:@"Plant Information"];
+        [self addSubview:self.label_PlantInfo];
+        // Plant Species
+        self.entry_PlantSpecies = [[UITextField alloc] init];
+        self.entry_PlantSpecies.borderStyle = UITextBorderStyleRoundedRect;
+        self.entry_PlantSpecies.font = [UIFont systemFontOfSize:FontSize_p1];
+        self.entry_PlantSpecies.placeholder = @"Plant Species (if known)";
+        self.entry_PlantSpecies.autocorrectionType = UITextAutocorrectionTypeNo;
+        self.entry_PlantSpecies.keyboardType = UIKeyboardTypeDefault;
+        self.entry_PlantSpecies.returnKeyType = UIReturnKeyDone;
+        self.entry_PlantSpecies.clearButtonMode = UITextFieldViewModeWhileEditing;
+        self.entry_PlantSpecies.contentVerticalAlignment = UIControlContentHorizontalAlignmentLeft;
+        self.entry_PlantSpecies.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+        self.entry_PlantSpecies.delegate = self;
+        [self addSubview:self.entry_PlantSpecies];
         
 #pragma mark - Content Layout
         // Temp, Time, Date Label
@@ -289,7 +313,6 @@
         [self.label_ArthropodOrderInfo mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.entry_Survey.mas_bottom).with.offset(Padding_Page_Large.top);
             make.left.equalTo(self.mas_left).with.offset(Padding_Page_Large.left);
-            make.bottom.equalTo(self.mas_bottom).with.offset(Padding_Page_Large.bottom);
             make.height.mas_equalTo(20);
         }];
         // Add button
@@ -300,15 +323,63 @@
             make.size.mas_equalTo(CGSizeMake(80, 23));
 //            make.bottom.equalTo(self.mas_bottom);
         }];
+        // Order detail table
+        [self.orderTableView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.label_ArthropodOrderInfo.mas_bottom).with.offset(Padding_Page_Small.top);
+            make.left.equalTo(self.mas_left).with.offset(Padding_Page_Large.left);
+            make.right.equalTo(self.mas_right).with.offset(Padding_Page_Large.right);
+            make.height.mas_equalTo(100);
+        }];
+        
+        // Plant Information
+        [self.label_PlantInfo mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.orderTableView.mas_bottom).with.offset(Padding_Page_Large.top);
+            make.left.equalTo(self.mas_left).with.offset(Padding_Page_Large.left);
+            make.right.equalTo(self.mas_right).with.offset(Padding_Page_Large.right);
+        }];
+        // Species
+        [self.entry_PlantSpecies mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.label_PlantInfo.mas_bottom).with.offset(Padding_Page_Small.top);
+            make.left.equalTo(self.mas_left).with.offset(Padding_Page_Large.left);
+            make.right.equalTo(self.mas_right).with.offset(Padding_Page_Large.right);
+            make.bottom.equalTo(self.mas_bottom).with.offset(Padding_Page_Large.bottom);
+        }];
+        
+        
         
     }
     return self;
     
 }
 
+#pragma mark - UITextField Delegate
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    self.contentOffset = CGPointZero;
+    DDLogVerbose(@"textFieldShouldEndEditing");
+    return YES;
+}
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    DDLogVerbose(@"textFieldShouldReturn:");
+    [self.entry_PlantSpecies resignFirstResponder];
+    
+//    if (textField.tag == 1) {
+//        UITextField *passwordTextField = (UITextField *)[self.view viewWithTag:2];
+//        [passwordTextField becomeFirstResponder];
+//    }
+//    else {
+//        [textField resignFirstResponder];
+//    }
+    return YES;
+}
 
-
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    DDLogVerbose(@"touchesBegan:withEvent:");
+    DDLogVerbose(@"Hide keyboard...");
+    [self endEditing:YES];
+    [super touchesBegan:touches withEvent:event];
+}
 
 
 @end
