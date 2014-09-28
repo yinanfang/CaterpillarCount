@@ -33,6 +33,10 @@
 // Submit Button
 @property FUIButton *btn_Submit;
 
+// States
+@property BOOL shouldMoveUpToAdjustForKeyboard;
+@property BOOL shouldMoveDownToAdjustForKeyboard;
+
 
 - (id)initWithParentController:(GCSurveyViewController *)controller;
 

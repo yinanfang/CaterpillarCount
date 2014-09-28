@@ -8,10 +8,10 @@
 
 #import "GCSurveyViewController.h"
 #import "GCSurveyScrollView.h"
-#import "OrderTableViewCell.h"
+#import "GCOrderTableViewCell.h"
+#import "GCNewOrderViewController.h"
 
 @interface GCSurveyViewController ()
-@property GCAppAPI *AppAPI;
 @property GCSurveyScrollView *surveyScrollView;
 
 
@@ -22,7 +22,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.AppAPI = [GCAppAPI sharedInstance];
     self.view.frame = ScreenBounds;
     
     // UI Navigation Bar
@@ -84,6 +83,13 @@
 //        [self.picker_Temp reloadAllComponents]
     }];
     
+    // Add order button
+    [[self.surveyScrollView.btn_NewOrderInfo rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+        NSLog(@"add botton tapped");
+        GCNewOrderViewController *newOrderViewController = [[GCNewOrderViewController alloc] init];
+        [self.navigationController pushViewController:newOrderViewController animated:YES];
+    }];
+    
     // Configure Order Table View
     self.surveyScrollView.orderTableView.delegate = self;
     self.surveyScrollView.orderTableView.dataSource = self;
@@ -127,9 +133,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *OrderTableIdentifier = @"OrderTableCell";
-    OrderTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:OrderTableIdentifier];
+    GCOrderTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:OrderTableIdentifier];
     if (cell == nil) {
-        cell = [[OrderTableViewCell alloc] init];
+        cell = [[GCOrderTableViewCell alloc] init];
     }
     // Customize cell
     

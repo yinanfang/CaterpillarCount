@@ -32,6 +32,8 @@ typedef NS_ENUM(NSInteger, testEnum) {
 #define ScreenSize [[UIScreen mainScreen] bounds].size
 #define ScreenWidth [[UIScreen mainScreen] bounds].size.width
 #define ScreenHeight [[UIScreen mainScreen] bounds].size.height
+// Keyboard
+#define kOFFSET_FOR_KEYBOARD 80.0
 
 #pragma mark - Image Types
 @property NSString *PNGTypeAndSuffix;

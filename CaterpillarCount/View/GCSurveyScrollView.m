@@ -11,7 +11,6 @@
 
 
 @interface GCSurveyScrollView ()
-@property GCAppAPI *AppAPI;
 @property GCSurveyViewController *parentController;
 
 
@@ -25,11 +24,12 @@
     self = [super init];
     if (self) {
         // Initialization code
-        self.AppAPI = [GCAppAPI sharedInstance];
         self.parentController = controller;
         self.backgroundColor = [UIColor whiteColor];
         self.frame = ScreenBounds;
         self.delegate = self;
+        self.shouldMoveUpToAdjustForKeyboard = YES;
+        self.shouldMoveDownToAdjustForKeyboard = NO;
         [self.parentController.view addSubview:self];
         
         // General Layout Metrics
@@ -459,15 +459,30 @@
 #pragma mark - UITextField Delegate
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
 {
-//    self.contentOffset = [GCAppAPI getCGPointZeroWithStatusbarAndNavigationBar:self.parentController];
-    self.contentOffset = CGPointMake(0, 300);
-    DDLogVerbose(@"textFieldShouldEndEditing");
+    DDLogVerbose(@"textFieldShouldBeginEditing");
+    if (self.shouldMoveUpToAdjustForKeyboard) {
+        [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+            DDLogVerbose(@"Adjusting content offset for keyboard");
+            self.center = CGPointMake(self.center.x, self.center.y-kOFFSET_FOR_KEYBOARD);
+        }completion:nil];
+        self.shouldMoveUpToAdjustForKeyboard = NO;
+        self.shouldMoveDownToAdjustForKeyboard = YES;
+    }
     return YES;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
     DDLogVerbose(@"textFieldShouldReturn:");
     [self.entry_PlantSpecies resignFirstResponder];
+    if (self.shouldMoveDownToAdjustForKeyboard) {
+        [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+            DDLogVerbose(@"Adjusting content offset for keyboard");
+            self.center = CGPointMake(self.center.x, self.center.y+kOFFSET_FOR_KEYBOARD);
+        }completion:nil];
+        self.shouldMoveUpToAdjustForKeyboard = YES;
+        self.shouldMoveDownToAdjustForKeyboard = NO;
+    }
+    
     
 //    if (textField.tag == 1) {
 //        UITextField *passwordTextField = (UITextField *)[self.view viewWithTag:2];
@@ -483,6 +498,14 @@
     DDLogVerbose(@"touchesBegan:withEvent:");
     DDLogVerbose(@"Hide keyboard...");
     [self endEditing:YES];
+    if (self.shouldMoveDownToAdjustForKeyboard) {
+        [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+            DDLogVerbose(@"Adjusting content offset for keyboard");
+            self.center = CGPointMake(self.center.x, self.center.y+kOFFSET_FOR_KEYBOARD);
+        }completion:nil];
+        self.shouldMoveUpToAdjustForKeyboard = YES;
+        self.shouldMoveDownToAdjustForKeyboard = NO;
+    }
     [super touchesBegan:touches withEvent:event];
 }
 

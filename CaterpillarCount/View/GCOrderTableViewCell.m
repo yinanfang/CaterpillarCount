@@ -1,14 +1,14 @@
 //
-//  OrderTableViewCell.m
+//  GCOrderTableViewCell.m
 //  CaterpillarCount
 //
-//  Created by Golden Compass on 9/27/14.
+//  Created by Golden Compass on 9/28/14.
 //  Copyright (c) 2014 Golden Compass. All rights reserved.
 //
 
-#import "OrderTableViewCell.h"
+#import "GCOrderTableViewCell.h"
 
-@implementation OrderTableViewCell
+@implementation GCOrderTableViewCell
 
 - (void)awakeFromNib {
     // Initialization code
