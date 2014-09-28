@@ -31,6 +31,17 @@
         self.shouldMoveUpToAdjustForKeyboard = YES;
         self.shouldMoveDownToAdjustForKeyboard = NO;
         [self.parentController.view addSubview:self];
+//        [self mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.top.equalTo(self.window.inpu.mas_top);
+//            make.top.equalTo(self.window.viewForBaselineLayout.mas_left);
+//            make.top.equalTo(self.window.viewForBaselineLayout.mas_bottom);
+//            make.top.equalTo(self.window.viewForBaselineLayout.mas_right);
+
+//            make.top.equalTo(self.parentController.view.mas_top);
+//            make.left.equalTo(self.parentController.view.mas_left);
+//            make.bottom.equalTo(self.parentController.view.mas_bottom);
+//            make.right.equalTo(self.parentController.view.mas_right);
+//        }];
         
         // General Layout Metrics
         UIEdgeInsets Padding_Page_Large = UIEdgeInsetsMake(20, 20, -20, -20);
@@ -91,9 +102,9 @@
         self.entry_Time.clipsToBounds = YES;
         [self addSubview:self.entry_Time];
         NSDate *currentTime = [NSDate date];
-        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateFormat:@"hh:mm a"];
-        NSString *timeString = [dateFormatter stringFromDate: currentTime];
+        NSDateFormatter *timeFormatter = [[NSDateFormatter alloc] init];
+        [timeFormatter setDateFormat:@"hh:mm a"];
+        NSString *timeString = [timeFormatter stringFromDate: currentTime];
         [self.entry_Time setTitle:timeString forState:UIControlStateNormal];
         
         self.entry_Date = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -106,6 +117,11 @@
         self.entry_Date.layer.cornerRadius = CornerRadius_General;
         self.entry_Date.clipsToBounds = YES;
         [self addSubview:self.entry_Date];
+        NSDate *currentDate = [NSDate date];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"mm/dd/yy"];
+        NSString *dateString = [dateFormatter stringFromDate: currentDate];
+        [self.entry_Date setTitle:dateString forState:UIControlStateNormal];
         
         // Site Information
         self.label_SiteInfo = [[UILabel alloc] init];
@@ -398,7 +414,7 @@
         // Order detail table
         [self.orderTableView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.label_ArthropodOrderInfo.mas_bottom).with.offset(Padding_Page_Small.top);
-            make.left.equalTo(self.mas_left).with.offset(Padding_Page_Large.left);
+            make.left.equalTo(self.mas_left).with.offset(Padding_Page_Small.left);   // wrong offset??
             make.right.equalTo(self.mas_right).with.offset(Padding_Page_Large.right);
             make.height.mas_equalTo(100);
         }];
