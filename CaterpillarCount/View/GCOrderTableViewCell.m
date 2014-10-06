@@ -17,7 +17,17 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
+//    self.contentView
+    
     // Configure the view for the selected state
 }
+
+//- (void)updateConstraints {
+//    
+//}
+//
+//- (void)updateConstraintsIfNeeded{
+//    
+//}
 
 @end

@@ -56,7 +56,7 @@
 + (void)setHasShownTour:(BOOL)mode;
 + (UIImageView *)getFullScreenImageView:(NSString *)name;
 + (CGPoint)getCGPointZeroWithStatusbarAndNavigationBar:(UIViewController *)controller;
-
++ (CGRect)getScreenBoundsDependOnOrientation;
 
 
 

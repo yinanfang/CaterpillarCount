@@ -160,4 +160,22 @@
     return CGPointMake(0, -statusBarHeight-navBarHeight);
 }
 
++ (CGRect)getScreenBoundsDependOnOrientation
+{
+    CGRect screenBounds = [UIScreen mainScreen].bounds ;
+    if(IS_IOS8){
+        return screenBounds ;
+    }
+    CGFloat width = CGRectGetWidth(screenBounds)  ;
+    CGFloat height = CGRectGetHeight(screenBounds) ;
+    UIInterfaceOrientation interfaceOrientation = [UIApplication sharedApplication].statusBarOrientation;
+    
+    if(UIInterfaceOrientationIsPortrait(interfaceOrientation)){
+        screenBounds.size = CGSizeMake(width, height);
+    }else if(UIInterfaceOrientationIsLandscape(interfaceOrientation)){
+        screenBounds.size = CGSizeMake(height, width);
+    }
+    return screenBounds ;
+}
+
 @end

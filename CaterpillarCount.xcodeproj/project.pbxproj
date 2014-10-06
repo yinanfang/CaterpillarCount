@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		84ED24DE56DF4E3C914A449A /* libPods-CaterpillarCount.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4205C588FBF14A44971BF8BB /* libPods-CaterpillarCount.a */; };
+		D430875E19D996D5008D92F5 /* GCSignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D430875D19D996D5008D92F5 /* GCSignInViewController.m */; };
+		D430876119D996FE008D92F5 /* GCRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D430876019D996FE008D92F5 /* GCRegisterViewController.m */; };
+		D430876419D9971A008D92F5 /* GCSignInScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D430876319D9971A008D92F5 /* GCSignInScrollView.m */; };
+		D430876719D99736008D92F5 /* GCRegisterScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D430876619D99736008D92F5 /* GCRegisterScrollView.m */; };
 		D43A916319CF94D7009AA0C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D43A916219CF94D7009AA0C7 /* main.m */; };
 		D43A916B19CF94D7009AA0C7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D43A916919CF94D7009AA0C7 /* LaunchScreen.xib */; };
 		D43A917719CF94D7009AA0C7 /* CaterpillarCountTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D43A917619CF94D7009AA0C7 /* CaterpillarCountTests.m */; };
@@ -39,6 +43,14 @@
 /* Begin PBXFileReference section */
 		4205C588FBF14A44971BF8BB /* libPods-CaterpillarCount.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CaterpillarCount.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C19FA1D45FD34550A668DF08 /* Pods-CaterpillarCount.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CaterpillarCount.xcconfig"; path = "Pods/Pods-CaterpillarCount.xcconfig"; sourceTree = "<group>"; };
+		D430875C19D996D5008D92F5 /* GCSignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GCSignInViewController.h; path = View/GCSignInViewController.h; sourceTree = "<group>"; };
+		D430875D19D996D5008D92F5 /* GCSignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCSignInViewController.m; path = View/GCSignInViewController.m; sourceTree = "<group>"; };
+		D430875F19D996FE008D92F5 /* GCRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GCRegisterViewController.h; path = View/GCRegisterViewController.h; sourceTree = "<group>"; };
+		D430876019D996FE008D92F5 /* GCRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCRegisterViewController.m; path = View/GCRegisterViewController.m; sourceTree = "<group>"; };
+		D430876219D9971A008D92F5 /* GCSignInScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GCSignInScrollView.h; path = View/GCSignInScrollView.h; sourceTree = "<group>"; };
+		D430876319D9971A008D92F5 /* GCSignInScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCSignInScrollView.m; path = View/GCSignInScrollView.m; sourceTree = "<group>"; };
+		D430876519D99736008D92F5 /* GCRegisterScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GCRegisterScrollView.h; path = View/GCRegisterScrollView.h; sourceTree = "<group>"; };
+		D430876619D99736008D92F5 /* GCRegisterScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCRegisterScrollView.m; path = View/GCRegisterScrollView.m; sourceTree = "<group>"; };
 		D43A915D19CF94D7009AA0C7 /* CaterpillarCount.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CaterpillarCount.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D43A916119CF94D7009AA0C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D43A916219CF94D7009AA0C7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -99,6 +111,42 @@
 				4205C588FBF14A44971BF8BB /* libPods-CaterpillarCount.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D430876819D99747008D92F5 /* Start_up */ = {
+			isa = PBXGroup;
+			children = (
+				D43A919B19CF9D49009AA0C7 /* GCCoverViewController.h */,
+				D43A919C19CF9D49009AA0C7 /* GCCoverViewController.m */,
+				D43A919E19CF9E1E009AA0C7 /* GCCoverView.h */,
+				D43A919F19CF9E1E009AA0C7 /* GCCoverView.m */,
+				D430875C19D996D5008D92F5 /* GCSignInViewController.h */,
+				D430875D19D996D5008D92F5 /* GCSignInViewController.m */,
+				D430876219D9971A008D92F5 /* GCSignInScrollView.h */,
+				D430876319D9971A008D92F5 /* GCSignInScrollView.m */,
+				D430875F19D996FE008D92F5 /* GCRegisterViewController.h */,
+				D430876019D996FE008D92F5 /* GCRegisterViewController.m */,
+				D430876519D99736008D92F5 /* GCRegisterScrollView.h */,
+				D430876619D99736008D92F5 /* GCRegisterScrollView.m */,
+			);
+			name = Start_up;
+			sourceTree = "<group>";
+		};
+		D430876919D99757008D92F5 /* Main_Views */ = {
+			isa = PBXGroup;
+			children = (
+				D46E5F0A19D2E50C002FF1C1 /* GCSurveyViewController.h */,
+				D46E5F0B19D2E50C002FF1C1 /* GCSurveyViewController.m */,
+				D46E5F0719D2E4E9002FF1C1 /* GCSurveyScrollView.h */,
+				D46E5F0819D2E4E9002FF1C1 /* GCSurveyScrollView.m */,
+				D48FAA3E19D83D900042DFC6 /* GCOrderTableViewCell.h */,
+				D48FAA3F19D83D900042DFC6 /* GCOrderTableViewCell.m */,
+				D48FAA4119D83DB00042DFC6 /* GCNewOrderViewController.h */,
+				D48FAA4219D83DB00042DFC6 /* GCNewOrderViewController.m */,
+				D48FAA4419D83DCE0042DFC6 /* GCNewOrderScrollView.h */,
+				D48FAA4519D83DCE0042DFC6 /* GCNewOrderScrollView.m */,
+			);
+			name = Main_Views;
 			sourceTree = "<group>";
 		};
 		D43A915419CF94D7009AA0C7 = {
@@ -168,20 +216,8 @@
 		D43A918A19CF979D009AA0C7 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D43A919B19CF9D49009AA0C7 /* GCCoverViewController.h */,
-				D43A919C19CF9D49009AA0C7 /* GCCoverViewController.m */,
-				D43A919E19CF9E1E009AA0C7 /* GCCoverView.h */,
-				D43A919F19CF9E1E009AA0C7 /* GCCoverView.m */,
-				D46E5F0A19D2E50C002FF1C1 /* GCSurveyViewController.h */,
-				D46E5F0B19D2E50C002FF1C1 /* GCSurveyViewController.m */,
-				D46E5F0719D2E4E9002FF1C1 /* GCSurveyScrollView.h */,
-				D46E5F0819D2E4E9002FF1C1 /* GCSurveyScrollView.m */,
-				D48FAA3E19D83D900042DFC6 /* GCOrderTableViewCell.h */,
-				D48FAA3F19D83D900042DFC6 /* GCOrderTableViewCell.m */,
-				D48FAA4119D83DB00042DFC6 /* GCNewOrderViewController.h */,
-				D48FAA4219D83DB00042DFC6 /* GCNewOrderViewController.m */,
-				D48FAA4419D83DCE0042DFC6 /* GCNewOrderScrollView.h */,
-				D48FAA4519D83DCE0042DFC6 /* GCNewOrderScrollView.m */,
+				D430876819D99747008D92F5 /* Start_up */,
+				D430876919D99757008D92F5 /* Main_Views */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -358,13 +394,17 @@
 			files = (
 				D43A919A19CF9CD2009AA0C7 /* GCConstant.m in Sources */,
 				D48FAA4619D83DCE0042DFC6 /* GCNewOrderScrollView.m in Sources */,
+				D430876719D99736008D92F5 /* GCRegisterScrollView.m in Sources */,
 				D43A919719CF9994009AA0C7 /* GCCustomLogFormatters.m in Sources */,
 				D43A919D19CF9D49009AA0C7 /* GCCoverViewController.m in Sources */,
 				D43A918619CF964E009AA0C7 /* GCAppDelegate.m in Sources */,
+				D430876119D996FE008D92F5 /* GCRegisterViewController.m in Sources */,
 				D48FAA4319D83DB00042DFC6 /* GCNewOrderViewController.m in Sources */,
 				D46E5F0C19D2E50C002FF1C1 /* GCSurveyViewController.m in Sources */,
 				D43A91A019CF9E1E009AA0C7 /* GCCoverView.m in Sources */,
+				D430875E19D996D5008D92F5 /* GCSignInViewController.m in Sources */,
 				D43A919419CF997A009AA0C7 /* GCAppConfig.m in Sources */,
+				D430876419D9971A008D92F5 /* GCSignInScrollView.m in Sources */,
 				D48FAA4019D83D900042DFC6 /* GCOrderTableViewCell.m in Sources */,
 				D46E5F0919D2E4E9002FF1C1 /* GCSurveyScrollView.m in Sources */,
 				D43A919119CF993D009AA0C7 /* GCAppAPI.m in Sources */,

@@ -15,6 +15,7 @@
 #define IS_IPHONE5S ([[UIScreen mainScreen] bounds].size.height == 568)
 #define IS_IPHONE4S ([[UIScreen mainScreen] bounds].size.height == 480)
 #define IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+#define IS_IOS8 (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_7_1)
 
 typedef NS_ENUM(NSInteger, testEnum) {
     testEnum1,

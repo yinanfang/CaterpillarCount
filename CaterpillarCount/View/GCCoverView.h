@@ -11,6 +11,7 @@
 
 @interface GCCoverView : UIView
 
+@property FUIButton *btn_SignIn, *btn_Register;
 
 - (id)initWithParentController:(GCCoverViewController *)controller;
 
