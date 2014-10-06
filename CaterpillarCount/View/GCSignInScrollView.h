@@ -7,7 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+@class GCSignInViewController;
 
-@interface GCSignInScrollView : UIScrollView
+@interface GCSignInScrollView : UIScrollView <UIScrollViewDelegate>
+
+// Self
+@property GCSignInViewController *parentController;
+@property BOOL didSetupConstraints;
+
+
+
+
+
+- (id)initWithParentController:(GCSignInViewController *)controller;
 
 @end

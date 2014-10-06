@@ -12,10 +12,6 @@
 #import "GCSignInViewController.h"
 
 @interface GCCoverView ()
-@property GCAppAPI *AppAPI;
-@property GCCoverViewController *parentController;
-
-
 
 @end
 
@@ -26,17 +22,9 @@
     self = [super init];
     if (self) {
         // Initialization code
-        self.AppAPI = [GCAppAPI sharedInstance];
         self.parentController = controller;
         self.backgroundColor = [UIColor whiteColor];
-//        self.frame = ScreenBounds;
         [self.parentController.view addSubview:self];
-        [self mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.parentController.view.mas_top);
-            make.left.equalTo(self.parentController.view.mas_left);
-            make.bottom.equalTo(self.parentController.view.mas_bottom);
-            make.right.equalTo(self.parentController.view.mas_right);
-        }];
         
         // Register Button
         self.btn_Register = [[FUIButton alloc] init];
@@ -49,11 +37,6 @@
         [self.btn_Register setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal];
         [self.btn_Register setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
         [self addSubview:self.btn_Register];
-        [self.btn_Register mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(CGSizeMake(200, 50));
-            make.centerX.equalTo(self.mas_centerX);
-            make.bottom.equalTo(self.mas_bottom).with.offset(-50);
-        }];
         [[self.btn_Register rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
             NSLog(@"button tapped");
             GCSurveyViewController *surveyViewController = [[GCSurveyViewController alloc] init];
@@ -72,24 +55,46 @@
         [self.btn_SignIn setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal];
         [self.btn_SignIn setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
         [self addSubview:self.btn_SignIn];
-        [self.btn_SignIn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(CGSizeMake(200, 50));
-            make.centerX.equalTo(self.mas_centerX);
-            make.bottom.equalTo(self.btn_Register.mas_top).with.offset(-10);
-        }];
+
         [[self.btn_SignIn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
             NSLog(@"Sign In button tapped");
             GCSignInViewController *signInViewController = [[GCSignInViewController alloc] init];
             [self.parentController.navigationController pushViewController:signInViewController animated:YES];
         }];
         
-        
-        
         // Cover Image
     }
     return self;
 }
 
+- (void)updateConstraints
+{
+    if(!self.didSetupConstraints) {
+        // Self
+        [self mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.parentController.view.mas_top);
+            make.left.equalTo(self.parentController.view.mas_left);
+            make.bottom.equalTo(self.parentController.view.mas_bottom);
+            make.right.equalTo(self.parentController.view.mas_right);
+        }];
+        
+        // Register
+        [self.btn_Register mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(CGSizeMake(200, 50));
+            make.centerX.equalTo(self.mas_centerX);
+            make.bottom.equalTo(self.mas_bottom).with.offset(-50);
+        }];
+        // Sign In
+        [self.btn_SignIn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(CGSizeMake(200, 50));
+            make.centerX.equalTo(self.mas_centerX);
+            make.bottom.equalTo(self.btn_Register.mas_top).with.offset(-10);
+        }];
+        
+        self.didSetupConstraints = YES;
+    }
+    [super updateConstraints];
+}
 
 
 

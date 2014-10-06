@@ -9,7 +9,21 @@
 #import <Foundation/Foundation.h>
 
 // Theme Color
-#define ThemeColor01 0x355D3DFF
+#define ThemeColor01        0x355D3DFF
+
+// Font and Size
+#define FontSize_h1                 18.0f
+#define FontSize_h2                 16.0f
+#define FontSize_p1                 16.0f
+#define WidthForEntryfieldBorder    1.0f
+#define CornerRadius_General        10.0f
+
+// General Layout Metrics
+#define Padding_Page_Large          UIEdgeInsetsMake(20, 20, -20, -20)
+#define Padding_Page_Small          UIEdgeInsetsMake(5, 5, -5, -5)
+#define Insets_Button               UIEdgeInsetsMake(8, 10, 8, 10)
+
+
 
 // Don't change this
 #pragma mark - CocoaLumberjack Logging Constant
@@ -52,5 +66,9 @@ typedef NS_ENUM(NSInteger, DisplayStyleMode) {
     DisplayStyleModeFullScreen,
 };
 //@property StoryDisplayStyleMode storyDisplayStyleMode;
+
+
+
+
 
 @end

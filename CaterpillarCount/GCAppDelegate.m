@@ -20,17 +20,23 @@
     [GCAppAPI setupApplicationWithProductionMode:YES];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor clearColor];
-    UINavigationController *navigationController = [[UINavigationController alloc] init];
-    self.window.rootViewController = navigationController;
+    
     GCCoverViewController *coverViewController = [[GCCoverViewController alloc] init];
-    [navigationController pushViewController:coverViewController animated:NO];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:coverViewController];
+    self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
 
     return YES;
 }
 
+// Overwrite setting in the Summary/Info.plist
+- (NSUInteger)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window
+{
+    return UIInterfaceOrientationMaskPortrait | UIInterfaceOrientationMaskLandscapeLeft;
+}
+
+// Others
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
@@ -53,4 +59,19 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+@end
+
+// Add category to help UINavigationController to determine rotation
+@implementation UINavigationController (OrientationSettings_IOS6)
+-(BOOL)shouldAutorotate {
+    return [[self.viewControllers lastObject] shouldAutorotate];
+}
+
+-(NSUInteger)supportedInterfaceOrientations {
+    return [[self.viewControllers lastObject] supportedInterfaceOrientations];
+}
+
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
+    return [[self.viewControllers lastObject] preferredInterfaceOrientationForPresentation];
+}
 @end

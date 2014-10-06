@@ -31,27 +31,8 @@
         self.shouldMoveUpToAdjustForKeyboard = YES;
         self.shouldMoveDownToAdjustForKeyboard = NO;
         [self.parentController.view addSubview:self];
-//        [self mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.top.equalTo(self.window.inpu.mas_top);
-//            make.top.equalTo(self.window.viewForBaselineLayout.mas_left);
-//            make.top.equalTo(self.window.viewForBaselineLayout.mas_bottom);
-//            make.top.equalTo(self.window.viewForBaselineLayout.mas_right);
-
-//            make.top.equalTo(self.parentController.view.mas_top);
-//            make.left.equalTo(self.parentController.view.mas_left);
-//            make.bottom.equalTo(self.parentController.view.mas_bottom);
-//            make.right.equalTo(self.parentController.view.mas_right);
-//        }];
         
-        // General Layout Metrics
-        UIEdgeInsets Padding_Page_Large = UIEdgeInsetsMake(20, 20, -20, -20);
-        UIEdgeInsets Padding_Page_Small = UIEdgeInsetsMake(5, 5, -5, -5);
-        UIEdgeInsets Insets_Button = UIEdgeInsetsMake(8, 10, 8, 10);
-        CGFloat FontSize_h1 = 18.0;
-//        CGFloat FontSize_h2 = 16.0;
-        CGFloat FontSize_p1 = 16.0;
-        CGFloat WidthForEntryfieldBorder = 1.0;
-        CGFloat CornerRadius_General = 10.0;
+
         
 #pragma mark - Content Initialization
         // Temp, Time, Date Label

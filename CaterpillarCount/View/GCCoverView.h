@@ -10,8 +10,13 @@
 @class GCCoverViewController;
 
 @interface GCCoverView : UIView
+// Self
+@property GCCoverViewController *parentController;
+@property BOOL didSetupConstraints;
 
+// View items
 @property FUIButton *btn_SignIn, *btn_Register;
+
 
 - (id)initWithParentController:(GCCoverViewController *)controller;
 

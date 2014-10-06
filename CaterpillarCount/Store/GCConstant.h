@@ -8,8 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-#import <Foundation/Foundation.h>
-
 #pragma mark - Device Type
 #define IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
 #define IS_IPHONE5S ([[UIScreen mainScreen] bounds].size.height == 568)
