@@ -21,30 +21,13 @@
     // Do any additional setup after loading the view.
     
     // UI Navigation Bar
-    // Set Title
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 120, 30)];
-    label.textAlignment = NSTextAlignmentCenter;
-    [label setFont:[UIFont boldSystemFontOfSize:16.0]];
-    [label setBackgroundColor:[UIColor clearColor]];
-    [label setTextColor:[UIColor whiteColor]];
-    [label setText:@"Sign In"];
-    self.navigationItem.titleView = label;
-    [label sizeToFit];
-    // Back Button
-    
-    UIButton *backButton = [[UIButton alloc] initWithFrame: CGRectMake(0, 0, 20.0f, 30.0f)];
-    backButton.backgroundColor = [UIColor clearColor];
-    [backButton setTitle:@"<" forState:UIControlStateNormal];
-    [backButton.titleLabel setFont:[UIFont fontWithName:@"Helvetica" size:20]];
-    UIBarButtonItem *backButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
-    self.navigationItem.leftBarButtonItem = backButtonItem;
-    self.navigationController.interactivePopGestureRecognizer.delegate = (id<UIGestureRecognizerDelegate>)self;
-    [[backButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
-        [self.navigationController popViewControllerAnimated:YES];
-    }];
+    [GCAppConfig configureNavigationViewController:self withNavigationTitle:@"Sign In"];
+
     
     // Add Survey View
     self.signInScrollView = [[GCSignInScrollView alloc] initWithParentController:self];
+    
+    
 }
 
 #pragma mark - Other View Methods

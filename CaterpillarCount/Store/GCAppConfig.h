@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Golden Compass. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
 // Theme Color
@@ -66,6 +67,16 @@ typedef NS_ENUM(NSInteger, DisplayStyleMode) {
     DisplayStyleModeFullScreen,
 };
 //@property StoryDisplayStyleMode storyDisplayStyleMode;
+
+// Font, size, and style
++ (void)configureNavigationViewController:(UIViewController *)viewcontroller withNavigationTitle:(NSString *)title;
+
+
+
+
+
+
+
 
 
 

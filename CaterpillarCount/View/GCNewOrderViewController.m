@@ -20,25 +20,7 @@
     self.view.frame = ScreenBounds;
     
     // UI Navigation Bar
-    // Set Title
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 120, 30)];
-    label.textAlignment = NSTextAlignmentCenter;
-    [label setFont:[UIFont boldSystemFontOfSize:16.0]];
-    [label setBackgroundColor:[UIColor clearColor]];
-    [label setTextColor:[UIColor whiteColor]];
-    [label setText:@"New Arthropod Order"];
-    self.navigationItem.titleView = label;
-    [label sizeToFit];
-    // Back Button
-    UIButton *backButton = [[UIButton alloc] initWithFrame: CGRectMake(0, 0, 45.0f, 30.0f)];
-    backButton.backgroundColor = [UIColor clearColor];
-    [backButton setTitle:@"Back" forState:UIControlStateNormal];
-    UIBarButtonItem *backButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
-    self.navigationItem.leftBarButtonItem = backButtonItem;
-    self.navigationController.interactivePopGestureRecognizer.delegate = (id<UIGestureRecognizerDelegate>)self;
-    [[backButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
-        [self.navigationController popViewControllerAnimated:YES];
-    }];
+    [GCAppConfig configureNavigationViewController:self withNavigationTitle:@"New Arthropod Order"];
     
     // Add new order scroll view
     self.singleOrderScrollView = [[GCNewOrderScrollView alloc] initWithParentController:self];
