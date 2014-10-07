@@ -6,11 +6,11 @@
 //  Copyright (c) 2014 Golden Compass. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
 // Theme Color
-#define ThemeColor01        0x355D3DFF
+#define ThemeColor01                0x355D3DFF
+#define ThemeColor01_Variation01    0x113C1BFF
 
 // Font and Size
 #define FontSize_h1                 18.0f
@@ -62,14 +62,13 @@ FOUNDATION_EXPORT NSString *const ProductionDomain;
 #pragma mark - General
 @property CGFloat PixelAdjustForHorizontalGap;
 @property CGFloat HeightDeterminant_FloatVSFullScreen;
-typedef NS_ENUM(NSInteger, DisplayStyleMode) {
-    DisplayStyleModeFloat,
-    DisplayStyleModeFullScreen,
+typedef NS_ENUM(NSInteger, PagePaddingOption) {
+    PagePaddingSmall,
+    PagePaddingLarge,
 };
 //@property StoryDisplayStyleMode storyDisplayStyleMode;
 
-// Font, size, and style
-+ (void)configureNavigationViewController:(UIViewController *)viewcontroller withNavigationTitle:(NSString *)title;
+
 
 
 

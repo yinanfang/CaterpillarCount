@@ -25,10 +25,12 @@
     self.view.frame = ScreenBounds;
     
     // UI Navigation Bar
-    [GCAppConfig configureNavigationViewController:self withNavigationTitle:@"Caterpillars Count"];
+    [GCAppSetup configureNavigationViewController:self withNavigationTitle:@"Caterpillars Count"];
     
     // Add Survey View
     self.surveyScrollView = [[GCSurveyScrollView alloc] initWithParentController:self];
+    [self.surveyScrollView setNeedsUpdateConstraints];
+    [self.surveyScrollView updateConstraintsIfNeeded];
     
     // Configure the pickers
     self.picker_Temp = [[UIPickerView alloc] init];

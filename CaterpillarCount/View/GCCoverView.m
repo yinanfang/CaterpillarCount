@@ -27,15 +27,7 @@
         [self.parentController.view addSubview:self];
         
         // Register Button
-        self.btn_Register = [[FUIButton alloc] init];
-        self.btn_Register.buttonColor = [GCAppAPI getColorWithRGBAinHex:ThemeColor01];
-        self.btn_Register.shadowColor = [UIColor greenSeaColor];
-        self.btn_Register.shadowHeight = 1.0f;
-        self.btn_Register.cornerRadius = 6.0f;
-        self.btn_Register.titleLabel.font = [UIFont boldFlatFontOfSize:16];
-        [self.btn_Register setTitle:@"Register" forState:UIControlStateNormal];
-        [self.btn_Register setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal];
-        [self.btn_Register setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+        self.btn_Register = [FUIButton ButtonWithTitle:@"Register" inBold:YES];
         [self addSubview:self.btn_Register];
         [[self.btn_Register rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
             NSLog(@"button tapped");
@@ -45,17 +37,8 @@
         }];
         
         // Sign In Button
-        self.btn_SignIn = [[FUIButton alloc] init];
-        self.btn_SignIn.buttonColor = [GCAppAPI getColorWithRGBAinHex:ThemeColor01];
-        self.btn_SignIn.shadowColor = [UIColor greenSeaColor];
-        self.btn_SignIn.shadowHeight = 1.0f;
-        self.btn_SignIn.cornerRadius = 6.0f;
-        self.btn_SignIn.titleLabel.font = [UIFont boldFlatFontOfSize:16];
-        [self.btn_SignIn setTitle:@"Sign In" forState:UIControlStateNormal];
-        [self.btn_SignIn setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal];
-        [self.btn_SignIn setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+        self.btn_SignIn = [FUIButton ButtonWithTitle:@"Sign In" inBold:YES];
         [self addSubview:self.btn_SignIn];
-
         [[self.btn_SignIn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
             NSLog(@"Sign In button tapped");
             GCSignInViewController *signInViewController = [[GCSignInViewController alloc] init];

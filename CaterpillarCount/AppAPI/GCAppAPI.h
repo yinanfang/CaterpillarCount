@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 // AppUtility
+#import "GCAppSetup.h"
 #import "GCAppConfig.h"
 #import "GCConstant.h"
 

@@ -21,7 +21,7 @@
     // Do any additional setup after loading the view.
     
     // UI Navigation Bar
-    [GCAppConfig configureNavigationViewController:self withNavigationTitle:@"Sign In"];
+    [GCAppSetup configureNavigationViewController:self withNavigationTitle:@"Sign In"];
 
     
     // Add Survey View

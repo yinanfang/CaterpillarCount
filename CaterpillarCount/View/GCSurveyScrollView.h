@@ -10,6 +10,9 @@
 @class GCSurveyViewController;
 
 @interface GCSurveyScrollView : UIScrollView <UIScrollViewDelegate, UITextFieldDelegate, FUIAlertViewDelegate>
+// Self
+@property GCSurveyViewController *parentController;
+@property BOOL didSetupConstraints;
 
 // Upper section
 @property UILabel *label_Temp, *label_Time, *label_Date;
@@ -23,7 +26,7 @@
 @property FUIButton *btn_NewOrderInfo;
 @property UITableView *orderTableView;
 // Plant Information
-@property UILabel *label_PlantInfo, *label_Herbivory;
+@property UILabel *label_PlantInfo, *label_PlantSpecies, *label_Herbivory;
 @property UITextField *entry_PlantSpecies;
 @property UIButton *entry_Herbivory;
 // Plant Photo

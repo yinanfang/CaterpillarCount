@@ -27,6 +27,7 @@
 		D48FAA4019D83D900042DFC6 /* GCOrderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D48FAA3F19D83D900042DFC6 /* GCOrderTableViewCell.m */; };
 		D48FAA4319D83DB00042DFC6 /* GCNewOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D48FAA4219D83DB00042DFC6 /* GCNewOrderViewController.m */; };
 		D48FAA4619D83DCE0042DFC6 /* GCNewOrderScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D48FAA4519D83DCE0042DFC6 /* GCNewOrderScrollView.m */; };
+		D4D9B3EE19E302D000547CDF /* GCAppSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D9B3ED19E302D000547CDF /* GCAppSetup.m */; };
 		D4FE8E8519D702E000E50E9C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4FE8E8419D702E000E50E9C /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +84,8 @@
 		D48FAA4219D83DB00042DFC6 /* GCNewOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCNewOrderViewController.m; path = View/GCNewOrderViewController.m; sourceTree = "<group>"; };
 		D48FAA4419D83DCE0042DFC6 /* GCNewOrderScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GCNewOrderScrollView.h; path = View/GCNewOrderScrollView.h; sourceTree = "<group>"; };
 		D48FAA4519D83DCE0042DFC6 /* GCNewOrderScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCNewOrderScrollView.m; path = View/GCNewOrderScrollView.m; sourceTree = "<group>"; };
+		D4D9B3EC19E302D000547CDF /* GCAppSetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GCAppSetup.h; path = AppAPI/GCAppSetup.h; sourceTree = "<group>"; };
+		D4D9B3ED19E302D000547CDF /* GCAppSetup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCAppSetup.m; path = AppAPI/GCAppSetup.m; sourceTree = "<group>"; };
 		D4FE8E8419D702E000E50E9C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -241,6 +244,8 @@
 			children = (
 				D43A918F19CF993D009AA0C7 /* GCAppAPI.h */,
 				D43A919019CF993D009AA0C7 /* GCAppAPI.m */,
+				D4D9B3EC19E302D000547CDF /* GCAppSetup.h */,
+				D4D9B3ED19E302D000547CDF /* GCAppSetup.m */,
 			);
 			name = AppAPI;
 			sourceTree = "<group>";
@@ -304,6 +309,7 @@
 		D43A915519CF94D7009AA0C7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = GC;
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = "Golden Compass";
 				TargetAttributes = {
@@ -401,6 +407,7 @@
 				D430876119D996FE008D92F5 /* GCRegisterViewController.m in Sources */,
 				D48FAA4319D83DB00042DFC6 /* GCNewOrderViewController.m in Sources */,
 				D46E5F0C19D2E50C002FF1C1 /* GCSurveyViewController.m in Sources */,
+				D4D9B3EE19E302D000547CDF /* GCAppSetup.m in Sources */,
 				D43A91A019CF9E1E009AA0C7 /* GCCoverView.m in Sources */,
 				D430875E19D996D5008D92F5 /* GCSignInViewController.m in Sources */,
 				D43A919419CF997A009AA0C7 /* GCAppConfig.m in Sources */,

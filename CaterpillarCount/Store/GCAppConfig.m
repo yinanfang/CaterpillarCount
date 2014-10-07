@@ -64,30 +64,7 @@ NSString *const ProductionDomain = @"http://story2movie.yinanfang.webfactional.c
     return self;
 }
 
-+ (void)configureNavigationViewController:(UIViewController *)viewcontroller withNavigationTitle:(NSString *)title
-{
-    // Set Title
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 120, 30)];
-    label.textAlignment = NSTextAlignmentCenter;
-    [label setFont:[UIFont boldSystemFontOfSize:16.0]];
-    [label setBackgroundColor:[UIColor clearColor]];
-    [label setTextColor:[UIColor whiteColor]];
-    [label setText:title];
-    viewcontroller.navigationItem.titleView = label;
-    [label sizeToFit];
-    // Back Button
-    
-    UIButton *backButton = [[UIButton alloc] initWithFrame: CGRectMake(0, 0, 20.0f, 30.0f)];
-    backButton.backgroundColor = [UIColor clearColor];
-    [backButton setTitle:@"<" forState:UIControlStateNormal];
-    [backButton.titleLabel setFont:[UIFont fontWithName:@"Helvetica" size:20]];
-    UIBarButtonItem *backButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
-    viewcontroller.navigationItem.leftBarButtonItem = backButtonItem;
-    viewcontroller.navigationController.interactivePopGestureRecognizer.delegate = (id<UIGestureRecognizerDelegate>)self;
-    [[backButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
-        [viewcontroller.navigationController popViewControllerAnimated:YES];
-    }];
-}
+
 
 
 
