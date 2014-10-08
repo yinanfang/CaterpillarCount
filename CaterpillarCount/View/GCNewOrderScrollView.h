@@ -10,6 +10,9 @@
 @class GCNewOrderViewController;
 
 @interface GCNewOrderScrollView : UIScrollView <UIScrollViewDelegate, UITextFieldDelegate, FUIAlertViewDelegate>
+// Self
+@property GCNewOrderViewController *parentController;
+@property BOOL didSetupConstraints;
 
 // Upper section
 @property UILabel *label_Order;

@@ -17,13 +17,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.frame = ScreenBounds;
     
     // UI Navigation Bar
     [GCAppSetup configureNavigationViewController:self withNavigationTitle:@"New Arthropod Order"];
     
     // Add new order scroll view
     self.singleOrderScrollView = [[GCNewOrderScrollView alloc] initWithParentController:self];
+    [self.singleOrderScrollView setNeedsUpdateConstraints];
+    [self.singleOrderScrollView updateConstraintsIfNeeded];
     
     
 }

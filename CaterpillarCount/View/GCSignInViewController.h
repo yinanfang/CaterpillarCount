@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GCSignInScrollView.h"
 
 @interface GCSignInViewController : UIViewController
+
+@property GCSignInScrollView *signInScrollView;
 
 
 @end

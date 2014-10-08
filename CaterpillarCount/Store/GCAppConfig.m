@@ -12,8 +12,8 @@
 
 #pragma mark - Domain
 // Change the domain for server here
-NSString *const DevelopmentDomain = @"http://Story2Movie.152.23.81.41.xip.io";
-NSString *const ProductionDomain = @"http://story2movie.yinanfang.webfactional.com";
+NSString *const DevelopmentDomain = @"https://secure28.webhostinghub.com";
+NSString *const ProductionDomain = @"https://secure28.webhostinghub.com";
 
 + (GCAppConfig *)sharedInstance
 {

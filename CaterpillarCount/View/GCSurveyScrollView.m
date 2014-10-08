@@ -104,7 +104,7 @@
         self.entry_Herbivory = [UIButton ButtonWithTitle:@"Click to choose a herbivory" inBold:NO horizontalAlign:UIControlContentHorizontalAlignmentLeft];
         [self addSubview:self.entry_Herbivory];
         // Plant Photo
-        self.label_PlantPhoto = [UILabel LabelSubTitleWithString:@"plant Photo" align:NSTextAlignmentLeft];
+        self.label_PlantPhoto = [UILabel LabelSubTitleWithString:@"Plant Photo" align:NSTextAlignmentLeft];
         [self addSubview:self.label_PlantPhoto];
         // Photo thumbnail
         self.entry_PlantPhoto = [[UIImageView alloc] init];
@@ -145,12 +145,6 @@
 {
     if(!self.didSetupConstraints) {
         // Self
-//        [self mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.top.equalTo(self.parentController.view.mas_top);
-//            make.left.equalTo(self.parentController.view.mas_left);
-//            make.bottom.equalTo(self.parentController.view.mas_bottom);
-//            make.right.equalTo(self.parentController.view.mas_right);
-//        }];
         [GCAppSetup setConstraints_FillFullScreenWithView:self superview:self.parentController.view];
         // Temp, Time, Date Label
         [self.label_Temp mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -199,39 +193,13 @@
         }];
         // Site
         [GCAppSetup setConstraints_PinHorizontallyWithPagePaddingAndTopWithPadding:PagePaddingSmall withView:self.label_Site superview:self upperview:self.label_SiteInfo];
-        
-//        [self.label_Site mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.top.equalTo(self.label_SiteInfo.mas_bottom).with.offset(Padding_Page_Small.top);
-//            make.left.equalTo(self.mas_left).with.offset(Padding_Page_Large.left);
-//            make.right.equalTo(self.mas_right).with.offset(Padding_Page_Large.right);
-//        }];
-        [self.entry_Site mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.label_Site.mas_bottom).with.offset(Padding_Page_Small.top);
-            make.left.equalTo(self.mas_left).with.offset(Padding_Page_Large.left);
-            make.right.equalTo(self.mas_right).with.offset(Padding_Page_Large.right);
-        }];
+        [GCAppSetup setConstraints_PinHorizontallyWithPagePaddingAndTopWithPadding:PagePaddingSmall withView:self.entry_Site superview:self upperview:self.label_Site];
         // Circle
-        [self.label_Circle mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.entry_Site.mas_bottom).with.offset(Padding_Page_Small.top);
-            make.left.equalTo(self.mas_left).with.offset(Padding_Page_Large.left);
-            make.right.equalTo(self.mas_right).with.offset(Padding_Page_Large.right);
-        }];
-        [self.entry_Circle mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.label_Circle.mas_bottom).with.offset(Padding_Page_Small.top);
-            make.left.equalTo(self.mas_left).with.offset(Padding_Page_Large.left);
-            make.right.equalTo(self.mas_right).with.offset(Padding_Page_Large.right);
-        }];
+        [GCAppSetup setConstraints_PinHorizontallyWithPagePaddingAndTopWithPadding:PagePaddingSmall withView:self.label_Circle superview:self upperview:self.entry_Site];
+        [GCAppSetup setConstraints_PinHorizontallyWithPagePaddingAndTopWithPadding:PagePaddingSmall withView:self.entry_Circle superview:self upperview:self.label_Circle];
         // Survey
-        [self.label_Survey mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.entry_Circle.mas_bottom).with.offset(Padding_Page_Small.top);
-            make.left.equalTo(self.mas_left).with.offset(Padding_Page_Large.left);
-            make.right.equalTo(self.mas_right).with.offset(Padding_Page_Large.right);
-        }];
-        [self.entry_Survey mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.label_Survey.mas_bottom).with.offset(Padding_Page_Small.top);
-            make.left.equalTo(self.mas_left).with.offset(Padding_Page_Large.left);
-            make.right.equalTo(self.mas_right).with.offset(Padding_Page_Large.right);
-        }];
+        [GCAppSetup setConstraints_PinHorizontallyWithPagePaddingAndTopWithPadding:PagePaddingSmall withView:self.label_Survey superview:self upperview:self.entry_Circle];
+        [GCAppSetup setConstraints_PinHorizontallyWithPagePaddingAndTopWithPadding:PagePaddingSmall withView:self.entry_Survey superview:self upperview:self.label_Survey];
         
         // Arthropod Order Info
         [self.label_ArthropodOrderInfo mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -256,40 +224,15 @@
         }];
         
         // Plant Information
-        [self.label_PlantInfo mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.orderTableView.mas_bottom).with.offset(Padding_Page_Large.top);
-            make.left.equalTo(self.mas_left).with.offset(Padding_Page_Large.left);
-            make.right.equalTo(self.mas_right).with.offset(Padding_Page_Large.right);
-        }];
+        [GCAppSetup setConstraints_PinHorizontallyWithPagePaddingAndTopWithPadding:PagePaddingLarge withView:self.label_PlantInfo superview:self upperview:self.orderTableView];
         // Species
-        [self.label_PlantSpecies mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.label_PlantInfo.mas_bottom).with.offset(Padding_Page_Small.top);
-            make.left.equalTo(self.mas_left).with.offset(Padding_Page_Large.left);
-            make.right.equalTo(self.mas_right).with.offset(Padding_Page_Large.right);
-        }];
-        [self.entry_PlantSpecies mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.label_PlantSpecies.mas_bottom).with.offset(Padding_Page_Small.top);
-            make.left.equalTo(self.mas_left).with.offset(Padding_Page_Large.left);
-            make.right.equalTo(self.mas_right).with.offset(Padding_Page_Large.right);
-        }];
+        [GCAppSetup setConstraints_PinHorizontallyWithPagePaddingAndTopWithPadding:PagePaddingSmall withView:self.label_PlantSpecies superview:self upperview:self.label_PlantInfo];
+        [GCAppSetup setConstraints_PinHorizontallyWithPagePaddingAndTopWithPadding:PagePaddingSmall withView:self.entry_PlantSpecies superview:self upperview:self.label_PlantSpecies];
         // Herbivory
-        [self.label_Herbivory mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.entry_PlantSpecies.mas_bottom).with.offset(Padding_Page_Small.top);
-            make.left.equalTo(self.mas_left).with.offset(Padding_Page_Large.left);
-            make.right.equalTo(self.mas_right).with.offset(Padding_Page_Large.right);
-        }];
-        [self.entry_Herbivory mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.label_Herbivory.mas_bottom).with.offset(Padding_Page_Small.top);
-            make.left.equalTo(self.mas_left).with.offset(Padding_Page_Large.left);
-            make.right.equalTo(self.mas_right).with.offset(Padding_Page_Large.right);
-        }];
-        
+        [GCAppSetup setConstraints_PinHorizontallyWithPagePaddingAndTopWithPadding:PagePaddingSmall withView:self.label_Herbivory superview:self upperview:self.entry_PlantSpecies];
+        [GCAppSetup setConstraints_PinHorizontallyWithPagePaddingAndTopWithPadding:PagePaddingSmall withView:self.entry_Herbivory superview:self upperview:self.label_Herbivory];
         // Plant Photo
-        [self.label_PlantPhoto mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.entry_Herbivory.mas_bottom).with.offset(Padding_Page_Large.top);
-            make.left.equalTo(self.mas_left).with.offset(Padding_Page_Large.left);
-            make.right.equalTo(self.mas_right).with.offset(Padding_Page_Large.right);
-        }];
+        [GCAppSetup setConstraints_PinHorizontallyWithPagePaddingAndTopWithPadding:PagePaddingSmall withView:self.label_PlantPhoto superview:self upperview:self.entry_Herbivory];
         [self.entry_PlantPhoto mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.label_PlantPhoto.mas_bottom).with.offset(Padding_Page_Small.top);
             make.centerX.equalTo(self.mas_centerX);

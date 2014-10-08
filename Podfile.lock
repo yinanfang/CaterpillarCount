@@ -39,6 +39,7 @@ PODS:
     - Mantle/extobjc
   - Mantle/extobjc (1.5)
   - Masonry (0.5.3)
+  - MBProgressHUD (0.9)
   - pop (1.0.6)
   - ReactiveCocoa (2.3.1):
     - ReactiveCocoa/UI
@@ -60,6 +61,7 @@ DEPENDENCIES:
   - FXBlurView
   - Mantle
   - Masonry
+  - MBProgressHUD
   - pop
   - ReactiveCocoa
   - Shimmer
@@ -76,10 +78,11 @@ SPEC CHECKSUMS:
   HexColors: 01384d2bbe8dc4ffa43c3b4135db6e976952d153
   Mantle: c67a7e45e14196ed42b2a7cbb98ff6a9920e6b92
   Masonry: 35368c2ca9577ca87722c12fc52c4bad9b1c1516
+  MBProgressHUD: 2038dbcf3dce73215abed6001657043d53aa79a8
   pop: e518794da38942c05255eb64b36d894e70cb4f00
   ReactiveCocoa: dca75777b9d18990c8714a3a6f2149f29b4d1462
   Shimmer: 35aa2a57b8fbc17f9e16706021665966fd93dbd1
   TSMessages: 8598a0645e9d54847f6e5f3b070bef39c493bbf8
   Tweaks: 05b197d4a1247288f576587546bc1932189d8c98
 
-COCOAPODS: 0.33.1
+COCOAPODS: 0.34.1

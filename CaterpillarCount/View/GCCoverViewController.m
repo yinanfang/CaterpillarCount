@@ -7,6 +7,7 @@
 //
 
 #import "GCCoverViewController.h"
+#import "GCSurveyViewController.h"
 #import "GCCoverView.h"
 
 @interface GCCoverViewController ()
@@ -21,7 +22,6 @@
     self.coverView = [[GCCoverView alloc] initWithParentController:self];
     [self.coverView setNeedsUpdateConstraints];
     [self.coverView updateConstraintsIfNeeded];
-
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -34,8 +34,18 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    self.navigationController.navigationBar.hidden = YES;
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Enter" style:UIBarButtonItemStyleBordered target:self action:@selector(enterDirectly)];
+    self.navigationItem.rightBarButtonItem = rightButton;
+    
+//    self.navigationController.navigationBar.hidden = YES;
 }
+- (void)enterDirectly
+{
+    GCSurveyViewController *surveyViewController = [[GCSurveyViewController alloc] init];
+    [self.navigationController pushViewController:surveyViewController animated:YES];
+}
+
+
 - (BOOL)prefersStatusBarHidden {
     return NO;
 }

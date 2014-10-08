@@ -10,15 +10,10 @@
 #import "GCNewOrderViewController.h"
 
 @interface GCNewOrderScrollView ()
-@property GCNewOrderViewController *parentController;
-
-
 
 @end
 
 @implementation GCNewOrderScrollView
-
-
 
 - (id)initWithParentController:(GCNewOrderViewController *)controller
 {
@@ -26,109 +21,43 @@
     if (self) {
         self.parentController = controller;
         self.backgroundColor = [UIColor whiteColor];
-        self.frame = ScreenBounds;
         self.delegate = self;
         [self.parentController.view addSubview:self];
-        [self mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.parentController.view.mas_top);
-            make.left.equalTo(self.parentController.view.mas_left);
-            make.bottom.equalTo(self.parentController.view.mas_bottom);
-            make.right.equalTo(self.parentController.view.mas_right);
-        }];
         
-#pragma mark - Content Initialization
         // Arthropod Order
-        self.label_Order = [[UILabel alloc] init];
-        self.label_Order.textAlignment = NSTextAlignmentLeft;
-        [self.label_Order setFont:[UIFont fontWithName:@"Helvetica" size:FontSize_p1]];
-        [self.label_Order setBackgroundColor:[UIColor clearColor]];
-        [self.label_Order setTextColor:[GCAppAPI getColorWithRGBAinHex:ThemeColor01]];
-        [self.label_Order setText:@"Arthropod Order"];
+        self.label_Order = [UILabel LabelTitleWithString:@"Arthropod Order" align:NSTextAlignmentLeft];
         [self addSubview:self.label_Order];
         // Entry order
-        self.entry_Order = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        self.entry_Order.contentEdgeInsets = Insets_Button;
-        [self.entry_Order setTitle:@"Click to choose a order" forState:UIControlStateNormal];
-        self.entry_Order.titleLabel.font = [UIFont fontWithName:@"Helvetica" size:FontSize_p1];
-        [self.entry_Order setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        self.entry_Order.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-        [[self.entry_Order layer] setBorderWidth:WidthForEntryfieldBorder];
-        [[self.entry_Order layer] setBorderColor:[UIColor lightGrayColor].CGColor];
-        self.entry_Order.layer.cornerRadius = CornerRadius_General;
-        self.entry_Order.clipsToBounds = YES;
+        self.entry_Order = [UIButton ButtonWithTitle:@"Click to choose a order" inBold:NO horizontalAlign:UIControlContentHorizontalAlignmentLeft];
         [self addSubview:self.entry_Order];
         // Entry Length
-        self.entry_Length = [[UITextField alloc] init];
-        self.entry_Length.borderStyle = UITextBorderStyleRoundedRect;
-        self.entry_Length.font = [UIFont systemFontOfSize:FontSize_p1];
-        self.entry_Length.placeholder = @"Length (mm)";
-        self.entry_Length.autocorrectionType = UITextAutocorrectionTypeNo;
-        self.entry_Length.keyboardType = UIKeyboardTypeDefault;
-        self.entry_Length.returnKeyType = UIReturnKeyDone;
-        self.entry_Length.clearButtonMode = UITextFieldViewModeWhileEditing;
-        self.entry_Length.contentVerticalAlignment = UIControlContentHorizontalAlignmentLeft;
-        self.entry_Length.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+        self.entry_Length = [UITextField TextFieldWithPlaceHolder:@"Length (mm)" keyboardType:UIKeyboardTypeNumberPad];
         self.entry_Length.delegate = self;
         [self addSubview:self.entry_Length];
         // Entry Count
-        self.entry_Count = [[UITextField alloc] init];
-        self.entry_Count.borderStyle = UITextBorderStyleRoundedRect;
-        self.entry_Count.font = [UIFont systemFontOfSize:FontSize_p1];
-        self.entry_Count.placeholder = @"Count (1 to 1000)";
-        self.entry_Count.autocorrectionType = UITextAutocorrectionTypeNo;
-        self.entry_Count.keyboardType = UIKeyboardTypeDefault;
-        self.entry_Count.returnKeyType = UIReturnKeyDone;
-        self.entry_Count.clearButtonMode = UITextFieldViewModeWhileEditing;
-        self.entry_Count.contentVerticalAlignment = UIControlContentHorizontalAlignmentLeft;
-        self.entry_Count.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+        self.entry_Count = [UITextField TextFieldWithPlaceHolder:@"Count (1 to 1000)" keyboardType:UIKeyboardTypeNumberPad];
         self.entry_Count.delegate = self;
         [self addSubview:self.entry_Count];
         // Entry Notes
-        self.entry_Notes = [[UITextField alloc] init];
-        self.entry_Notes.borderStyle = UITextBorderStyleRoundedRect;
-        self.entry_Notes.font = [UIFont systemFontOfSize:FontSize_p1];
-        self.entry_Notes.placeholder = @"Notes";
-        self.entry_Notes.autocorrectionType = UITextAutocorrectionTypeNo;
-        self.entry_Notes.keyboardType = UIKeyboardTypeDefault;
-        self.entry_Notes.returnKeyType = UIReturnKeyDone;
-        self.entry_Notes.clearButtonMode = UITextFieldViewModeWhileEditing;
-        self.entry_Notes.contentVerticalAlignment = UIControlContentHorizontalAlignmentLeft;
-        self.entry_Notes.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+        self.entry_Notes = [UITextField TextFieldWithPlaceHolder:@"Notes" keyboardType:UIKeyboardTypeDefault];
         self.entry_Notes.delegate = self;
         [self addSubview:self.entry_Notes];
         
         // Photo
-        self.label_Photo = [[UILabel alloc] init];
-        self.label_Photo.textAlignment = NSTextAlignmentLeft;
-        [self.label_Photo setFont:[UIFont fontWithName:@"Helvetica" size:FontSize_p1]];
-        [self.label_Photo setBackgroundColor:[UIColor clearColor]];
-        [self.label_Photo setTextColor:[GCAppAPI getColorWithRGBAinHex:ThemeColor01]];
-        [self.label_Photo setText:@"Photo"];
+        self.label_Photo = [UILabel LabelTitleWithString:@"Photo" align:NSTextAlignmentLeft];
         [self addSubview:self.label_Photo];
         // Photo thumbnail
         self.entry_Photo = [[UIImageView alloc] init];
+        self.entry_Photo.backgroundColor = [UIColor lightGrayColor];
+        self.entry_Photo.layer.cornerRadius = CornerRadius_General;
+        self.entry_Photo.clipsToBounds = YES;
         [self addSubview:self.entry_Photo];
         // Photo Place Holder
-        self.label_PhotoPlaceHolder = [[UILabel alloc] init];
-        self.label_PhotoPlaceHolder.textAlignment = NSTextAlignmentCenter;
-        [self.label_PhotoPlaceHolder setFont:[UIFont fontWithName:@"Helvetica" size:FontSize_p1]];
-        [self.label_PhotoPlaceHolder setBackgroundColor:[UIColor lightGrayColor]];
-        [self.label_PhotoPlaceHolder setTextColor:[GCAppAPI getColorWithRGBAinHex:ThemeColor01]];
-        [self.label_PhotoPlaceHolder setText:@"Capture"];
-        self.label_PhotoPlaceHolder.layer.cornerRadius = CornerRadius_General;
-        self.label_PhotoPlaceHolder.clipsToBounds = YES;
+        self.label_PhotoPlaceHolder = [UILabel LabelSubTitleWithString:@"Capture" align:NSTextAlignmentCenter];
         [self addSubview:self.label_PhotoPlaceHolder];
         
         // Submit button and alert view
-        self.btn_Submit = [[FUIButton alloc] init];
-        self.btn_Submit.buttonColor = [GCAppAPI getColorWithRGBAinHex:ThemeColor01];
-        self.btn_Submit.shadowColor = [UIColor greenSeaColor];
-        self.btn_Submit.shadowHeight = 1.0f;
-        self.btn_Submit.cornerRadius = 6.0f;
-        self.btn_Submit.titleLabel.font = [UIFont boldFlatFontOfSize:16];
-        [self.btn_Submit setTitle:@"Submit" forState:UIControlStateNormal];
-        [self.btn_Submit setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal];
-        [self.btn_Submit setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+        self.btn_Submit = [FUIButton ButtonWithTitle:@"Submit" inBold:YES];
         [self addSubview:self.btn_Submit];
         [[self.btn_Submit rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
             NSLog(@"hit button submit");
@@ -148,7 +77,16 @@
             [alertView show];
         }];
 
-#pragma mark - Content Layout
+    }
+    return self;
+    
+}
+
+- (void)updateConstraints
+{
+    if(!self.didSetupConstraints) {
+        // Self
+        [GCAppSetup setConstraints_FillFullScreenWithView:self superview:self.parentController.view];
         // Arthropod Order
         [self.label_Order mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.mas_top).with.offset(Padding_Page_Large.top);
@@ -156,34 +94,17 @@
             make.right.equalTo(self.mas_right).with.offset(Padding_Page_Large.right);
             make.width.mas_equalTo(ScreenWidth-2*Padding_Page_Large.left);
         }];
-        [self.entry_Order mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.label_Order.mas_bottom).with.offset(Padding_Page_Small.top);
-            make.left.equalTo(self.mas_left).with.offset(Padding_Page_Large.left);
-            make.right.equalTo(self.mas_right).with.offset(Padding_Page_Large.right);
-        }];
-        [self.entry_Length mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.entry_Order.mas_bottom).with.offset(Padding_Page_Small.top);
-            make.left.equalTo(self.mas_left).with.offset(Padding_Page_Large.left);
-            make.right.equalTo(self.mas_right).with.offset(Padding_Page_Large.right);
-//            make.bottom.equalTo(self.mas_bottom).with.offset(Padding_Page_Large.bottom);
-        }];
-        [self.entry_Count mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.entry_Length.mas_bottom).with.offset(Padding_Page_Small.top);
-            make.left.equalTo(self.mas_left).with.offset(Padding_Page_Large.left);
-            make.right.equalTo(self.mas_right).with.offset(Padding_Page_Large.right);
-        }];
-        [self.entry_Notes mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.entry_Count.mas_bottom).with.offset(Padding_Page_Small.top);
-            make.left.equalTo(self.mas_left).with.offset(Padding_Page_Large.left);
-            make.right.equalTo(self.mas_right).with.offset(Padding_Page_Large.right);
-        }];
-        [self.label_Photo mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.entry_Notes.mas_bottom).with.offset(Padding_Page_Large.top);
-            make.left.equalTo(self.mas_left).with.offset(Padding_Page_Large.left);
-            make.right.equalTo(self.mas_right).with.offset(Padding_Page_Large.right);
-//            make.bottom.equalTo(self.mas_bottom).with.offset(Padding_Page_Large.bottom);
-
-        }];
+        // Order
+        [GCAppSetup setConstraints_PinHorizontallyWithPagePaddingAndTopWithPadding:PagePaddingLarge withView:self.entry_Order superview:self upperview:self.label_Order];
+        // Length
+        [GCAppSetup setConstraints_PinHorizontallyWithPagePaddingAndTopWithPadding:PagePaddingLarge withView:self.entry_Length superview:self upperview:self.entry_Order];
+        // Count
+        [GCAppSetup setConstraints_PinHorizontallyWithPagePaddingAndTopWithPadding:PagePaddingLarge withView:self.entry_Count superview:self upperview:self.entry_Length];
+        // Notes
+        [GCAppSetup setConstraints_PinHorizontallyWithPagePaddingAndTopWithPadding:PagePaddingLarge withView:self.entry_Notes superview:self upperview:self.entry_Count];
+        
+        // Photo
+        [GCAppSetup setConstraints_PinHorizontallyWithPagePaddingAndTopWithPadding:PagePaddingLarge withView:self.label_Photo superview:self upperview:self.entry_Notes];
         [self.entry_Photo mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.label_Photo.mas_bottom).with.offset(Padding_Page_Small.top);
             make.centerX.equalTo(self.mas_centerX);
@@ -201,17 +122,11 @@
             make.height.mas_equalTo(40);
             make.bottom.equalTo(self.mas_bottom).with.offset(Padding_Page_Large.bottom);
         }];
-
         
-        
-        
-        
-        
-        
-        
+        self.didSetupConstraints = YES;
     }
-    return self;
-    
+    [super updateConstraints];
 }
+
 
 @end

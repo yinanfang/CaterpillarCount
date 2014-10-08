@@ -7,10 +7,9 @@
 //
 
 #import "GCSignInViewController.h"
-#import "GCSignInScrollView.h"
+
 
 @interface GCSignInViewController ()
-@property GCSignInScrollView *signInScrollView;
 
 @end
 
@@ -23,10 +22,10 @@
     // UI Navigation Bar
     [GCAppSetup configureNavigationViewController:self withNavigationTitle:@"Sign In"];
 
-    
     // Add Survey View
     self.signInScrollView = [[GCSignInScrollView alloc] initWithParentController:self];
-    
+    [self.signInScrollView setNeedsUpdateConstraints];
+    [self.signInScrollView updateConstraintsIfNeeded];
     
 }
 

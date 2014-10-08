@@ -11,6 +11,7 @@ target "CaterpillarCount" do
     pod 'FXBlurView'
     pod 'Mantle'
     pod 'Masonry'
+    pod 'MBProgressHUD'
     pod 'pop'
     pod 'ReactiveCocoa'
     pod 'Shimmer'

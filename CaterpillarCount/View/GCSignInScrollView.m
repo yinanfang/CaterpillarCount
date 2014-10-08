@@ -25,8 +25,39 @@
         self.delegate = self;
         [self.parentController.view addSubview:self];
 
-        
+        // Login Label
+        self.label_Login = [UILabel LabelTitleWithString:@"Log In to Your Account:" align:NSTextAlignmentLeft];
+        [self addSubview:self.label_Login];
+        // Entry order
+        self.entry_Username = [UITextField TextFieldWithPlaceHolder:@"Username / Email" keyboardType:UIKeyboardTypeDefault];
+        self.entry_Username.delegate = self;
+        [self addSubview:self.entry_Username];
+        // Entry Length
+        self.entry_Password = [UITextField TextFieldWithPlaceHolder:@"Password" keyboardType:UIKeyboardTypeDefault];
+        self.entry_Password.delegate = self;
+        [self addSubview:self.entry_Password];
 
+        // Submit button and alert view
+        self.btn_Submit = [FUIButton ButtonWithTitle:@"Submit" inBold:YES];
+        [self addSubview:self.btn_Submit];
+        [[self.btn_Submit rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+            NSLog(@"hit button submit");
+            FUIAlertView *alertView = [[FUIAlertView alloc] initWithTitle:@"Well Done!" message:@"Submitting the data..." delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil, nil];
+            alertView.alertViewStyle = FUIAlertViewStylePlainTextInput;
+            alertView.delegate = self;
+            alertView.titleLabel.textColor = [UIColor cloudsColor];
+            alertView.titleLabel.font = [UIFont boldFlatFontOfSize:16];
+            alertView.messageLabel.textColor = [UIColor cloudsColor];
+            alertView.messageLabel.font = [UIFont flatFontOfSize:14];
+            alertView.backgroundOverlay.backgroundColor = [[UIColor cloudsColor] colorWithAlphaComponent:0.8];
+            alertView.alertContainer.backgroundColor = [UIColor midnightBlueColor];
+            alertView.defaultButtonColor = [UIColor cloudsColor];
+            alertView.defaultButtonShadowColor = [UIColor asbestosColor];
+            alertView.defaultButtonFont = [UIFont boldFlatFontOfSize:16];
+            alertView.defaultButtonTitleColor = [UIColor asbestosColor];
+            [alertView show];
+        }];
+        
     }
     return self;
 }
@@ -35,19 +66,38 @@
 {
     if(!self.didSetupConstraints) {
         // Self
-        [self mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.parentController.view.mas_top);
-            make.left.equalTo(self.parentController.view.mas_left);
-            make.bottom.equalTo(self.parentController.view.mas_bottom);
-            make.right.equalTo(self.parentController.view.mas_right);
-        }];
+        [GCAppSetup setConstraints_FillFullScreenWithView:self superview:self.parentController.view];
         
-        // Register
-
+        // Login label
+        [self.label_Login mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.mas_top).with.offset(Padding_Page_Large.top);
+            make.left.equalTo(self.mas_left).with.offset(Padding_Page_Large.left);
+            make.right.equalTo(self.mas_right).with.offset(Padding_Page_Large.right);
+            make.width.mas_equalTo(ScreenWidth-2*Padding_Page_Large.left);
+        }];
+        // Username
+        [GCAppSetup setConstraints_PinHorizontallyWithPagePaddingAndTopWithPadding:PagePaddingLarge withView:self.entry_Username superview:self upperview:self.label_Login];
+        // Password
+        [GCAppSetup setConstraints_PinHorizontallyWithPagePaddingAndTopWithPadding:PagePaddingLarge withView:self.entry_Password superview:self upperview:self.entry_Username];
+        
+        // Submit Button
+        [self.btn_Submit mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.entry_Password.mas_bottom).with.offset(Padding_Page_Large.top);
+            make.left.equalTo(self.mas_left).with.offset(Padding_Page_Large.left);
+            make.right.equalTo(self.mas_right).with.offset(Padding_Page_Large.right);
+            make.height.mas_equalTo(40);
+            make.bottom.equalTo(self.mas_bottom).with.offset(Padding_Page_Large.bottom);
+        }];
         
         self.didSetupConstraints = YES;
     }
     [super updateConstraints];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    DDLogVerbose(@"textFieldShouldReturn:");
+    [textField resignFirstResponder];
+    return YES;
 }
 
 /*

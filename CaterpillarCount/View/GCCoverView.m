@@ -10,6 +10,7 @@
 #import "GCCoverViewController.h"
 #import "GCSurveyViewController.h"
 #import "GCSignInViewController.h"
+#import "GCRegisterViewController.h"
 
 @interface GCCoverView ()
 
@@ -31,9 +32,8 @@
         [self addSubview:self.btn_Register];
         [[self.btn_Register rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
             NSLog(@"button tapped");
-            GCSurveyViewController *surveyViewController = [[GCSurveyViewController alloc] init];
-//            surveyViewController.view.frame = [[UIScreen mainScreen] bounds];
-            [self.parentController.navigationController pushViewController:surveyViewController animated:YES];
+            GCRegisterViewController *registerViewController = [[GCRegisterViewController alloc] init];
+            [self.parentController.navigationController pushViewController:registerViewController animated:YES];
         }];
         
         // Sign In Button
@@ -54,12 +54,7 @@
 {
     if(!self.didSetupConstraints) {
         // Self
-        [self mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.parentController.view.mas_top);
-            make.left.equalTo(self.parentController.view.mas_left);
-            make.bottom.equalTo(self.parentController.view.mas_bottom);
-            make.right.equalTo(self.parentController.view.mas_right);
-        }];
+        [GCAppSetup setConstraints_FillFullScreenWithView:self superview:self.parentController.view];
         
         // Register
         [self.btn_Register mas_makeConstraints:^(MASConstraintMaker *make) {

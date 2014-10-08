@@ -22,7 +22,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.frame = ScreenBounds;
     
     // UI Navigation Bar
     [GCAppSetup configureNavigationViewController:self withNavigationTitle:@"Caterpillars Count"];
