@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "GCRegisterScrollView.h"
+#import "GCUser.h"
 
-@interface GCRegisterViewController : UIViewController <FUIAlertViewDelegate>
+@interface GCRegisterViewController : UIViewController <FUIAlertViewDelegate, MBProgressHUDDelegate>
 
 @property GCRegisterScrollView *registerScrollView;
+
+@property MBProgressHUD *HUD;
 
 @end

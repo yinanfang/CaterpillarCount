@@ -7,7 +7,7 @@
 //
 
 #import "GCRegisterViewController.h"
-
+#import "GCSurveyViewController.h"
 
 @interface GCRegisterViewController ()
 
@@ -29,33 +29,76 @@
     
     // Submit Control
     [[self.registerScrollView.btn_Submit rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
-        NSLog(@"Submit registration");
+        NSLog(@"Submit registration button hit!");
         
-        NSString *url_string = [[NSString alloc] initWithFormat:@"%@/~pocket14/forsyth.im/caterpillars/users.php", [GCAppAPI getCurrentDomain]];
-        DDLogVerbose(@"url is: %@", url_string);
-//        NSDictionary *parameters = @{
-//                                     @"email": self.registerScrollView.entry_Email.text,
-//                                     @"password": [NSString stringWithFormat:@"%@",
-//                                                   self.registerScrollView.entry_PasswordNew.text],
-//                                     @"name": [NSString stringWithFormat:@"%@ %@",
-//                                               self.registerScrollView.entry_NameFirst.text,
-//                                               self.registerScrollView.entry_NameLast.text],
-//                                     };
+        self.HUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        self.HUD.mode = MBProgressHUDModeIndeterminate;
+        self.HUD.labelText = @"Loging In...";
+        self.HUD.square = YES;
+        [self.view addSubview:self.HUD];
+        NSURL *url = [NSURL URLWithString:[[NSString alloc] initWithFormat:@"%@/~pocket14/forsyth.im/caterpillars/users.php", [GCAppAPI getCurrentDomain]]];
+        DDLogVerbose(@"url is: %@", url.absoluteString);
+        //        NSDictionary *parameters = @{
+        //                                     @"email": self.registerScrollView.entry_Email.text,
+        //                                     @"password": [NSString stringWithFormat:@"%@",
+        //                                                   self.registerScrollView.entry_PasswordNew.text],
+        //                                     @"name": [NSString stringWithFormat:@"%@ %@",
+        //                                               self.registerScrollView.entry_NameFirst.text,
+        //                                               self.registerScrollView.entry_NameLast.text],
+        //                                     };
         NSDictionary *parameters = @{
-                                     @"email": @"yinan_fang@hotmail.com",
+                                     @"email": @"yinan_fang@hotmail.com27",
                                      @"password": @"asdfasdf",
                                      @"name": @"Yinan Fang"
                                      };
-
         DDLogVerbose(@"parameter: %@", parameters);
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+        manager.requestSerializer = [AFJSONRequestSerializer serializer];
         manager.responseSerializer = [AFJSONResponseSerializer serializer];
-        [manager POST:url_string parameters:parameters success:^(AFHTTPRequestOperation *operation, NSDictionary *responseDictionary) {
+        [manager POST:url.absoluteString parameters:parameters success:^(AFHTTPRequestOperation *operation, NSDictionary *responseDictionary) {
             DDLogInfo(@"Get data successfully. Printing response JSON: %@", responseDictionary);
+            NSError *mantleError = nil;
+            GCUser *user = [MTLJSONAdapter modelOfClass:[GCUser class] fromJSONDictionary:responseDictionary error:&mantleError];
+            DDLogVerbose([user description]);
+            if (mantleError) {
+                DDLogWarn(@"Cannot generate Mantle model!!!");
+            }
             
+            // Check mark HUD
+            self.HUD.mode = MBProgressHUDModeCustomView;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                UIImage *image = [UIImage imageNamed:@"Checkmark.png"];
+                UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+                self.HUD.customView = imageView;
+                self.HUD.labelText = @"Logged in successfully";
+            });
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+                [self.HUD hide:YES];
+                GCSurveyViewController *surveyViewController = [[GCSurveyViewController alloc] init];
+                [self.navigationController pushViewController:surveyViewController animated:YES];
+            });
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            DDLogError(@"Error: %@", error);
+            DDLogWarn(@"Error: %@", error);
+            if ([operation.response statusCode] == 409) {
+                DDLogError(@"Email has already been registered");
+                
+                // Cross mark HUD
+                self.HUD.mode = MBProgressHUDModeCustomView;
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    UIImage *image = [UIImage imageNamed:@"Checkmark.png"];
+                    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+                    self.HUD.customView = imageView;
+                    self.HUD.labelText = @"Error!";
+                    self.HUD.detailsLabelText = @"Email has already been registered";
+                });
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 4*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+                    [self.HUD hide:YES];
+                });
+            }
         }];
+
+        
+        
         
 //        FUIAlertView *alertView = [[FUIAlertView alloc] initWithTitle:@"Well Done!" message:@"Submitting the data..." delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil, nil];
 //        alertView.alertViewStyle = FUIAlertViewStylePlainTextInput;
@@ -73,6 +116,9 @@
 //        [alertView show];
     }];
     
+}
+
+- (void)hudWasHidden:(MBProgressHUD *)hud {
 }
 
 - (void)viewWillAppear:(BOOL)animated

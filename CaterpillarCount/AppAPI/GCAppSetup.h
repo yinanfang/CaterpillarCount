@@ -13,6 +13,8 @@
 
 @interface GCAppSetup : NSObject
 
+#pragma mark - Basic Setup
++ (void)setupApplicationWithProductionMode:(BOOL)mode;
 
 // Font, size, and style
 + (void)configureNavigationViewController:(UIViewController *)viewcontroller withNavigationTitle:(NSString *)title;

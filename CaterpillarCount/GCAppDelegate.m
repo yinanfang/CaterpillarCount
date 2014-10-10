@@ -14,10 +14,9 @@
 
 @implementation GCAppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
-    [GCAppAPI setupApplicationWithProductionMode:YES];
+        
+    [GCAppSetup setupApplicationWithProductionMode:YES];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor clearColor];

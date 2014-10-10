@@ -4,7 +4,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 # platform :ios, "7.0"
 
 target "CaterpillarCount" do
-    pod "AFNetworking"
+    pod 'AFNetworking'
     pod 'CocoaLumberjack'
     pod 'Facebook-iOS-SDK'
     pod 'FlatUIKit'

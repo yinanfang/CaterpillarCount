@@ -31,6 +31,8 @@
 #import <Mantle/Mantle.h>
 // Masonry
 #import <Masonry.h>
+// MBProgressHUD
+#import "MBProgressHUD.h"
 // TSMessage
 #import <TSMessages/TSMessage.h>
 // POP
@@ -48,8 +50,6 @@
 // Accessor for Singleton class
 + (GCAppAPI *)sharedInstance;
 
-#pragma mark - Basic Setup
-+ (void)setupApplicationWithProductionMode:(BOOL)mode;
 
 #pragma mark - Basic Utilities
 + (NSString *)getCurrentDomain;
@@ -58,6 +58,15 @@
 + (UIImageView *)getFullScreenImageView:(NSString *)name;
 + (CGPoint)getCGPointZeroWithStatusbarAndNavigationBar:(UIViewController *)controller;
 + (CGRect)getScreenBoundsDependOnOrientation;
+
+#pragma mark - Network API Calls
+
+
+
+
+
+
+
 
 
 
