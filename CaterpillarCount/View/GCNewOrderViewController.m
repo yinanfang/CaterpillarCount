@@ -74,7 +74,7 @@
  
     [self.singleOrderScrollView.btn_PhotoPlaceHolder setTitle:@"" forState:UIControlStateNormal];
     [self.singleOrderScrollView.entry_Photo setImage:[info objectForKey:UIImagePickerControllerEditedImage]];
-    [self dismissViewControllerAnimated:picker completion:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker

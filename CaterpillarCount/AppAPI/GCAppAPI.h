@@ -8,13 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-// App Import
-#import "GCAppSetup.h"
-#import "GCAppConfig.h"
-#import "GCConstant.h"
-#import "GCStore.h"
-//#import "GCAppData.h"
-
 // AFNetworking
 #import <AFNetworking.h>
 // CocoaLumberjack
@@ -46,6 +39,13 @@
 // Tweaks
 #import <Tweaks/FBTweak.h>
 
+// App Import
+#import "GCAppSetup.h"
+#import "GCAppConfig.h"
+#import "GCConstant.h"
+#import "GCNetwork.h"
+#import "GCStore.h"
+#import "GCAppDataViewModel.h"
 
 @interface GCAppAPI : NSObject
 

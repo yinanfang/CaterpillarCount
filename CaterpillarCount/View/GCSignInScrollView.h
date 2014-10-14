@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 @class GCSignInViewController;
 
-@interface GCSignInScrollView : UIScrollView <UIScrollViewDelegate, UITextFieldDelegate, FUIAlertViewDelegate>
+@interface GCSignInScrollView : UIScrollView <UIScrollViewDelegate, UITextFieldDelegate>
 
 // Self
 @property GCSignInViewController *parentController;

@@ -40,23 +40,7 @@
         // Submit button and alert view
         self.btn_Submit = [FUIButton ButtonWithTitle:@"Submit" inBold:YES];
         [self addSubview:self.btn_Submit];
-        [[self.btn_Submit rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
-            NSLog(@"hit button submit");
-            FUIAlertView *alertView = [[FUIAlertView alloc] initWithTitle:@"Well Done!" message:@"Submitting the data..." delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil, nil];
-            alertView.alertViewStyle = FUIAlertViewStylePlainTextInput;
-            alertView.delegate = self;
-            alertView.titleLabel.textColor = [UIColor cloudsColor];
-            alertView.titleLabel.font = [UIFont boldFlatFontOfSize:16];
-            alertView.messageLabel.textColor = [UIColor cloudsColor];
-            alertView.messageLabel.font = [UIFont flatFontOfSize:14];
-            alertView.backgroundOverlay.backgroundColor = [[UIColor cloudsColor] colorWithAlphaComponent:0.8];
-            alertView.alertContainer.backgroundColor = [UIColor midnightBlueColor];
-            alertView.defaultButtonColor = [UIColor cloudsColor];
-            alertView.defaultButtonShadowColor = [UIColor asbestosColor];
-            alertView.defaultButtonFont = [UIFont boldFlatFontOfSize:16];
-            alertView.defaultButtonTitleColor = [UIColor asbestosColor];
-            [alertView show];
-        }];
+        
         
     }
     return self;

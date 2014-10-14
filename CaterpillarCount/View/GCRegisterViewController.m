@@ -15,6 +15,8 @@
 
 @implementation GCRegisterViewController
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -31,13 +33,8 @@
     [[self.registerScrollView.btn_Submit rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         NSLog(@"Submit registration button hit!");
         
-        self.HUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        self.HUD.mode = MBProgressHUDModeIndeterminate;
-        self.HUD.labelText = @"Loging In...";
-        self.HUD.square = YES;
-        [self.view addSubview:self.HUD];
         NSURL *url = [NSURL URLWithString:[[NSString alloc] initWithFormat:@"%@/~pocket14/forsyth.im/caterpillars/users.php", [GCAppAPI getCurrentDomain]]];
-        DDLogVerbose(@"url is: %@", url.absoluteString);
+        
         //        NSDictionary *parameters = @{
         //                                     @"email": self.registerScrollView.entry_Email.text,
         //                                     @"password": [NSString stringWithFormat:@"%@",
@@ -47,88 +44,20 @@
         //                                               self.registerScrollView.entry_NameLast.text],
         //                                     };
         NSDictionary *parameters = @{
-                                     @"email": @"yinan_fang@hotmail.com118",
+                                     @"email": @"yinan_fang@hotmail.com120",
                                      @"password": @"asdfasdf",
                                      @"name": @"Yinan Fang"
                                      };
-        DDLogVerbose(@"parameter: %@", parameters);
-        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-        manager.requestSerializer = [AFJSONRequestSerializer serializer];
-        manager.responseSerializer = [AFJSONResponseSerializer serializer];
-        [manager POST:url.absoluteString parameters:parameters success:^(AFHTTPRequestOperation *operation, NSDictionary *responseDictionary) {
-            DDLogInfo(@"Get data successfully. Printing response JSON: %@", responseDictionary);
-            NSError *mantleError = nil;
-            GCUser *user = [MTLJSONAdapter modelOfClass:[GCUser class] fromJSONDictionary:responseDictionary error:&mantleError];
-            DDLogVerbose([user description]);
-            if (mantleError) {
-                DDLogWarn(@"Cannot generate Mantle model!!!");
-            }
-            
-            // Check mark HUD
-            self.HUD.mode = MBProgressHUDModeCustomView;
-            dispatch_async(dispatch_get_main_queue(), ^{
-                UIImage *image = [UIImage imageNamed:@"mark_check"];
-                UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
-                self.HUD.customView = imageView;
-                self.HUD.labelText = @"Logged in successfully";
-            });
-            
-            // Update Current User
-            [GCStore updateUserWithGCUser:user];
-            DDLogVerbose(@"Current App data is: %@", [GCStore getAppData]);
-            DDLogVerbose(@"Current JSON serialization: %@", [MTLJSONAdapter JSONDictionaryFromModel:[GCStore getAppData]]);
-            
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-                [self.HUD hide:YES];
-                GCSurveyViewController *surveyViewController = [[GCSurveyViewController alloc] init];
-                [self.navigationController pushViewController:surveyViewController animated:YES];
-            });
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            DDLogWarn(@"Error: %@", error);
-            // Cross mark HUD
-            self.HUD.mode = MBProgressHUDModeCustomView;
-            dispatch_async(dispatch_get_main_queue(), ^{
-                UIImage *image = [UIImage imageNamed:@"mark_cross"];
-                UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
-                self.HUD.customView = imageView;
-                self.HUD.labelText = @"Error!";
-            });
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 4*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-                [self.HUD hide:YES];
-            });
-
-            // Customize error response
-            if ([operation.response statusCode] == 409) {
-                DDLogError(@"Email has already been registered");
-                self.HUD.detailsLabelText = @"Email has already been registered";
-            } else {
-                DDLogError(@"Here's the error");
-                self.HUD.detailsLabelText = [error localizedDescription];
-            }
+        
+        [GCNetwork twoWayJSONPOSTRequestWithViewController:self URL:url parameter:parameters HUDMessage:@"Log In" completion:^(BOOL succeeded, NSDictionary *userInfoDictionary){
+            // Update User Info
+            [GCAppDataViewModel updateUserWithGCUser:userInfoDictionary];
+            // Push to the Survey View
+            GCSurveyViewController *surveyViewController = [[GCSurveyViewController alloc] init];
+            [self.navigationController pushViewController:surveyViewController animated:YES];
         }];
-
-        
-        
-        
-//        FUIAlertView *alertView = [[FUIAlertView alloc] initWithTitle:@"Well Done!" message:@"Submitting the data..." delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil, nil];
-//        alertView.alertViewStyle = FUIAlertViewStylePlainTextInput;
-//        alertView.delegate = self;
-//        alertView.titleLabel.textColor = [UIColor cloudsColor];
-//        alertView.titleLabel.font = [UIFont boldFlatFontOfSize:16];
-//        alertView.messageLabel.textColor = [UIColor cloudsColor];
-//        alertView.messageLabel.font = [UIFont flatFontOfSize:14];
-//        alertView.backgroundOverlay.backgroundColor = [[UIColor cloudsColor] colorWithAlphaComponent:0.8];
-//        alertView.alertContainer.backgroundColor = [UIColor midnightBlueColor];
-//        alertView.defaultButtonColor = [UIColor cloudsColor];
-//        alertView.defaultButtonShadowColor = [UIColor asbestosColor];
-//        alertView.defaultButtonFont = [UIFont boldFlatFontOfSize:16];
-//        alertView.defaultButtonTitleColor = [UIColor asbestosColor];
-//        [alertView show];
     }];
     
-}
-
-- (void)hudWasHidden:(MBProgressHUD *)hud {
 }
 
 - (void)viewWillAppear:(BOOL)animated

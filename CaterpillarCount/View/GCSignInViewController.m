@@ -27,6 +27,11 @@
     [self.signInScrollView setNeedsUpdateConstraints];
     [self.signInScrollView updateConstraintsIfNeeded];
     
+    // Sign In submit control
+    [[self.signInScrollView.btn_Submit rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+        NSLog(@"hit button submit");
+
+    }];
 }
 
 #pragma mark - Other View Merringtonthods

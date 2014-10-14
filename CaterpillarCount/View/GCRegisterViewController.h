@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "GCRegisterScrollView.h"
-#import "GCUser.h"
 
 @interface GCRegisterViewController : UIViewController <FUIAlertViewDelegate, MBProgressHUDDelegate>
 
