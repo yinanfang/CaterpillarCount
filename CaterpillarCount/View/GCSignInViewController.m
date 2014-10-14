@@ -29,7 +29,7 @@
     
 }
 
-#pragma mark - Other View Methods
+#pragma mark - Other View Merringtonthods
 - (void)viewWillAppear:(BOOL)animated
 {
 //    self.navigationController.navigationBar.tintColor =[UIColor redColor];

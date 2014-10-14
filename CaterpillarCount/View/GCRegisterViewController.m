@@ -47,7 +47,7 @@
         //                                               self.registerScrollView.entry_NameLast.text],
         //                                     };
         NSDictionary *parameters = @{
-                                     @"email": @"yinan_fang@hotmail.com27",
+                                     @"email": @"yinan_fang@hotmail.com118",
                                      @"password": @"asdfasdf",
                                      @"name": @"Yinan Fang"
                                      };
@@ -67,11 +67,17 @@
             // Check mark HUD
             self.HUD.mode = MBProgressHUDModeCustomView;
             dispatch_async(dispatch_get_main_queue(), ^{
-                UIImage *image = [UIImage imageNamed:@"Checkmark.png"];
+                UIImage *image = [UIImage imageNamed:@"mark_check"];
                 UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
                 self.HUD.customView = imageView;
                 self.HUD.labelText = @"Logged in successfully";
             });
+            
+            // Update Current User
+            [GCStore updateUserWithGCUser:user];
+            DDLogVerbose(@"Current App data is: %@", [GCStore getAppData]);
+            DDLogVerbose(@"Current JSON serialization: %@", [MTLJSONAdapter JSONDictionaryFromModel:[GCStore getAppData]]);
+            
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
                 [self.HUD hide:YES];
                 GCSurveyViewController *surveyViewController = [[GCSurveyViewController alloc] init];
@@ -79,21 +85,25 @@
             });
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             DDLogWarn(@"Error: %@", error);
+            // Cross mark HUD
+            self.HUD.mode = MBProgressHUDModeCustomView;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                UIImage *image = [UIImage imageNamed:@"mark_cross"];
+                UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+                self.HUD.customView = imageView;
+                self.HUD.labelText = @"Error!";
+            });
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 4*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+                [self.HUD hide:YES];
+            });
+
+            // Customize error response
             if ([operation.response statusCode] == 409) {
                 DDLogError(@"Email has already been registered");
-                
-                // Cross mark HUD
-                self.HUD.mode = MBProgressHUDModeCustomView;
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    UIImage *image = [UIImage imageNamed:@"Checkmark.png"];
-                    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
-                    self.HUD.customView = imageView;
-                    self.HUD.labelText = @"Error!";
-                    self.HUD.detailsLabelText = @"Email has already been registered";
-                });
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 4*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-                    [self.HUD hide:YES];
-                });
+                self.HUD.detailsLabelText = @"Email has already been registered";
+            } else {
+                DDLogError(@"Here's the error");
+                self.HUD.detailsLabelText = [error localizedDescription];
             }
         }];
 

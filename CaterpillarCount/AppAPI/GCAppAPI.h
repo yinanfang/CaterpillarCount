@@ -8,10 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-// AppUtility
+// App Import
 #import "GCAppSetup.h"
 #import "GCAppConfig.h"
 #import "GCConstant.h"
+#import "GCStore.h"
+//#import "GCAppData.h"
 
 // AFNetworking
 #import <AFNetworking.h>
@@ -49,7 +51,6 @@
 
 // Accessor for Singleton class
 + (GCAppAPI *)sharedInstance;
-
 
 #pragma mark - Basic Utilities
 + (NSString *)getCurrentDomain;

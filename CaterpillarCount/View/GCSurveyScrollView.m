@@ -8,6 +8,7 @@
 
 #import "GCSurveyViewController.h"
 #import "GCSurveyScrollView.h"
+#import "GCOrderTableViewCell.h"
 
 
 @interface GCSurveyScrollView ()
@@ -85,7 +86,8 @@
         }];
         // Order details table
         self.orderTableView = [[UITableView alloc] init];
-        self.orderTableView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+        [self.orderTableView registerClass:[GCOrderTableViewCell class] forCellReuseIdentifier:CellIdentifierForOrderTableViewCell];
+//        self.orderTableView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
         [self addSubview:self.orderTableView];
         
         // Plant Information

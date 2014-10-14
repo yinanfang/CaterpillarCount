@@ -32,10 +32,10 @@
 
 + (NSValueTransformer *)emailJSONTransformer
 {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSString *str){
-        return str;
-    }reverseBlock:^(NSString *str){
-        return str;
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSString *email){
+        return email;
+    }reverseBlock:^(NSString *email){
+        return email;
     }];
 }
 
@@ -50,20 +50,12 @@
 
 + (NSValueTransformer *)isValidUserJSONTransformer
 {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSString *str){
-        return str;
-    }reverseBlock:^(NSString *str){
-        return str;
-    }];
+    return [NSValueTransformer valueTransformerForName:MTLBooleanValueTransformerName];
 }
 
 + (NSValueTransformer *)isActiveJSONTransformer
 {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSString *str){
-        return str;
-    }reverseBlock:^(NSString *str){
-        return str;
-    }];
+    return [NSValueTransformer valueTransformerForName:MTLBooleanValueTransformerName];
 }
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionaryValue error:(NSError *__autoreleasing *)error{

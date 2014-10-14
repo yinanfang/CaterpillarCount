@@ -24,7 +24,8 @@
 #define Padding_Page_Small          UIEdgeInsetsMake(5, 5, -5, -5)
 #define Insets_Button               UIEdgeInsetsMake(8, 10, 8, 10)
 
-
+// Table View Configuration
+#define CellIdentifierForOrderTableViewCell @"OrderTableViewCellIdentifier"
 
 // Don't change this
 #pragma mark - CocoaLumberjack Logging Constant

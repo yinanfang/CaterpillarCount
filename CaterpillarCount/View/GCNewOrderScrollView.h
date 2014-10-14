@@ -22,7 +22,7 @@
 // Photo
 @property UILabel *label_Photo;
 @property UIImageView *entry_Photo;
-@property UILabel *label_PhotoPlaceHolder;
+@property UIButton *btn_PhotoPlaceHolder;
 // Submit Button
 @property FUIButton *btn_Submit;
 

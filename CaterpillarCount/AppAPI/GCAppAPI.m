@@ -10,6 +10,7 @@
 
 @implementation GCAppAPI
 
+#pragma mark - Singleton Class
 + (GCAppAPI *)sharedInstance
 {
     static GCAppAPI *shareInstance = nil;
@@ -23,12 +24,11 @@
 
 - (id)init
 {
-    DDLogVerbose(@"Initializing GCAppUtility...");
+    DDLogVerbose(@"Initializing GCAppAPI...");
     self = [super init];
     if (self) {
         // Initialize values
         
-        // Set up the GalleryImageWidth and GalleryImageHeight according to device height
         
     }
     return self;
@@ -43,9 +43,7 @@
 }
 
 + (UIColor *)getColorWithRGBAinHex:(NSUInteger)color
-{
-    DDLogVerbose(@"... Invoked UtilityClass.colorWithRGBAinHex ...");
-    
+{    
     return [UIColor colorWithRed:((color >> 24) & 0xFF) / 255.0f
                            green:((color >> 16) & 0xFF) / 255.0f
                             blue:((color >> 8) & 0xFF) / 255.0f
@@ -111,6 +109,9 @@
     }
     return screenBounds ;
 }
+
+
+
 
 #pragma mark - Network API Calls
 

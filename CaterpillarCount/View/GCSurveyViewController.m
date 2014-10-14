@@ -74,6 +74,7 @@
     }];
     
     // Configure Order Table View
+//    self.surveyScrollView.orderTableView.allowsSelection = YES;
     self.surveyScrollView.orderTableView.delegate = self;
     self.surveyScrollView.orderTableView.dataSource = self;
     
@@ -110,8 +111,9 @@
 #pragma mark - UITableView DataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    return 3;
 }
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {

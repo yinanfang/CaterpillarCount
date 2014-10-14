@@ -16,4 +16,5 @@
 @property BOOL isValidUser;
 @property BOOL isActive;
 
+
 @end

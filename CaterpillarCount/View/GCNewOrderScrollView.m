@@ -53,8 +53,8 @@
         self.entry_Photo.clipsToBounds = YES;
         [self addSubview:self.entry_Photo];
         // Photo Place Holder
-        self.label_PhotoPlaceHolder = [UILabel LabelSubTitleWithString:@"Capture" align:NSTextAlignmentCenter];
-        [self addSubview:self.label_PhotoPlaceHolder];
+        self.btn_PhotoPlaceHolder = [UIButton ButtonWithTitle:@"Capture" inBold:NO horizontalAlign:UIControlContentHorizontalAlignmentCenter];
+        [self addSubview:self.btn_PhotoPlaceHolder];
         
         // Submit button and alert view
         self.btn_Submit = [FUIButton ButtonWithTitle:@"Submit" inBold:YES];
@@ -110,7 +110,7 @@
             make.centerX.equalTo(self.mas_centerX);
             make.size.mas_equalTo(CGSizeMake(100, 100));
         }];
-        [self.label_PhotoPlaceHolder mas_makeConstraints:^(MASConstraintMaker *make) {
+        [self.btn_PhotoPlaceHolder mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.label_Photo.mas_bottom).with.offset(Padding_Page_Small.top);
             make.centerX.equalTo(self.mas_centerX);
             make.size.mas_equalTo(CGSizeMake(100, 100));
