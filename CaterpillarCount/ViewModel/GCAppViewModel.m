@@ -7,6 +7,7 @@
 //
 
 #import "GCAppViewModel.h"
+#import "GCUserData02.h"
 
 @implementation GCAppViewModel
 
@@ -41,10 +42,23 @@
     NSData *appData_encoded = [defaults objectForKey:NSUserDefaultsKeyForAppData];
     GCAppViewModel *appViewModel = [GCAppViewModel sharedInstance];
     if (appData_encoded) {
+        NSLog(@"running");
         DDLogVerbose(@"Updating app data...");
         GCAppData *appData_decoded = [NSKeyedUnarchiver unarchiveObjectWithData:appData_encoded];
         appViewModel.appData = appData_decoded;
-//        appViewModel.userData = appViewModel.appData.allUserData[appViewModel.appData.lastUserID];
+        // Convert them back to GCUserData object
+//        for(id key in appViewModel.appData.allUserData) {
+//            NSError *mantleError = nil;
+//            GCUserData *userData = [MTLJSONAdapter modelOfClass:[GCUserData class] fromJSONDictionary:appViewModel.appData.allUserData[key] error:&mantleError];
+//            if (mantleError) {
+//                NSLog(@"Cannot generate GCUser model!!!");
+//            }
+//            appViewModel.appData.allUserData[key] = userData;
+//        }
+//        GCUserData *currentUserData = appViewModel.appData.allUserData[appViewModel.appData.lastUserID];
+//        NSLog(@"key-value: %@", currentUserData);
+        
+        appViewModel.userData = appViewModel.appData.allUserData[appViewModel.appData.lastUserID];
     } else {
         DDLogVerbose(@"There's not appData. Need to set up for the first time...");
         NSData *appData_encoded = [NSKeyedArchiver archivedDataWithRootObject:appViewModel.appData];
@@ -61,28 +75,23 @@
 {
     DDLogVerbose(@"Saveing app data...");
     GCAppViewModel *appViewModel = [GCAppViewModel sharedInstance];
-    [appViewModel.appData.allUserData setObject:appViewModel.userData forKey:appViewModel.appData.lastUserID];
+//    [appViewModel.appData.allUserData setObject:appViewModel.userData forKey:appViewModel.appData.lastUserID];
+    appViewModel.appData.allUserData[appViewModel.appData.lastUserID] = appViewModel.userData;
+//    // Init GCUser
+//    NSError *mantleError = nil;
+//    GCUserData *userData = [MTLJSONAdapter modelOfClass:[GCUser class] fromJSONDictionary:userDictionary error:&mantleError];
+//    DDLogVerbose([user description]);
+//    if (mantleError) {
+//        DDLogWarn(@"Cannot generate GCUser model!!!");
+//    }
+    DDLogVerbose(@"Current value:");
+
     DDLogVerbose(@"Current value: %@", [MTLJSONAdapter JSONDictionaryFromModel:appViewModel.appData]);
     NSData *appData_encoded = [NSKeyedArchiver archivedDataWithRootObject:appViewModel.appData];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:appData_encoded forKey:NSUserDefaultsKeyForAppData];
     [defaults synchronize];
 }
-
-//+ (GCAppData *)getAppDataFromMemory
-//{
-//    GCAppViewModel *appViewModel = [GCAppViewModel sharedInstance];
-//    return appViewModel.appData;
-//}
-//
-//+ (GCAppData *)getAppDataFromNSUserDefaults
-//{
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    NSData *user_encoded = [defaults objectForKey:NSUserDefaultsKeyForAppData];
-//    
-//    GCAppViewModel *viewModel = [GCAppViewModel sharedInstance];
-//    return viewModel.appData;
-//}
 
 #pragma mark - User data
 + (void)updateUserWithGCUser:(NSDictionary *)userDictionary
@@ -91,6 +100,7 @@
     
     // Init GCUser
     NSError *mantleError = nil;
+    GCUser *user02 = [[GCUser alloc] init];
     GCUser *user = [MTLJSONAdapter modelOfClass:[GCUser class] fromJSONDictionary:userDictionary error:&mantleError];
     DDLogVerbose([user description]);
     if (mantleError) {
@@ -98,7 +108,15 @@
     }
     
     // Update Current User in View Model
-    viewModel.userData.user = user;
+//    NSDictionary *userDataDic = [NSDictionary dictionaryWithObjectsAndKeys:user, @"user", [[NSArray alloc] init], @"surveys", nil];
+//      GCUserData *userData = [MTLJSONAdapter modelOfClass:[GCUserData class] fromJSONDictionary:userDataDic error:&mantleError];
+//    
+//    viewModel.userData = userData;
+    GCUserData02 *userdata02 = [[GCUserData02 alloc] init];
+    GCUserData *LLuserData = [[GCUserData alloc] init];
+//    userData.user = [user copy];
+//    viewModel.userData = [userData copy];
+    
     viewModel.appData.didLogedIn = YES;
     viewModel.appData.lastUserID = user.userID;
     DDLogVerbose(@"Current App data is: %@", viewModel.appData);

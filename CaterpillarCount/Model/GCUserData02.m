@@ -1,26 +1,15 @@
 //
-//  GCUserData.m
+//  GCUserData02.m
 //  CaterpillarCount
 //
-//  Created by Golden Compass on 10/14/14.
+//  Created by Golden Compass on 10/15/14.
 //  Copyright (c) 2014 Golden Compass. All rights reserved.
 //
 
-#import "GCUserData.h"
+#import "GCUserData02.h"
 
-@implementation GCUserData
+@implementation GCUserData02
 
-//- (id)init
-//{
-//    DDLogVerbose(@"Initializing GCAppData...");
-//    self = [super init];
-//    if (self) {
-//        // Initialize values
-//        self.user = [[GCUser alloc] init];
-//        self.surveys = [[NSMutableArray alloc] init];
-//    }
-//    return self;
-//}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey
 {
@@ -47,8 +36,5 @@
     }
     return self;
 }
-
-
-
 
 @end

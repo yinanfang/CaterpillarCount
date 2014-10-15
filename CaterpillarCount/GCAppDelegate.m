@@ -29,15 +29,14 @@
     [GCAppViewModel getAppDataFromNSUserDefaultsAndUpdateViewModel];
     
     // Determine next page
-    UINavigationController *navigationController;
+    GCCoverViewController *coverViewController = [[GCCoverViewController alloc] init];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:coverViewController];
     if ([GCAppViewModel sharedInstance].appData.didLogedIn) {
         DDLogVerbose(@"Has Logged In already. Go to survey...");
         GCSurveyViewController *surveyViewController = [[GCSurveyViewController alloc] init];
-        navigationController = [[UINavigationController alloc] initWithRootViewController:surveyViewController];
+        [navigationController pushViewController:surveyViewController animated:NO];
     } else {
         DDLogVerbose(@"Need to log in or register...");
-        GCCoverViewController *coverViewController = [[GCCoverViewController alloc] init];
-        navigationController = [[UINavigationController alloc] initWithRootViewController:coverViewController];
     }
     
     // Set rootViewController

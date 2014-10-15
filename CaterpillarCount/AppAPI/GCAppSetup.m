@@ -111,7 +111,7 @@
     rightButton.backgroundColor = [UIColor clearColor];
     [rightButton setImage:[UIImage imageNamed:@"icon_menu"] forState:UIControlStateNormal];
     UIBarButtonItem *rightButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightButton];
-    viewcontroller.navigationItem.leftBarButtonItem = rightButtonItem;
+    viewcontroller.navigationItem.rightBarButtonItem = rightButtonItem;
     viewcontroller.navigationController.interactivePopGestureRecognizer.delegate = (id<UIGestureRecognizerDelegate>)self;
     [[rightButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         [viewcontroller.navigationController popViewControllerAnimated:YES];

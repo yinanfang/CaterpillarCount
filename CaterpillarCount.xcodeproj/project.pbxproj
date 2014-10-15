@@ -34,6 +34,7 @@
 		D48FAA4619D83DCE0042DFC6 /* GCNewOrderScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D48FAA4519D83DCE0042DFC6 /* GCNewOrderScrollView.m */; };
 		D4B97AB119EDF1B400F721D6 /* GCUserData.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B97AB019EDF1B400F721D6 /* GCUserData.m */; };
 		D4B97AB719EDF50B00F721D6 /* GCAppViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B97AB619EDF50B00F721D6 /* GCAppViewModel.m */; };
+		D4B97ABA19EEC08F00F721D6 /* GCUserData02.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B97AB919EEC08F00F721D6 /* GCUserData02.m */; };
 		D4D9B3EE19E302D000547CDF /* GCAppSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D9B3ED19E302D000547CDF /* GCAppSetup.m */; };
 		D4E0CCE019E8196E00500C86 /* mark_check.png in Resources */ = {isa = PBXBuildFile; fileRef = D4E0CCDE19E8196E00500C86 /* mark_check.png */; };
 		D4E0CCE119E8196E00500C86 /* mark_cross.png in Resources */ = {isa = PBXBuildFile; fileRef = D4E0CCDF19E8196E00500C86 /* mark_cross.png */; };
@@ -111,6 +112,8 @@
 		D4B97AB019EDF1B400F721D6 /* GCUserData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCUserData.m; path = Model/GCUserData.m; sourceTree = "<group>"; };
 		D4B97AB519EDF50B00F721D6 /* GCAppViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GCAppViewModel.h; path = ViewModel/GCAppViewModel.h; sourceTree = "<group>"; };
 		D4B97AB619EDF50B00F721D6 /* GCAppViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCAppViewModel.m; path = ViewModel/GCAppViewModel.m; sourceTree = "<group>"; };
+		D4B97AB819EEC08F00F721D6 /* GCUserData02.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GCUserData02.h; path = Model/GCUserData02.h; sourceTree = "<group>"; };
+		D4B97AB919EEC08F00F721D6 /* GCUserData02.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCUserData02.m; path = Model/GCUserData02.m; sourceTree = "<group>"; };
 		D4D9B3EC19E302D000547CDF /* GCAppSetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GCAppSetup.h; path = AppAPI/GCAppSetup.h; sourceTree = "<group>"; };
 		D4D9B3ED19E302D000547CDF /* GCAppSetup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCAppSetup.m; path = AppAPI/GCAppSetup.m; sourceTree = "<group>"; };
 		D4E0CCDE19E8196E00500C86 /* mark_check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mark_check.png; path = Images/mark_check.png; sourceTree = "<group>"; };
@@ -297,6 +300,8 @@
 				D437C2D619EACB0E00F0A9C5 /* GCAppData.m */,
 				D4B97AAF19EDF1B400F721D6 /* GCUserData.h */,
 				D4B97AB019EDF1B400F721D6 /* GCUserData.m */,
+				D4B97AB819EEC08F00F721D6 /* GCUserData02.h */,
+				D4B97AB919EEC08F00F721D6 /* GCUserData02.m */,
 				D4748A2419E5757E000B17E2 /* GCUser.h */,
 				D4748A2519E5757E000B17E2 /* GCUser.m */,
 				D4E0CCE419E82E7F00500C86 /* GCSurvey.h */,
@@ -500,6 +505,7 @@
 				D46E5F0919D2E4E9002FF1C1 /* GCSurveyScrollView.m in Sources */,
 				D43A919119CF993D009AA0C7 /* GCAppAPI.m in Sources */,
 				D43A916319CF94D7009AA0C7 /* main.m in Sources */,
+				D4B97ABA19EEC08F00F721D6 /* GCUserData02.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

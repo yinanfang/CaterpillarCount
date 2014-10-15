@@ -57,7 +57,7 @@
         [self addSubview:self.btn_PhotoPlaceHolder];
         
         // Submit button and alert view
-        self.btn_Submit = [FUIButton ButtonWithTitle:@"Submit" inBold:YES];
+        self.btn_Submit = [FUIButton ButtonWithTitle:@"Save Data" inBold:YES];
         [self addSubview:self.btn_Submit];
         [[self.btn_Submit rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
             NSLog(@"hit button submit");

@@ -45,14 +45,25 @@
 }
 
 + (NSValueTransformer *)allUserDataJSONTransformer {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSMutableDictionary *allUserData){
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSMutableDictionary *allUserDataDictionary){
+//        return allUserData;
+        NSMutableDictionary *allUserData = [[NSMutableDictionary alloc] init];
+        for(id key in allUserData) {
+            NSError *mantleError = nil;
+            GCUserData *userData = [MTLJSONAdapter modelOfClass:[GCUserData class] fromJSONDictionary:allUserData[key] error:&mantleError];
+            if (mantleError) {
+                NSLog(@"Cannot generate GCUser model!!!");
+            }
+            allUserData[key] = userData;
+        }
         return allUserData;
     }reverseBlock:^(NSMutableDictionary *allUserData){
-//        for(NSNumber *userID in allUserData) {
-//            GCUserData *userData = [allUserData objectForKey:userID];
-//            [allUserData setObject:[MTLJSONAdapter JSONDictionaryFromModel:userData] forKey:userID];
-//        }        
-        return allUserData;
+        NSMutableDictionary *allUserDic = [[NSMutableDictionary alloc] init];
+        for(id key in allUserData) {
+            GCUserData *userData = [allUserData objectForKey:key];
+            [allUserDic setObject:[MTLJSONAdapter JSONDictionaryFromModel:userData] forKey:key];
+        }        
+        return allUserDic;
     }];
 }
 

@@ -42,7 +42,7 @@
         //                                               self.registerScrollView.entry_NameLast.text],
         //                                     };
         __block NSDictionary *parameters = @{
-                                     @"email": @"yinan_fang@hotmail.com122",
+                                     @"email": @"yinan_fang@hotmail.com138",
                                      @"password": @"asdfasdf",
                                      };
         
@@ -50,7 +50,7 @@
             DDLogVerbose(@"Sign In succeeded.");
             
             parameters = @{
-                           @"email": @"yinan_fang@hotmail.com122",
+                           @"email": @"yinan_fang@hotmail.com138",
                            };
             [GCNetwork twoWayJSONPOSTRequestWithViewController:self URL:url parameter:parameters HUDMessage:@"Updating User Info" completion:^(BOOL succeeded, NSDictionary *userInfoDictionary){
                 DDLogVerbose(@"Getting User object");
