@@ -25,6 +25,7 @@
     
     // UI Navigation Bar
     [GCAppSetup configureNavigationViewController:self withNavigationTitle:@"Caterpillars Count"];
+    [GCAppSetup configureRightButtonOfNavigationViewController:self];
     
     // Add Survey View
     self.surveyScrollView = [[GCSurveyScrollView alloc] initWithParentController:self];

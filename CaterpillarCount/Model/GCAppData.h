@@ -11,7 +11,7 @@
 @interface GCAppData : MTLModel <MTLJSONSerializing>
 
 @property BOOL didLogedIn;
-@property NSNumber *previousUserID;
+@property NSNumber *lastUserID;
 @property NSMutableDictionary *allUserData;
 
 @end

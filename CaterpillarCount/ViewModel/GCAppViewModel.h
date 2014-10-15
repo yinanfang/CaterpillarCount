@@ -20,11 +20,10 @@
 
 #pragma mark - App data
 + (void)getAppDataFromNSUserDefaultsAndUpdateViewModel;
++ (void)saveAppDataToNSUserDefaults;
 
-
-
-+ (GCAppData *)getAppDataFromMemory;
-+ (GCAppData *)getAppDataFromNSUserDefaults;
+//+ (GCAppData *)getAppDataFromMemory;
+//+ (GCAppData *)getAppDataFromNSUserDefaults;
 + (void)updateUserWithGCUser:(NSDictionary *)userDictionary;
 
 @end

@@ -31,7 +31,7 @@
         self.btn_Register = [FUIButton ButtonWithTitle:@"Register" inBold:YES];
         [self addSubview:self.btn_Register];
         [[self.btn_Register rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
-            NSLog(@"button tapped");
+            NSLog(@"Register button tapped");
             GCRegisterViewController *registerViewController = [[GCRegisterViewController alloc] init];
             [self.parentController.navigationController pushViewController:registerViewController animated:YES];
         }];

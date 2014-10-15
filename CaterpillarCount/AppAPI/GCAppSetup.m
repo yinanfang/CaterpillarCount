@@ -87,8 +87,11 @@
     [label setText:title];
     viewcontroller.navigationItem.titleView = label;
     [label sizeToFit];
+}
+
++ (void)configureBackButtonOfNavigationViewController:(UIViewController *)viewcontroller
+{
     // Back Button
-    
     UIButton *backButton = [[UIButton alloc] initWithFrame: CGRectMake(0, 0, 20.0f, 30.0f)];
     backButton.backgroundColor = [UIColor clearColor];
     [backButton setTitle:@"<" forState:UIControlStateNormal];
@@ -97,6 +100,20 @@
     viewcontroller.navigationItem.leftBarButtonItem = backButtonItem;
     viewcontroller.navigationController.interactivePopGestureRecognizer.delegate = (id<UIGestureRecognizerDelegate>)self;
     [[backButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+        [viewcontroller.navigationController popViewControllerAnimated:YES];
+    }];
+}
+
++ (void)configureRightButtonOfNavigationViewController:(UIViewController *)viewcontroller
+{
+    // Back Button
+    UIButton *rightButton = [[UIButton alloc] initWithFrame: CGRectMake(0, 0, 20.0f, 30.0f)];
+    rightButton.backgroundColor = [UIColor clearColor];
+    [rightButton setImage:[UIImage imageNamed:@"icon_menu"] forState:UIControlStateNormal];
+    UIBarButtonItem *rightButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightButton];
+    viewcontroller.navigationItem.leftBarButtonItem = rightButtonItem;
+    viewcontroller.navigationController.interactivePopGestureRecognizer.delegate = (id<UIGestureRecognizerDelegate>)self;
+    [[rightButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         [viewcontroller.navigationController popViewControllerAnimated:YES];
     }];
 }

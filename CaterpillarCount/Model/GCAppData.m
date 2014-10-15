@@ -25,7 +25,7 @@
 {
     return @{
              @"didLogedIn": @"didLogedIn",
-             @"previousUserID": @"previousUserID",
+             @"lastUserID": @"lastUserID",
              @"allUserData": @"allUserData",
              };
 }
@@ -35,7 +35,7 @@
     return [NSValueTransformer valueTransformerForName:MTLBooleanValueTransformerName];
 }
 
-+ (NSValueTransformer *)previousUserIDJSONTransformer
++ (NSValueTransformer *)lastUserIDJSONTransformer
 {
     return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSNumber *idNumber){
         return idNumber;
@@ -48,8 +48,13 @@
     return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSMutableDictionary *allUserData){
         return allUserData;
     }reverseBlock:^(NSMutableDictionary *allUserData){
+//        for(NSNumber *userID in allUserData) {
+//            GCUserData *userData = [allUserData objectForKey:userID];
+//            [allUserData setObject:[MTLJSONAdapter JSONDictionaryFromModel:userData] forKey:userID];
+//        }        
         return allUserData;
-    }];}
+    }];
+}
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionaryValue error:(NSError *__autoreleasing *)error{
     self = [super initWithDictionary:dictionaryValue error:error];
