@@ -10,7 +10,6 @@
 
 @implementation GCUserData02
 
-
 + (NSDictionary *)JSONKeyPathsByPropertyKey
 {
     return @{

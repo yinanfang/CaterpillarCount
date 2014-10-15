@@ -52,6 +52,7 @@
 // App Import
 #import "GCAppSetup.h"
 #import "GCUserData.h"
+#import "GCUserData02.h"
 #import "GCAppConfig.h"
 #import "GCConstant.h"
 #import "GCNetwork.h"

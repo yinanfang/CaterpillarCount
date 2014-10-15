@@ -7,13 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-@class GCAppData, GCUserData, GCUser, GCSurvey, GCOrder;
+@class GCAppData, GCUserData, GCUserData02, GCUser, GCSurvey, GCOrder;
 
 @interface GCAppViewModel : NSObject
 
 // App Data
 @property GCAppData *appData;
-@property GCUserData *userData;
+@property (copy) GCUserData *userData;
+//@property GCUserData02 *userData;
 
 // Accessor for Singleton class
 + (GCAppViewModel *)sharedInstance;

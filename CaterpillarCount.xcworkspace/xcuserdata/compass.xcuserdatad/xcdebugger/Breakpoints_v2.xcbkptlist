@@ -9,29 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CaterpillarCount/ViewModel/GCAppViewModel.m"
-            timestampString = "435077741.480781"
+            filePath = "CaterpillarCount/Model/GCAppData.m"
+            timestampString = "435080197.454692"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
-            landmarkName = "+saveAppDataToNSUserDefaults"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CaterpillarCount/ViewModel/GCAppViewModel.m"
-            timestampString = "435077741.480781"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
-            landmarkName = "+updateUserWithGCUser:"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "+allUserDataJSONTransformer"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -32,9 +32,9 @@
 		D48FAA4019D83D900042DFC6 /* GCOrderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D48FAA3F19D83D900042DFC6 /* GCOrderTableViewCell.m */; };
 		D48FAA4319D83DB00042DFC6 /* GCNewOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D48FAA4219D83DB00042DFC6 /* GCNewOrderViewController.m */; };
 		D48FAA4619D83DCE0042DFC6 /* GCNewOrderScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D48FAA4519D83DCE0042DFC6 /* GCNewOrderScrollView.m */; };
-		D4B97AB119EDF1B400F721D6 /* GCUserData.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B97AB019EDF1B400F721D6 /* GCUserData.m */; };
 		D4B97AB719EDF50B00F721D6 /* GCAppViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B97AB619EDF50B00F721D6 /* GCAppViewModel.m */; };
 		D4B97ABA19EEC08F00F721D6 /* GCUserData02.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B97AB919EEC08F00F721D6 /* GCUserData02.m */; };
+		D4B97ABD19EEC34D00F721D6 /* GCUserData.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B97ABC19EEC34D00F721D6 /* GCUserData.m */; };
 		D4D9B3EE19E302D000547CDF /* GCAppSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D9B3ED19E302D000547CDF /* GCAppSetup.m */; };
 		D4E0CCE019E8196E00500C86 /* mark_check.png in Resources */ = {isa = PBXBuildFile; fileRef = D4E0CCDE19E8196E00500C86 /* mark_check.png */; };
 		D4E0CCE119E8196E00500C86 /* mark_cross.png in Resources */ = {isa = PBXBuildFile; fileRef = D4E0CCDF19E8196E00500C86 /* mark_cross.png */; };
@@ -108,12 +108,12 @@
 		D48FAA4419D83DCE0042DFC6 /* GCNewOrderScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GCNewOrderScrollView.h; path = View/GCNewOrderScrollView.h; sourceTree = "<group>"; };
 		D48FAA4519D83DCE0042DFC6 /* GCNewOrderScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCNewOrderScrollView.m; path = View/GCNewOrderScrollView.m; sourceTree = "<group>"; };
 		D4B97AAB19EDB2BA00F721D6 /* RecycledMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecycledMethod.h; sourceTree = "<group>"; };
-		D4B97AAF19EDF1B400F721D6 /* GCUserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GCUserData.h; path = Model/GCUserData.h; sourceTree = "<group>"; };
-		D4B97AB019EDF1B400F721D6 /* GCUserData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCUserData.m; path = Model/GCUserData.m; sourceTree = "<group>"; };
 		D4B97AB519EDF50B00F721D6 /* GCAppViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GCAppViewModel.h; path = ViewModel/GCAppViewModel.h; sourceTree = "<group>"; };
 		D4B97AB619EDF50B00F721D6 /* GCAppViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCAppViewModel.m; path = ViewModel/GCAppViewModel.m; sourceTree = "<group>"; };
 		D4B97AB819EEC08F00F721D6 /* GCUserData02.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GCUserData02.h; path = Model/GCUserData02.h; sourceTree = "<group>"; };
 		D4B97AB919EEC08F00F721D6 /* GCUserData02.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCUserData02.m; path = Model/GCUserData02.m; sourceTree = "<group>"; };
+		D4B97ABB19EEC34D00F721D6 /* GCUserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GCUserData.h; path = Model/GCUserData.h; sourceTree = "<group>"; };
+		D4B97ABC19EEC34D00F721D6 /* GCUserData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCUserData.m; path = Model/GCUserData.m; sourceTree = "<group>"; };
 		D4D9B3EC19E302D000547CDF /* GCAppSetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GCAppSetup.h; path = AppAPI/GCAppSetup.h; sourceTree = "<group>"; };
 		D4D9B3ED19E302D000547CDF /* GCAppSetup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCAppSetup.m; path = AppAPI/GCAppSetup.m; sourceTree = "<group>"; };
 		D4E0CCDE19E8196E00500C86 /* mark_check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mark_check.png; path = Images/mark_check.png; sourceTree = "<group>"; };
@@ -298,8 +298,8 @@
 			children = (
 				D437C2D519EACB0E00F0A9C5 /* GCAppData.h */,
 				D437C2D619EACB0E00F0A9C5 /* GCAppData.m */,
-				D4B97AAF19EDF1B400F721D6 /* GCUserData.h */,
-				D4B97AB019EDF1B400F721D6 /* GCUserData.m */,
+				D4B97ABB19EEC34D00F721D6 /* GCUserData.h */,
+				D4B97ABC19EEC34D00F721D6 /* GCUserData.m */,
 				D4B97AB819EEC08F00F721D6 /* GCUserData02.h */,
 				D4B97AB919EEC08F00F721D6 /* GCUserData02.m */,
 				D4748A2419E5757E000B17E2 /* GCUser.h */,
@@ -483,7 +483,6 @@
 				D437C2D719EACB0E00F0A9C5 /* GCAppData.m in Sources */,
 				D48FAA4619D83DCE0042DFC6 /* GCNewOrderScrollView.m in Sources */,
 				D430876719D99736008D92F5 /* GCRegisterScrollView.m in Sources */,
-				D4B97AB119EDF1B400F721D6 /* GCUserData.m in Sources */,
 				D4E0CCE919E82F0800500C86 /* GCOrder.m in Sources */,
 				D43A919719CF9994009AA0C7 /* GCCustomLogFormatters.m in Sources */,
 				D43A919D19CF9D49009AA0C7 /* GCCoverViewController.m in Sources */,
@@ -497,6 +496,7 @@
 				D4748A2619E5757E000B17E2 /* GCUser.m in Sources */,
 				D4D9B3EE19E302D000547CDF /* GCAppSetup.m in Sources */,
 				D43A91A019CF9E1E009AA0C7 /* GCCoverView.m in Sources */,
+				D4B97ABD19EEC34D00F721D6 /* GCUserData.m in Sources */,
 				D430875E19D996D5008D92F5 /* GCSignInViewController.m in Sources */,
 				D4B97AB719EDF50B00F721D6 /* GCAppViewModel.m in Sources */,
 				D43A919419CF997A009AA0C7 /* GCAppConfig.m in Sources */,

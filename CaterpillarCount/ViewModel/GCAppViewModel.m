@@ -110,12 +110,17 @@
     // Update Current User in View Model
 //    NSDictionary *userDataDic = [NSDictionary dictionaryWithObjectsAndKeys:user, @"user", [[NSArray alloc] init], @"surveys", nil];
 //      GCUserData *userData = [MTLJSONAdapter modelOfClass:[GCUserData class] fromJSONDictionary:userDataDic error:&mantleError];
-//    
-//    viewModel.userData = userData;
-    GCUserData02 *userdata02 = [[GCUserData02 alloc] init];
-    GCUserData *LLuserData = [[GCUserData alloc] init];
-//    userData.user = [user copy];
-//    viewModel.userData = [userData copy];
+//
+    
+    NSLog(@"userData02: %@", [viewModel.userData description]);
+    viewModel.userData.user = user;
+    viewModel.userData = viewModel.userData;
+    
+    
+//    GCUserData02 *userData02 = [[GCUserData02 alloc] init];
+//    NSLog(@"userData02: %@", [userData02 description]);
+//    userData02.user = user;
+//    viewModel.userData = userData02;
     
     viewModel.appData.didLogedIn = YES;
     viewModel.appData.lastUserID = user.userID;
