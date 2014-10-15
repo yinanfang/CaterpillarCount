@@ -7,7 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+@class GCUser;
+@class GCSurvey;
 
-@interface GCUserData : NSObject
+@interface GCUserData : MTLModel <MTLJSONSerializing>
+
+@property GCUser *user;
+@property NSMutableArray *surveys;
 
 @end
+
+
+
+

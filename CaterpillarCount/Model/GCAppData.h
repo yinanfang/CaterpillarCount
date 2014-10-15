@@ -7,12 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-@class GCUser;
-@class GCSurvey;
 
 @interface GCAppData : MTLModel <MTLJSONSerializing>
 
-@property GCUser *user;
-@property NSMutableArray *surveys;
+@property BOOL didLogedIn;
+@property NSNumber *previousUserID;
+@property NSMutableDictionary *allUserData;
 
 @end

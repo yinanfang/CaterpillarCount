@@ -73,10 +73,9 @@
     
     [DDLog addLogger:fileLogger];
     DDLogInfo(@"Logging is setup (\"%@\")", [fileLogger.logFileManager logsDirectory]);
-    
 }
 
-
+#pragma mark - Style, font, size, and
 + (void)configureNavigationViewController:(UIViewController *)viewcontroller withNavigationTitle:(NSString *)title
 {
     // Set Title

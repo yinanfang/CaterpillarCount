@@ -7,12 +7,6 @@
 //
 
 #import "GCAppData.h"
-#import "GCUser.h"
-#import "GCSurvey.h"
-
-@interface GCAppData ()
-
-@end
 
 @implementation GCAppData
 
@@ -22,7 +16,7 @@
     self = [super init];
     if (self) {
         // Initialize values
-        self.surveys = [[NSMutableArray alloc] init];
+        self.allUserData = [[NSMutableDictionary alloc] init];
     }
     return self;
 }
@@ -30,20 +24,32 @@
 + (NSDictionary *)JSONKeyPathsByPropertyKey
 {
     return @{
-             @"user": @"user",
-             @"surveys": @"surveys",
+             @"didLogedIn": @"didLogedIn",
+             @"previousUserID": @"previousUserID",
+             @"allUserData": @"allUserData",
              };
 }
 
-+ (NSValueTransformer *)userJSONTransformer {
-    return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[GCUser class]];
++ (NSValueTransformer *)didLogedInJSONTransformer
+{
+    return [NSValueTransformer valueTransformerForName:MTLBooleanValueTransformerName];
 }
 
-+ (NSValueTransformer *)surveysJSONTransformer
++ (NSValueTransformer *)previousUserIDJSONTransformer
 {
-    // tell Mantle to populate appActions property with an array of ChoosyAppAction objects
-    return [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:[GCSurvey class]];
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSNumber *idNumber){
+        return idNumber;
+    }reverseBlock:^(NSNumber *idNumber){
+        return idNumber;
+    }];
 }
+
++ (NSValueTransformer *)allUserDataJSONTransformer {
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSMutableDictionary *allUserData){
+        return allUserData;
+    }reverseBlock:^(NSMutableDictionary *allUserData){
+        return allUserData;
+    }];}
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionaryValue error:(NSError *__autoreleasing *)error{
     self = [super initWithDictionary:dictionaryValue error:error];

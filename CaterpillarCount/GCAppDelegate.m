@@ -7,7 +7,9 @@
 //
 
 #import "GCAppDelegate.h"
+#import "GCSurveyViewController.h"
 #import "GCCoverViewController.h"
+
 @interface GCAppDelegate ()
 
 @end
@@ -15,17 +17,30 @@
 @implementation GCAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-        
+    
+    // App setup process
     [GCAppSetup setupApplicationWithProductionMode:YES];
     
+    // Allocate window
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor clearColor];
     
-    [GCAppAPI didLogedIn];
+    // Update view model
+    [GCAppViewModel getAppDataFromNSUserDefaultsAndUpdateViewModel];
     
-    GCCoverViewController *coverViewController = [[GCCoverViewController alloc] init];
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:coverViewController];
-
+    // Determine next page
+    UINavigationController *navigationController;
+    if ([GCAppViewModel sharedInstance].appData.didLogedIn) {
+        DDLogVerbose(@"Has Logged In already. Go to survey...");
+        GCSurveyViewController *surveyViewController = [[GCSurveyViewController alloc] init];
+        navigationController = [[UINavigationController alloc] initWithRootViewController:surveyViewController];
+    } else {
+        DDLogVerbose(@"Need to log in or register...");
+        GCCoverViewController *coverViewController = [[GCCoverViewController alloc] init];
+        navigationController = [[UINavigationController alloc] initWithRootViewController:coverViewController];
+    }
+    
+    // Set rootViewController
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
 

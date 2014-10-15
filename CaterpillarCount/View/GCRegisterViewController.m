@@ -49,7 +49,7 @@
         
         [GCNetwork twoWayJSONPOSTRequestWithViewController:self URL:url parameter:parameters HUDMessage:@"Register" completion:^(BOOL succeeded, NSDictionary *userInfoDictionary){
             // Update User Info
-            [GCAppDataViewModel updateUserWithGCUser:userInfoDictionary];
+            [GCAppViewModel updateUserWithGCUser:userInfoDictionary];
             // Push to the Survey View
             GCSurveyViewController *surveyViewController = [[GCSurveyViewController alloc] init];
             [self.navigationController pushViewController:surveyViewController animated:YES];

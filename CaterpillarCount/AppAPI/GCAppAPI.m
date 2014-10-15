@@ -56,17 +56,11 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
-+ (BOOL)didLogedIn
++ (BOOL)didRunAppBefore
 {
-    NSDictionary *userInfo = [[NSUserDefaults standardUserDefaults] objectForKey:NSUserDefaultsKeyForUserInfo];
-    if (userInfo) {
-        DDLogVerbose(@"Has previously logged in...");
-        DDLogVerbose(@"%@", userInfo);
-        return YES;
-    } else {
-        DDLogVerbose(@"Has not previous user info...");
-        return NO;
-    }
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    BOOL didRunAppBefore = [defaults boolForKey:NSUserDefaultsKeyForDidRunAppBefore];
+    return didRunAppBefore ? YES : NO;
 }
 
 + (UIImageView *)getFullScreenImageView:(NSString *)name

@@ -39,13 +39,24 @@
 // Tweaks
 #import <Tweaks/FBTweak.h>
 
+// Data Model
+#import "GCAppData.h"
+#import "GCUserData.h"
+#import "GCUser.h"
+#import "GCSurvey.h"
+#import "GCOrder.h"
+
+// View Model
+#import "GCAppViewModel.h"
+
 // App Import
 #import "GCAppSetup.h"
+#import "GCUserData.h"
 #import "GCAppConfig.h"
 #import "GCConstant.h"
 #import "GCNetwork.h"
 #import "GCStore.h"
-#import "GCAppDataViewModel.h"
+
 
 @interface GCAppAPI : NSObject
 
@@ -56,7 +67,7 @@
 + (NSString *)getCurrentDomain;
 + (UIColor *)getColorWithRGBAinHex:(NSUInteger)color;
 + (void)setHasShownTour:(BOOL)mode;
-+ (BOOL)didLogedIn;
++ (BOOL)didRunAppBefore;
 + (UIImageView *)getFullScreenImageView:(NSString *)name;
 + (CGPoint)getCGPointZeroWithStatusbarAndNavigationBar:(UIViewController *)controller;
 + (CGRect)getScreenBoundsDependOnOrientation;

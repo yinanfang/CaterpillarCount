@@ -52,7 +52,8 @@ FOUNDATION_EXPORT NSString *const URIPathToSubmissionPHP;
 
 #pragma mark - NSUserDefaults values
 FOUNDATION_EXPORT NSString *const NSUserDefaultsKeyForDidShownTour;
-FOUNDATION_EXPORT NSString *const NSUserDefaultsKeyForUserInfo;
+FOUNDATION_EXPORT NSString *const NSUserDefaultsKeyForDidRunAppBefore;
+FOUNDATION_EXPORT NSString *const NSUserDefaultsKeyForAppData;
 
 #pragma mark - Default Value
 @property NSNumber *defaultStoryCount, *defaultBookCount;

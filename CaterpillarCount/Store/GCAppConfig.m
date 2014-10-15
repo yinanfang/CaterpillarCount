@@ -19,7 +19,8 @@ NSString *const URIPathToSubmissionPHP = @"/~pocket14/forsyth.im/caterpillars/su
 
 #pragma mark - NSUserDefaults values
 NSString *const NSUserDefaultsKeyForDidShownTour = @"didShownTour";
-NSString *const NSUserDefaultsKeyForUserInfo = @"UserInfo";
+NSString *const NSUserDefaultsKeyForDidRunAppBefore = @"didRunAppBefore";
+NSString *const NSUserDefaultsKeyForAppData = @"AppData";
 
 + (GCAppConfig *)sharedInstance
 {

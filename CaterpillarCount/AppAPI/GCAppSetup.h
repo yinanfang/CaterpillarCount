@@ -16,7 +16,7 @@
 #pragma mark - Basic Setup
 + (void)setupApplicationWithProductionMode:(BOOL)mode;
 
-// Font, size, and style
+#pragma mark - Style, font, size, and 
 + (void)configureNavigationViewController:(UIViewController *)viewcontroller withNavigationTitle:(NSString *)title;
 + (void)setConstraints_FillFullScreenWithView:(UIView *)view superview:(UIView *)superview;
 + (void)setConstraints_PinHorizontallyWithPagePaddingAndTopWithPadding:(PagePaddingOption)paddingOption withView:(UIView *)view superview:(UIView *)superview upperview:(UIView *)upperview;
