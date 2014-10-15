@@ -21,10 +21,11 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor clearColor];
     
+    [GCAppAPI didLogedIn];
+    
     GCCoverViewController *coverViewController = [[GCCoverViewController alloc] init];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:coverViewController];
-//    UINavigationController *navigationController = [[UINavigationController alloc] init];
-//    [navigationController pushViewController:coverViewController animated:YES];
+
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
 

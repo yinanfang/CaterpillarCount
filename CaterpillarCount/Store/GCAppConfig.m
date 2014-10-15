@@ -14,6 +14,12 @@
 // Change the domain for server here
 NSString *const DevelopmentDomain = @"https://secure28.webhostinghub.com";
 NSString *const ProductionDomain = @"https://secure28.webhostinghub.com";
+NSString *const URIPathToUsersPHP = @"/~pocket14/forsyth.im/caterpillars/users.php";
+NSString *const URIPathToSubmissionPHP = @"/~pocket14/forsyth.im/caterpillars/submission.php";
+
+#pragma mark - NSUserDefaults values
+NSString *const NSUserDefaultsKeyForDidShownTour = @"didShownTour";
+NSString *const NSUserDefaultsKeyForUserInfo = @"UserInfo";
 
 + (GCAppConfig *)sharedInstance
 {

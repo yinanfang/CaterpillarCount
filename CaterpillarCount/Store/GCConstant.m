@@ -13,9 +13,6 @@
 #pragma mark - Gesture Recognizer
 CGFloat const SWIPE_VELOCITY_THRESHOLD = 0.278f; // TODO: it's weird. Simulator require >.5 to be a swipe
 
-#pragma mark - Others
-NSString *const HasShownTour = @"HasShownTour";
-
 
 + (GCConstant *)sharedInstance
 {

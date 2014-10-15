@@ -47,6 +47,12 @@ static const int ddLogLevel = LOG_LEVEL_WARN;
 #pragma mark - Domain
 FOUNDATION_EXPORT NSString *const DevelopmentDomain;
 FOUNDATION_EXPORT NSString *const ProductionDomain;
+FOUNDATION_EXPORT NSString *const URIPathToUsersPHP;
+FOUNDATION_EXPORT NSString *const URIPathToSubmissionPHP;
+
+#pragma mark - NSUserDefaults values
+FOUNDATION_EXPORT NSString *const NSUserDefaultsKeyForDidShownTour;
+FOUNDATION_EXPORT NSString *const NSUserDefaultsKeyForUserInfo;
 
 #pragma mark - Default Value
 @property NSNumber *defaultStoryCount, *defaultBookCount;

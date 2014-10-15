@@ -56,6 +56,7 @@
 + (NSString *)getCurrentDomain;
 + (UIColor *)getColorWithRGBAinHex:(NSUInteger)color;
 + (void)setHasShownTour:(BOOL)mode;
++ (BOOL)didLogedIn;
 + (UIImageView *)getFullScreenImageView:(NSString *)name;
 + (CGPoint)getCGPointZeroWithStatusbarAndNavigationBar:(UIViewController *)controller;
 + (CGRect)getScreenBoundsDependOnOrientation;

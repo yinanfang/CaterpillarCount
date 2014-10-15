@@ -49,8 +49,17 @@
 }
 
 #pragma mark - App data
-+ (GCAppData *)getAppData
++ (GCAppData *)getAppDataFromMemory
 {
+    GCAppDataViewModel *viewModel = [GCAppDataViewModel sharedInstance];
+    return viewModel.appData;
+}
+
++ (GCAppData *)getAppDataFromNSUserDefaults
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSData *user_encoded = [defaults objectForKey:NSUserDefaultsKeyForUserInfo];
+    
     GCAppDataViewModel *viewModel = [GCAppDataViewModel sharedInstance];
     return viewModel.appData;
 }
@@ -58,6 +67,7 @@
 + (void)updateUserWithGCUser:(NSDictionary *)userDictionary
 {
     GCAppDataViewModel *viewModel = [GCAppDataViewModel sharedInstance];
+    
     // Init GCUser
     NSError *mantleError = nil;
     GCUser *user = [MTLJSONAdapter modelOfClass:[GCUser class] fromJSONDictionary:userDictionary error:&mantleError];
@@ -65,10 +75,19 @@
     if (mantleError) {
         DDLogWarn(@"Cannot generate GCUser model!!!");
     }
-    // Update Current User
+    
+    // Update Current User in View Model
     viewModel.appData.user = user;
-    DDLogVerbose(@"Current App data is: %@", [GCAppDataViewModel getAppData]);
-    DDLogVerbose(@"Current JSON serialization: %@", [MTLJSONAdapter JSONDictionaryFromModel:[GCAppDataViewModel getAppData]]);
+    DDLogVerbose(@"Current App data is: %@", [GCAppDataViewModel getAppDataFromMemory]);
+    DDLogVerbose(@"Current JSON serialization: %@", [MTLJSONAdapter JSONDictionaryFromModel:[GCAppDataViewModel getAppDataFromMemory]]);
+    
+    // Update Current User in NSUserDefaults
+    NSData *user_encoded = [NSKeyedArchiver archivedDataWithRootObject:user];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:user_encoded forKey:NSUserDefaultsKeyForUserInfo];
+    [defaults synchronize];
+    
+    DDLogVerbose(@"Updated User object in View Model and NSUserDefaults");
 }
 
 

@@ -18,7 +18,8 @@
 // Accessor for Singleton class
 + (GCAppDataViewModel *)sharedInstance;
 
-+ (GCAppData *)getAppData;
++ (GCAppData *)getAppDataFromMemory;
++ (GCAppData *)getAppDataFromNSUserDefaults;
 + (void)updateUserWithGCUser:(NSDictionary *)userDictionary;
 
 @end

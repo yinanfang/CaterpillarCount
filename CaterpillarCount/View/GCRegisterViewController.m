@@ -15,8 +15,6 @@
 
 @implementation GCRegisterViewController
 
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -29,7 +27,7 @@
     [self.registerScrollView setNeedsUpdateConstraints];
     [self.registerScrollView updateConstraintsIfNeeded];
     
-    // Submit Control
+    // Register submit control
     [[self.registerScrollView.btn_Submit rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         NSLog(@"Submit registration button hit!");
         
@@ -44,12 +42,12 @@
         //                                               self.registerScrollView.entry_NameLast.text],
         //                                     };
         NSDictionary *parameters = @{
-                                     @"email": @"yinan_fang@hotmail.com120",
+                                     @"email": @"yinan_fang@hotmail.com122",
                                      @"password": @"asdfasdf",
                                      @"name": @"Yinan Fang"
                                      };
         
-        [GCNetwork twoWayJSONPOSTRequestWithViewController:self URL:url parameter:parameters HUDMessage:@"Log In" completion:^(BOOL succeeded, NSDictionary *userInfoDictionary){
+        [GCNetwork twoWayJSONPOSTRequestWithViewController:self URL:url parameter:parameters HUDMessage:@"Register" completion:^(BOOL succeeded, NSDictionary *userInfoDictionary){
             // Update User Info
             [GCAppDataViewModel updateUserWithGCUser:userInfoDictionary];
             // Push to the Survey View

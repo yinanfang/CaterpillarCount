@@ -52,8 +52,21 @@
 
 + (void)setHasShownTour:(BOOL)mode
 {
-    [[NSUserDefaults standardUserDefaults] setBool:mode forKey:HasShownTour];
+    [[NSUserDefaults standardUserDefaults] setBool:mode forKey:NSUserDefaultsKeyForDidShownTour];
     [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
++ (BOOL)didLogedIn
+{
+    NSDictionary *userInfo = [[NSUserDefaults standardUserDefaults] objectForKey:NSUserDefaultsKeyForUserInfo];
+    if (userInfo) {
+        DDLogVerbose(@"Has previously logged in...");
+        DDLogVerbose(@"%@", userInfo);
+        return YES;
+    } else {
+        DDLogVerbose(@"Has not previous user info...");
+        return NO;
+    }
 }
 
 + (UIImageView *)getFullScreenImageView:(NSString *)name

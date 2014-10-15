@@ -16,16 +16,16 @@
 
 @implementation GCAppData
 
-//- (id)init
-//{
-//    DDLogVerbose(@"Initializing GCAppData...");
-//    self = [super init];
-//    if (self) {
-//        // Initialize values
-//        self.surveys = [[NSMutableArray alloc] init];
-//    }
-//    return self;
-//}
+- (id)init
+{
+    DDLogVerbose(@"Initializing GCAppData...");
+    self = [super init];
+    if (self) {
+        // Initialize values
+        self.surveys = [[NSMutableArray alloc] init];
+    }
+    return self;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey
 {

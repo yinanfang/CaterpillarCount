@@ -12,7 +12,27 @@
 #endif
 
 /*
-
+ 
+ // Setup Navigation Controller
+ //    UINavigationController *navigationController = [[UINavigationController alloc] init];
+ //    [navigationController pushViewController:coverViewController animated:YES];
+  
+ 
+ AFNetworking POST and cancel
+ 
+ [manager.operationQueue cancelAllOperations];
+ 
+ /*   OR   ///////////////
+ 
+ AFHTTPRequestOperation *post =[manager POST:nil parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+ //doing something
+ } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+ // error handling.
+ }];
+ //Cancel operation
+ [post cancel];
+ 
+ 
  // Submit Control
  [[self.registerScrollView.btn_Submit rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
 

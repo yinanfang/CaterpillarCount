@@ -33,6 +33,7 @@
 		D48FAA4319D83DB00042DFC6 /* GCNewOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D48FAA4219D83DB00042DFC6 /* GCNewOrderViewController.m */; };
 		D48FAA4619D83DCE0042DFC6 /* GCNewOrderScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D48FAA4519D83DCE0042DFC6 /* GCNewOrderScrollView.m */; };
 		D4B97AAE19EDBEE600F721D6 /* GCAppDataViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B97AAD19EDBEE600F721D6 /* GCAppDataViewModel.m */; };
+		D4B97AB119EDF1B400F721D6 /* GCUserData.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B97AB019EDF1B400F721D6 /* GCUserData.m */; };
 		D4D9B3EE19E302D000547CDF /* GCAppSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D9B3ED19E302D000547CDF /* GCAppSetup.m */; };
 		D4E0CCE019E8196E00500C86 /* mark_check.png in Resources */ = {isa = PBXBuildFile; fileRef = D4E0CCDE19E8196E00500C86 /* mark_check.png */; };
 		D4E0CCE119E8196E00500C86 /* mark_cross.png in Resources */ = {isa = PBXBuildFile; fileRef = D4E0CCDF19E8196E00500C86 /* mark_cross.png */; };
@@ -108,6 +109,8 @@
 		D4B97AAB19EDB2BA00F721D6 /* RecycledMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecycledMethod.h; sourceTree = "<group>"; };
 		D4B97AAC19EDBEE600F721D6 /* GCAppDataViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GCAppDataViewModel.h; path = ViewModel/GCAppDataViewModel.h; sourceTree = "<group>"; };
 		D4B97AAD19EDBEE600F721D6 /* GCAppDataViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCAppDataViewModel.m; path = ViewModel/GCAppDataViewModel.m; sourceTree = "<group>"; };
+		D4B97AAF19EDF1B400F721D6 /* GCUserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GCUserData.h; path = Model/GCUserData.h; sourceTree = "<group>"; };
+		D4B97AB019EDF1B400F721D6 /* GCUserData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCUserData.m; path = Model/GCUserData.m; sourceTree = "<group>"; };
 		D4D9B3EC19E302D000547CDF /* GCAppSetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GCAppSetup.h; path = AppAPI/GCAppSetup.h; sourceTree = "<group>"; };
 		D4D9B3ED19E302D000547CDF /* GCAppSetup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCAppSetup.m; path = AppAPI/GCAppSetup.m; sourceTree = "<group>"; };
 		D4E0CCDE19E8196E00500C86 /* mark_check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mark_check.png; path = Images/mark_check.png; sourceTree = "<group>"; };
@@ -292,6 +295,8 @@
 			children = (
 				D437C2D519EACB0E00F0A9C5 /* GCAppData.h */,
 				D437C2D619EACB0E00F0A9C5 /* GCAppData.m */,
+				D4B97AAF19EDF1B400F721D6 /* GCUserData.h */,
+				D4B97AB019EDF1B400F721D6 /* GCUserData.m */,
 				D4748A2419E5757E000B17E2 /* GCUser.h */,
 				D4748A2519E5757E000B17E2 /* GCUser.m */,
 				D4E0CCE419E82E7F00500C86 /* GCSurvey.h */,
@@ -473,6 +478,7 @@
 				D437C2D719EACB0E00F0A9C5 /* GCAppData.m in Sources */,
 				D48FAA4619D83DCE0042DFC6 /* GCNewOrderScrollView.m in Sources */,
 				D430876719D99736008D92F5 /* GCRegisterScrollView.m in Sources */,
+				D4B97AB119EDF1B400F721D6 /* GCUserData.m in Sources */,
 				D4E0CCE919E82F0800500C86 /* GCOrder.m in Sources */,
 				D43A919719CF9994009AA0C7 /* GCCustomLogFormatters.m in Sources */,
 				D43A919D19CF9D49009AA0C7 /* GCCoverViewController.m in Sources */,

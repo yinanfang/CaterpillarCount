@@ -40,9 +40,6 @@ typedef NS_ENUM(NSInteger, testEnum) {
 #pragma mark - Gesture Recognizer
 FOUNDATION_EXPORT CGFloat const SWIPE_VELOCITY_THRESHOLD;
 
-#pragma mark - Others
-FOUNDATION_EXPORT NSString *const HasShownTour;
-
 // This is the method to access this Singleton class
 + (GCConstant *)sharedInstance;
 

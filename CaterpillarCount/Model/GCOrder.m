@@ -71,10 +71,10 @@
 
 + (NSValueTransformer *)orderPhotoURLJSONTransformer
 {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSURL *url){
-        return url;
-    }reverseBlock:^(NSURL *url){
-        return url;
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSString *localURL){
+        return localURL;
+    }reverseBlock:^(NSString *localURL){
+        return localURL;
     }];
 }
 
