@@ -26,6 +26,7 @@
 		D43A919A19CF9CD2009AA0C7 /* GCConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = D43A919919CF9CD2009AA0C7 /* GCConstant.m */; };
 		D43A919D19CF9D49009AA0C7 /* GCCoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D43A919C19CF9D49009AA0C7 /* GCCoverViewController.m */; };
 		D43A91A019CF9E1E009AA0C7 /* GCCoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = D43A919F19CF9E1E009AA0C7 /* GCCoverView.m */; };
+		D4527FAF19F0543D00DDFCC7 /* leaf.png in Resources */ = {isa = PBXBuildFile; fileRef = D4527FAE19F0543D00DDFCC7 /* leaf.png */; };
 		D46E5F0919D2E4E9002FF1C1 /* GCSurveyScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D46E5F0819D2E4E9002FF1C1 /* GCSurveyScrollView.m */; };
 		D46E5F0C19D2E50C002FF1C1 /* GCSurveyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D46E5F0B19D2E50C002FF1C1 /* GCSurveyViewController.m */; };
 		D4748A2619E5757E000B17E2 /* GCUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D4748A2519E5757E000B17E2 /* GCUser.m */; };
@@ -33,7 +34,6 @@
 		D48FAA4319D83DB00042DFC6 /* GCNewOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D48FAA4219D83DB00042DFC6 /* GCNewOrderViewController.m */; };
 		D48FAA4619D83DCE0042DFC6 /* GCNewOrderScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D48FAA4519D83DCE0042DFC6 /* GCNewOrderScrollView.m */; };
 		D4B97AB719EDF50B00F721D6 /* GCAppViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B97AB619EDF50B00F721D6 /* GCAppViewModel.m */; };
-		D4B97ABA19EEC08F00F721D6 /* GCUserData02.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B97AB919EEC08F00F721D6 /* GCUserData02.m */; };
 		D4B97ABD19EEC34D00F721D6 /* GCUserData.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B97ABC19EEC34D00F721D6 /* GCUserData.m */; };
 		D4D9B3EE19E302D000547CDF /* GCAppSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D9B3ED19E302D000547CDF /* GCAppSetup.m */; };
 		D4E0CCE019E8196E00500C86 /* mark_check.png in Resources */ = {isa = PBXBuildFile; fileRef = D4E0CCDE19E8196E00500C86 /* mark_check.png */; };
@@ -95,6 +95,7 @@
 		D43A919C19CF9D49009AA0C7 /* GCCoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCCoverViewController.m; path = View/GCCoverViewController.m; sourceTree = "<group>"; };
 		D43A919E19CF9E1E009AA0C7 /* GCCoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GCCoverView.h; path = View/GCCoverView.h; sourceTree = "<group>"; };
 		D43A919F19CF9E1E009AA0C7 /* GCCoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCCoverView.m; path = View/GCCoverView.m; sourceTree = "<group>"; };
+		D4527FAE19F0543D00DDFCC7 /* leaf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = leaf.png; path = Images/leaf.png; sourceTree = "<group>"; };
 		D46E5F0719D2E4E9002FF1C1 /* GCSurveyScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GCSurveyScrollView.h; path = View/GCSurveyScrollView.h; sourceTree = "<group>"; };
 		D46E5F0819D2E4E9002FF1C1 /* GCSurveyScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCSurveyScrollView.m; path = View/GCSurveyScrollView.m; sourceTree = "<group>"; };
 		D46E5F0A19D2E50C002FF1C1 /* GCSurveyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GCSurveyViewController.h; path = View/GCSurveyViewController.h; sourceTree = "<group>"; };
@@ -110,8 +111,6 @@
 		D4B97AAB19EDB2BA00F721D6 /* RecycledMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecycledMethod.h; sourceTree = "<group>"; };
 		D4B97AB519EDF50B00F721D6 /* GCAppViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GCAppViewModel.h; path = ViewModel/GCAppViewModel.h; sourceTree = "<group>"; };
 		D4B97AB619EDF50B00F721D6 /* GCAppViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCAppViewModel.m; path = ViewModel/GCAppViewModel.m; sourceTree = "<group>"; };
-		D4B97AB819EEC08F00F721D6 /* GCUserData02.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GCUserData02.h; path = Model/GCUserData02.h; sourceTree = "<group>"; };
-		D4B97AB919EEC08F00F721D6 /* GCUserData02.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCUserData02.m; path = Model/GCUserData02.m; sourceTree = "<group>"; };
 		D4B97ABB19EEC34D00F721D6 /* GCUserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GCUserData.h; path = Model/GCUserData.h; sourceTree = "<group>"; };
 		D4B97ABC19EEC34D00F721D6 /* GCUserData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCUserData.m; path = Model/GCUserData.m; sourceTree = "<group>"; };
 		D4D9B3EC19E302D000547CDF /* GCAppSetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GCAppSetup.h; path = AppAPI/GCAppSetup.h; sourceTree = "<group>"; };
@@ -165,6 +164,7 @@
 		D41F933D19E75BFB0078A88B /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				D4527FAE19F0543D00DDFCC7 /* leaf.png */,
 				D4E0CCDE19E8196E00500C86 /* mark_check.png */,
 				D4E0CCDF19E8196E00500C86 /* mark_cross.png */,
 				D4E0CCE219E81A7100500C86 /* icon_menu.png */,
@@ -300,8 +300,6 @@
 				D437C2D619EACB0E00F0A9C5 /* GCAppData.m */,
 				D4B97ABB19EEC34D00F721D6 /* GCUserData.h */,
 				D4B97ABC19EEC34D00F721D6 /* GCUserData.m */,
-				D4B97AB819EEC08F00F721D6 /* GCUserData02.h */,
-				D4B97AB919EEC08F00F721D6 /* GCUserData02.m */,
 				D4748A2419E5757E000B17E2 /* GCUser.h */,
 				D4748A2519E5757E000B17E2 /* GCUser.m */,
 				D4E0CCE419E82E7F00500C86 /* GCSurvey.h */,
@@ -426,6 +424,7 @@
 				D41F933F19E75C130078A88B /* Checkmark@2x.png in Resources */,
 				D4E0CCE019E8196E00500C86 /* mark_check.png in Resources */,
 				D4FE8E8519D702E000E50E9C /* Images.xcassets in Resources */,
+				D4527FAF19F0543D00DDFCC7 /* leaf.png in Resources */,
 				D4E0CCE319E81A7100500C86 /* icon_menu.png in Resources */,
 				D4E0CCE119E8196E00500C86 /* mark_cross.png in Resources */,
 				D43A916B19CF94D7009AA0C7 /* LaunchScreen.xib in Resources */,
@@ -505,7 +504,6 @@
 				D46E5F0919D2E4E9002FF1C1 /* GCSurveyScrollView.m in Sources */,
 				D43A919119CF993D009AA0C7 /* GCAppAPI.m in Sources */,
 				D43A916319CF94D7009AA0C7 /* main.m in Sources */,
-				D4B97ABA19EEC08F00F721D6 /* GCUserData02.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

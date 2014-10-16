@@ -109,10 +109,7 @@
         self.label_PlantPhoto = [UILabel LabelSubTitleWithString:@"Plant Photo" align:NSTextAlignmentLeft];
         [self addSubview:self.label_PlantPhoto];
         // Photo thumbnail
-        self.entry_PlantPhoto = [[UIImageView alloc] init];
-        self.entry_PlantPhoto.backgroundColor = [UIColor lightGrayColor];
-        self.entry_PlantPhoto.layer.cornerRadius = CornerRadius_General;
-        self.entry_PlantPhoto.clipsToBounds = YES;
+        self.entry_PlantPhoto = [UIImageView ImageViewWithDefaultBackgroundImage:nil];
         [self addSubview:self.entry_PlantPhoto];
         // Photo Place Holder
         self.label_PhotoPlaceHolder = [UILabel LabelSubTitleWithString:@"Capture" align:NSTextAlignmentCenter];
@@ -121,23 +118,6 @@
         // Submit button and alert view
         self.btn_Submit = [FUIButton ButtonWithTitle:@"Submit" inBold:YES];
         [self addSubview:self.btn_Submit];
-        [[self.btn_Submit rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
-            NSLog(@"hit button submit");
-            FUIAlertView *alertView = [[FUIAlertView alloc] initWithTitle:@"Well Done!" message:@"Submitting the data..." delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil, nil];
-            alertView.alertViewStyle = FUIAlertViewStylePlainTextInput;
-            alertView.delegate = self;
-            alertView.titleLabel.textColor = [UIColor cloudsColor];
-            alertView.titleLabel.font = [UIFont boldFlatFontOfSize:16];
-            alertView.messageLabel.textColor = [UIColor cloudsColor];
-            alertView.messageLabel.font = [UIFont flatFontOfSize:14];
-            alertView.backgroundOverlay.backgroundColor = [[UIColor cloudsColor] colorWithAlphaComponent:0.8];
-            alertView.alertContainer.backgroundColor = [UIColor midnightBlueColor];
-            alertView.defaultButtonColor = [UIColor cloudsColor];
-            alertView.defaultButtonShadowColor = [UIColor asbestosColor];
-            alertView.defaultButtonFont = [UIFont boldFlatFontOfSize:16];
-            alertView.defaultButtonTitleColor = [UIColor asbestosColor];
-            [alertView show];
-        }];
     }
     return self;
     
@@ -150,48 +130,48 @@
         [GCAppSetup setConstraints_FillFullScreenWithView:self superview:self.parentController.view];
         // Temp, Time, Date Label
         [self.label_Temp mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.mas_top).with.offset(Padding_Page_Large.top);
-            make.left.equalTo(self.mas_left).with.offset(Padding_Page_Large.left);
+            make.top.equalTo(self.mas_top).with.offset(mas_Padding_Page_Large.top);
+            make.left.equalTo(self.mas_left).with.offset(mas_Padding_Page_Large.left);
         }];
         [self.label_Time mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.mas_top).with.offset(Padding_Page_Large.top);
+            make.top.equalTo(self.mas_top).with.offset(mas_Padding_Page_Large.top);
             make.left.equalTo(self.label_Temp.mas_right);
             make.width.equalTo(self.label_Temp.mas_width);
             make.centerX.equalTo(self.mas_centerX);
         }];
         [self.label_Date mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.mas_top).with.offset(Padding_Page_Large.top);
+            make.top.equalTo(self.mas_top).with.offset(mas_Padding_Page_Large.top);
             make.left.equalTo(self.label_Time.mas_right);
-            make.right.equalTo(self.mas_right).with.offset(Padding_Page_Large.right);
+            make.right.equalTo(self.mas_right).with.offset(mas_Padding_Page_Large.right);
             make.width.equalTo(self.label_Time.mas_width);
         }];
         
         // Temp, Time, Date Entry
         [self.entry_Temp mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.label_Temp.mas_bottom).with.offset(Padding_Page_Small.top);
-            make.left.equalTo(self.mas_left).with.offset(Padding_Page_Large.left);
-            make.bottom.equalTo(self.label_SiteInfo.mas_top).with.offset(Padding_Page_Large.bottom);
+            make.top.equalTo(self.label_Temp.mas_bottom).with.offset(mas_Padding_Page_Small.top);
+            make.left.equalTo(self.mas_left).with.offset(mas_Padding_Page_Large.left);
+            make.bottom.equalTo(self.label_SiteInfo.mas_top).with.offset(mas_Padding_Page_Large.bottom);
         }];
         [self.entry_Time mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.label_Time.mas_bottom).with.offset(Padding_Page_Small.top);
-            make.left.equalTo(self.entry_Temp.mas_right).with.offset(Padding_Page_Small.left);
-            make.bottom.equalTo(self.label_SiteInfo.mas_top).with.offset(Padding_Page_Large.bottom);
-            make.right.equalTo(self.entry_Date.mas_left).with.offset(Padding_Page_Small.right);
+            make.top.equalTo(self.label_Time.mas_bottom).with.offset(mas_Padding_Page_Small.top);
+            make.left.equalTo(self.entry_Temp.mas_right).with.offset(mas_Padding_Page_Small.left);
+            make.bottom.equalTo(self.label_SiteInfo.mas_top).with.offset(mas_Padding_Page_Large.bottom);
+            make.right.equalTo(self.entry_Date.mas_left).with.offset(mas_Padding_Page_Small.right);
             make.width.equalTo(self.entry_Temp.mas_width);
             make.centerX.equalTo(self.mas_centerX);
         }];
         [self.entry_Date mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.label_Date.mas_bottom).with.offset(Padding_Page_Small.top);
-            make.right.equalTo(self.mas_right).with.offset(Padding_Page_Large.right);
-            make.bottom.equalTo(self.label_SiteInfo.mas_top).with.offset(Padding_Page_Large.bottom);
+            make.top.equalTo(self.label_Date.mas_bottom).with.offset(mas_Padding_Page_Small.top);
+            make.right.equalTo(self.mas_right).with.offset(mas_Padding_Page_Large.right);
+            make.bottom.equalTo(self.label_SiteInfo.mas_top).with.offset(mas_Padding_Page_Large.bottom);
             make.width.equalTo(self.entry_Time.mas_width);
         }];
         
         // Site Information
         [self.label_SiteInfo mas_makeConstraints:^(MASConstraintMaker *make) {
             // top is defined by three entries above
-            make.left.equalTo(self.mas_left).with.offset(Padding_Page_Large.left);
-            make.right.equalTo(self.mas_right).with.offset(Padding_Page_Large.right);
+            make.left.equalTo(self.mas_left).with.offset(mas_Padding_Page_Large.left);
+            make.right.equalTo(self.mas_right).with.offset(mas_Padding_Page_Large.right);
         }];
         // Site
         [GCAppSetup setConstraints_PinHorizontallyWithPagePaddingAndTopWithPadding:PagePaddingSmall withView:self.label_Site superview:self upperview:self.label_SiteInfo];
@@ -205,23 +185,23 @@
         
         // Arthropod Order Info
         [self.label_ArthropodOrderInfo mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.entry_Survey.mas_bottom).with.offset(Padding_Page_Large.top);
-            make.left.equalTo(self.mas_left).with.offset(Padding_Page_Large.left);
+            make.top.equalTo(self.entry_Survey.mas_bottom).with.offset(mas_Padding_Page_Large.top);
+            make.left.equalTo(self.mas_left).with.offset(mas_Padding_Page_Large.left);
             make.height.mas_equalTo(20);
         }];
         // Add button
         [self.btn_NewOrderInfo mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.entry_Survey.mas_bottom).with.offset(Padding_Page_Large.top);
+            make.top.equalTo(self.entry_Survey.mas_bottom).with.offset(mas_Padding_Page_Large.top);
             make.left.equalTo(self.label_ArthropodOrderInfo.mas_right);
-            make.right.equalTo(self.mas_right).with.offset(Padding_Page_Large.right);
+            make.right.equalTo(self.mas_right).with.offset(mas_Padding_Page_Large.right);
             make.size.mas_equalTo(CGSizeMake(80, 23));
             //            make.bottom.equalTo(self.mas_bottom);
         }];
         // Order detail table
         [self.orderTableView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.label_ArthropodOrderInfo.mas_bottom).with.offset(Padding_Page_Small.top);
-            make.left.equalTo(self.mas_left).with.offset(Padding_Page_Small.left);   // wrong offset??
-            make.right.equalTo(self.mas_right).with.offset(Padding_Page_Large.right);
+            make.top.equalTo(self.label_ArthropodOrderInfo.mas_bottom).with.offset(mas_Padding_Page_Small.top);
+            make.left.equalTo(self.mas_left).with.offset(mas_Padding_Page_Large.left);   // wrong offset??
+            make.right.equalTo(self.mas_right).with.offset(mas_Padding_Page_Large.right);
             make.height.mas_equalTo(100);
         }];
         
@@ -236,21 +216,21 @@
         // Plant Photo
         [GCAppSetup setConstraints_PinHorizontallyWithPagePaddingAndTopWithPadding:PagePaddingSmall withView:self.label_PlantPhoto superview:self upperview:self.entry_Herbivory];
         [self.entry_PlantPhoto mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.label_PlantPhoto.mas_bottom).with.offset(Padding_Page_Small.top);
+            make.top.equalTo(self.label_PlantPhoto.mas_bottom).with.offset(mas_Padding_Page_Small.top);
             make.centerX.equalTo(self.mas_centerX);
             make.size.mas_equalTo(CGSizeMake(100, 100));
         }];
         [self.label_PhotoPlaceHolder mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.label_PlantPhoto.mas_bottom).with.offset(Padding_Page_Small.top);
+            make.top.equalTo(self.label_PlantPhoto.mas_bottom).with.offset(mas_Padding_Page_Small.top);
             make.centerX.equalTo(self.mas_centerX);
             make.size.mas_equalTo(CGSizeMake(100, 100));
         }];
         [self.btn_Submit mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.entry_PlantPhoto.mas_bottom).with.offset(Padding_Page_Large.top);
-            make.left.equalTo(self.mas_left).with.offset(Padding_Page_Large.left);
-            make.right.equalTo(self.mas_right).with.offset(Padding_Page_Large.right);
+            make.top.equalTo(self.entry_PlantPhoto.mas_bottom).with.offset(mas_Padding_Page_Large.top);
+            make.left.equalTo(self.mas_left).with.offset(mas_Padding_Page_Large.left);
+            make.right.equalTo(self.mas_right).with.offset(mas_Padding_Page_Large.right);
             make.height.mas_equalTo(40);
-            make.bottom.equalTo(self.mas_bottom).with.offset(Padding_Page_Large.bottom);
+            make.bottom.equalTo(self.mas_bottom).with.offset(mas_Padding_Page_Large.bottom);
         }];
         
         self.didSetupConstraints = YES;

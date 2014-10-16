@@ -20,8 +20,12 @@
 #define CornerRadius_General        10.0f
 
 // General Layout Metrics
-#define Padding_Page_Large          UIEdgeInsetsMake(20, 20, -20, -20)
-#define Padding_Page_Small          UIEdgeInsetsMake(5, 5, -5, -5)
+// For MASConstraintMaker
+#define mas_Padding_Page_Large          UIEdgeInsetsMake(20, 20, -20, -20)
+#define mas_Padding_Page_Small          UIEdgeInsetsMake(5, 5, -5, -5)
+#define mas_Padding_Page_Default          UIEdgeInsetsMake(8, 8, -8, -8)
+// For UIKit
+#define Insets_Default              UIEdgeInsetsMake(8, 8, 8, 8)
 #define Insets_Button               UIEdgeInsetsMake(8, 10, 8, 10)
 
 // Table View Configuration

@@ -13,6 +13,37 @@
 
 /*
  
+ 
+ DDLogVerbose(@"trying to set the image");
+ NSString *mediaType = [info objectForKey:UIImagePickerControllerMediaType];
+ UIImage *originalImage, *editedImage, *imageToSave;
+ // Handle a still image capture
+ if (CFStringCompare((CFStringRef) mediaType, kUTTypeImage, 0) == kCFCompareEqualTo) {
+ editedImage = (UIImage *) [info objectForKey:UIImagePickerControllerEditedImage];
+ originalImage =  (UIImage *) [info objectForKey:UIImagePickerControllerOriginalImage];
+ if (editedImage) {
+ imageToSave = editedImage;
+ } else {
+ imageToSave = originalImage;
+ }
+ // Save the image to Camera Roll
+ UIImageWriteToSavedPhotosAlbum(imageToSave, nil, nil, nil);
+ NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES);
+ NSString *documentsDirectory = paths[0];
+ NSString *path = [documentsDirectory stringByAppendingPathComponent:@"testImage.png"];
+ NSData *data = UIImagePNGRepresentation(imageToSave);
+ [data writeToFile:path atomically:YES];
+ }
+ // Handle a movie capture
+ //    if (CFStringCompare ((CFStringRef) mediaType, kUTTypeMovie, 0) == kCFCompareEqualTo) {
+ //        NSString *moviePath = [[info objectForKey: UIImagePickerControllerMediaURL] path];
+ //        if (UIVideoAtPathIsCompatibleWithSavedPhotosAlbum (moviePath)) {
+ //            UISaveVideoAtPathToSavedPhotosAlbum (moviePath, nil, nil, nil);
+ //        }
+ //    }
+ 
+ 
+ 
  // Setup Navigation Controller
  //    UINavigationController *navigationController = [[UINavigationController alloc] init];
  //    [navigationController pushViewController:coverViewController animated:YES];

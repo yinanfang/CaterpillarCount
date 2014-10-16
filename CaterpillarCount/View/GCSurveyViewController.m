@@ -7,13 +7,9 @@
 //
 
 #import "GCSurveyViewController.h"
-#import "GCSurveyScrollView.h"
 #import "GCOrderTableViewCell.h"
-#import "GCNewOrderViewController.h"
 
 @interface GCSurveyViewController ()
-@property GCSurveyScrollView *surveyScrollView;
-
 
 @end
 
@@ -70,8 +66,8 @@
     // Add order button
     [[self.surveyScrollView.btn_NewOrderInfo rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         NSLog(@"add botton tapped");
-        GCNewOrderViewController *newOrderViewController = [[GCNewOrderViewController alloc] init];
-        [self.navigationController pushViewController:newOrderViewController animated:YES];
+        GCNewOrderViewController *orderViewController = [[GCNewOrderViewController alloc] init];
+        [self.navigationController pushViewController:orderViewController animated:YES];
     }];
     
     // Configure Order Table View
@@ -79,8 +75,23 @@
     self.surveyScrollView.orderTableView.delegate = self;
     self.surveyScrollView.orderTableView.dataSource = self;
     
+    // Submit button
+    [[self.surveyScrollView.btn_Submit rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+        NSLog(@"hit button submit");
+    }];
     
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    // Navigation Control
+    self.navigationController.navigationBar.barTintColor = [GCAppAPI getColorWithRGBAinHex:ThemeColor01];
+    self.navigationController.navigationBar.hidden = NO;
     
+    // Reload table view
+    NSLog(@"reload..");
+    [self.surveyScrollView.orderTableView reloadData];
+    [super viewWillAppear:animated];
 }
 
 #pragma mark - UIPickerView Delegate
@@ -110,15 +121,26 @@
 
 
 #pragma mark - UITableView DataSource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3;
+    return [[GCAppViewModel sharedInstance].currentUnsavedOrders count];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *OrderTableIdentifier = @"OrderTableCell";
+    DDLogVerbose(@"cellForRowAtIndexPath...");
+    GCOrderTableViewCell *cell = [self.surveyScrollView.orderTableView dequeueReusableCellWithIdentifier:CellIdentifierForOrderTableViewCell];
+    
+    
+    
+    
+    static NSString *OrderTableIdentifier = CellIdentifierForOrderTableViewCell;
     GCOrderTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:OrderTableIdentifier];
     if (cell == nil) {
         cell = [[GCOrderTableViewCell alloc] init];
@@ -132,11 +154,6 @@
 
 
 #pragma mark - Other View Methods
-- (void)viewWillAppear:(BOOL)animated
-{
-    self.navigationController.navigationBar.barTintColor = [GCAppAPI getColorWithRGBAinHex:ThemeColor01];
-    self.navigationController.navigationBar.hidden = NO;
-}
 //- (BOOL)prefersStatusBarHidden {
 //    return YES;
 //}

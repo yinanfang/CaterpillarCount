@@ -52,7 +52,6 @@
 // App Import
 #import "GCAppSetup.h"
 #import "GCUserData.h"
-#import "GCUserData02.h"
 #import "GCAppConfig.h"
 #import "GCConstant.h"
 #import "GCNetwork.h"
@@ -73,8 +72,8 @@
 + (CGPoint)getCGPointZeroWithStatusbarAndNavigationBar:(UIViewController *)controller;
 + (CGRect)getScreenBoundsDependOnOrientation;
 
-#pragma mark - Network API Calls
-
+#pragma mark - Mantle
++ (id)getMantleModelWithDictionary:(NSDictionary *)dictionary modelClass:(Class)modelClass;
 
 
 

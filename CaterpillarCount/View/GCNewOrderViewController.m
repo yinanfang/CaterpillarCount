@@ -22,11 +22,11 @@
     [GCAppSetup configureNavigationViewController:self withNavigationTitle:@"New Arthropod Order"];
     
     // Add new order scroll view
-    self.singleOrderScrollView = [[GCNewOrderScrollView alloc] initWithParentController:self];
-    [self.singleOrderScrollView setNeedsUpdateConstraints];
-    [self.singleOrderScrollView updateConstraintsIfNeeded];
+    self.orderScrollView = [[GCNewOrderScrollView alloc] initWithParentController:self];
+    [self.orderScrollView setNeedsUpdateConstraints];
+    [self.orderScrollView updateConstraintsIfNeeded];
     
-    [[self.singleOrderScrollView.btn_PhotoPlaceHolder rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+    [[self.orderScrollView.btn_PhotoPlaceHolder rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         NSLog(@"should take picture");
         UIImagePickerController *camera = [[UIImagePickerController alloc] init];
         camera.sourceType = UIImagePickerControllerSourceTypeCamera;
@@ -39,6 +39,21 @@
         [self presentViewController:camera animated:YES completion:nil];
     }];
     
+    [[self.orderScrollView.btn_Submit rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+        NSLog(@"New Order button submit");
+        NSDictionary *newOrder = @{
+                                   @"orderID": @"",
+                                   @"orderName": @"orderName test",
+                                   @"length": @"length test",
+                                   @"count": @"count test",
+                                   @"note": @"notenotenotenotenotenotenotenote test",
+                                   @"orderPhotoLocalURL": self.orderScrollView.btn_PhotoPlaceHolder.titleLabel.text,
+                                   };
+        [GCAppViewModel addCurrentunsavedOrdersWithDictionary:newOrder];
+        [self.navigationController popViewControllerAnimated:YES];
+        NSLog(@"pop...");
+    }];
+    
 }
 
 #pragma mark - UIImagePickerControllerDelegate Delegate
@@ -47,6 +62,7 @@
     DDLogVerbose(@"trying to set the image");
     NSString *mediaType = [info objectForKey:UIImagePickerControllerMediaType];
     UIImage *originalImage, *editedImage, *imageToSave;
+    NSString *imagePath;
     // Handle a still image capture
     if (CFStringCompare((CFStringRef) mediaType, kUTTypeImage, 0) == kCFCompareEqualTo) {
         editedImage = (UIImage *) [info objectForKey:UIImagePickerControllerEditedImage];
@@ -57,23 +73,17 @@
             imageToSave = originalImage;
         }
         // Save the image to Camera Roll
-//        UIImageWriteToSavedPhotosAlbum(imageToSave, nil, nil, nil);
+        UIImageWriteToSavedPhotosAlbum(imageToSave, nil, nil, nil);
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES);
         NSString *documentsDirectory = paths[0];
-        NSString *path = [documentsDirectory stringByAppendingPathComponent:@"testImage.png"];
+        imagePath = [documentsDirectory stringByAppendingPathComponent:@"testImage.png"];
         NSData *data = UIImagePNGRepresentation(imageToSave);
-        [data writeToFile:path atomically:YES];
+        [data writeToFile:imagePath atomically:YES];
     }
-    // Handle a movie capture
-//    if (CFStringCompare ((CFStringRef) mediaType, kUTTypeMovie, 0) == kCFCompareEqualTo) {
-//        NSString *moviePath = [[info objectForKey: UIImagePickerControllerMediaURL] path];
-//        if (UIVideoAtPathIsCompatibleWithSavedPhotosAlbum (moviePath)) {
-//            UISaveVideoAtPathToSavedPhotosAlbum (moviePath, nil, nil, nil);
-//        }
-//    }
  
-    [self.singleOrderScrollView.btn_PhotoPlaceHolder setTitle:@"" forState:UIControlStateNormal];
-    [self.singleOrderScrollView.entry_Photo setImage:[info objectForKey:UIImagePickerControllerEditedImage]];
+    [self.orderScrollView.btn_PhotoPlaceHolder setTitle:imagePath forState:UIControlStateNormal];
+    [self.orderScrollView.btn_PhotoPlaceHolder setTitleColor:[UIColor clearColor] forState:UIControlStateNormal];
+    [self.orderScrollView.entry_Photo setImage:[info objectForKey:UIImagePickerControllerEditedImage]];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

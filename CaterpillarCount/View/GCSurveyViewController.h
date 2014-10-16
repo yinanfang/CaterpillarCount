@@ -7,8 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GCSurveyScrollView.h"
+#import "GCNewOrderViewController.h"
 
 @interface GCSurveyViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDelegate, UITableViewDataSource>
+
+@property GCSurveyScrollView *surveyScrollView;
+@property (strong) NSMutableDictionary
+
 
 @property UIPickerView *picker_Temp;
 @property NSMutableArray *pickerContentArray;
@@ -18,6 +24,9 @@ typedef NS_ENUM(NSInteger, PickerType) {
     PickerType02,
 };
 //@property StoryDisplayStyleMode storyDisplayStyleMode;
+
+
+
 
 @end
 

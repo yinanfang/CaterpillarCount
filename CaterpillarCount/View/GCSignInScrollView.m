@@ -54,10 +54,10 @@
         
         // Login label
         [self.label_Login mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.mas_top).with.offset(Padding_Page_Large.top);
-            make.left.equalTo(self.mas_left).with.offset(Padding_Page_Large.left);
-            make.right.equalTo(self.mas_right).with.offset(Padding_Page_Large.right);
-            make.width.mas_equalTo(ScreenWidth-2*Padding_Page_Large.left);
+            make.top.equalTo(self.mas_top).with.offset(mas_Padding_Page_Large.top);
+            make.left.equalTo(self.mas_left).with.offset(mas_Padding_Page_Large.left);
+            make.right.equalTo(self.mas_right).with.offset(mas_Padding_Page_Large.right);
+            make.width.mas_equalTo(ScreenWidth-2*mas_Padding_Page_Large.left);
         }];
         // Username
         [GCAppSetup setConstraints_PinHorizontallyWithPagePaddingAndTopWithPadding:PagePaddingLarge withView:self.entry_Username superview:self upperview:self.label_Login];
@@ -66,11 +66,11 @@
         
         // Submit Button
         [self.btn_Submit mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.entry_Password.mas_bottom).with.offset(Padding_Page_Large.top);
-            make.left.equalTo(self.mas_left).with.offset(Padding_Page_Large.left);
-            make.right.equalTo(self.mas_right).with.offset(Padding_Page_Large.right);
+            make.top.equalTo(self.entry_Password.mas_bottom).with.offset(mas_Padding_Page_Large.top);
+            make.left.equalTo(self.mas_left).with.offset(mas_Padding_Page_Large.left);
+            make.right.equalTo(self.mas_right).with.offset(mas_Padding_Page_Large.right);
             make.height.mas_equalTo(40);
-            make.bottom.equalTo(self.mas_bottom).with.offset(Padding_Page_Large.bottom);
+            make.bottom.equalTo(self.mas_bottom).with.offset(mas_Padding_Page_Large.bottom);
         }];
         
         self.didSetupConstraints = YES;

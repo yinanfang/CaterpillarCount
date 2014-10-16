@@ -10,4 +10,18 @@
 
 @interface GCOrderTableViewCell : UITableViewCell
 
+// Self
+@property (assign) BOOL didSetupConstraints;
+
+// Cell item
+@property (strong) UIImageView *captureImageView;
+@property (strong) UILabel *label_OrderName, *label_Length, *label_Count;
+
+
+
+
+@property (strong) NSString *orderName;
+@property (strong) NSNumber *length;
+@property (strong) NSNumber *count;
+
 @end

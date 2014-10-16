@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 @class GCSurveyViewController;
 
-@interface GCSurveyScrollView : UIScrollView <UIScrollViewDelegate, UITextFieldDelegate, FUIAlertViewDelegate>
+@interface GCSurveyScrollView : UIScrollView <UIScrollViewDelegate, UITextFieldDelegate>
 // Self
 @property GCSurveyViewController *parentController;
 @property BOOL didSetupConstraints;

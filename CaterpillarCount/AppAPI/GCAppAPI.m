@@ -117,11 +117,17 @@
     return screenBounds ;
 }
 
-
-
-
-#pragma mark - Network API Calls
-
+#pragma mark - Mantle
++ (id)getMantleModelWithDictionary:(NSDictionary *)dictionary modelClass:(Class)modelClass
+{
+    NSError *mantleError = nil;
+    id model = [MTLJSONAdapter modelOfClass:modelClass fromJSONDictionary:dictionary error:&mantleError];
+    DDLogVerbose([model description]);
+    if (mantleError) {
+        DDLogWarn(@"Cannot generate GCUser model!!!");
+    }
+    return model;
+}
 
 
 

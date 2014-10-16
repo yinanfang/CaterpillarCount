@@ -16,7 +16,7 @@
 #pragma mark - Basic Setup
 + (void)setupApplicationWithProductionMode:(BOOL)mode;
 
-#pragma mark - Style, font, size, and 
+#pragma mark - Style, font, size
 + (void)configureNavigationViewController:(UIViewController *)viewcontroller withNavigationTitle:(NSString *)title;
 + (void)configureBackButtonOfNavigationViewController:(UIViewController *)viewcontroller;
 + (void)configureRightButtonOfNavigationViewController:(UIViewController *)viewcontroller;
@@ -27,7 +27,7 @@
 
 @end
 
-
+#pragma mark - UIkit and Foundation extention
 @interface UILabel (AdvancedInitialization)
 + (UILabel *)LabelTitleWithString:(NSString *)title align:(NSTextAlignment)alignment;
 + (UILabel *)LabelSubTitleWithString:(NSString *)title align:(NSTextAlignment)alignment;
@@ -44,3 +44,13 @@
 @interface UITextField (AdvancedInitialization)
 + (UITextField *)TextFieldWithPlaceHolder:(NSString *)placeHolder keyboardType:(UIKeyboardType)keyboardType;
 @end
+@interface UIImageView (AdvancedInitialization)
++ (UIImageView *)ImageViewWithDefaultBackgroundImage:(UIImage *)image;
+@end
+
+
+
+
+
+
+

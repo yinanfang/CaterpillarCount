@@ -75,7 +75,7 @@
     DDLogInfo(@"Logging is setup (\"%@\")", [fileLogger.logFileManager logsDirectory]);
 }
 
-#pragma mark - Style, font, size, and
+#pragma mark - Style, font, size
 + (void)configureNavigationViewController:(UIViewController *)viewcontroller withNavigationTitle:(NSString *)title
 {
     // Set Title
@@ -131,19 +131,19 @@
 {
     [view mas_makeConstraints:^(MASConstraintMaker *make) {
         if (paddingOption==PagePaddingLarge) {
-            make.top.equalTo(upperview.mas_bottom).with.offset(Padding_Page_Large.top);
+            make.top.equalTo(upperview.mas_bottom).with.offset(mas_Padding_Page_Large.top);
         }else{
-            make.top.equalTo(upperview.mas_bottom).with.offset(Padding_Page_Small.top);
+            make.top.equalTo(upperview.mas_bottom).with.offset(mas_Padding_Page_Small.top);
         }
-        make.left.equalTo(superview.mas_left).with.offset(Padding_Page_Large.left);
-        make.right.equalTo(superview.mas_right).with.offset(Padding_Page_Large.right);
+        make.left.equalTo(superview.mas_left).with.offset(mas_Padding_Page_Large.left);
+        make.right.equalTo(superview.mas_right).with.offset(mas_Padding_Page_Large.right);
     }];
 
 }
 
 @end
 
-
+#pragma mark - UIkit and Foundation extention
 @implementation UILabel (AdvancedInitialization)
 + (UILabel *)LabelTitleWithString:(NSString *)title align:(NSTextAlignment)alignment
 {
@@ -226,6 +226,22 @@
     return textField;
 }
 @end
+
+@implementation UIImageView (AdvancedInitialization)
++ (UIImageView *)ImageViewWithDefaultBackgroundImage:(UIImage *)image
+{
+    UIImageView *imageView = [[UIImageView alloc] init];
+    imageView.backgroundColor = [UIColor lightGrayColor];
+    if (image) {
+        [imageView setImage:image];
+    }
+    imageView.contentMode = UIViewContentModeScaleAspectFill;
+    imageView.layer.cornerRadius = CornerRadius_General;
+    imageView.clipsToBounds = YES;
+    return imageView;
+}
+@end
+
 
 
 

@@ -13,7 +13,8 @@
 
 // App Data
 @property GCAppData *appData;
-@property (copy) GCUserData *userData;
+@property (copy) GCUserData *currentUserData;
+@property NSMutableArray *currentUnsavedOrders;
 //@property GCUserData02 *userData;
 
 // Accessor for Singleton class
@@ -23,9 +24,10 @@
 + (void)getAppDataFromNSUserDefaultsAndUpdateViewModel;
 + (void)saveAppDataToNSUserDefaults;
 
-//+ (GCAppData *)getAppDataFromMemory;
-//+ (GCAppData *)getAppDataFromNSUserDefaults;
+#pragma mark - User data
 + (void)updateUserWithGCUser:(NSDictionary *)userDictionary;
++ (void)addCurrentunsavedOrdersWithDictionary:(NSDictionary *)orderDictionary;
+
 
 @end
 

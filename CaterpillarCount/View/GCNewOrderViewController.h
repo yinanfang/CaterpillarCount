@@ -12,7 +12,10 @@
 
 @interface GCNewOrderViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
-@property GCNewOrderScrollView *singleOrderScrollView;
+@property GCNewOrderScrollView *orderScrollView;
+
+//@property GCOrder *singleOrder;
+
 
 
 @end

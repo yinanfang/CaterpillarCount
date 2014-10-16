@@ -42,7 +42,7 @@
         //                                               self.registerScrollView.entry_NameLast.text],
         //                                     };
         NSDictionary *parameters = @{
-                                     @"email": @"yinan_fang@hotmail.com143",
+                                     @"email": @"yinan_fang@hotmail.com144",
                                      @"password": @"asdfasdf",
                                      @"name": @"Yinan Fang"
                                      };
