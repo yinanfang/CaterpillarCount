@@ -12,8 +12,8 @@
 
 @interface GCSurveyViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDelegate, UITableViewDataSource>
 
-@property GCSurveyScrollView *surveyScrollView;
-@property (strong) NSMutableDictionary
+@property (strong) GCSurveyScrollView *surveyScrollView;
+@property (strong) NSMutableDictionary *offscreenCells;
 
 
 @property UIPickerView *picker_Temp;

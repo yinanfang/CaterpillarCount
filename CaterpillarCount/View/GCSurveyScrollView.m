@@ -202,7 +202,7 @@
             make.top.equalTo(self.label_ArthropodOrderInfo.mas_bottom).with.offset(mas_Padding_Page_Small.top);
             make.left.equalTo(self.mas_left).with.offset(mas_Padding_Page_Large.left);   // wrong offset??
             make.right.equalTo(self.mas_right).with.offset(mas_Padding_Page_Large.right);
-            make.height.mas_equalTo(100);
+            make.height.mas_equalTo(300);
         }];
         
         // Plant Information

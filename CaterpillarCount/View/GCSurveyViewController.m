@@ -72,6 +72,7 @@
     
     // Configure Order Table View
 //    self.surveyScrollView.orderTableView.allowsSelection = YES;
+    self.surveyScrollView.orderTableView.estimatedRowHeight = UITableViewAutomaticDimension;
     self.surveyScrollView.orderTableView.delegate = self;
     self.surveyScrollView.orderTableView.dataSource = self;
     
@@ -134,22 +135,32 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    DDLogVerbose(@"cellForRowAtIndexPath...");
+    NSLog(@"cellForRowAtIndexPath...");
     GCOrderTableViewCell *cell = [self.surveyScrollView.orderTableView dequeueReusableCellWithIdentifier:CellIdentifierForOrderTableViewCell];
-    
-    
-    
-    
-    static NSString *OrderTableIdentifier = CellIdentifierForOrderTableViewCell;
-    GCOrderTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:OrderTableIdentifier];
-    if (cell == nil) {
-        cell = [[GCOrderTableViewCell alloc] init];
-    }
-    // Customize cell
-    
+    [cell setNeedsUpdateConstraints];
+    [cell updateConstraintsIfNeeded];
     return cell;
-    
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"heightForRowAtIndexPath");
+    GCOrderTableViewCell *cell = self.offscreenCells[CellIdentifierForOrderTableViewCell];
+    if (!cell) {
+        cell = [[GCOrderTableViewCell alloc] init];
+        [self.offscreenCells setObject:cell forKey:CellIdentifierForOrderTableViewCell];
+    }
+    [cell setNeedsUpdateConstraints];
+    [cell updateConstraintsIfNeeded];
+    cell.bounds = CGRectMake(0.0f, 0.0f, CGRectGetWidth(self.surveyScrollView.orderTableView.bounds), CGRectGetHeight(cell.bounds));
+    [cell setNeedsLayout];
+    [cell layoutIfNeeded];
+    CGFloat height = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height;
+    height += 1;
+    NSLog(@"cell # %ld; cell height: %f", (long)indexPath.row, height);
+    return 80;
+}
+
 
 
 
