@@ -143,6 +143,8 @@
     GCOrderTableViewCell *cell = [self.surveyScrollView.orderTableView dequeueReusableCellWithIdentifier:CellIdentifierForOrderTableViewCell];
     [cell setNeedsUpdateConstraints];
     [cell updateConstraintsIfNeeded];
+    [cell setNeedsLayout];
+    [cell layoutIfNeeded];
     return cell;
 }
 
@@ -169,8 +171,8 @@
     NSLog(@"compression height: %@", [NSValue valueWithCGSize:s]);
     NSLog(@"expandable height: %@", [NSValue valueWithCGSize:s]);
 
-//    return s.height + 1;
-    return 130;
+    return s.height + 1;
+//    return 130;
     
     
 //    GCOrderTableViewCell *cell = self.offscreenCells[CellIdentifierForOrderTableViewCell];

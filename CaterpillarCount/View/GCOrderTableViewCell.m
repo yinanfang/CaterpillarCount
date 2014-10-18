@@ -15,11 +15,8 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
 //        self.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-//        self.contentView.translatesAutoresizingMaskIntoConstraints = NO;
-
         // Thumbnail picture
         self.captureImageView = [UIImageView ImageViewWithDefaultBackgroundImage:nil];
-        self.captureImageView.frame = CGRectMake(0, 0, 100, 100);
         [self.captureImageView setImage:[UIImage imageNamed:@"Checkmark"]];
         [self.contentView addSubview:self.captureImageView];
         // Order Name
@@ -49,7 +46,7 @@
         [self.captureImageView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.contentView.mas_top).with.offset(mas_Padding_Page_Default.top);
             make.leading.equalTo(self.contentView.mas_left).with.offset(mas_Padding_Page_Default.left);
-            make.bottom.equalTo(self.contentView.mas_bottom).with.offset(mas_Padding_Page_Default.bottom);
+            make.bottom.equalTo(self.contentView.mas_bottom).with.offset(mas_Padding_Page_Default.bottom).priority(999);
             make.height.mas_equalTo(100);
             make.width.mas_equalTo(100);
 
@@ -93,7 +90,7 @@
 //        }];
         self.didSetupConstraints = YES;
     }
-    self.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+//    self.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     [super updateConstraints];
 }
 
