@@ -72,7 +72,8 @@
     
     // Configure Order Table View
 //    self.surveyScrollView.orderTableView.allowsSelection = YES;
-    self.surveyScrollView.orderTableView.estimatedRowHeight = UITableViewAutomaticDimension;
+//    self.surveyScrollView.orderTableView.estimatedRowHeight = UITableViewAutomaticDimension;
+    [self.surveyScrollView.orderTableView registerClass:[GCOrderTableViewCell class] forCellReuseIdentifier: CellIdentifierForOrderTableViewCell];
     self.surveyScrollView.orderTableView.delegate = self;
     self.surveyScrollView.orderTableView.dataSource = self;
     
@@ -80,6 +81,9 @@
     [[self.surveyScrollView.btn_Submit rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         NSLog(@"hit button submit");
     }];
+    
+    
+//    ui
     
 }
 
@@ -145,23 +149,64 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"heightForRowAtIndexPath");
-    GCOrderTableViewCell *cell = self.offscreenCells[CellIdentifierForOrderTableViewCell];
-    if (!cell) {
-        cell = [[GCOrderTableViewCell alloc] init];
-        [self.offscreenCells setObject:cell forKey:CellIdentifierForOrderTableViewCell];
-    }
+    static GCOrderTableViewCell *cell;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        cell = [self.surveyScrollView.orderTableView dequeueReusableCellWithIdentifier: CellIdentifierForOrderTableViewCell];
+    });
+
+    cell.bounds = CGRectMake(0.0f, 0.0f, self.surveyScrollView.orderTableView.bounds.size.width, cell.bounds.size.height);
+    cell.contentView.bounds = cell.bounds;
     [cell setNeedsUpdateConstraints];
     [cell updateConstraintsIfNeeded];
-    cell.bounds = CGRectMake(0.0f, 0.0f, CGRectGetWidth(self.surveyScrollView.orderTableView.bounds), CGRectGetHeight(cell.bounds));
     [cell setNeedsLayout];
     [cell layoutIfNeeded];
-    CGFloat height = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height;
-    height += 1;
-    NSLog(@"cell # %ld; cell height: %f", (long)indexPath.row, height);
-    return 80;
+    NSLog(@"cell.bounds: %@", [NSValue valueWithCGRect:cell.bounds]);
+
+    CGSize s = [cell.contentView systemLayoutSizeFittingSize: UILayoutFittingCompressedSize];
+    NSLog(@"image view height: %@", [NSValue valueWithCGRect:cell.captureImageView.bounds]);
+
+    NSLog(@"compression height: %@", [NSValue valueWithCGSize:s]);
+    NSLog(@"expandable height: %@", [NSValue valueWithCGSize:s]);
+
+//    return s.height + 1;
+    return 130;
+    
+    
+//    GCOrderTableViewCell *cell = self.offscreenCells[CellIdentifierForOrderTableViewCell];
+//    if (!cell) {
+//        cell = [[GCOrderTableViewCell alloc] init];
+//        [self.offscreenCells setObject:cell forKey:CellIdentifierForOrderTableViewCell];
+//    }
+//    [cell setNeedsUpdateConstraints];
+//    [cell updateConstraintsIfNeeded];
+////    [cell setNeedsLayout];
+////    [cell layoutIfNeeded];
+//    NSLog(@"after constratintcell bounds: %@", [NSValue valueWithCGRect:cell.contentView.bounds]);
+//    NSLog(@"cell # %ld; cell height: %f", (long)indexPath.row, [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height);
+//
+//    
+//    
+//    
+//    cell.bounds = CGRectMake(0.0f, 0.0f, CGRectGetWidth(self.surveyScrollView.orderTableView.bounds), CGRectGetHeight(cell.bounds));
+//    NSLog(@"set bounds.. bounds: %@", [NSValue valueWithCGRect:cell.bounds]);
+//
+//    
+//    [cell setNeedsLayout];
+//    [cell layoutIfNeeded];
+//    CGFloat height = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height;
+//    NSLog(@"cell # %ld; cell height: %f", (long)indexPath.row, height);
+//    NSLog(@"cell bounds: %@", [NSValue valueWithCGRect:cell.contentView.bounds]);
+//    NSLog(@"label dimension: %@", [NSValue valueWithCGRect:cell.captureImageView.bounds]);
+//
+//    height += 1;
+//    return 88;
 }
 
-
+//- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    return UITableViewAutomaticDimension;
+//}
 
 
 #pragma mark - Other View Methods
