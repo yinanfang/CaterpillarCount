@@ -14,7 +14,7 @@
 
 @property GCUser *user;
 @property NSMutableArray *surveys;
-
+@property NSMutableArray *sites;
 
 
 @end

@@ -17,6 +17,7 @@
     if (self) {
         // Initialize values
         self.surveys = [[NSMutableArray alloc] init];
+        self.sites = [NSMutableArray new];
     }
     return self;
 }
@@ -26,6 +27,7 @@
     return @{
              @"user": @"user",
              @"surveys": @"surveys",
+             @"sites": @"sites",
              };
 }
 

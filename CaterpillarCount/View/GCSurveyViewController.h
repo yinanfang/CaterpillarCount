@@ -13,11 +13,10 @@
 @interface GCSurveyViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDelegate, UITableViewDataSource>
 
 @property (strong) GCSurveyScrollView *surveyScrollView;
-//@property (strong) NSMutableDictionary *offscreenCells;
 
 
 @property UIPickerView *picker_Temp;
-@property NSMutableArray *pickerContentArray;
+//@property NSMutableArray *pickerContentArray;
 
 typedef NS_ENUM(NSInteger, PickerType) {
     PickerType01,

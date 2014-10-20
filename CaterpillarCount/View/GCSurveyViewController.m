@@ -21,7 +21,10 @@
     
     // UI Navigation Bar
     [GCAppSetup configureNavigationViewController:self withNavigationTitle:@"Caterpillars Count"];
-    [GCAppSetup configureRightButtonOfNavigationViewController:self];
+    UIButton *rightButton = [GCAppSetup configureRightButtonOfNavigationViewController:self];
+    [[rightButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+        DDLogVerbose(@"hit right button");
+    }];
     
     // Add Survey View
     self.surveyScrollView = [[GCSurveyScrollView alloc] initWithParentController:self];
@@ -39,8 +42,8 @@
         make.right.equalTo(self.view.mas_right);
         make.bottom.mas_equalTo(self.picker_Temp.frame.size.height);
     }];
-    self.pickerContentArray = [[NSMutableArray alloc] init];
-    self.pickerContentArray = [@[@"Below 40F", @"40F - 50F", @"50F - 60F", @"60F - 70F", @"70F - 80F", @"80F - 90F", @"90F - 100F", @"Above 100F"] mutableCopy];
+//    self.pickerContentArray = [[NSMutableArray alloc] init];
+//    self.pickerContentArray = [@[@"Below 40F", @"40F - 50F", @"50F - 60F", @"60F - 70F", @"70F - 80F", @"80F - 90F", @"90F - 100F", @"Above 100F"] mutableCopy];
     self.picker_Temp.delegate = self;
     self.picker_Temp.dataSource = self;
     // Show and hide motion
@@ -80,6 +83,7 @@
     // Submit button
     [[self.surveyScrollView.btn_Submit rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         NSLog(@"hit button submit");
+        [GCAppViewModel saveAppDataToNSUserDefaults];
     }];
     
     
@@ -102,7 +106,12 @@
 #pragma mark - UIPickerView Delegate
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-    [self.surveyScrollView.entry_Temp setTitle:self.pickerContentArray[row] forState:UIControlStateNormal];
+    NSMutableArray *pickerContent;
+    if (pickerView == self.picker_Temp) {
+        pickerContent = [GCStore sharedInstance].temperatureRanges;
+        [self.surveyScrollView.entry_Temp setTitle:pickerContent[row] forState:UIControlStateNormal];
+    }
+    
 }
 
 #pragma mark - UIPickerView DataSource
@@ -114,12 +123,22 @@
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
-    return self.pickerContentArray.count;
+    NSMutableArray *pickerContent;
+    if (pickerView == self.picker_Temp) {
+        pickerContent = [GCStore sharedInstance].temperatureRanges;
+        return pickerContent.count;
+    }
+    return 0;
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-    return self.pickerContentArray[row];
+    NSMutableArray *pickerContent;
+    if (pickerView == self.picker_Temp) {
+        pickerContent = [GCStore sharedInstance].temperatureRanges;
+        return pickerContent[row];
+    }
+    return @"";
 } 
 
 #pragma mark - UITableView Delegate

@@ -104,7 +104,7 @@
     }];
 }
 
-+ (void)configureRightButtonOfNavigationViewController:(UIViewController *)viewcontroller
++ (UIButton *)configureRightButtonOfNavigationViewController:(UIViewController *)viewcontroller
 {
     // Back Button
     UIButton *rightButton = [[UIButton alloc] initWithFrame: CGRectMake(0, 0, 20.0f, 30.0f)];
@@ -113,9 +113,7 @@
     UIBarButtonItem *rightButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightButton];
     viewcontroller.navigationItem.rightBarButtonItem = rightButtonItem;
     viewcontroller.navigationController.interactivePopGestureRecognizer.delegate = (id<UIGestureRecognizerDelegate>)self;
-    [[rightButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
-        [viewcontroller.navigationController popViewControllerAnimated:YES];
-    }];
+    return rightButton;
 }
 
 + (void)setConstraints_FillFullScreenWithView:(UIView *)view superview:(UIView *)superview

@@ -10,5 +10,13 @@
 
 @interface GCStore : NSObject
 
+// Accessor for Singleton class
++ (GCStore *)sharedInstance;
+
+// Store Info
+@property NSMutableArray *temperatureRanges;
+@property NSMutableArray *circles;
+@property NSMutableArray *surveyStrings;
+@property NSMutableArray *arthropodOrder;
 
 @end

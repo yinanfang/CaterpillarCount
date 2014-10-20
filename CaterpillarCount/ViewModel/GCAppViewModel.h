@@ -13,7 +13,7 @@
 
 // App Data
 @property GCAppData *appData;
-@property (copy) GCUserData *currentUserData;
+@property GCUserData *currentUserData;
 @property NSMutableArray *currentUnsavedOrders;
 //@property GCUserData02 *userData;
 

@@ -15,7 +15,7 @@
 // Font and Size
 #define FontSize_h1                 18.0f
 #define FontSize_h2                 16.0f
-#define FontSize_p1                 16.0f
+#define FontSize_p1                 12.0f
 #define WidthForEntryfieldBorder    1.0f
 #define CornerRadius_General        10.0f
 

@@ -45,7 +45,7 @@
         DDLogVerbose(@"Updating app data...");
         GCAppData *appData_decoded = [NSKeyedUnarchiver unarchiveObjectWithData:appData_encoded];
         appViewModel.appData = appData_decoded;
-        appViewModel.currentUserData = appViewModel.appData.allUserData[appViewModel.appData.lastUserID];
+        appViewModel.currentUserData = [appViewModel.appData.allUserData[appViewModel.appData.lastUserID] copy];
     } else {
         DDLogVerbose(@"There's not appData...");
 //        NSData *appData_encoded = [NSKeyedArchiver archivedDataWithRootObject:appViewModel.appData];
@@ -62,15 +62,7 @@
 {
     DDLogVerbose(@"Saveing app data...");
     GCAppViewModel *appViewModel = [GCAppViewModel sharedInstance];
-//    [appViewModel.appData.allUserData setObject:appViewModel.userData forKey:appViewModel.appData.lastUserID];
     appViewModel.appData.allUserData[appViewModel.appData.lastUserID] = appViewModel.currentUserData;
-//    // Init GCUser
-//    NSError *mantleError = nil;
-//    GCUserData *userData = [MTLJSONAdapter modelOfClass:[GCUser class] fromJSONDictionary:userDictionary error:&mantleError];
-//    DDLogVerbose([user description]);
-//    if (mantleError) {
-//        DDLogWarn(@"Cannot generate GCUser model!!!");
-//    }
     DDLogVerbose(@"App Data Current value: %@", [appViewModel.appData description]);
     DDLogVerbose(@"App Data Current valuein JSON: %@", [MTLJSONAdapter JSONDictionaryFromModel:appViewModel.appData]);
     NSData *appData_encoded = [NSKeyedArchiver archivedDataWithRootObject:appViewModel.appData];

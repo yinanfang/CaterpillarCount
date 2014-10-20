@@ -19,7 +19,7 @@
 #pragma mark - Style, font, size
 + (void)configureNavigationViewController:(UIViewController *)viewcontroller withNavigationTitle:(NSString *)title;
 + (void)configureBackButtonOfNavigationViewController:(UIViewController *)viewcontroller;
-+ (void)configureRightButtonOfNavigationViewController:(UIViewController *)viewcontroller;
++ (UIButton *)configureRightButtonOfNavigationViewController:(UIViewController *)viewcontroller;
 
 + (void)setConstraints_FillFullScreenWithView:(UIView *)view superview:(UIView *)superview;
 + (void)setConstraints_PinHorizontallyWithPagePaddingAndTopWithPadding:(PagePaddingOption)paddingOption withView:(UIView *)view superview:(UIView *)superview upperview:(UIView *)upperview;
