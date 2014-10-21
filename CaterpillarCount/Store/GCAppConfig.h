@@ -9,15 +9,23 @@
 #import <Foundation/Foundation.h>
 
 // Theme Color
-#define ThemeColor01                0x355D3DFF
+#define ThemeColor01                0x355D3DFF  // Green
 #define ThemeColor01_Variation01    0x113C1BFF
+#define WhiteFading                 0xFFFFFF45  //
 
 // Font and Size
-#define FontSize_h1                 18.0f
-#define FontSize_h2                 16.0f
-#define FontSize_p1                 12.0f
+#define Font_Logo                   @"Chalkduster"
+#define Font_Title                  @"AppleGothic"
+#define Font_Paragraph              @"AppleGothic"
+#define FontSize_H1                 18.0f
+#define FontSize_H2                 16.0f
+#define FontSize_P1                 12.0f
 #define WidthForEntryfieldBorder    1.0f
 #define CornerRadius_General        10.0f
+
+// Animation
+#define AnimationDuration_Short     0.25
+#define AnimationDelay_Short        0
 
 // General Layout Metrics
 // For MASConstraintMaker
@@ -26,7 +34,7 @@
 #define mas_Padding_Page_Default          UIEdgeInsetsMake(8, 8, -8, -8)
 // For UIKit
 #define Insets_Default              UIEdgeInsetsMake(8, 8, 8, 8)
-#define Insets_Button               UIEdgeInsetsMake(8, 10, 8, 10)
+#define Insets_Button               UIEdgeInsetsMake(8, 8, 8, 8)
 
 // Table View Configuration
 #define CellIdentifierForOrderTableViewCell @"OrderTableViewCellIdentifier"

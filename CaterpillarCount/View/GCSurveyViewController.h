@@ -15,7 +15,7 @@
 @property (strong) GCSurveyScrollView *surveyScrollView;
 
 
-@property UIPickerView *picker_Temp;
+@property UIPickerView *picker_Generic;
 //@property NSMutableArray *pickerContentArray;
 
 typedef NS_ENUM(NSInteger, PickerType) {

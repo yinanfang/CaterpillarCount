@@ -147,7 +147,7 @@
 {
     UILabel *label = [[UILabel alloc] init];
     label.textAlignment = alignment;
-    [label setFont:[UIFont fontWithName:@"Helvetica-Bold" size:FontSize_h1]];
+    [label setFont:[UIFont fontWithName:@"Helvetica-Bold" size:FontSize_H1]];
     [label setBackgroundColor:[UIColor clearColor]];
     [label setTextColor:[GCAppAPI getColorWithRGBAinHex:ThemeColor01]];
     [label setText:title];
@@ -158,7 +158,7 @@
 {
     UILabel *label = [[UILabel alloc] init];
     label.textAlignment = alignment;
-    [label setFont:[UIFont fontWithName:@"Helvetica" size:FontSize_p1]];
+    [label setFont:[UIFont fontWithName:@"Helvetica" size:FontSize_P1]];
     [label setBackgroundColor:[UIColor clearColor]];
     [label setTextColor:[GCAppAPI getColorWithRGBAinHex:ThemeColor01]];
     [label setText:title];
@@ -175,9 +175,9 @@
     [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [button setTitle:title forState:UIControlStateNormal];
     if (IsBold) {
-        button.titleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:FontSize_p1];
+        button.titleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:FontSize_P1];
     }else{
-        button.titleLabel.font = [UIFont fontWithName:@"Helvetica" size:FontSize_p1];
+        button.titleLabel.font = [UIFont fontWithName:@"Helvetica" size:FontSize_P1];
     }
     button.contentHorizontalAlignment = horizontalAlign;
     button.layer.borderWidth = WidthForEntryfieldBorder;
@@ -197,9 +197,9 @@
     button.shadowHeight = 1.0f;
     button.cornerRadius = 6.0f;
     if (IsBold) {
-        button.titleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:FontSize_p1];
+        button.titleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:FontSize_P1];
     }else{
-        button.titleLabel.font = [UIFont fontWithName:@"Helvetica" size:FontSize_p1];
+        button.titleLabel.font = [UIFont fontWithName:@"Helvetica" size:FontSize_P1];
     }
     [button setTitle:title forState:UIControlStateNormal];
     [button setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal];
@@ -213,7 +213,7 @@
 {
     UITextField *textField = [[UITextField alloc] init];
     textField.borderStyle = UITextBorderStyleRoundedRect;
-    textField.font = [UIFont systemFontOfSize:FontSize_p1];
+    textField.font = [UIFont systemFontOfSize:FontSize_P1];
     textField.placeholder = placeHolder;
     textField.autocorrectionType = UITextAutocorrectionTypeYes;
     textField.keyboardType = keyboardType;
