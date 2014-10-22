@@ -14,12 +14,15 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
+        DDLogWarn(@"initWithStyle");
         // Thumbnail picture
         self.captureImageView = [UIImageView ImageViewWithDefaultBackgroundImage:nil];
         [self.captureImageView setImage:[UIImage imageNamed:@"Checkmark"]];
         [self.contentView addSubview:self.captureImageView];
         // Order Name
-        self.label_OrderName = [UILabel LabelSubTitleWithString:@"Order Name" align:NSTextAlignmentLeft];
+        self.label_OrderName = [UILabel LabelSubTitleWithString:@"test message that should be ignore but is quite long, which is good for testing." align:NSTextAlignmentLeft];
+        self.label_OrderName.numberOfLines = 0;
+        self.label_OrderName.lineBreakMode = NSLineBreakByTruncatingTail;
         self.label_OrderName.backgroundColor = [UIColor blueColor];
         [self.contentView addSubview:self.label_OrderName];
         // Length
@@ -35,6 +38,7 @@
         self.label_Notes.numberOfLines = 0;
         self.label_Notes.backgroundColor = [UIColor blackColor];
         [self.contentView addSubview:self.label_Notes];
+        
         
         // Add and Minus Button
         self.btn_Add = [FUIButton ButtonWithTitle:@"+" inBold:YES];
@@ -59,8 +63,7 @@
             make.top.equalTo(self.contentView.mas_top).with.offset(mas_Padding_Page_Small.top);
             make.left.equalTo(self.contentView.mas_left).with.offset(mas_Padding_Page_Small.left);
             make.right.equalTo(self.contentView.mas_right).offset(mas_Padding_Page_Small.right);
-            
-            
+            make.bottom.equalTo(self.contentView.mas_bottom).offset(mas_Padding_Page_Small.bottom);
         }];
         
 //        [self.captureImageView setContentCompressionResistancePriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisVertical];
@@ -120,6 +123,8 @@
     [super layoutSubviews];
     [self.contentView setNeedsLayout];
     [self.contentView layoutIfNeeded];
+    
+    self.label_OrderName.preferredMaxLayoutWidth = CGRectGetWidth(self.label_OrderName.frame);
 }
 
 // Other default method

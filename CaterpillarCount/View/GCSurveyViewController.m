@@ -174,12 +174,17 @@
 
     cell.bounds = CGRectMake(0.0f, 0.0f, self.surveyScrollView.orderTableView.bounds.size.width, cell.bounds.size.height);
     cell.contentView.bounds = cell.bounds;
+    DDLogWarn(@"%@", cell.label_OrderName.text);
     [cell setNeedsUpdateConstraints];
     [cell updateConstraintsIfNeeded];
-    [cell setNeedsLayout];
-    [cell layoutIfNeeded];
+    
     NSLog(@"cell.bounds: %@", [NSValue valueWithCGRect:cell.bounds]);
 
+    
+    
+    [cell setNeedsLayout];
+    [cell layoutIfNeeded];
+    
     CGSize s = [cell.contentView systemLayoutSizeFittingSize: UILayoutFittingCompressedSize];
     NSLog(@"image view height: %@", [NSValue valueWithCGRect:cell.captureImageView.bounds]);
 
