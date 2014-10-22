@@ -86,8 +86,7 @@
         }];
         // Order details table
         self.orderTableView = [[UITableView alloc] init];
-        [self.orderTableView registerClass:[GCOrderTableViewCell class] forCellReuseIdentifier:CellIdentifierForOrderTableViewCell];
-//        self.orderTableView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+        self.orderTableView.separatorInset = UIEdgeInsetsZero;
         [self addSubview:self.orderTableView];
         
         // Plant Information

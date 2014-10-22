@@ -70,8 +70,6 @@
     }];
     
     // Configure Order Table View
-//    self.surveyScrollView.orderTableView.allowsSelection = YES;
-//    self.surveyScrollView.orderTableView.estimatedRowHeight = UITableViewAutomaticDimension;
     [self.surveyScrollView.orderTableView registerClass:[GCOrderTableViewCell class] forCellReuseIdentifier: CellIdentifierForOrderTableViewCell];
     self.surveyScrollView.orderTableView.delegate = self;
     self.surveyScrollView.orderTableView.dataSource = self;
