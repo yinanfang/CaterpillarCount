@@ -13,6 +13,28 @@
 
 /*
  
+ - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event
+ {
+ UIView *result = nil;
+ for (UIView *child in self.subviews)
+ if ([child pointInside:point withEvent:event])
+ if ((result = [child hitTest:point withEvent:event]) != nil)
+ break;
+ 
+ return result;
+ }
+ 
+ Note: This is only useful if you really do not need any touch events in the UIScrollView because even the scrolling drag touch events will be ignored and send to the UIViewController. If you want to be more selective, e.g. just pass the touchesEnded event on to the parents via:
+ 
+ -(void) touchesEnded: (NSSet *) touches withEvent: (UIEvent *) event
+ {
+ // Pass to parent
+ [super touchesEnded:touches withEvent:event];
+ [self.nextResponder touchesEnded:touches withEvent:event];
+ }
+ 
+ 
+ 
  [self.captureImageView setContentCompressionResistancePriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisVertical];
  
  

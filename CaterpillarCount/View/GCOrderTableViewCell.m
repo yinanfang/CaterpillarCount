@@ -20,15 +20,12 @@
         [self.captureImageView setImage:[UIImage imageNamed:@"Checkmark"]];
         [self.contentView addSubview:self.captureImageView];
         // Order Name
-        self.label_OrderName = [UILabel LabelSubTitleWithString:@"test message that should be ignore but is quite long, which is good for testing. Really really good!!Really really good!!Really really good!!Really really good!!Really really good!!" align:NSTextAlignmentLeft];
+        self.label_OrderName = [UILabel LabelSubTitleWithString:@"Order Name" align:NSTextAlignmentLeft];
         self.label_OrderName.numberOfLines = 0;
-        self.label_OrderName.lineBreakMode = NSLineBreakByTruncatingTail;
         self.label_OrderName.backgroundColor = [UIColor blueColor];
         [self.contentView addSubview:self.label_OrderName];
         // Length
-        self.label_Length = [UILabel LabelSubTitleWithString:@"test message that should be ignore but is quite long, which is good for testing. test message that should be ignore but is quite long, which is good for testing." align:NSTextAlignmentLeft];
-        self.label_Length.numberOfLines = 0;
-        self.label_Length.lineBreakMode = NSLineBreakByTruncatingTail;
+        self.label_Length = [UILabel LabelSubTitleWithString:@"Length" align:NSTextAlignmentLeft];
         self.label_Length.backgroundColor = [UIColor greenColor];
         [self.contentView addSubview:self.label_Length];
         // Count
@@ -36,12 +33,10 @@
         self.label_Count.backgroundColor = [UIColor yellowColor];
         [self.contentView addSubview:self.label_Count];
         // Notes
-        self.label_Notes = [UILabel LabelSubTitleWithString:@"test message that should be ignore but is quite long, which is good for testing. test message that should be ignore but is quite long, which is good for testing." align:NSTextAlignmentLeft];
+        self.label_Notes = [UILabel LabelSubTitleWithString:@"Notes" align:NSTextAlignmentLeft];
         self.label_Notes.numberOfLines = 0;
-        self.label_Notes.lineBreakMode = NSLineBreakByTruncatingTail;
         self.label_Notes.backgroundColor = [UIColor blackColor];
         [self.contentView addSubview:self.label_Notes];
-        
         
         // Add and Minus Button
         self.btn_Add = [FUIButton ButtonWithTitle:@"+" inBold:YES];
@@ -59,8 +54,10 @@
 {
     NSLog(@"updateConstraints table cell.");
     if (!self.didSetupConstraints) {
+        // Expand the content view temporariry
         self.contentView.bounds = CGRectMake(0.0f, 0.0f, 1000.0f, 1000.0f);
         
+        // Set compression resistance to ensure vertical height
         [self.label_OrderName setContentCompressionResistancePriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisVertical];
         [self.label_OrderName mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.contentView.mas_top).with.offset(mas_Padding_Page_Small.top);
@@ -72,15 +69,12 @@
             make.top.equalTo(self.label_OrderName.mas_bottom).with.offset(mas_Padding_Page_Small.top);
             make.left.equalTo(self.contentView.mas_left).with.offset(mas_Padding_Page_Small.left);
             make.size.mas_equalTo(CGSizeMake(60, 60));
-//            make.bottom.equalTo(self.contentView.mas_bottom).with.offset(mas_Padding_Page_Small.bottom).priority(999);
         }];
         
         [self.label_Length setContentCompressionResistancePriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisVertical];
         [self.label_Length mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.label_OrderName.mas_bottom).with.offset(mas_Padding_Page_Small.top);
             make.leading.equalTo(self.captureImageView.mas_trailing).with.offset(mas_Padding_Page_Small.left);
-            
-            
         }];
         
         [self.label_Count setContentCompressionResistancePriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisVertical];
@@ -110,6 +104,9 @@
             make.size.mas_equalTo(CGSizeMake(40, 40));
             make.right.equalTo(self.contentView.mas_right).with.offset(mas_Padding_Page_Small.right);
         }];
+        
+        // Might need to use one NSLayoutRelationGreaterThanOrEqual to account for 1.0 point added for the 0.5 separator in iOS 7.0
+        
         self.didSetupConstraints = YES;
     }
     [super updateConstraints];
@@ -118,12 +115,12 @@
 - (void)layoutSubviews
 {
     NSLog(@"layoutSubviews table cell.");
-
     [super layoutSubviews];
+    // Make sure the contentView does a layout pass, which set the frames in order to calculate the preferredMaxLayoutWidth
     [self.contentView setNeedsLayout];
     [self.contentView layoutIfNeeded];
     
-    // Solve multi-line UILabel issue
+    // Solve multi-line UILabel issue. Calculate actual height depends on the label width
     self.label_OrderName.preferredMaxLayoutWidth = CGRectGetWidth(self.label_OrderName.frame);
     self.label_Length.preferredMaxLayoutWidth = CGRectGetWidth(self.label_Length.frame);
     self.label_Count.preferredMaxLayoutWidth = CGRectGetWidth(self.label_Count.frame);

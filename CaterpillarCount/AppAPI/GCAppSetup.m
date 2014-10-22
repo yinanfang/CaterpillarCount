@@ -159,6 +159,7 @@
     UILabel *label = [[UILabel alloc] init];
     label.textAlignment = alignment;
     label.numberOfLines = 1;
+    label.lineBreakMode = NSLineBreakByTruncatingTail;
     [label setFont:[UIFont fontWithName:@"Helvetica" size:FontSize_P1]];
     [label setBackgroundColor:[UIColor clearColor]];
     [label setTextColor:[GCAppAPI getColorWithRGBAinHex:ThemeColor01]];

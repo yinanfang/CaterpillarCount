@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 @class GCNewOrderViewController;
 
-@interface GCNewOrderScrollView : UIScrollView <UIScrollViewDelegate, UITextFieldDelegate, FUIAlertViewDelegate>
+@interface GCNewOrderScrollView : UIScrollView <UIScrollViewDelegate, FUIAlertViewDelegate>
 // Self
 @property GCNewOrderViewController *parentController;
 @property BOOL didSetupConstraints;

@@ -23,9 +23,15 @@
     
     // Add new order scroll view
     self.orderScrollView = [[GCNewOrderScrollView alloc] initWithParentController:self];
+    self.orderScrollView.delegate = self;
     [self.orderScrollView setNeedsUpdateConstraints];
     [self.orderScrollView updateConstraintsIfNeeded];
     
+    // Configure UITextField Delegate
+    self.orderScrollView.entry_Notes.delegate = self;
+    self.orderScrollView.entry_Count.delegate = self;
+    self.orderScrollView.entry_Length.delegate = self;
+
     [[self.orderScrollView.btn_PhotoPlaceHolder rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         NSLog(@"should take picture");
         UIImagePickerController *camera = [[UIImagePickerController alloc] init];
@@ -44,9 +50,9 @@
         NSDictionary *newOrder = @{
                                    @"orderID": @"",
                                    @"orderName": @"orderName test",
-                                   @"length": @"length test",
-                                   @"count": @"count test",
-                                   @"note": @"notenotenotenotenotenotenotenote test",
+                                   @"length": self.orderScrollView.entry_Length,
+                                   @"count": self.orderScrollView.entry_Count,
+                                   @"note": self.orderScrollView.entry_Notes,
                                    @"orderPhotoLocalURL": self.orderScrollView.btn_PhotoPlaceHolder.titleLabel.text,
                                    };
         [GCAppViewModel addCurrentunsavedOrdersWithDictionary:newOrder];
@@ -54,6 +60,41 @@
         NSLog(@"pop...");
     }];
     
+}
+
+#pragma mark - UITextField Delegate
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    DDLogVerbose(@"textFieldShouldReturn:");
+    NSInteger nextTag = textField.tag + 1;
+    // Try to find next responder
+    UIResponder* nextResponder = [textField.superview viewWithTag:nextTag];
+    if (nextResponder) {
+        // Found next responder, so set it.
+        [nextResponder becomeFirstResponder];
+    } else {
+        // Not found, so remove keyboard.
+        [textField resignFirstResponder];
+    }
+    return NO; // We do not want UITextField to insert line-breaks.
+}
+
+// Hide keyboard when touching the background
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    DDLogVerbose(@"touchesBegan in GCNewOrderViewController");
+    UITouch *touch = [[event allTouches] anyObject];
+    if ([self.orderScrollView.entry_Length isFirstResponder] && [touch view] != self.orderScrollView.entry_Length) {
+        [self.orderScrollView.entry_Length resignFirstResponder];
+    }
+    if ([self.orderScrollView.entry_Count isFirstResponder] && [touch view] != self.orderScrollView.entry_Count) {
+        [self.orderScrollView.entry_Count resignFirstResponder];
+    }
+    if ([self.orderScrollView.entry_Notes isFirstResponder] && [touch view] != self.orderScrollView.entry_Notes) {
+        [self.orderScrollView.entry_Notes resignFirstResponder];
+    }
+    [super touchesBegan:touches withEvent:event];
+    
+
 }
 
 #pragma mark - UIImagePickerControllerDelegate Delegate

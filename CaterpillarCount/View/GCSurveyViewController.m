@@ -154,43 +154,40 @@
 {
     NSLog(@"cellForRowAtIndexPath...");
     GCOrderTableViewCell *cell = [self.surveyScrollView.orderTableView dequeueReusableCellWithIdentifier:CellIdentifierForOrderTableViewCell];
+    [self configureCellContent:cell atRow:indexPath.row];
     [cell setNeedsUpdateConstraints];
     [cell updateConstraintsIfNeeded];
-    [cell setNeedsLayout];
-    [cell layoutIfNeeded];
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"heightForRowAtIndexPath");
+    // Init a static instance of cell
     static GCOrderTableViewCell *cell;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         cell = [self.surveyScrollView.orderTableView dequeueReusableCellWithIdentifier: CellIdentifierForOrderTableViewCell];
     });
-
-    cell.bounds = CGRectMake(0.0f, 0.0f, self.surveyScrollView.orderTableView.bounds.size.width, cell.bounds.size.height);
-    cell.contentView.bounds = cell.bounds;
-    DDLogWarn(@"%@", cell.label_OrderName.text);
+    [self configureCellContent:cell atRow:indexPath.row];
+    
+    // Make sure the constraints have been added to this cell, since it may have just been created from scratch
     [cell setNeedsUpdateConstraints];
     [cell updateConstraintsIfNeeded];
-    
-    NSLog(@"cell.bounds: %@", [NSValue valueWithCGRect:cell.bounds]);
-
-    
-    
+    // Set width of the tableview. Important for calculating multi-line & word-wraping UILabel. This happens automatically in cellForRowAtIndexPath
+    cell.bounds = CGRectMake(0.0f, 0.0f, self.surveyScrollView.orderTableView.bounds.size.width, cell.bounds.size.height);
+    // Do the layout pass on the cell, which will calculate the frames for all the views based on the constraints
     [cell setNeedsLayout];
     [cell layoutIfNeeded];
     
     CGSize s = [cell.contentView systemLayoutSizeFittingSize: UILayoutFittingCompressedSize];
-    NSLog(@"image view height: %@", [NSValue valueWithCGRect:cell.captureImageView.bounds]);
-
-    NSLog(@"compression height: %@", [NSValue valueWithCGSize:s]);
-    NSLog(@"expandable height: %@", [NSValue valueWithCGSize:s]);
-
+    DDLogVerbose(@"cell height: %f", s.height + 1);
     return s.height + 1;
+}
 
+- (void)configureCellContent:(GCOrderTableViewCell *)cell atRow:(NSInteger)row
+{
+    
 }
 
 //- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath

@@ -10,7 +10,7 @@
 #import "GCNewOrderScrollView.h"
 
 
-@interface GCNewOrderViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface GCNewOrderViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate, UIScrollViewDelegate>
 
 @property GCNewOrderScrollView *orderScrollView;
 

@@ -21,7 +21,8 @@
     if (self) {
         self.parentController = controller;
         self.backgroundColor = [UIColor whiteColor];
-        self.delegate = self;
+        self.userInteractionEnabled = YES;
+//        self.delegate = self;
         [self.parentController.view addSubview:self];
         
         // Arthropod Order
@@ -32,15 +33,15 @@
         [self addSubview:self.entry_Order];
         // Entry Length
         self.entry_Length = [UITextField TextFieldWithPlaceHolder:@"Length (mm)" keyboardType:UIKeyboardTypeNumberPad];
-        self.entry_Length.delegate = self;
+        self.entry_Length.tag = 1;
         [self addSubview:self.entry_Length];
         // Entry Count
         self.entry_Count = [UITextField TextFieldWithPlaceHolder:@"Count (1 to 1000)" keyboardType:UIKeyboardTypeNumberPad];
-        self.entry_Count.delegate = self;
+        self.entry_Count.tag = 2;
         [self addSubview:self.entry_Count];
         // Entry Notes
         self.entry_Notes = [UITextField TextFieldWithPlaceHolder:@"Notes" keyboardType:UIKeyboardTypeDefault];
-        self.entry_Notes.delegate = self;
+        self.entry_Notes.tag = 3;
         [self addSubview:self.entry_Notes];
         
         // Photo
@@ -108,5 +109,12 @@
     [super updateConstraints];
 }
 
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    DDLogVerbose(@"touchesBegan in GCNewOrderScrollView");
+    [super touchesBegan:touches withEvent:event];
+    // Don't let UIScrollView eats up all the touch events. Pass it to nextResponder
+    [self.nextResponder touchesBegan: touches withEvent:event];
+}
 
 @end
