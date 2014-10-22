@@ -19,7 +19,7 @@
 #define Font_Paragraph              @"AppleGothic"
 #define FontSize_H1                 18.0f
 #define FontSize_H2                 16.0f
-#define FontSize_P1                 12.0f
+#define FontSize_P1                 14.0f
 #define WidthForEntryfieldBorder    1.0f
 #define CornerRadius_General        10.0f
 
@@ -34,7 +34,7 @@
 #define mas_Padding_Page_Default          UIEdgeInsetsMake(8, 8, -8, -8)
 // For UIKit
 #define Insets_Default              UIEdgeInsetsMake(8, 8, 8, 8)
-#define Insets_Button               UIEdgeInsetsMake(8, 8, 8, 8)
+#define Insets_Small               UIEdgeInsetsMake(5, 5, 5, 5)
 
 // Table View Configuration
 #define CellIdentifierForOrderTableViewCell @"OrderTableViewCellIdentifier"

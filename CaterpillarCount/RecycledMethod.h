@@ -13,6 +13,9 @@
 
 /*
  
+ [self.captureImageView setContentCompressionResistancePriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisVertical];
+ 
+ 
  
  DDLogVerbose(@"trying to set the image");
  NSString *mediaType = [info objectForKey:UIImagePickerControllerMediaType];

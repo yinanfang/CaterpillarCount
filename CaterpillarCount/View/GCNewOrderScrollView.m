@@ -86,12 +86,12 @@
         // Photo
         [GCAppSetup setConstraints_PinHorizontallyWithPagePaddingAndTopWithPadding:PagePaddingLarge withView:self.label_Photo superview:self upperview:self.entry_Notes];
         [self.entry_Photo mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.label_Photo.mas_bottom).with.offset(mas_Padding_Page_Small.top);
+            make.top.equalTo(self.label_Photo.mas_bottom).with.offset(mas_Padding_Page_Default.top);
             make.centerX.equalTo(self.mas_centerX);
             make.size.mas_equalTo(CGSizeMake(100, 100));
         }];
         [self.btn_PhotoPlaceHolder mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.label_Photo.mas_bottom).with.offset(mas_Padding_Page_Small.top);
+            make.top.equalTo(self.label_Photo.mas_bottom).with.offset(mas_Padding_Page_Default.top);
             make.centerX.equalTo(self.mas_centerX);
             make.size.mas_equalTo(CGSizeMake(100, 100));
         }];

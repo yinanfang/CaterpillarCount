@@ -148,20 +148,20 @@
         
         // Temp, Time, Date Entry
         [self.entry_Temp mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.label_Temp.mas_bottom).with.offset(mas_Padding_Page_Small.top);
+            make.top.equalTo(self.label_Temp.mas_bottom).with.offset(mas_Padding_Page_Default.top);
             make.left.equalTo(self.mas_left).with.offset(mas_Padding_Page_Large.left);
             make.bottom.equalTo(self.label_SiteInfo.mas_top).with.offset(mas_Padding_Page_Large.bottom);
         }];
         [self.entry_Time mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.label_Time.mas_bottom).with.offset(mas_Padding_Page_Small.top);
-            make.left.equalTo(self.entry_Temp.mas_right).with.offset(mas_Padding_Page_Small.left);
+            make.top.equalTo(self.label_Time.mas_bottom).with.offset(mas_Padding_Page_Default.top);
+            make.left.equalTo(self.entry_Temp.mas_right).with.offset(mas_Padding_Page_Default.left);
             make.bottom.equalTo(self.label_SiteInfo.mas_top).with.offset(mas_Padding_Page_Large.bottom);
-            make.right.equalTo(self.entry_Date.mas_left).with.offset(mas_Padding_Page_Small.right);
+            make.right.equalTo(self.entry_Date.mas_left).with.offset(mas_Padding_Page_Default.right);
             make.width.equalTo(self.entry_Temp.mas_width);
             make.centerX.equalTo(self.mas_centerX);
         }];
         [self.entry_Date mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.label_Date.mas_bottom).with.offset(mas_Padding_Page_Small.top);
+            make.top.equalTo(self.label_Date.mas_bottom).with.offset(mas_Padding_Page_Default.top);
             make.right.equalTo(self.mas_right).with.offset(mas_Padding_Page_Large.right);
             make.bottom.equalTo(self.label_SiteInfo.mas_top).with.offset(mas_Padding_Page_Large.bottom);
             make.width.equalTo(self.entry_Time.mas_width);
@@ -199,7 +199,7 @@
         }];
         // Order detail table
         [self.orderTableView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.label_ArthropodOrderInfo.mas_bottom).with.offset(mas_Padding_Page_Small.top);
+            make.top.equalTo(self.label_ArthropodOrderInfo.mas_bottom).with.offset(mas_Padding_Page_Default.top);
             make.left.equalTo(self.mas_left).with.offset(mas_Padding_Page_Large.left);   // wrong offset??
             make.right.equalTo(self.mas_right).with.offset(mas_Padding_Page_Large.right);
             make.height.mas_equalTo(300);
@@ -216,12 +216,12 @@
         // Plant Photo
         [GCAppSetup setConstraints_PinHorizontallyWithPagePaddingAndTopWithPadding:PagePaddingSmall withView:self.label_PlantPhoto superview:self upperview:self.entry_Herbivory];
         [self.entry_PlantPhoto mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.label_PlantPhoto.mas_bottom).with.offset(mas_Padding_Page_Small.top);
+            make.top.equalTo(self.label_PlantPhoto.mas_bottom).with.offset(mas_Padding_Page_Default.top);
             make.centerX.equalTo(self.mas_centerX);
             make.size.mas_equalTo(CGSizeMake(100, 100));
         }];
         [self.label_PhotoPlaceHolder mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.label_PlantPhoto.mas_bottom).with.offset(mas_Padding_Page_Small.top);
+            make.top.equalTo(self.label_PlantPhoto.mas_bottom).with.offset(mas_Padding_Page_Default.top);
             make.centerX.equalTo(self.mas_centerX);
             make.size.mas_equalTo(CGSizeMake(100, 100));
         }];

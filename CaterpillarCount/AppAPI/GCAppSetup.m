@@ -131,7 +131,7 @@
         if (paddingOption==PagePaddingLarge) {
             make.top.equalTo(upperview.mas_bottom).with.offset(mas_Padding_Page_Large.top);
         }else{
-            make.top.equalTo(upperview.mas_bottom).with.offset(mas_Padding_Page_Small.top);
+            make.top.equalTo(upperview.mas_bottom).with.offset(mas_Padding_Page_Default.top);
         }
         make.left.equalTo(superview.mas_left).with.offset(mas_Padding_Page_Large.left);
         make.right.equalTo(superview.mas_right).with.offset(mas_Padding_Page_Large.right);
@@ -171,7 +171,7 @@
 + (UIButton *)ButtonWithTitle:(NSString *)title inBold:(BOOL)IsBold horizontalAlign:(UIControlContentHorizontalAlignment)horizontalAlign
 {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    button.contentEdgeInsets = Insets_Button;
+    button.contentEdgeInsets = Insets_Small;
     [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [button setTitle:title forState:UIControlStateNormal];
     if (IsBold) {

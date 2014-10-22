@@ -15,13 +15,7 @@
 
 // Cell item
 @property (strong) UIImageView *captureImageView;
-@property (strong) UILabel *label_OrderName, *label_Length, *label_Count;
-
-
-
-
-@property (strong) NSString *orderName;
-@property (strong) NSNumber *length;
-@property (strong) NSNumber *count;
+@property (strong) UILabel *label_OrderName, *label_Length, *label_Count, *label_Notes;
+@property (strong) FUIButton *btn_Add, *btn_Minus;
 
 @end
