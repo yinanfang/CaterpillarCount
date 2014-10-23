@@ -68,24 +68,24 @@ FOUNDATION_EXPORT NSString *const NSUserDefaultsKeyForDidRunAppBefore;
 FOUNDATION_EXPORT NSString *const NSUserDefaultsKeyForAppData;
 
 #pragma mark - Default Value
-@property NSNumber *defaultStoryCount, *defaultBookCount;
-
-#pragma mark - Book Specific
-//@property NSInteger bookCurrentPageNumber;
-@property CGRect PageControlRect, BookTitleViewRect;
-
-#pragma mark - Story Specific
-@property CGFloat WidthForSmallStory, HeightForSmallStory;
-@property CGFloat WidthForCurrentStory, HeightForCurrentStory;
-@property CGRect BoundsForStoryCollectionController;
 
 #pragma mark - General
 @property CGFloat PixelAdjustForHorizontalGap;
-@property CGFloat HeightDeterminant_FloatVSFullScreen;
 typedef NS_ENUM(NSInteger, PagePaddingOption) {
     PagePaddingSmall,
     PagePaddingLarge,
 };
+
+typedef NS_ENUM(NSInteger, PickerType) {
+    PickerType_Temperature,
+    PickerType_Site,
+    PickerType_Circle,
+    PickerType_Survey,
+    PickerType_Herbivory,
+    PickerType_Order,
+};
+
+
 //@property StoryDisplayStyleMode storyDisplayStyleMode;
 
 

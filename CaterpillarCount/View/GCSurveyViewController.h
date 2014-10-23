@@ -16,12 +16,13 @@
 
 
 @property UIPickerView *picker_Generic;
+@property RACCommand *firePicker;
+@property PickerType pickerType;
+@property __block BOOL didShowPicker;
+@property NSMutableArray *pickerContent;
 //@property NSMutableArray *pickerContentArray;
 
-typedef NS_ENUM(NSInteger, PickerType) {
-    PickerType01,
-    PickerType02,
-};
+
 //@property StoryDisplayStyleMode storyDisplayStyleMode;
 
 

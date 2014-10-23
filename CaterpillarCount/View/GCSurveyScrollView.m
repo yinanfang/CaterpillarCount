@@ -263,15 +263,6 @@
         self.shouldMoveUpToAdjustForKeyboard = YES;
         self.shouldMoveDownToAdjustForKeyboard = NO;
     }
-    
-    
-//    if (textField.tag == 1) {
-//        UITextField *passwordTextField = (UITextField *)[self.view viewWithTag:2];
-//        [passwordTextField becomeFirstResponder];
-//    }
-//    else {
-//        [textField resignFirstResponder];
-//    }
     return YES;
 }
 
@@ -288,6 +279,8 @@
         self.shouldMoveDownToAdjustForKeyboard = NO;
     }
     [super touchesBegan:touches withEvent:event];
+    // Don't let UIScrollView eats up all the touch events. Pass it to nextResponder
+    [self.nextResponder touchesBegan: touches withEvent:event];
 }
 
 

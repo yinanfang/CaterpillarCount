@@ -43,25 +43,43 @@
         make.bottom.mas_equalTo(self.picker_Generic.frame.size.height);
     }];
     // Show and hide motion
-    __block BOOL shouldDisplayPicker = NO;
-    [[self.surveyScrollView.entry_Temp rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
-        NSLog(@"botton tapped");
-        shouldDisplayPicker = !shouldDisplayPicker;
-        [self.view layoutIfNeeded];
-        [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-            [self.picker_Generic mas_updateConstraints:^(MASConstraintMaker *make){
-                if (shouldDisplayPicker == YES) {
+    self.firePicker = [[RACCommand alloc] initWithSignalBlock:^(UIButton *button) {
+        if (!self.didShowPicker) {
+            DDLogVerbose(@"fire picker!");
+            if (button == self.surveyScrollView.entry_Temp) {
+                self.pickerType = PickerType_Temperature;
+                DDLogVerbose(@"temp!!");
+            } else if (button == self.surveyScrollView.entry_Site) {
+                self.pickerType = PickerType_Site;
+                DDLogVerbose(@"site!!");
+            } else if (button == self.surveyScrollView.entry_Circle) {
+                self.pickerType = PickerType_Circle;
+                DDLogVerbose(@"circle!!");
+            } else if (button == self.surveyScrollView.entry_Survey) {
+                self.pickerType = PickerType_Survey;
+                DDLogVerbose(@"survey!!");
+            } else if (button == self.surveyScrollView.entry_Herbivory) {
+                self.pickerType = PickerType_Herbivory;
+                DDLogVerbose(@"herbivory");
+            }
+            [self.picker_Generic reloadAllComponents];
+            [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+                [self.picker_Generic mas_updateConstraints:^(MASConstraintMaker *make){
                     make.bottom.equalTo(self.view.mas_bottom);
-                }else{
-                    make.bottom.equalTo(self.view.mas_bottom).with.offset(self.picker_Generic.frame.size.height);
-                }
-            }];
-            [self.view layoutIfNeeded];
-        }completion:nil];
-        // reload content for different options
-//        [self.picker_Temp reloadAllComponents]
+                }];
+                [self.view layoutIfNeeded];
+            }completion:nil];
+        }
+        
+        return [RACSignal empty];
     }];
     
+    self.surveyScrollView.entry_Temp.rac_command = self.firePicker;
+    self.surveyScrollView.entry_Site.rac_command = self.firePicker;
+    self.surveyScrollView.entry_Circle.rac_command = self.firePicker;
+    self.surveyScrollView.entry_Survey.rac_command = self.firePicker;
+    self.surveyScrollView.entry_Herbivory.rac_command = self.firePicker;
+
     // Add order button
     [[self.surveyScrollView.btn_NewOrderInfo rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         NSLog(@"add botton tapped");
@@ -79,11 +97,8 @@
         NSLog(@"hit button submit");
         [GCAppViewModel saveAppDataToNSUserDefaults];
     }];
-    
-    
-//    ui
-    
 }
+
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -97,15 +112,50 @@
     [super viewWillAppear:animated];
 }
 
+
+
+
 #pragma mark - UIPickerView Delegate
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-    NSMutableArray *pickerContent;
-    if (pickerView == self.picker_Generic) {
-        pickerContent = [GCStore sharedInstance].temperatureRanges;
-        [self.surveyScrollView.entry_Temp setTitle:pickerContent[row] forState:UIControlStateNormal];
+    NSString *newValue = self.pickerContent[row];
+    switch (self.pickerType) {
+        case PickerType_Temperature:
+            [self.surveyScrollView.entry_Temp setTitle:newValue forState:UIControlStateNormal];
+            break;
+        case PickerType_Site:
+            [self.surveyScrollView.entry_Site setTitle:newValue forState:UIControlStateNormal];
+            break;
+        case PickerType_Circle:
+            [self.surveyScrollView.entry_Circle setTitle:newValue forState:UIControlStateNormal];
+            break;
+        case PickerType_Survey:
+            [self.surveyScrollView.entry_Survey setTitle:newValue forState:UIControlStateNormal];
+            break;
+        case PickerType_Herbivory:
+            [self.surveyScrollView.entry_Herbivory setTitle:newValue forState:UIControlStateNormal];
+            break;
+        case PickerType_Order:
+        default:
+            break;
     }
-    
+}
+
+// Hide keyboard when touching the background
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    DDLogVerbose(@"touchesBegan in GCSurveyViewController");
+//    UITouch *touch = [[event allTouches] anyObject];
+//    if ([self.orderScrollView.entry_Length isFirstResponder] && [touch view] != self.orderScrollView.entry_Length) {
+//        [self.orderScrollView.entry_Length resignFirstResponder];
+//    }
+//    if ([self.orderScrollView.entry_Count isFirstResponder] && [touch view] != self.orderScrollView.entry_Count) {
+//        [self.orderScrollView.entry_Count resignFirstResponder];
+//    }
+//    if ([self.orderScrollView.entry_Notes isFirstResponder] && [touch view] != self.orderScrollView.entry_Notes) {
+//        [self.orderScrollView.entry_Notes resignFirstResponder];
+//    }
+    [super touchesBegan:touches withEvent:event];
 }
 
 #pragma mark - UIPickerView DataSource
@@ -117,23 +167,40 @@
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
-    NSMutableArray *pickerContent;
-    if (pickerView == self.picker_Generic) {
-        pickerContent = [GCStore sharedInstance].temperatureRanges;
-        return pickerContent.count;
-    }
-    return 0;
+    [self configurePickerContent];
+    return self.pickerContent.count;
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-    NSMutableArray *pickerContent;
-    if (pickerView == self.picker_Generic) {
-        pickerContent = [GCStore sharedInstance].temperatureRanges;
-        return pickerContent[row];
+    [self configurePickerContent];
+    return self.pickerContent[row];
+}
+
+- (void)configurePickerContent
+{
+    GCStore *store = [GCStore sharedInstance];
+    switch (self.pickerType) {
+        case PickerType_Temperature:
+            self.pickerContent = store.temperatureRanges;
+            break;
+        case PickerType_Site:
+            self.pickerContent = [GCAppViewModel sharedInstance].currentUserData.sites;
+            break;
+        case PickerType_Circle:
+            self.pickerContent = store.circles;
+            break;
+        case PickerType_Survey:
+            self.pickerContent = store.surveyStrings;
+            break;
+        case PickerType_Herbivory:
+            self.pickerContent = store.herbivory;
+            break;
+        case PickerType_Order:
+        default:
+            break;
     }
-    return @"";
-} 
+}
 
 #pragma mark - UITableView Delegate
 

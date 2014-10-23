@@ -17,6 +17,7 @@
 @property NSMutableArray *temperatureRanges;
 @property NSMutableArray *circles;
 @property NSMutableArray *surveyStrings;
+@property NSMutableArray *herbivory;
 @property NSMutableArray *arthropodOrder;
 
 @end

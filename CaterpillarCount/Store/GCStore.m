@@ -31,6 +31,7 @@
         self.temperatureRanges = [GCStore initTemperatureRanges];
         self.circles = [GCStore initCircles];
         self.surveyStrings = [GCStore initSurveyStrings];
+        self.herbivory = [GCStore initHerbivory];
         self.arthropodOrder = [GCStore initArthropodOrder];
     }
     return self;
@@ -115,6 +116,19 @@
                    ]
                   mutableCopy];
     return surveyStringArray;
+}
+
++ (NSMutableArray *)initHerbivory
+{
+    NSMutableArray *herbivoryArray = [NSMutableArray new];
+    herbivoryArray = [@
+                  [@"1",
+                   @"2",
+                   @"3",
+                   @"4",
+                   ]
+                  mutableCopy];
+    return herbivoryArray;
 }
 
 + (NSMutableArray *)initArthropodOrder
