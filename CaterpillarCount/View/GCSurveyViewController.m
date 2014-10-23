@@ -187,6 +187,13 @@
 
 - (void)configureCellContent:(GCOrderTableViewCell *)cell atRow:(NSInteger)row
 {
+    GCOrder *order = (GCOrder *)[GCAppViewModel sharedInstance].currentUnsavedOrders[row];
+    DDLogVerbose(@"%@", order);
+    cell.label_OrderName.text = order.orderName;
+    cell.label_Length.text = [NSString stringWithFormat:@"%@", order.length];
+    cell.label_Count.text = [NSString stringWithFormat:@"%@", order.count];
+    cell.label_Notes.text = order.note;
+
     
 }
 

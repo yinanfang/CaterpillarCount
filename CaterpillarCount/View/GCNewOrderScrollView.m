@@ -41,6 +41,7 @@
         [self addSubview:self.entry_Count];
         // Entry Notes
         self.entry_Notes = [UITextField TextFieldWithPlaceHolder:@"Notes" keyboardType:UIKeyboardTypeDefault];
+        self.entry_Notes.returnKeyType = UIReturnKeyDone;
         self.entry_Notes.tag = 3;
         [self addSubview:self.entry_Notes];
         

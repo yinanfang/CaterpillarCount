@@ -20,6 +20,7 @@
     
     // UI Navigation Bar
     [GCAppSetup configureNavigationViewController:self withNavigationTitle:@"New Arthropod Order"];
+    [GCAppSetup configureBackButtonOfNavigationViewController:self];
     
     // Add new order scroll view
     self.orderScrollView = [[GCNewOrderScrollView alloc] initWithParentController:self];
@@ -28,10 +29,15 @@
     [self.orderScrollView updateConstraintsIfNeeded];
     
     // Configure UITextField Delegate
-    self.orderScrollView.entry_Notes.delegate = self;
-    self.orderScrollView.entry_Count.delegate = self;
     self.orderScrollView.entry_Length.delegate = self;
-
+    [self addAccessaryViewToTextField:self.orderScrollView.entry_Length];
+    self.orderScrollView.entry_Count.delegate = self;
+    [self addAccessaryViewToTextField:self.orderScrollView.entry_Count];
+    self.orderScrollView.entry_Notes.delegate = self;
+    // Add Input accessary view
+    
+    
+    
     [[self.orderScrollView.btn_PhotoPlaceHolder rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         NSLog(@"should take picture");
         UIImagePickerController *camera = [[UIImagePickerController alloc] init];
@@ -47,12 +53,16 @@
     
     [[self.orderScrollView.btn_Submit rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         NSLog(@"New Order button submit");
+        NSString *length = [self.orderScrollView.entry_Length.text isEqualToString:@""] ? @"0" : self.orderScrollView.entry_Length.text;
+        NSString *count = [self.orderScrollView.entry_Count.text isEqualToString:@""] ? @"0" : self.orderScrollView.entry_Count.text;
+        NSString *note = [self.orderScrollView.entry_Notes.text isEqualToString:@""] ? @" " : self.orderScrollView.entry_Notes.text;
+        
         NSDictionary *newOrder = @{
                                    @"orderID": @"",
                                    @"orderName": @"orderName test",
-                                   @"length": self.orderScrollView.entry_Length,
-                                   @"count": self.orderScrollView.entry_Count,
-                                   @"note": self.orderScrollView.entry_Notes,
+                                   @"length": length,
+                                   @"count": count,
+                                   @"note": note,
                                    @"orderPhotoLocalURL": self.orderScrollView.btn_PhotoPlaceHolder.titleLabel.text,
                                    };
         [GCAppViewModel addCurrentunsavedOrdersWithDictionary:newOrder];
@@ -93,8 +103,39 @@
         [self.orderScrollView.entry_Notes resignFirstResponder];
     }
     [super touchesBegan:touches withEvent:event];
-    
+}
 
+- (void)addAccessaryViewToTextField:(UITextField *)textField
+{
+    UIToolbar* numberToolbar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 50)];
+    numberToolbar.barStyle = UIBarStyleBlackTranslucent;
+    numberToolbar.items = [NSArray arrayWithObjects:
+                           [[UIBarButtonItem alloc]initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:self action:@selector(cancelNumberPad)],
+                           [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil],
+                           [[UIBarButtonItem alloc]initWithTitle:@"Next" style:UIBarButtonItemStyleDone target:self action:@selector(doneWithNumberPad)],
+                           nil];
+    [numberToolbar sizeToFit];
+    textField.inputAccessoryView = numberToolbar;
+}
+
+-(void)cancelNumberPad{
+    if ([self.orderScrollView.entry_Length isFirstResponder]) {
+        self.orderScrollView.entry_Length.text = @"";
+        [self.orderScrollView.entry_Length resignFirstResponder];
+    }
+    if ([self.orderScrollView.entry_Count isFirstResponder]) {
+        self.orderScrollView.entry_Count.text = @"";
+        [self.orderScrollView.entry_Count resignFirstResponder];
+    }
+}
+
+-(void)doneWithNumberPad{
+    if ([self.orderScrollView.entry_Length isFirstResponder]) {
+        [self.orderScrollView.entry_Length resignFirstResponder];
+    }
+    if ([self.orderScrollView.entry_Count isFirstResponder]) {
+        [self.orderScrollView.entry_Notes becomeFirstResponder];
+    }
 }
 
 #pragma mark - UIImagePickerControllerDelegate Delegate

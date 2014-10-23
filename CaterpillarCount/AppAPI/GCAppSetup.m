@@ -141,7 +141,7 @@
 
 @end
 
-#pragma mark - UIkit and Foundation extention
+#pragma mark - Category UILabel
 @implementation UILabel (AdvancedInitialization)
 + (UILabel *)LabelTitleWithString:(NSString *)title align:(NSTextAlignment)alignment
 {
@@ -168,7 +168,7 @@
 }
 @end
 
-
+#pragma mark - Category UIButton & FUIButton
 @implementation UIButton (AdvancedInitialization)
 + (UIButton *)ButtonWithTitle:(NSString *)title inBold:(BOOL)IsBold horizontalAlign:(UIControlContentHorizontalAlignment)horizontalAlign
 {
@@ -210,23 +210,7 @@
 }
 @end
 
-@implementation UITextField (AdvancedInitialization)
-+ (UITextField *)TextFieldWithPlaceHolder:(NSString *)placeHolder keyboardType:(UIKeyboardType)keyboardType
-{
-    UITextField *textField = [[UITextField alloc] init];
-    textField.borderStyle = UITextBorderStyleRoundedRect;
-    textField.font = [UIFont systemFontOfSize:FontSize_P1];
-    textField.placeholder = placeHolder;
-    textField.autocorrectionType = UITextAutocorrectionTypeYes;
-    textField.keyboardType = keyboardType;
-    textField.returnKeyType = UIReturnKeyDone;
-    textField.clearButtonMode = UITextFieldViewModeWhileEditing;
-    textField.contentVerticalAlignment = UIControlContentHorizontalAlignmentLeft;
-    textField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
-    return textField;
-}
-@end
-
+#pragma mark - Category UIImageView
 @implementation UIImageView (AdvancedInitialization)
 + (UIImageView *)ImageViewWithDefaultBackgroundImage:(UIImage *)image
 {
@@ -241,6 +225,26 @@
     return imageView;
 }
 @end
+
+#pragma mark - Category UITextField
+@implementation UITextField (AdvancedInitialization)
++ (UITextField *)TextFieldWithPlaceHolder:(NSString *)placeHolder keyboardType:(UIKeyboardType)keyboardType
+{
+    UITextField *textField = [[UITextField alloc] init];
+    textField.borderStyle = UITextBorderStyleRoundedRect;
+    textField.font = [UIFont systemFontOfSize:FontSize_P1];
+    textField.placeholder = placeHolder;
+    textField.autocorrectionType = UITextAutocorrectionTypeYes;
+    textField.returnKeyType = UIReturnKeyNext;
+    textField.keyboardType = keyboardType;
+    textField.returnKeyType = UIReturnKeyDone;
+    textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+    textField.contentVerticalAlignment = UIControlContentHorizontalAlignmentLeft;
+    textField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+    return textField;
+}
+@end
+
 
 
 

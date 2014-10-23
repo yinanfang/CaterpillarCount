@@ -27,12 +27,13 @@
 
 @end
 
-#pragma mark - UIkit and Foundation extention
+#pragma mark - Category UILabel
 @interface UILabel (AdvancedInitialization)
 + (UILabel *)LabelTitleWithString:(NSString *)title align:(NSTextAlignment)alignment;
 + (UILabel *)LabelSubTitleWithString:(NSString *)title align:(NSTextAlignment)alignment;
 @end
 
+#pragma mark - Category UIButton & FUIButton
 @interface UIButton (AdvancedInitialization)
 + (UIButton *)ButtonWithTitle:(NSString *)title inBold:(BOOL)IsBold horizontalAlign:(UIControlContentHorizontalAlignment)horizontalAlign;
 @end
@@ -41,12 +42,18 @@
 + (FUIButton *)ButtonWithTitle:(NSString *)title inBold:(BOOL)IsBold;
 @end
 
-@interface UITextField (AdvancedInitialization)
-+ (UITextField *)TextFieldWithPlaceHolder:(NSString *)placeHolder keyboardType:(UIKeyboardType)keyboardType;
-@end
+#pragma mark - Category UIImageView
 @interface UIImageView (AdvancedInitialization)
 + (UIImageView *)ImageViewWithDefaultBackgroundImage:(UIImage *)image;
 @end
+
+#pragma mark - Category UITextField
+@interface UITextField (AdvancedInitialization)
++ (UITextField *)TextFieldWithPlaceHolder:(NSString *)placeHolder keyboardType:(UIKeyboardType)keyboardType;
+@end
+
+
+
 
 
 

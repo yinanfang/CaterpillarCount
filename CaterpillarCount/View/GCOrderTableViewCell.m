@@ -22,7 +22,7 @@
         // Order Name
         self.label_OrderName = [UILabel LabelSubTitleWithString:@"Order Name" align:NSTextAlignmentLeft];
         self.label_OrderName.numberOfLines = 0;
-        self.label_OrderName.backgroundColor = [UIColor blueColor];
+        self.label_OrderName.backgroundColor = [UIColor emerlandColor];
         [self.contentView addSubview:self.label_OrderName];
         // Length
         self.label_Length = [UILabel LabelSubTitleWithString:@"Length" align:NSTextAlignmentLeft];
