@@ -260,8 +260,18 @@
     cell.label_Length.text = [NSString stringWithFormat:@"%@", order.length];
     cell.label_Count.text = [NSString stringWithFormat:@"%@", order.count];
     cell.label_Notes.text = order.note;
-
     
+//    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
+//                                                         NSUserDomainMask, YES);
+//    NSString *documentsDirectory = [paths objectAtIndex:0];
+//    NSString* path = [documentsDirectory stringByAppendingPathComponent:@"testImage.png"];
+//    NSLog(@"path: %@", path);
+//    UIImage* image = [UIImage imageWithContentsOfFile:path];
+    UIImage *image = [UIImage imageWithContentsOfFile:order.orderPhotoLocalURL];
+    cell.captureImageView.image = image;
+//
+//    cell.captureImageView.image = [UIImage imageNamed:@"icon_menu"];
+
 }
 
 //- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
