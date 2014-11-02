@@ -78,6 +78,7 @@
     NSInteger nextTag = textField.tag + 1;
     // Try to find next responder
     UIResponder* nextResponder = [textField.superview viewWithTag:nextTag];
+    DDLogVerbose(@"%@", nextResponder);
     if (nextResponder) {
         // Found next responder, so set it.
         [nextResponder becomeFirstResponder];
@@ -131,9 +132,8 @@
 
 -(void)doneWithNumberPad{
     if ([self.orderScrollView.entry_Length isFirstResponder]) {
-        [self.orderScrollView.entry_Length resignFirstResponder];
-    }
-    if ([self.orderScrollView.entry_Count isFirstResponder]) {
+        [self.orderScrollView.entry_Count becomeFirstResponder];
+    } else if ([self.orderScrollView.entry_Count isFirstResponder]) {
         [self.orderScrollView.entry_Notes becomeFirstResponder];
     }
 }

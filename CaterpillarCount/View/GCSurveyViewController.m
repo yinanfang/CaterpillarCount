@@ -73,7 +73,6 @@
         
         return [RACSignal empty];
     }];
-    
     self.surveyScrollView.entry_Temp.rac_command = self.firePicker;
     self.surveyScrollView.entry_Site.rac_command = self.firePicker;
     self.surveyScrollView.entry_Circle.rac_command = self.firePicker;
@@ -99,9 +98,9 @@
     }];
 }
 
-
 - (void)viewWillAppear:(BOOL)animated
 {
+    DDLogInfo(@"viewWillAppear");
     // Navigation Control
     self.navigationController.navigationBar.barTintColor = [GCAppAPI getColorWithRGBAinHex:ThemeColor01];
     self.navigationController.navigationBar.hidden = NO;
@@ -109,6 +108,7 @@
     // Reload table view
     NSLog(@"reload..");
     [self.surveyScrollView.orderTableView reloadData];
+    
     [super viewWillAppear:animated];
 }
 
@@ -220,6 +220,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"cellForRowAtIndexPath...");
+    DDLogWarn(@"%li", (long)indexPath.row);
     GCOrderTableViewCell *cell = [self.surveyScrollView.orderTableView dequeueReusableCellWithIdentifier:CellIdentifierForOrderTableViewCell];
     [self configureCellContent:cell atRow:indexPath.row];
     [cell setNeedsUpdateConstraints];
@@ -254,24 +255,41 @@
 
 - (void)configureCellContent:(GCOrderTableViewCell *)cell atRow:(NSInteger)row
 {
+//    DDLogVerbose(@"hit add button at index: %li", (long)[self.surveyScrollView.orderTableView indexPathForCell:cell].row);
+    DDLogWarn(@"cell tag: %li", (long)cell.tag);
+    
     GCOrder *order = (GCOrder *)[GCAppViewModel sharedInstance].currentUnsavedOrders[row];
     DDLogVerbose(@"%@", order);
     cell.label_OrderName.text = order.orderName;
-    cell.label_Length.text = [NSString stringWithFormat:@"%@", order.length];
-    cell.label_Count.text = [NSString stringWithFormat:@"%@", order.count];
-    cell.label_Notes.text = order.note;
-    
-//    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
-//                                                         NSUserDomainMask, YES);
-//    NSString *documentsDirectory = [paths objectAtIndex:0];
-//    NSString* path = [documentsDirectory stringByAppendingPathComponent:@"testImage.png"];
-//    NSLog(@"path: %@", path);
-//    UIImage* image = [UIImage imageWithContentsOfFile:path];
+    cell.label_Length.text = [NSString stringWithFormat:@"Length: %@", order.length];
+    cell.label_Count.text = [NSString stringWithFormat:@"Count: %@", order.count];
+    cell.label_Notes.text = [NSString stringWithFormat:@"Notes: %@", order.note];
     UIImage *image = [UIImage imageWithContentsOfFile:order.orderPhotoLocalURL];
     cell.captureImageView.image = image;
-//
-//    cell.captureImageView.image = [UIImage imageNamed:@"icon_menu"];
+    
+    cell.btn_Add.tag = row;
+    [cell.btn_Add addTarget:self action:@selector(addCount:) forControlEvents:UIControlEventTouchUpInside];
+    cell.btn_Minus.tag = row;
+    [cell.btn_Minus addTarget:self action:@selector(minusCount:) forControlEvents:UIControlEventTouchUpInside];
 
+}
+
+- (void)addCount:(FUIButton *)addButton
+{
+    DDLogVerbose(@"hit add button. tag: %li", (long)addButton.tag);
+    GCOrder *order = (GCOrder *)[GCAppViewModel sharedInstance].currentUnsavedOrders[addButton.tag];
+    order.count = [NSNumber numberWithInt:[order.count intValue]+1];
+    DDLogVerbose(@"%@", [GCAppViewModel sharedInstance].currentUnsavedOrders);
+    [self.surveyScrollView.orderTableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:addButton.tag inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
+}
+
+- (void)minusCount:(FUIButton *)addButton
+{
+    DDLogVerbose(@"hit minus button. tag: %li", (long)addButton.tag);
+    GCOrder *order = (GCOrder *)[GCAppViewModel sharedInstance].currentUnsavedOrders[addButton.tag];
+    order.count = [NSNumber numberWithInt:[order.count intValue]-1];
+    DDLogVerbose(@"%@", [GCAppViewModel sharedInstance].currentUnsavedOrders);
+    [self.surveyScrollView.orderTableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:addButton.tag inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
 }
 
 //- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
