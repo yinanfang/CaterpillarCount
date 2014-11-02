@@ -17,7 +17,7 @@
     if (self) {
         // Initialize values
         self.surveys = [[NSMutableArray alloc] init];
-        self.sites = [NSMutableArray new];
+        self.sites = [[NSMutableArray alloc] init];
     }
     return self;
 }

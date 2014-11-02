@@ -27,6 +27,7 @@
 #pragma mark - User data
 + (void)updateUserWithGCUser:(NSDictionary *)userDictionary;
 + (void)addCurrentunsavedOrdersWithDictionary:(NSDictionary *)orderDictionary;
++ (void)addSurveyData:(GCSurvey *)survey;
 
 
 @end

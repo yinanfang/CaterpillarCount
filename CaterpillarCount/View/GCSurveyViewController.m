@@ -63,14 +63,24 @@
                 DDLogVerbose(@"herbivory");
             }
             [self.picker_Generic reloadAllComponents];
+            [self.view layoutIfNeeded];
             [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
                 [self.picker_Generic mas_updateConstraints:^(MASConstraintMaker *make){
                     make.bottom.equalTo(self.view.mas_bottom);
                 }];
                 [self.view layoutIfNeeded];
             }completion:nil];
+        } else {
+            DDLogVerbose(@"Hiding picker");
+            [self.view layoutIfNeeded];
+            [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+                [self.picker_Generic mas_updateConstraints:^(MASConstraintMaker *make){
+                    make.bottom.equalTo(self.view.mas_bottom).with.offset(self.picker_Generic.frame.size.height);
+                }];
+                [self.view layoutIfNeeded];
+            }completion:nil];
         }
-        
+        self.didShowPicker = !self.didShowPicker;
         return [RACSignal empty];
     }];
     self.surveyScrollView.entry_Temp.rac_command = self.firePicker;
@@ -94,7 +104,65 @@
     // Submit button
     [[self.surveyScrollView.btn_Submit rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         NSLog(@"hit button submit");
-        [GCAppViewModel saveAppDataToNSUserDefaults];
+        GCUserData *userData = [GCAppViewModel sharedInstance].currentUserData;
+        GCSurvey *survey = [[GCSurvey alloc] init];
+        survey.userID = [NSString stringWithFormat:@"%@", userData.user.userID];
+        survey.siteName = self.surveyScrollView.entry_Site.titleLabel.text;
+        survey.circleNumber = [[[NSNumberFormatter alloc] init] numberFromString:self.surveyScrollView.entry_Circle.titleLabel.text];
+        survey.surveyString = self.surveyScrollView.entry_Survey.titleLabel.text;
+//        survey.timeSubmitted
+        survey.temperature = self.surveyScrollView.entry_Temp.titleLabel.text;
+        survey.ordersArray = [GCAppViewModel sharedInstance].currentUnsavedOrders;
+        survey.plantSpecies = self.surveyScrollView.entry_PlantSpecies.text;
+        survey.herbivory = self.surveyScrollView.entry_Herbivory.titleLabel.text;
+        survey.plantPhotoLocalURL = self.surveyScrollView.label_PhotoPlaceHolder.text;
+        [GCAppViewModel addSurveyData:survey];
+        
+        NSDictionary *surveyDictionary = [MTLJSONAdapter JSONDictionaryFromModel:survey];
+        DDLogInfo(@"surveyDictionary, %@", surveyDictionary);
+        __block NSURL *url_Submission = [NSURL URLWithString:[[NSString alloc] initWithFormat:@"%@/~pocket14/forsyth.im/caterpillars/submission_full.php", [GCAppAPI getCurrentDomain]]];
+        __block NSDictionary *parameters = @{
+                                             @"type": @"survey",
+                                             @"siteID": @"5",
+                                             @"userID": surveyDictionary[@"userID"],
+                                             
+                                             @"circle": @1,
+                                             @"survey": @"a",
+                                             @"timeStart": @"2014-10-13 12:06:02",
+                                             @"temperatureMin": @72,
+                                             @"temperatureMax": @73,
+                                             @"siteNotes": @"siteNote",
+                                             @"plantSpecies": @"plantSpecies",
+                                             @"herbivory": @4,
+                                             
+                                             
+//                                             @"circle": surveyDictionary[@"circleNumber"],
+//                                             @"survey": surveyDictionary[@"surveyString"],
+//                                             @"timeStart": @"2014-10-13 12:06:02",
+//                                             @"temperatureMin": @"72",
+//                                             @"temperatureMax": @"73",
+//                                             @"siteNotes": @"note",
+//                                             @"plantSpecies": surveyDictionary[@"plantSpecies"],
+//                                             @"herbivory": surveyDictionary[@"herbivory"],
+                                             };
+        DDLogInfo(@"Registering Survey");
+        [GCNetwork requestPOSTWithURL:url_Submission parameter:parameters completion:^(BOOL succeeded, NSData *responseData) {
+            if (succeeded) {
+                DDLogInfo(@"Submitting full survey");
+//                url_Submission = [NSURL URLWithString:[[NSString alloc] initWithFormat:@"%@/~pocket14/forsyth.im/caterpillars/submission_full.php", [GCAppAPI getCurrentDomain]]];
+//                parameters = @{
+//                                                     @"type": @"survey",
+//                                                     @"siteID": @"5",
+//                                                     @"userID": survey.userID,
+//                                                     };
+
+            }
+        }];
+        
+
+        
+//        [GCAppViewModel saveAppDataToNSUserDefaults];
+
     }];
 }
 
@@ -185,7 +253,11 @@
             self.pickerContent = store.temperatureRanges;
             break;
         case PickerType_Site:
-            self.pickerContent = [GCAppViewModel sharedInstance].currentUserData.sites;
+            if ([[GCAppViewModel sharedInstance].currentUserData.sites count] == 0) {
+                self.pickerContent = [@[@"No site",] mutableCopy];
+            } else {
+                self.pickerContent = [GCAppViewModel sharedInstance].currentUserData.sites;
+            }
             break;
         case PickerType_Circle:
             self.pickerContent = store.circles;

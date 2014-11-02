@@ -71,6 +71,8 @@
     [defaults synchronize];
 }
 
+
+
 #pragma mark - User data
 + (void)updateUserWithGCUser:(NSDictionary *)userDictionary
 {
@@ -105,7 +107,11 @@
     DDLogVerbose(@"Added a new order. currentUnsavedOrders: %@", viewModel.currentUnsavedOrders);
 }
 
-
++ (void)addSurveyData:(GCSurvey *)survey
+{
+//    DDLogVerbose(@"Survey data JSON serialization: %@", [MTLJSONAdapter JSONDictionaryFromModel:survey]);
+    [[GCAppViewModel sharedInstance].currentUserData.surveys addObject:survey];
+}
 
 
 @end
