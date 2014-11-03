@@ -31,19 +31,19 @@
 
 + (NSValueTransformer *)userIDJSONTransformer
 {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSString *idString){
-        return idString;
-    }reverseBlock:^(NSString *idString){
-        return idString;
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSNumber *num){
+        return num;
+    }reverseBlock:^(NSNumber *num){
+        return num;
     }];
 }
 
 + (NSValueTransformer *)surveyIDJSONTransformer
 {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSString *idString){
-        return idString;
-    }reverseBlock:^(NSString *idString){
-        return idString;
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSNumber *num){
+        return num;
+    }reverseBlock:^(NSNumber *num){
+        return num;
     }];
 }
 
@@ -112,10 +112,10 @@
 
 + (NSValueTransformer *)herbivoryJSONTransformer
 {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSString *str){
-        return str;
-    }reverseBlock:^(NSString *str){
-        return str;
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSNumber *num){
+        return num;
+    }reverseBlock:^(NSNumber *num){
+        return num;
     }];
 }
 

@@ -106,19 +106,21 @@
         NSLog(@"hit button submit");
         GCUserData *userData = [GCAppViewModel sharedInstance].currentUserData;
         GCSurvey *survey = [[GCSurvey alloc] init];
-        survey.userID = [NSString stringWithFormat:@"%@", userData.user.userID];
+        survey.userID = userData.user.userID;
         survey.siteName = self.surveyScrollView.entry_Site.titleLabel.text;
         survey.circleNumber = [[[NSNumberFormatter alloc] init] numberFromString:self.surveyScrollView.entry_Circle.titleLabel.text];
+        survey.circleNumber = (survey.circleNumber) ? : @1;
         survey.surveyString = self.surveyScrollView.entry_Survey.titleLabel.text;
 //        survey.timeSubmitted
         survey.temperature = self.surveyScrollView.entry_Temp.titleLabel.text;
         survey.ordersArray = [GCAppViewModel sharedInstance].currentUnsavedOrders;
         survey.plantSpecies = self.surveyScrollView.entry_PlantSpecies.text;
-        survey.herbivory = self.surveyScrollView.entry_Herbivory.titleLabel.text;
+        survey.herbivory = [[[NSNumberFormatter alloc] init] numberFromString:self.surveyScrollView.entry_Herbivory.titleLabel.text];
+        survey.herbivory = (survey.herbivory) ? : @1;
         survey.plantPhotoLocalURL = self.surveyScrollView.label_PhotoPlaceHolder.text;
         [GCAppViewModel addSurveyData:survey];
         
-        NSDictionary *surveyDictionary = [MTLJSONAdapter JSONDictionaryFromModel:survey];
+        __block NSDictionary *surveyDictionary = [MTLJSONAdapter JSONDictionaryFromModel:survey];
         DDLogInfo(@"surveyDictionary, %@", surveyDictionary);
         __block NSURL *url_Submission = [NSURL URLWithString:[[NSString alloc] initWithFormat:@"%@/~pocket14/forsyth.im/caterpillars/submission_full.php", [GCAppAPI getCurrentDomain]]];
         __block NSDictionary *parameters = @{
@@ -126,35 +128,40 @@
                                              @"siteID": @"5",
                                              @"userID": surveyDictionary[@"userID"],
                                              
-                                             @"circle": @1,
-                                             @"survey": @"a",
+                                             @"circle": surveyDictionary[@"circleNumber"],
+                                             @"survey": surveyDictionary[@"surveyString"],
                                              @"timeStart": @"2014-10-13 12:06:02",
                                              @"temperatureMin": @72,
                                              @"temperatureMax": @73,
-                                             @"siteNotes": @"siteNote",
-                                             @"plantSpecies": @"plantSpecies",
-                                             @"herbivory": @4,
-                                             
-                                             
-//                                             @"circle": surveyDictionary[@"circleNumber"],
-//                                             @"survey": surveyDictionary[@"surveyString"],
-//                                             @"timeStart": @"2014-10-13 12:06:02",
-//                                             @"temperatureMin": @"72",
-//                                             @"temperatureMax": @"73",
-//                                             @"siteNotes": @"note",
-//                                             @"plantSpecies": surveyDictionary[@"plantSpecies"],
-//                                             @"herbivory": surveyDictionary[@"herbivory"],
+                                             @"siteNotes": @"note",
+                                             @"plantSpecies": surveyDictionary[@"plantSpecies"],
+                                             @"herbivory": surveyDictionary[@"herbivory"],
                                              };
         DDLogInfo(@"Registering Survey");
-        [GCNetwork requestPOSTWithURL:url_Submission parameter:parameters completion:^(BOOL succeeded, NSData *responseData) {
+        [GCNetwork requestPOSTWithURL:url_Submission parameter:parameters completion:^(BOOL succeeded, NSData *data) {
             if (succeeded) {
                 DDLogInfo(@"Submitting full survey");
-//                url_Submission = [NSURL URLWithString:[[NSString alloc] initWithFormat:@"%@/~pocket14/forsyth.im/caterpillars/submission_full.php", [GCAppAPI getCurrentDomain]]];
-//                parameters = @{
-//                                                     @"type": @"survey",
-//                                                     @"siteID": @"5",
-//                                                     @"userID": survey.userID,
-//                                                     };
+                survey.surveyID = ((NSDictionary *)data)[@"surveyID"];
+                surveyDictionary = [MTLJSONAdapter JSONDictionaryFromModel:survey];
+                NSArray *ordersArray = surveyDictionary[@"ordersArray"];
+                for (GCOrder *order in ordersArray) {
+                    parameters = @{
+                                   @"type": @"order",
+                                   @"userID": surveyDictionary[@"userID"],
+                                   @"surveyID": surveyDictionary[@"surveyID"],
+                                   @"orderArthropod": order.orderName,
+                                   @"orderLength": order.length,
+                                   @"orderNotes": order.note,
+                                   @"orderCount": order.count,
+                                   };
+                    [GCNetwork requestPOSTWithURL:url_Submission parameter:parameters completion:^(BOOL succeeded, NSData *data) {
+                        
+                    }];
+                    
+                    
+                }
+                
+                
 
             }
         }];

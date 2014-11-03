@@ -10,8 +10,8 @@
 
 @interface GCSurvey : MTLModel <MTLJSONSerializing>
 
-@property NSString *userID;
-@property NSString *surveyID;
+@property NSNumber *userID;
+@property NSNumber *surveyID;
 
 @property NSString *siteName;
 @property NSNumber *circleNumber;
@@ -22,7 +22,7 @@
 @property NSMutableArray *ordersArray;
 
 @property NSString *plantSpecies;
-@property NSString *herbivory;
+@property NSNumber *herbivory;
 @property NSString *plantPhotoLocalURL;
 //@property UIImageView *plantPhotoView;
 

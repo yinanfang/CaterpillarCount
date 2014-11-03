@@ -11,7 +11,7 @@
 @interface GCNetwork : NSObject
 
 + (void)twoWayJSONPOSTRequestWithViewController:(UIViewController *)controller URL:(NSURL *)url parameter:(NSDictionary *)parameter HUDMessage:(NSString *)message completion:(void (^)(BOOL succeeded, NSDictionary *responseDictionary))completionBlock;
-+ (void)requestPOSTWithURL:(NSURL *)url parameter:(NSDictionary *)parameter completion:(void (^)(BOOL succeeded, NSData *responseData))completionBlock;
++ (void)requestPOSTWithURL:(NSURL *)url parameter:(NSDictionary *)parameter completion:(void (^)(BOOL succeeded, NSData *data))completionBlock;
 
     
 @end

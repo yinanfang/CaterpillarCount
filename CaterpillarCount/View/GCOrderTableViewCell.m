@@ -22,20 +22,20 @@
         // Order Name
         self.label_OrderName = [UILabel LabelSubTitleWithString:@"Order Name" align:NSTextAlignmentLeft];
         self.label_OrderName.numberOfLines = 0;
-        self.label_OrderName.backgroundColor = [UIColor emerlandColor];
+//        self.label_OrderName.backgroundColor = [UIColor emerlandColor];
         [self.contentView addSubview:self.label_OrderName];
         // Length
         self.label_Length = [UILabel LabelSubTitleWithString:@"Length" align:NSTextAlignmentLeft];
-        self.label_Length.backgroundColor = [UIColor greenColor];
+//        self.label_Length.backgroundColor = [UIColor greenColor];
         [self.contentView addSubview:self.label_Length];
         // Count
         self.label_Count = [UILabel LabelSubTitleWithString:@"Count" align:NSTextAlignmentLeft];
-        self.label_Count.backgroundColor = [UIColor yellowColor];
+//        self.label_Count.backgroundColor = [UIColor yellowColor];
         [self.contentView addSubview:self.label_Count];
         // Notes
         self.label_Notes = [UILabel LabelSubTitleWithString:@"Notes" align:NSTextAlignmentLeft];
         self.label_Notes.numberOfLines = 0;
-        self.label_Notes.backgroundColor = [UIColor blackColor];
+//        self.label_Notes.backgroundColor = [UIColor blackColor];
         [self.contentView addSubview:self.label_Notes];
         
         // Add and Minus Button
@@ -44,7 +44,7 @@
         self.btn_Minus = [FUIButton ButtonWithTitle:@"-" inBold:YES];
         [self.contentView addSubview:self.btn_Minus];
         
-        self.contentView.backgroundColor = [UIColor colorWithRed:1 green:0 blue:0 alpha:1];
+//        self.contentView.backgroundColor = [UIColor colorWithRed:1 green:0 blue:0 alpha:1];
         
     }
     return self;

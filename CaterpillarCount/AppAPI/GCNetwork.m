@@ -69,7 +69,7 @@
     }];
 }
 
-+ (void)requestPOSTWithURL:(NSURL *)url parameter:(NSDictionary *)parameter completion:(void (^)(BOOL succeeded, NSData *responseData))completionBlock
++ (void)requestPOSTWithURL:(NSURL *)url parameter:(NSDictionary *)parameter completion:(void (^)(BOOL succeeded, NSData *data))completionBlock
 {
     DDLogVerbose(@"url is: %@", url.absoluteString);
     DDLogVerbose(@"parameter: %@", parameter);
