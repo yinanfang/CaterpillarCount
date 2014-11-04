@@ -105,7 +105,7 @@
         self.entry_Herbivory = [UIButton ButtonWithTitle:@"Click to choose a herbivory" inBold:NO horizontalAlign:UIControlContentHorizontalAlignmentLeft];
         [self addSubview:self.entry_Herbivory];
         // Plant Photo
-        self.label_PlantPhoto = [UILabel LabelSubTitleWithString:@"Plant Photo" align:NSTextAlignmentLeft];
+        self.label_PlantPhoto = [UILabel LabelSubTitleWithString:@"Leaf Photo" align:NSTextAlignmentLeft];
         [self addSubview:self.label_PlantPhoto];
         // Photo thumbnail
         self.entry_PlantPhoto = [UIImageView ImageViewWithDefaultBackgroundImage:nil];
