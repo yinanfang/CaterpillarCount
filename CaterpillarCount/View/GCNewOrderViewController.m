@@ -36,8 +36,47 @@
     self.orderScrollView.entry_Notes.delegate = self;
     // Add Input accessary view
     
+    // UIPickerView
+    self.picker_Generic = [[UIPickerView alloc] init];
+    self.picker_Generic.backgroundColor = [UIColor whiteColor];
+    self.picker_Generic.delegate = self;
+    self.picker_Generic.dataSource = self;
+    [self.view addSubview:self.picker_Generic];
+    [self.picker_Generic mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view.mas_left);
+        make.right.equalTo(self.view.mas_right);
+        make.bottom.mas_equalTo(self.picker_Generic.frame.size.height);
+    }];
+    // Show and hide motion
     
     
+    self.orderScrollView.entry_Order.rac_command = [[RACCommand alloc] initWithSignalBlock:^(UIButton *button) {
+        if (!self.didShowPicker) {
+            DDLogVerbose(@"fire order name picker!");
+            self.pickerType = PickerType_Order;
+            [self.picker_Generic reloadAllComponents];
+            [self.view layoutIfNeeded];
+            [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+                [self.picker_Generic mas_updateConstraints:^(MASConstraintMaker *make){
+                    make.bottom.equalTo(self.view.mas_bottom);
+                }];
+                [self.view layoutIfNeeded];
+            }completion:nil];
+        } else {
+            DDLogVerbose(@"Hiding picker");
+            [self.view layoutIfNeeded];
+            [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+                [self.picker_Generic mas_updateConstraints:^(MASConstraintMaker *make){
+                    make.bottom.equalTo(self.view.mas_bottom).with.offset(self.picker_Generic.frame.size.height);
+                }];
+                [self.view layoutIfNeeded];
+            }completion:nil];
+        }
+        self.didShowPicker = !self.didShowPicker;
+        return [RACSignal empty];
+    }];
+    
+    // Image picker
     [[self.orderScrollView.btn_PhotoPlaceHolder rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         NSLog(@"should take picture");
         UIImagePickerController *camera = [[UIImagePickerController alloc] init];
@@ -59,7 +98,7 @@
         
         NSDictionary *newOrder = @{
                                    @"orderID": @"",
-                                   @"orderName": @"orderName test",
+                                   @"orderName": self.orderScrollView.entry_Order.titleLabel.text,
                                    @"length": length,
                                    @"count": count,
                                    @"note": note,
@@ -70,6 +109,50 @@
         NSLog(@"pop...");
     }];
     
+}
+
+#pragma mark - UIPickerView Delegate
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    NSString *newValue = self.pickerContent[row];
+    switch (self.pickerType) {
+        case PickerType_Order:
+            [self.orderScrollView.entry_Order setTitle:newValue forState:UIControlStateNormal];
+            break;
+        default:
+            break;
+    }
+}
+
+#pragma mark - UIPickerView DataSource
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    [self configurePickerContent];
+    return self.pickerContent.count;
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    [self configurePickerContent];
+    return self.pickerContent[row];
+}
+
+- (void)configurePickerContent
+{
+    GCStore *store = [GCStore sharedInstance];
+    switch (self.pickerType) {
+        case PickerType_Order:
+            self.pickerContent = store.arthropodOrder;
+            break;
+        default:
+            break;
+    }
 }
 
 #pragma mark - UITextField Delegate

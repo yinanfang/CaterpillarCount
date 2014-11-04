@@ -10,12 +10,22 @@
 #import "GCNewOrderScrollView.h"
 
 
-@interface GCNewOrderViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate, UIScrollViewDelegate>
+@interface GCNewOrderViewController : UIViewController
+<   UINavigationControllerDelegate,
+    UIImagePickerControllerDelegate,
+    UITextFieldDelegate,
+    UIScrollViewDelegate,
+    UIPickerViewDelegate,
+    UIPickerViewDataSource
+>
 
 @property GCNewOrderScrollView *orderScrollView;
 
-//@property GCOrder *singleOrder;
-
+// View Items
+@property UIPickerView *picker_Generic;
+@property PickerType pickerType;
+@property __block BOOL didShowPicker;
+@property NSMutableArray *pickerContent;
 
 
 @end

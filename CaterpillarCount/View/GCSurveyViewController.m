@@ -32,7 +32,7 @@
     [self.surveyScrollView setNeedsUpdateConstraints];
     [self.surveyScrollView updateConstraintsIfNeeded];
     
-    // Configure the pickers
+    // UIPickerView
     self.picker_Generic = [[UIPickerView alloc] init];
     self.picker_Generic.backgroundColor = [UIColor whiteColor];
     self.picker_Generic.delegate = self;
@@ -188,8 +188,12 @@
     [super viewWillAppear:animated];
 }
 
-
-
+// Hide keyboard when touching the background
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    DDLogVerbose(@"touchesBegan in GCSurveyViewController");
+    [super touchesBegan:touches withEvent:event];
+}
 
 #pragma mark - UIPickerView Delegate
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
@@ -215,13 +219,6 @@
         default:
             break;
     }
-}
-
-// Hide keyboard when touching the background
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    DDLogVerbose(@"touchesBegan in GCSurveyViewController");
-    [super touchesBegan:touches withEvent:event];
 }
 
 #pragma mark - UIPickerView DataSource
