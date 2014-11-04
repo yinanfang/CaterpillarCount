@@ -81,9 +81,7 @@
         // New Order Info Button
         self.btn_NewOrderInfo = [FUIButton ButtonWithTitle:@"New" inBold:YES];
         [self addSubview:self.btn_NewOrderInfo];
-        [[self.btn_NewOrderInfo rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
-            NSLog(@"add order button tapped");
-        }];
+
         // Order details table
         self.orderTableView = [[UITableView alloc] init];
         self.orderTableView.separatorInset = UIEdgeInsetsZero;

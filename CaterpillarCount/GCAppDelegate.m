@@ -28,6 +28,9 @@
     // Update view model
     [GCAppViewModel getAppDataFromNSUserDefaultsAndUpdateViewModel];
     
+    // Set global tint color
+    [self.window setTintColor:[UIColor whiteColor]];
+    
     // Determine next page
     GCCoverViewController *coverViewController = [[GCCoverViewController alloc] init];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:coverViewController];

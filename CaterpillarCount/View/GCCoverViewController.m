@@ -24,27 +24,18 @@
     [self.coverView updateConstraintsIfNeeded];
 }
 
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-//    DDLogVerbose(@"touchesBegan:withEvent:");
-//    DDLogVerbose(@"controller.view.frame = %@", [NSValue valueWithCGRect:[[UIScreen mainScreen] bounds]]);
-//    DDLogVerbose(@"screen height = %f", ScreenHeight);
-//    DDLogVerbose(@"screen width = %f", ScreenWidth);
-    [super touchesBegan:touches withEvent:event];
-}
-
 - (void)viewWillAppear:(BOOL)animated
 {
-    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Enter" style:UIBarButtonItemStyleBordered target:self action:@selector(enterDirectly)];
-    self.navigationItem.rightBarButtonItem = rightButton;
+//    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Enter" style:UIBarButtonItemStyleBordered target:self action:@selector(enterDirectly)];
+//    self.navigationItem.rightBarButtonItem = rightButton;
     
-//    self.navigationController.navigationBar.hidden = YES;
+    self.navigationController.navigationBar.hidden = YES;
 }
-- (void)enterDirectly
-{
-    GCSurveyViewController *surveyViewController = [[GCSurveyViewController alloc] init];
-    [self.navigationController pushViewController:surveyViewController animated:YES];
-}
-
+//- (void)enterDirectly
+//{
+//    GCSurveyViewController *surveyViewController = [[GCSurveyViewController alloc] init];
+//    [self.navigationController pushViewController:surveyViewController animated:YES];
+//}
 
 - (BOOL)prefersStatusBarHidden {
     return NO;

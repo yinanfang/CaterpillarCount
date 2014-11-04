@@ -157,9 +157,11 @@
         // Save the image to Camera Roll
 //        UIImageWriteToSavedPhotosAlbum(imageToSave, nil, nil, nil);
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-        NSLog(@"paths: %@", [paths description]);
         NSString *documentsDirectory = paths[0];
-        imagePath = [documentsDirectory stringByAppendingPathComponent:@"testImage.png"];
+        NSDateFormatter *objDateformat = [[NSDateFormatter alloc] init];
+        [objDateformat setDateFormat:@"yyyy_MM_dd_HH_mm_ss"];
+        NSString *strTime = [objDateformat stringFromDate:[NSDate date]];
+        imagePath = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.png", strTime]];
         NSLog(@"image Path: %@", imagePath);
         NSData *data = UIImagePNGRepresentation(imageToSave);
         NSError *error = nil;
@@ -167,7 +169,6 @@
         if (error) {
             NSLog(@"Fail: %@", [error localizedDescription]);
         }
-        
     }
  
     [self.orderScrollView.btn_PhotoPlaceHolder setTitle:imagePath forState:UIControlStateNormal];

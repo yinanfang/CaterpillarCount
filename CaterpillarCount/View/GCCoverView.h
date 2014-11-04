@@ -15,6 +15,8 @@
 @property BOOL didSetupConstraints;
 
 // View items
+@property UILabel *label_Title;
+@property UIImageView *imageView_Logo;
 @property FUIButton *btn_SignIn, *btn_Register;
 
 

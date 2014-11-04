@@ -24,6 +24,7 @@
     UIButton *rightButton = [GCAppSetup configureRightButtonOfNavigationViewController:self];
     [[rightButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         DDLogVerbose(@"hit right button");
+        [self.navigationController popToRootViewControllerAnimated:YES];
     }];
     
     // Add Survey View
@@ -220,16 +221,6 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     DDLogVerbose(@"touchesBegan in GCSurveyViewController");
-//    UITouch *touch = [[event allTouches] anyObject];
-//    if ([self.orderScrollView.entry_Length isFirstResponder] && [touch view] != self.orderScrollView.entry_Length) {
-//        [self.orderScrollView.entry_Length resignFirstResponder];
-//    }
-//    if ([self.orderScrollView.entry_Count isFirstResponder] && [touch view] != self.orderScrollView.entry_Count) {
-//        [self.orderScrollView.entry_Count resignFirstResponder];
-//    }
-//    if ([self.orderScrollView.entry_Notes isFirstResponder] && [touch view] != self.orderScrollView.entry_Notes) {
-//        [self.orderScrollView.entry_Notes resignFirstResponder];
-//    }
     [super touchesBegan:touches withEvent:event];
 }
 
@@ -359,7 +350,7 @@
     GCOrder *order = (GCOrder *)[GCAppViewModel sharedInstance].currentUnsavedOrders[addButton.tag];
     order.count = [NSNumber numberWithInt:[order.count intValue]+1];
     DDLogVerbose(@"%@", [GCAppViewModel sharedInstance].currentUnsavedOrders);
-    [self.surveyScrollView.orderTableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:addButton.tag inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
+    [self.surveyScrollView.orderTableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:addButton.tag inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
 }
 
 - (void)minusCount:(FUIButton *)addButton
@@ -368,7 +359,7 @@
     GCOrder *order = (GCOrder *)[GCAppViewModel sharedInstance].currentUnsavedOrders[addButton.tag];
     order.count = [NSNumber numberWithInt:[order.count intValue]-1];
     DDLogVerbose(@"%@", [GCAppViewModel sharedInstance].currentUnsavedOrders);
-    [self.surveyScrollView.orderTableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:addButton.tag inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
+    [self.surveyScrollView.orderTableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:addButton.tag inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
 }
 
 //- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -386,14 +377,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
