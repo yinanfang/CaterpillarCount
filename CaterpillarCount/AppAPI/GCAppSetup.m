@@ -81,7 +81,7 @@
     // Set Title
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 120, 30)];
     label.textAlignment = NSTextAlignmentCenter;
-    [label setFont:[UIFont boldSystemFontOfSize:16.0]];
+    [label setFont:[UIFont boldSystemFontOfSize:20.0]];
     [label setBackgroundColor:[UIColor clearColor]];
     [label setTextColor:[UIColor whiteColor]];
     [label setText:title];

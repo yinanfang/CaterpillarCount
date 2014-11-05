@@ -18,12 +18,14 @@
 @property NSString *surveyString;
 @property NSDate *timeSubmitted;
 @property NSString *temperature;
+@property NSString *siteNotes;
 
 @property NSMutableArray *ordersArray;
 
 @property NSString *plantSpecies;
 @property NSNumber *herbivory;
 @property NSString *plantPhotoLocalURL;
+@property NSString *plantPhotoServerURL;
 //@property UIImageView *plantPhotoView;
 
 @end

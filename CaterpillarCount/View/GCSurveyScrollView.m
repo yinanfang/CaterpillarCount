@@ -74,6 +74,12 @@
         [self addSubview:self.label_Survey];
         self.entry_Survey = [UIButton ButtonWithTitle:@"Click to choose a survey" inBold:NO horizontalAlign:UIControlContentHorizontalAlignmentLeft];
         [self addSubview:self.entry_Survey];
+        // Site Notes
+        self.label_Notes = [UILabel LabelSubTitleWithString:@"Notes" align:NSTextAlignmentLeft];
+        [self addSubview:self.label_Notes];
+        self.entry_SiteNotes = [UITextField TextFieldWithPlaceHolder:@"Site Notes" keyboardType:UIKeyboardTypeDefault];
+        self.entry_SiteNotes.delegate = self;
+        [self addSubview:self.entry_SiteNotes];
         
         // Arthropod Order Info
         self.label_ArthropodOrderInfo = [UILabel LabelTitleWithString:@"Arthropod Order Info" align:NSTextAlignmentLeft];
@@ -109,8 +115,8 @@
         self.entry_PlantPhoto = [UIImageView ImageViewWithDefaultBackgroundImage:nil];
         [self addSubview:self.entry_PlantPhoto];
         // Photo Place Holder
-        self.label_PhotoPlaceHolder = [UILabel LabelSubTitleWithString:@"Capture" align:NSTextAlignmentCenter];
-        [self addSubview:self.label_PhotoPlaceHolder];
+        self.btn_PhotoPlaceHolder = [UIButton ButtonWithTitle:@"Capture" inBold:NO horizontalAlign:UIControlContentHorizontalAlignmentCenter];
+        [self addSubview:self.btn_PhotoPlaceHolder];
         
         // Submit button and alert view
         self.btn_Submit = [FUIButton ButtonWithTitle:@"Submit" inBold:YES];
@@ -168,7 +174,7 @@
         [self.label_SiteInfo mas_makeConstraints:^(MASConstraintMaker *make) {
             // top is defined by three entries above
             make.left.equalTo(self.mas_left).with.offset(mas_Padding_Page_Large.left);
-            make.right.equalTo(self.mas_right).with.offset(mas_Padding_Page_Large.right);
+//            make.right.equalTo(self.mas_right).with.offset(mas_Padding_Page_Large.right);
         }];
         // Site
         [GCAppSetup setConstraints_PinHorizontallyWithPagePaddingAndTopWithPadding:PagePaddingSmall withView:self.label_Site superview:self upperview:self.label_SiteInfo];
@@ -179,19 +185,22 @@
         // Survey
         [GCAppSetup setConstraints_PinHorizontallyWithPagePaddingAndTopWithPadding:PagePaddingSmall withView:self.label_Survey superview:self upperview:self.entry_Circle];
         [GCAppSetup setConstraints_PinHorizontallyWithPagePaddingAndTopWithPadding:PagePaddingSmall withView:self.entry_Survey superview:self upperview:self.label_Survey];
+        // Notes
+        [GCAppSetup setConstraints_PinHorizontallyWithPagePaddingAndTopWithPadding:PagePaddingSmall withView:self.label_Notes superview:self upperview:self.entry_Survey];
+        [GCAppSetup setConstraints_PinHorizontallyWithPagePaddingAndTopWithPadding:PagePaddingSmall withView:self.entry_SiteNotes superview:self upperview:self.label_Notes];
         
         // Arthropod Order Info
         [self.label_ArthropodOrderInfo mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.entry_Survey.mas_bottom).with.offset(mas_Padding_Page_Large.top);
+            make.top.equalTo(self.entry_SiteNotes.mas_bottom).with.offset(mas_Padding_Page_Large.top);
             make.left.equalTo(self.mas_left).with.offset(mas_Padding_Page_Large.left);
             make.height.mas_equalTo(20);
         }];
         // Add button
         [self.btn_NewOrderInfo mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.entry_Survey.mas_bottom).with.offset(mas_Padding_Page_Large.top);
+            make.top.equalTo(self.entry_SiteNotes.mas_bottom).with.offset(mas_Padding_Page_Large.top);
             make.left.equalTo(self.label_ArthropodOrderInfo.mas_right);
             make.right.equalTo(self.mas_right).with.offset(mas_Padding_Page_Large.right);
-            make.size.mas_equalTo(CGSizeMake(80, 23));
+            make.size.mas_equalTo(CGSizeMake(60, 23));
             //            make.bottom.equalTo(self.mas_bottom);
         }];
         // Order detail table
@@ -217,7 +226,7 @@
             make.centerX.equalTo(self.mas_centerX);
             make.size.mas_equalTo(CGSizeMake(100, 100));
         }];
-        [self.label_PhotoPlaceHolder mas_makeConstraints:^(MASConstraintMaker *make) {
+        [self.btn_PhotoPlaceHolder mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.label_PlantPhoto.mas_bottom).with.offset(mas_Padding_Page_Default.top);
             make.centerX.equalTo(self.mas_centerX);
             make.size.mas_equalTo(CGSizeMake(100, 100));
@@ -252,7 +261,7 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
     DDLogVerbose(@"textFieldShouldReturn:");
-    [self.entry_PlantSpecies resignFirstResponder];
+    [textField resignFirstResponder];
     if (self.shouldMoveDownToAdjustForKeyboard) {
         [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
             DDLogVerbose(@"Adjusting content offset for keyboard");

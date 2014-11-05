@@ -19,8 +19,10 @@
 @property UIButton *entry_Temp, *entry_Time, *entry_Date;
 // Input section
 @property UILabel *label_SiteInfo;
-@property UILabel *label_Site, *label_Circle, *label_Survey;
+@property UILabel *label_Site, *label_Circle, *label_Survey, *label_Notes;
 @property UIButton *entry_Site, *entry_Circle, *entry_Survey;
+@property UITextField *entry_SiteNotes;
+
 // Arthropod Order Info
 @property UILabel *label_ArthropodOrderInfo;
 @property FUIButton *btn_NewOrderInfo;
@@ -32,7 +34,7 @@
 // Plant Photo
 @property UILabel *label_PlantPhoto;
 @property UIImageView *entry_PlantPhoto;
-@property UILabel *label_PhotoPlaceHolder;
+@property UIButton *btn_PhotoPlaceHolder;
 // Submit Button
 @property FUIButton *btn_Submit;
 

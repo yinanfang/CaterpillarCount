@@ -48,8 +48,6 @@
         make.bottom.mas_equalTo(self.picker_Generic.frame.size.height);
     }];
     // Show and hide motion
-    
-    
     self.orderScrollView.entry_Order.rac_command = [[RACCommand alloc] initWithSignalBlock:^(UIButton *button) {
         if (!self.didShowPicker) {
             DDLogVerbose(@"fire order name picker!");
@@ -90,6 +88,7 @@
         [self presentViewController:camera animated:YES completion:nil];
     }];
     
+    // Submission Button
     [[self.orderScrollView.btn_Submit rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         NSLog(@"New Order button submit");
         NSString *length = [self.orderScrollView.entry_Length.text isEqualToString:@""] ? @"0" : self.orderScrollView.entry_Length.text;

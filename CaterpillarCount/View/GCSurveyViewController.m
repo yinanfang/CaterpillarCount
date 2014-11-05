@@ -21,6 +21,7 @@
     
     // UI Navigation Bar
     [GCAppSetup configureNavigationViewController:self withNavigationTitle:@"Caterpillars Count"];
+    self.navigationItem.hidesBackButton = YES;
     UIButton *rightButton = [GCAppSetup configureRightButtonOfNavigationViewController:self];
     [[rightButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         DDLogVerbose(@"hit right button");
@@ -102,6 +103,20 @@
     self.surveyScrollView.orderTableView.delegate = self;
     self.surveyScrollView.orderTableView.dataSource = self;
     
+    // Image picker
+    [[self.surveyScrollView.btn_PhotoPlaceHolder rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+        NSLog(@"should take picture");
+        UIImagePickerController *camera = [[UIImagePickerController alloc] init];
+        camera.sourceType = UIImagePickerControllerSourceTypeCamera;
+        // Allow Video
+        //        camera.mediaTypes = [UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeCamera];
+        camera.delegate = self;
+        camera.cameraDevice = UIImagePickerControllerCameraDeviceRear;
+        camera.showsCameraControls = YES;
+        camera.allowsEditing = YES;
+        [self presentViewController:camera animated:YES completion:nil];
+    }];
+    
     // Submit button
     [[self.surveyScrollView.btn_Submit rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         NSLog(@"hit button submit");
@@ -114,11 +129,12 @@
         survey.surveyString = self.surveyScrollView.entry_Survey.titleLabel.text;
 //        survey.timeSubmitted
         survey.temperature = self.surveyScrollView.entry_Temp.titleLabel.text;
+        survey.siteNotes = self.surveyScrollView.entry_SiteNotes.text;
         survey.ordersArray = [GCAppViewModel sharedInstance].currentUnsavedOrders;
         survey.plantSpecies = self.surveyScrollView.entry_PlantSpecies.text;
         survey.herbivory = [[[NSNumberFormatter alloc] init] numberFromString:self.surveyScrollView.entry_Herbivory.titleLabel.text];
         survey.herbivory = (survey.herbivory) ? : @1;
-        survey.plantPhotoLocalURL = self.surveyScrollView.label_PhotoPlaceHolder.text;
+        survey.plantPhotoLocalURL = self.surveyScrollView.btn_PhotoPlaceHolder.titleLabel.text;
         [GCAppViewModel addSurveyData:survey];
         
         __block NSDictionary *surveyDictionary = [MTLJSONAdapter JSONDictionaryFromModel:survey];
@@ -134,7 +150,7 @@
                                              @"timeStart": @"2014-10-13 12:06:02",
                                              @"temperatureMin": @72,
                                              @"temperatureMax": @73,
-                                             @"siteNotes": @"note",
+                                             @"siteNotes": surveyDictionary[@"siteNotes"],
                                              @"plantSpecies": surveyDictionary[@"plantSpecies"],
                                              @"herbivory": surveyDictionary[@"herbivory"],
                                              };
@@ -158,12 +174,7 @@
                     [GCNetwork requestPOSTWithURL:url_Submission parameter:parameters completion:^(BOOL succeeded, NSData *data) {
                         
                     }];
-                    
-                    
                 }
-                
-                
-
             }
         }];
         
@@ -363,6 +374,50 @@
 //{
 //    return UITableViewAutomaticDimension;
 //}
+
+#pragma mark - UIImagePickerControllerDelegate Delegate
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    DDLogVerbose(@"trying to set the image");
+    NSString *mediaType = [info objectForKey:UIImagePickerControllerMediaType];
+    UIImage *originalImage, *editedImage, *imageToSave;
+    NSString *imagePath;
+    // Handle a still image capture
+    if (CFStringCompare((CFStringRef) mediaType, kUTTypeImage, 0) == kCFCompareEqualTo) {
+        editedImage = (UIImage *) [info objectForKey:UIImagePickerControllerEditedImage];
+        originalImage =  (UIImage *) [info objectForKey:UIImagePickerControllerOriginalImage];
+        if (editedImage) {
+            imageToSave = editedImage;
+        } else {
+            imageToSave = originalImage;
+        }
+        // Save the image to Camera Roll
+        //        UIImageWriteToSavedPhotosAlbum(imageToSave, nil, nil, nil);
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *documentsDirectory = paths[0];
+        NSDateFormatter *objDateformat = [[NSDateFormatter alloc] init];
+        [objDateformat setDateFormat:@"yyyy_MM_dd_HH_mm_ss"];
+        NSString *strTime = [objDateformat stringFromDate:[NSDate date]];
+        imagePath = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.png", strTime]];
+        NSLog(@"image Path: %@", imagePath);
+        NSData *data = UIImagePNGRepresentation(imageToSave);
+        NSError *error = nil;
+        [data writeToFile:imagePath options:NSDataWritingAtomic error:&error];
+        if (error) {
+            NSLog(@"Fail: %@", [error localizedDescription]);
+        }
+    }
+    
+    [self.surveyScrollView.btn_PhotoPlaceHolder setTitle:imagePath forState:UIControlStateNormal];
+    [self.surveyScrollView.btn_PhotoPlaceHolder setTitleColor:[UIColor clearColor] forState:UIControlStateNormal];
+    [self.surveyScrollView.entry_PlantPhoto setImage:[info objectForKey:UIImagePickerControllerEditedImage]];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 
 #pragma mark - Other View Methods

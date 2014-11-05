@@ -21,7 +21,10 @@
              @"surveyString": @"surveyString",
              @"timeSubmitted": @"timeSubmitted",
              @"temperature": @"temperature",
+             @"siteNotes": @"siteNotes",
+             
              @"ordersArray": @"ordersArray",
+             
              @"plantSpecies": @"plantSpecies",
              @"herbivory": @"herbivory",
              @"plantPhotoLocalURL": @"plantPhotoLocalURL",
@@ -84,6 +87,15 @@
 }
 
 + (NSValueTransformer *)temperatureJSONTransformer
+{
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSString *str){
+        return str;
+    }reverseBlock:^(NSString *str){
+        return str;
+    }];
+}
+
++ (NSValueTransformer *)siteNotesJSONTransformer
 {
     return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSString *str){
         return str;

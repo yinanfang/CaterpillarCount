@@ -10,7 +10,7 @@
 #import "GCSurveyScrollView.h"
 #import "GCNewOrderViewController.h"
 
-@interface GCSurveyViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDelegate, UITableViewDataSource>
+@interface GCSurveyViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDelegate, UITableViewDataSource,UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (strong) GCSurveyScrollView *surveyScrollView;
 
