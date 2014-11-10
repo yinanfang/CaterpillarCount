@@ -183,7 +183,7 @@
     }
     button.contentHorizontalAlignment = horizontalAlign;
     button.layer.borderWidth = WidthForEntryfieldBorder;
-    button.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    button.layer.borderColor = [GCAppAPI getColorWithRGBAinHex:ThemeColor01].CGColor;
     button.layer.cornerRadius = CornerRadius_General;
     button.clipsToBounds = YES;
     return button;
@@ -232,10 +232,13 @@
 {
     UITextField *textField = [[UITextField alloc] init];
     textField.borderStyle = UITextBorderStyleRoundedRect;
+    textField.layer.borderColor = [[GCAppAPI getColorWithRGBAinHex:ThemeColor01] CGColor];
+    textField.layer.borderWidth= 1.0f;
+    textField.layer.cornerRadius=10.0f;
+    textField.layer.masksToBounds=YES;
     textField.font = [UIFont systemFontOfSize:FontSize_P1];
     textField.placeholder = placeHolder;
     textField.autocorrectionType = UITextAutocorrectionTypeYes;
-    textField.returnKeyType = UIReturnKeyNext;
     textField.keyboardType = keyboardType;
     textField.returnKeyType = UIReturnKeyDone;
     textField.clearButtonMode = UITextFieldViewModeWhileEditing;

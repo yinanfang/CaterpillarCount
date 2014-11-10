@@ -53,6 +53,8 @@
         // Site Information
         self.label_SiteInfo = [UILabel LabelTitleWithString:@"Site Information" align:NSTextAlignmentLeft];
         [self addSubview:self.label_SiteInfo];
+        self.btn_Info_Site = [self addInfoButton];
+        
         // Site
         self.label_Site = [UILabel LabelSubTitleWithString:@"Site" align:NSTextAlignmentLeft];
         [self addSubview:self.label_Site];
@@ -78,6 +80,8 @@
         // Arthropod Order Info
         self.label_ArthropodOrderInfo = [UILabel LabelTitleWithString:@"Arthropod Order Info" align:NSTextAlignmentLeft];
         [self addSubview:self.label_ArthropodOrderInfo];
+        // Info Button
+        self.btn_Info_Order = [self addInfoButton];
         // New Order Info Button
         self.btn_NewOrderInfo = [FUIButton ButtonWithTitle:@"New" inBold:YES];
         [self addSubview:self.btn_NewOrderInfo];
@@ -90,6 +94,8 @@
         // Plant Information
         self.label_PlantInfo = [UILabel LabelTitleWithString:@"Plant Information" align:NSTextAlignmentLeft];
         [self addSubview:self.label_PlantInfo];
+        // Info Button
+        self.btn_Info_Plant = [self addInfoButton];
         // Plant Species
         self.label_PlantSpecies = [UILabel LabelSubTitleWithString:@"Plant Species" align:NSTextAlignmentLeft];
         [self addSubview:self.label_PlantSpecies];
@@ -168,8 +174,13 @@
         [self.label_SiteInfo mas_makeConstraints:^(MASConstraintMaker *make) {
             // top is defined by three entries above
             make.left.equalTo(self.mas_left).with.offset(mas_Padding_Page_Large.left);
-//            make.right.equalTo(self.mas_right).with.offset(mas_Padding_Page_Large.right);
         }];
+        [self.btn_Info_Site mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.label_SiteInfo.mas_top);
+            make.left.equalTo(self.label_SiteInfo.mas_right).with.offset(mas_Padding_Page_Default.left);
+            make.size.mas_equalTo(CGSizeMake(20, 20));
+        }];
+        
         // Site
         [GCAppSetup setConstraints_PinHorizontallyWithPagePaddingAndTopWithPadding:PagePaddingSmall withView:self.label_Site superview:self upperview:self.label_SiteInfo];
         [GCAppSetup setConstraints_PinHorizontallyWithPagePaddingAndTopWithPadding:PagePaddingSmall withView:self.entry_Site superview:self upperview:self.label_Site];
@@ -189,10 +200,15 @@
             make.left.equalTo(self.mas_left).with.offset(mas_Padding_Page_Large.left);
             make.height.mas_equalTo(20);
         }];
+        [self.btn_Info_Order mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.label_ArthropodOrderInfo.mas_top);
+            make.left.equalTo(self.label_ArthropodOrderInfo.mas_right).with.offset(mas_Padding_Page_Default.left);
+            make.size.mas_equalTo(CGSizeMake(20, 20));
+        }];
         // Add button
         [self.btn_NewOrderInfo mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.entry_SiteNotes.mas_bottom).with.offset(mas_Padding_Page_Large.top);
-            make.left.equalTo(self.label_ArthropodOrderInfo.mas_right);
+            make.left.equalTo(self.btn_Info_Order.mas_right).with.offset(mas_Padding_Page_Default.left);
             make.right.equalTo(self.mas_right).with.offset(mas_Padding_Page_Large.right);
             make.size.mas_equalTo(CGSizeMake(60, 23));
             //            make.bottom.equalTo(self.mas_bottom);
@@ -206,7 +222,16 @@
         }];
         
         // Plant Information
-        [GCAppSetup setConstraints_PinHorizontallyWithPagePaddingAndTopWithPadding:PagePaddingLarge withView:self.label_PlantInfo superview:self upperview:self.orderTableView];
+        [self.label_PlantInfo mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.orderTableView.mas_bottom).with.offset(mas_Padding_Page_Large.top);
+            make.left.equalTo(self.mas_left).with.offset(mas_Padding_Page_Large.left);
+        }];
+        // Info Button
+        [self.btn_Info_Plant mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.label_PlantInfo.mas_top);
+            make.left.equalTo(self.label_PlantInfo.mas_right).with.offset(mas_Padding_Page_Default.left);
+            make.size.mas_equalTo(CGSizeMake(20, 20));
+        }];
         // Species
         [GCAppSetup setConstraints_PinHorizontallyWithPagePaddingAndTopWithPadding:PagePaddingSmall withView:self.label_PlantSpecies superview:self upperview:self.label_PlantInfo];
         [GCAppSetup setConstraints_PinHorizontallyWithPagePaddingAndTopWithPadding:PagePaddingSmall withView:self.entry_PlantSpecies superview:self upperview:self.label_PlantSpecies];
@@ -284,5 +309,12 @@
     [self.nextResponder touchesBegan: touches withEvent:event];
 }
 
-
+#pragma mark - Factory Methods
+- (UIButton *)addInfoButton
+{
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [button setImage:[UIImage imageNamed:@"icon_info"] forState:UIControlStateNormal];
+    [self addSubview:button];
+    return button;
+}
 @end

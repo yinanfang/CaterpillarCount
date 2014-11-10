@@ -34,6 +34,7 @@
 		D48FAA4019D83D900042DFC6 /* GCOrderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D48FAA3F19D83D900042DFC6 /* GCOrderTableViewCell.m */; };
 		D48FAA4319D83DB00042DFC6 /* GCNewOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D48FAA4219D83DB00042DFC6 /* GCNewOrderViewController.m */; };
 		D48FAA4619D83DCE0042DFC6 /* GCNewOrderScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D48FAA4519D83DCE0042DFC6 /* GCNewOrderScrollView.m */; };
+		D49D773F1A1059840076989D /* icon_info.png in Resources */ = {isa = PBXBuildFile; fileRef = D49D773E1A1059840076989D /* icon_info.png */; };
 		D4B97AB719EDF50B00F721D6 /* GCAppViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B97AB619EDF50B00F721D6 /* GCAppViewModel.m */; };
 		D4B97ABD19EEC34D00F721D6 /* GCUserData.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B97ABC19EEC34D00F721D6 /* GCUserData.m */; };
 		D4D9B3EE19E302D000547CDF /* GCAppSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D9B3ED19E302D000547CDF /* GCAppSetup.m */; };
@@ -110,6 +111,7 @@
 		D48FAA4219D83DB00042DFC6 /* GCNewOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCNewOrderViewController.m; path = View/GCNewOrderViewController.m; sourceTree = "<group>"; };
 		D48FAA4419D83DCE0042DFC6 /* GCNewOrderScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GCNewOrderScrollView.h; path = View/GCNewOrderScrollView.h; sourceTree = "<group>"; };
 		D48FAA4519D83DCE0042DFC6 /* GCNewOrderScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCNewOrderScrollView.m; path = View/GCNewOrderScrollView.m; sourceTree = "<group>"; };
+		D49D773E1A1059840076989D /* icon_info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_info.png; sourceTree = "<group>"; };
 		D4B97AAB19EDB2BA00F721D6 /* RecycledMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecycledMethod.h; sourceTree = "<group>"; };
 		D4B97AB519EDF50B00F721D6 /* GCAppViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GCAppViewModel.h; path = ViewModel/GCAppViewModel.h; sourceTree = "<group>"; };
 		D4B97AB619EDF50B00F721D6 /* GCAppViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCAppViewModel.m; path = ViewModel/GCAppViewModel.m; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 		D41F933D19E75BFB0078A88B /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				D49D773E1A1059840076989D /* icon_info.png */,
 				D4712C4C1A088A79006B5ACA /* cover_logo.png */,
 				D4527FAE19F0543D00DDFCC7 /* leaf.png */,
 				D4E0CCDE19E8196E00500C86 /* mark_check.png */,
@@ -429,6 +432,7 @@
 				D4E0CCE019E8196E00500C86 /* mark_check.png in Resources */,
 				D4FE8E8519D702E000E50E9C /* Images.xcassets in Resources */,
 				D4527FAF19F0543D00DDFCC7 /* leaf.png in Resources */,
+				D49D773F1A1059840076989D /* icon_info.png in Resources */,
 				D4E0CCE319E81A7100500C86 /* icon_menu.png in Resources */,
 				D4E0CCE119E8196E00500C86 /* mark_cross.png in Resources */,
 				D43A916B19CF94D7009AA0C7 /* LaunchScreen.xib in Resources */,

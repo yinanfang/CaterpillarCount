@@ -25,7 +25,12 @@
     UIButton *rightButton = [GCAppSetup configureRightButtonOfNavigationViewController:self];
     [[rightButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         DDLogVerbose(@"hit right button");
-        [self.navigationController popToRootViewControllerAnimated:YES];
+        self.alert_Logout =[[UIAlertView alloc ] initWithTitle:@"Warning!"
+                                                         message:@"All unsaved data will be lost!"
+                                                        delegate:self
+                                               cancelButtonTitle:@"Log Out"
+                                               otherButtonTitles: nil];
+        [self.alert_Logout show];
     }];
     
     // Add Survey View
@@ -90,7 +95,36 @@
     self.surveyScrollView.entry_Circle.rac_command = self.firePicker;
     self.surveyScrollView.entry_Survey.rac_command = self.firePicker;
     self.surveyScrollView.entry_Herbivory.rac_command = self.firePicker;
-
+    
+    // Info Button Control
+    [[self.surveyScrollView.btn_Info_Site rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+        NSLog(@"Info button for Site tapped!");
+        UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Site Info"
+                                                         message:@"Enter the Site, Circle, and Survey associated with where you are currently recording data. Enter any notes that you may deem relevant to data reviewers."
+                                                        delegate:self
+                                               cancelButtonTitle:@"I got it!"
+                                               otherButtonTitles: nil];
+        [alert show];
+    }];
+    [[self.surveyScrollView.btn_Info_Order rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+        NSLog(@"Info button for Order tapped!");
+        UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Order Info"
+                                                         message:@"Record each class of Arthropod Order (bug/insect) that you see. You can add multiple Arthropod Orders to each submission. You will be asked to estimate the count and length of each Arthropod Order, as well as record any notes that you may deem relevant to data reviewers."
+                                                        delegate:self
+                                               cancelButtonTitle:@"I got it!"
+                                               otherButtonTitles: nil];
+        [alert show];
+    }];
+    [[self.surveyScrollView.btn_Info_Plant rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+        NSLog(@"Info button for Plant tapped!");
+        UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Plant Info"
+                                                         message:@"Enter the plant's species name if you know it. Choose the herbivory score that best characterizes the average level of herbivory across all leaves examined in the survey."
+                                                        delegate:self
+                                               cancelButtonTitle:@"I got it!"
+                                               otherButtonTitles: nil];
+        [alert show];
+    }];
+    
     // Add order button
     [[self.surveyScrollView.btn_NewOrderInfo rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         NSLog(@"add botton tapped");
@@ -419,6 +453,14 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+#pragma mark - UIAlertView Delegate
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    if (alertView == self.alert_Logout)
+    {
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    }
+}
 
 #pragma mark - Other View Methods
 //- (BOOL)prefersStatusBarHidden {
