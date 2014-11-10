@@ -10,7 +10,10 @@
 #import "GCSurveyScrollView.h"
 #import "GCNewOrderViewController.h"
 
-@interface GCSurveyViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDelegate, UITableViewDataSource,UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIAlertViewDelegate>
+#import "BRRequestUpload.h"
+#import "BRRequestCreateDirectory.h"
+
+@interface GCSurveyViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDelegate, UITableViewDataSource,UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIAlertViewDelegate, BRRequestDelegate>
 
 @property (strong) GCSurveyScrollView *surveyScrollView;
 
@@ -21,6 +24,8 @@
 @property __block BOOL didShowPicker;
 @property NSMutableArray *pickerContent;
 //@property NSMutableArray *pickerContentArray;
+
+@property NSData *uploadData;
 
 @property UIAlertView *alert_Logout;
 

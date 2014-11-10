@@ -195,28 +195,86 @@
                 survey.surveyID = ((NSDictionary *)data)[@"surveyID"];
                 surveyDictionary = [MTLJSONAdapter JSONDictionaryFromModel:survey];
                 NSArray *ordersArray = surveyDictionary[@"ordersArray"];
-                for (GCOrder *order in ordersArray) {
-                    parameters = @{
-                                   @"type": @"order",
-                                   @"userID": surveyDictionary[@"userID"],
-                                   @"surveyID": surveyDictionary[@"surveyID"],
-                                   @"orderArthropod": order.orderName,
-                                   @"orderLength": order.length,
-                                   @"orderNotes": order.note,
-                                   @"orderCount": order.count,
-                                   };
-                    [GCNetwork requestPOSTWithURL:url_Submission parameter:parameters completion:^(BOOL succeeded, NSData *data) {
-                        
-                    }];
-                }
+                
+                NSString *filepath = surveyDictionary[@"plantPhotoLocalURL"];
+                self.uploadData = [NSData dataWithContentsOfFile: filepath];
+                DDLogVerbose(@"local file: %@", filepath);
+                DDLogVerbose(@"testing FTP upload...");
+                BRRequestUpload *uploadFile = [[BRRequestUpload alloc] initWithDelegate:self];
+                uploadFile.path = @".";
+                uploadFile.hostname = @"pocketprotection.org";
+                uploadFile.username = @"caterpillars@pocketprotection.org";
+                uploadFile.password = @"password123";
+                [uploadFile start];
+                
+//                BRRequestCreateDirectory *createDir = [[BRRequestCreateDirectory alloc] initWithDelegate:self];
+//                createDir.hostname = @"pocketprotection.org";
+//                createDir.path = @"public_html/forsyth.im/caterpillars/uploadsALot";
+//                createDir.username = @"caterpillars@pocketprotection.org";
+//                createDir.password = @"password123";
+//                [createDir start];
+                
+                
+//                for (GCOrder *order in ordersArray) {
+//                    parameters = @{
+//                                   @"type": @"order",
+//                                   @"userID": surveyDictionary[@"userID"],
+//                                   @"surveyID": surveyDictionary[@"surveyID"],
+//                                   @"orderArthropod": order.orderName,
+//                                   @"orderLength": order.length,
+//                                   @"orderNotes": order.note,
+//                                   @"orderCount": order.count,
+//                                   };
+//                    [GCNetwork requestPOSTWithURL:url_Submission parameter:parameters completion:^(BOOL succeeded, NSData *data) {
+//                        
+//                    }];
+//                }
             }
         }];
-        
-
         
         [GCAppViewModel saveAppDataToNSUserDefaults];
 
     }];
+}
+
+- (NSData *) requestDataToSend: (BRRequestUpload *) request
+{
+    //----- returns data object or nil when complete
+    //----- basically, first time we return the pointer to the NSData.
+    //----- and BR will upload the data.
+    //----- Second time we return nil which means no more data to send
+    DDLogVerbose(@"Uploading files...");
+    NSData *temp = [self.uploadData copy];                                                  // this is a shallow copy of the pointer, not a deep copy
+    
+    self.uploadData = nil;                                                           // next time around, return nil...
+    
+    return temp;
+}
+
+- (void)startSubmissionProcess
+{
+    
+}
+
+- (void)uploadImageWithPath:(NSString *)path newName:(NSString *)newname
+{
+    // Get the file name in the middle
+    
+    // Upload the Image with AFNetworking
+    
+    NSString *urlString = @"http://forsyth.im/caterpillars/uploads/order158-75.jpg";
+    
+//    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+//    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+//    [manager POST:[url absoluteString] parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+//        [formData appendPartWithFileData:imageData name:fieldName fileName:[imagePath lastPathComponent] mimeType:[self mimeTypeForPath:imagePath]];
+//    } success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//        NSString *string = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+//        NSLog(@"Success: %@", string);
+//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//        NSLog(@"Error: %@", error);
+//    }];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
