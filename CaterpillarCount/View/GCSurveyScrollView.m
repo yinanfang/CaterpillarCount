@@ -10,13 +10,6 @@
 #import "GCSurveyScrollView.h"
 #import "GCOrderTableViewCell.h"
 
-
-@interface GCSurveyScrollView ()
-
-
-
-@end
-
 @implementation GCSurveyScrollView
 
 - (id)initWithParentController:(GCSurveyViewController *)controller
@@ -25,6 +18,7 @@
     if (self) {
         // Initialization code
         self.parentController = controller;
+        self.tintColor = [GCAppAPI getColorWithRGBAinHex:ThemeColor01];
         self.backgroundColor = [UIColor whiteColor];
         self.delegate = self;
         self.shouldMoveUpToAdjustForKeyboard = YES;
@@ -40,7 +34,7 @@
         [self addSubview:self.label_Date];
         
         // Temp, Time, Date Entry
-        self.entry_Temp = [UIButton ButtonWithTitle:@"70 F" inBold:NO horizontalAlign:UIControlContentHorizontalAlignmentCenter];
+        self.entry_Temp = [UIButton ButtonWithTitle:@"60F - 70 F" inBold:NO horizontalAlign:UIControlContentHorizontalAlignmentCenter];
         [self addSubview:self.entry_Temp];
         self.entry_Time = [UIButton ButtonWithTitle:@"Time" inBold:NO horizontalAlign:UIControlContentHorizontalAlignmentCenter];
         [self addSubview:self.entry_Time];
@@ -49,10 +43,10 @@
         // Set Time and Date
         NSDate *currentDateAndTime = [NSDate date];
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-        [formatter setDateFormat:@"hh:mm a"];
+        [formatter setDateFormat:@"HH:mm a"];
         NSString *timeString = [formatter stringFromDate: currentDateAndTime];
         [self.entry_Time setTitle:timeString forState:UIControlStateNormal];
-        [formatter setDateFormat:@"mm/dd/yy"];
+        [formatter setDateFormat:@"MM/dd/yy"];
         NSString *dateString = [formatter stringFromDate: currentDateAndTime];
         [self.entry_Date setTitle:dateString forState:UIControlStateNormal];
         

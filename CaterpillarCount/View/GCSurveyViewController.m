@@ -180,7 +180,7 @@
         
 
         
-//        [GCAppViewModel saveAppDataToNSUserDefaults];
+        [GCAppViewModel saveAppDataToNSUserDefaults];
 
     }];
 }

@@ -20,6 +20,7 @@
     self = [super init];
     if (self) {
         self.parentController = controller;
+        self.tintColor = [GCAppAPI getColorWithRGBAinHex:ThemeColor01];
         self.backgroundColor = [UIColor whiteColor];
         self.userInteractionEnabled = YES;
 //        self.delegate = self;

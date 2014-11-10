@@ -21,6 +21,7 @@
     self = [super init];
     if (self) {
         self.parentController = controller;
+        self.tintColor = [GCAppAPI getColorWithRGBAinHex:ThemeColor01];
         self.backgroundColor = [UIColor whiteColor];
         self.delegate = self;
         [self.parentController.view addSubview:self];

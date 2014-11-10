@@ -20,7 +20,6 @@
     
     // UI Navigation Bar
     [GCAppSetup configureNavigationViewController:self withNavigationTitle:@"New Arthropod Order"];
-    [GCAppSetup configureBackButtonOfNavigationViewController:self];
     
     // Add new order scroll view
     self.orderScrollView = [[GCNewOrderScrollView alloc] initWithParentController:self];
@@ -197,6 +196,7 @@
                            [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil],
                            [[UIBarButtonItem alloc]initWithTitle:@"Next" style:UIBarButtonItemStyleDone target:self action:@selector(doneWithNumberPad)],
                            nil];
+    numberToolbar.tintColor = [UIColor whiteColor];
     [numberToolbar sizeToFit];
     textField.inputAccessoryView = numberToolbar;
 }
