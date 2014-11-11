@@ -100,7 +100,7 @@
     [[self.surveyScrollView.btn_Info_Site rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         NSLog(@"Info button for Site tapped!");
         UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Site Info"
-                                                         message:@"Enter the Site, Circle, and Survey associated with where you are currently recording data. Enter any notes that you may deem relevant to data reviewers."
+                                                         message:@"Enter the Site, Circle, and Survey id’s from where you conducted a survey. Enter any notes that you may deem relevant to data reviewers."
                                                         delegate:self
                                                cancelButtonTitle:@"I got it!"
                                                otherButtonTitles: nil];
@@ -109,7 +109,7 @@
     [[self.surveyScrollView.btn_Info_Order rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         NSLog(@"Info button for Order tapped!");
         UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Order Info"
-                                                         message:@"Record each class of Arthropod Order (bug/insect) that you see. You can add multiple Arthropod Orders to each submission. You will be asked to estimate the count and length of each Arthropod Order, as well as record any notes that you may deem relevant to data reviewers."
+                                                         message:@"Add a record for each Arthropod Order that you see, estimating its length in mm and noting how many you saw. If necessary, submit observations for an Order using multiple records (e.g., you saw 10 ants of size 4 mm, and 3 ants of size 12 mm). You can add multiple Arthropod Orders to each submission. IMPORTANT: If you conducted a survey but observed no arthropods at all, select ‘NONE’."
                                                         delegate:self
                                                cancelButtonTitle:@"I got it!"
                                                otherButtonTitles: nil];
@@ -118,7 +118,7 @@
     [[self.surveyScrollView.btn_Info_Plant rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         NSLog(@"Info button for Plant tapped!");
         UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Plant Info"
-                                                         message:@"Enter the plant's species name if you know it. Choose the herbivory score that best characterizes the average level of herbivory across all leaves examined in the survey."
+                                                         message:@"Select the name of the plant species that you surveyed from the menu below, or enter it if it does not appear on the list. Choose the herbivory score that best characterizes the average level of herbivory across all leaves examined in the survey."
                                                         delegate:self
                                                cancelButtonTitle:@"I got it!"
                                                otherButtonTitles: nil];
@@ -154,104 +154,138 @@
     // Submit button
     [[self.surveyScrollView.btn_Submit rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         NSLog(@"hit button submit");
-        GCUserData *userData = [GCAppViewModel sharedInstance].currentUserData;
-        GCSurvey *survey = [[GCSurvey alloc] init];
-        survey.userID = userData.user.userID;
-        survey.siteName = self.surveyScrollView.entry_Site.titleLabel.text;
-        survey.circleNumber = [[[NSNumberFormatter alloc] init] numberFromString:self.surveyScrollView.entry_Circle.titleLabel.text];
-        survey.circleNumber = (survey.circleNumber) ? : @1;
-        survey.surveyString = self.surveyScrollView.entry_Survey.titleLabel.text;
-//        survey.timeSubmitted
-        survey.temperature = self.surveyScrollView.entry_Temp.titleLabel.text;
-        survey.siteNotes = self.surveyScrollView.entry_SiteNotes.text;
-        survey.ordersArray = [GCAppViewModel sharedInstance].currentUnsavedOrders;
-        survey.plantSpecies = self.surveyScrollView.entry_PlantSpecies.text;
-        survey.herbivory = [[[NSNumberFormatter alloc] init] numberFromString:self.surveyScrollView.entry_Herbivory.titleLabel.text];
-        survey.herbivory = (survey.herbivory) ? : @1;
-        survey.plantPhotoLocalURL = self.surveyScrollView.btn_PhotoPlaceHolder.titleLabel.text;
-        [GCAppViewModel addSurveyData:survey];
         
-        __block NSDictionary *surveyDictionary = [MTLJSONAdapter JSONDictionaryFromModel:survey];
-        DDLogInfo(@"surveyDictionary, %@", surveyDictionary);
-        __block NSURL *url_Submission = [NSURL URLWithString:[[NSString alloc] initWithFormat:@"%@/~pocket14/forsyth.im/caterpillars/submission_full.php", [GCAppAPI getCurrentDomain]]];
-        __block NSDictionary *parameters = @{
-                                             @"type": @"survey",
-                                             @"siteID": @"5",
-                                             @"userID": surveyDictionary[@"userID"],
-                                             
-                                             @"circle": surveyDictionary[@"circleNumber"],
-                                             @"survey": surveyDictionary[@"surveyString"],
-                                             @"timeStart": @"2014-10-13 12:06:02",
-                                             @"temperatureMin": @72,
-                                             @"temperatureMax": @73,
-                                             @"siteNotes": surveyDictionary[@"siteNotes"],
-                                             @"plantSpecies": surveyDictionary[@"plantSpecies"],
-                                             @"herbivory": surveyDictionary[@"herbivory"],
-                                             };
-        DDLogInfo(@"Registering Survey");
-        [GCNetwork requestPOSTWithURL:url_Submission parameter:parameters completion:^(BOOL succeeded, NSData *data) {
-            if (succeeded) {
-                DDLogInfo(@"Submitting full survey");
-                survey.surveyID = ((NSDictionary *)data)[@"surveyID"];
-                surveyDictionary = [MTLJSONAdapter JSONDictionaryFromModel:survey];
-                NSArray *ordersArray = surveyDictionary[@"ordersArray"];
-                
-                NSString *filepath = surveyDictionary[@"plantPhotoLocalURL"];
-                self.uploadData = [NSData dataWithContentsOfFile: filepath];
-                DDLogVerbose(@"local file: %@", filepath);
-                
-                NSString *urlString = @"http://forsyth.im/caterpillars/uploads/upload.php";
-                AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-                manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-                [manager POST:urlString parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
-                    [formData appendPartWithFileData:self.uploadData name:@"userfile" fileName:[filepath lastPathComponent] mimeType:[self mimeTypeForPath:filepath]];
-                } success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                    NSString *string = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
-                    NSLog(@"Success: %@", string);
-                } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                    NSLog(@"Error: %@", error);
-                }];
-                
-//                for (GCOrder *order in ordersArray) {
-//                    parameters = @{
-//                                   @"type": @"order",
-//                                   @"userID": surveyDictionary[@"userID"],
-//                                   @"surveyID": surveyDictionary[@"surveyID"],
-//                                   @"orderArthropod": order.orderName,
-//                                   @"orderLength": order.length,
-//                                   @"orderNotes": order.note,
-//                                   @"orderCount": order.count,
-//                                   };
-//                    [GCNetwork requestPOSTWithURL:url_Submission parameter:parameters completion:^(BOOL succeeded, NSData *data) {
-//                        
-//                    }];
-//                }
-            }
-        }];
+        [self startSubmissionProcess];
         
-        [GCAppViewModel saveAppDataToNSUserDefaults];
+//        [GCAppViewModel saveAppDataToNSUserDefaults];
 
     }];
 }
 
-- (NSString *)mimeTypeForPath:(NSString *)path
-{
-    // get a mime type for an extension using MobileCoreServices.framework
-    CFStringRef extension = (__bridge CFStringRef)[path pathExtension];
-    CFStringRef UTI = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, extension, NULL);
-    assert(UTI != NULL);
-    
-    NSString *mimetype = CFBridgingRelease(UTTypeCopyPreferredTagWithClass(UTI, kUTTagClassMIMEType));
-    assert(mimetype != NULL);
-    
-    CFRelease(UTI);
-    
-    return mimetype;
-}
-
 - (void)startSubmissionProcess
 {
+    // Getting Survey data
+    GCUserData *userData = [GCAppViewModel sharedInstance].currentUserData;
+    GCSurvey *survey = [[GCSurvey alloc] init];
+    survey.userID = userData.user.userID;
+    survey.siteName = self.surveyScrollView.entry_Site.titleLabel.text;
+    survey.circleNumber = [[[NSNumberFormatter alloc] init] numberFromString:self.surveyScrollView.entry_Circle.titleLabel.text];
+    survey.circleNumber = (survey.circleNumber) ? : @1;
+    survey.surveyString = self.surveyScrollView.entry_Survey.titleLabel.text;
+    survey.timeSubmitted = [NSDate date];
+    survey.temperature = self.surveyScrollView.entry_Temp.titleLabel.text;
+    survey.siteNotes = self.surveyScrollView.entry_SiteNotes.text;
+    survey.ordersArray = [GCAppViewModel sharedInstance].currentUnsavedOrders;
+    survey.plantSpecies = self.surveyScrollView.entry_PlantSpecies.text;
+    survey.herbivory = [[[NSNumberFormatter alloc] init] numberFromString:self.surveyScrollView.entry_Herbivory.titleLabel.text];
+    survey.herbivory = (survey.herbivory) ? : @1;
+    survey.plantPhotoLocalURL = self.surveyScrollView.btn_PhotoPlaceHolder.titleLabel.text;
+    [GCAppViewModel addSurveyData:survey];
     
+    __block NSDictionary *surveyDictionary = [MTLJSONAdapter JSONDictionaryFromModel:survey];
+    DDLogInfo(@"surveyDictionary, %@", surveyDictionary);
+    __block NSURL *url_Submission = [NSURL URLWithString:[[NSString alloc] initWithFormat:@"%@/~pocket14/forsyth.im/caterpillars/submission_full.php", [GCAppAPI getCurrentDomain]]];
+    __block NSDictionary *parameters = @{
+                                         @"type": @"survey",
+                                         @"siteID": @"5",
+                                         @"userID": surveyDictionary[@"userID"],
+                                         
+                                         @"circle": surveyDictionary[@"circleNumber"],
+                                         @"survey": surveyDictionary[@"surveyString"],
+                                         @"timeStart": surveyDictionary[@"timeSubmitted"],
+                                         @"temperatureMin": @72,
+                                         @"temperatureMax": @73,
+                                         @"siteNotes": surveyDictionary[@"siteNotes"],
+                                         @"plantSpecies": surveyDictionary[@"plantSpecies"],
+                                         @"herbivory": surveyDictionary[@"herbivory"],
+                                         };
+    DDLogInfo(@"Registering Survey text content");
+    [GCNetwork requestPOSTWithURL:url_Submission parameter:parameters completion:^(BOOL succeeded, NSData *data) {
+        if (succeeded) {
+            DDLogInfo(@"Submitting full survey");
+            survey.surveyID = ((NSDictionary *)data)[@"surveyID"];
+            surveyDictionary = [MTLJSONAdapter JSONDictionaryFromModel:survey];
+            NSArray *ordersArray = surveyDictionary[@"ordersArray"];
+            
+            // Init image buffer
+            self.imageBuffer = [[NSMutableArray alloc] init];
+            
+            // Upload Plant Picture
+            NSString *filepath = surveyDictionary[@"plantPhotoLocalURL"];
+            if (![filepath isEqual:@"Capture"]) {
+                [self addToImageBufferWithFileName:filepath newName:((NSDictionary *)data)[@"leavePhoto"]];
+            }
+            
+            //                for (GCOrder *order in ordersArray) {
+            //                    parameters = @{
+            //                                   @"type": @"order",
+            //                                   @"userID": surveyDictionary[@"userID"],
+            //                                   @"surveyID": surveyDictionary[@"surveyID"],
+            //                                   @"orderArthropod": order.orderName,
+            //                                   @"orderLength": order.length,
+            //                                   @"orderNotes": order.note,
+            //                                   @"orderCount": order.count,
+            //                                   };
+            //                    [GCNetwork requestPOSTWithURL:url_Submission parameter:parameters completion:^(BOOL succeeded, NSData *data) {
+            //
+            //                    }];
+            //                }
+            [self uploadAllImages];
+        }
+    }];
+}
+
+- (void)addToImageBufferWithFileName:(NSString *)oldName newName:(NSString *)newName
+{
+    // Copy the file and Rename
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSError *error;
+    DDLogVerbose(@"old name: %@; new name: %@", oldName, newName);
+    
+    newName = @"value:hello World:value";
+
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"(?<=v).+?(?=:value)" options:0 error:&error];
+    NSRange needleRange = [regex rangeOfFirstMatchInString:newName options:NSMatchingAnchored range:NSMakeRange(0, newName.length)];
+    NSString *needle = [newName substringWithRange:needleRange];
+    NSLog(@"regex error: %@", error);
+    DDLogVerbose(@"needle: %@", needle);
+    
+//    NSString *txtPath = [documentsDirectory stringByAppendingPathComponent:@"txtFile.txt"];
+//    
+//    if ([fileManager fileExistsAtPath:txtPath] == YES) {
+//        [fileManager removeItemAtPath:txtPath error:&error];
+//    }
+//    
+//    NSString *resourcePath = [[NSBundle mainBundle] pathForResource:@"txtFile" ofType:@"txt"];
+//    [fileManager copyItemAtPath:resourcePath toPath:txtPath error:&error];
+    
+    // Add to buffer
+    [self.imageBuffer addObject:oldName];
+}
+
+- (void)uploadAllImages
+{
+    DDLogVerbose(@"uploadAllImages");
+    if ([self.imageBuffer count] != 0) {
+        NSString *oneName = self.imageBuffer[0];
+        DDLogVerbose(@"Still have images to upload. Local file: %@", oneName);
+        NSData *uploadData = [NSData dataWithContentsOfFile: oneName];
+        self.manager = [AFHTTPRequestOperationManager manager];
+        self.manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+        [self.manager POST:URLPathToImageSubmissionPHP parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+            [formData appendPartWithFileData:uploadData name:@"userfile" fileName:[oneName lastPathComponent] mimeType:[self mimeTypeForPath:oneName]];
+        } success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            NSString *string = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+            NSLog(@"Success: %@", string);
+            // Delete the image location string in buffer
+            [self.imageBuffer removeObjectAtIndex:0];
+            // Recursively upload the rest
+            [self uploadAllImages];
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            NSLog(@"Error: %@", error);
+        }];
+    }
+    DDLogVerbose(@"Upload completed!");
 }
 
 - (void)uploadImageWithPath:(NSString *)path newName:(NSString *)newname
@@ -273,6 +307,21 @@
 //        NSLog(@"Error: %@", error);
 //    }];
     
+}
+
+- (NSString *)mimeTypeForPath:(NSString *)path
+{
+    // get a mime type for an extension using MobileCoreServices.framework
+    CFStringRef extension = (__bridge CFStringRef)[path pathExtension];
+    CFStringRef UTI = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, extension, NULL);
+    assert(UTI != NULL);
+    
+    NSString *mimetype = CFBridgingRelease(UTTypeCopyPreferredTagWithClass(UTI, kUTTagClassMIMEType));
+    assert(mimetype != NULL);
+    
+    CFRelease(UTI);
+    
+    return mimetype;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -516,6 +565,19 @@
     {
         [self.navigationController popToRootViewControllerAnimated:YES];
     }
+}
+
+#pragma mark - Class Instance
++ (NSDateFormatter *)dateFormatter {
+    
+    static NSDateFormatter *kDateFormatter = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        kDateFormatter = [[NSDateFormatter alloc] init];
+        kDateFormatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
+        kDateFormatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";  // you configure this based on the strings that your webservice uses!!
+    });
+    return kDateFormatter;
 }
 
 #pragma mark - Other View Methods

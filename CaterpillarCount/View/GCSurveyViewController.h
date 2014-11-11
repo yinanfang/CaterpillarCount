@@ -10,7 +10,7 @@
 #import "GCSurveyScrollView.h"
 #import "GCNewOrderViewController.h"
 
-@interface GCSurveyViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDelegate, UITableViewDataSource,UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIAlertViewDelegate, BRRequestDelegate>
+@interface GCSurveyViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDelegate, UITableViewDataSource,UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIAlertViewDelegate>
 
 @property (strong) GCSurveyScrollView *surveyScrollView;
 
@@ -22,8 +22,8 @@
 @property NSMutableArray *pickerContent;
 //@property NSMutableArray *pickerContentArray;
 
-@property NSData *uploadData;
-
+@property AFHTTPRequestOperationManager *manager;
+@property NSMutableArray *imageBuffer;
 @property UIAlertView *alert_Logout;
 
 //@property StoryDisplayStyleMode storyDisplayStyleMode;

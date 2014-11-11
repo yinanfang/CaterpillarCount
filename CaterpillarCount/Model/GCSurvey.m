@@ -79,11 +79,23 @@
 
 + (NSValueTransformer *)timeSubmittedJSONTransformer
 {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSString *str){
-        return str;
-    }reverseBlock:^(NSString *str){
-        return str;
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSString *timeString){
+        return [self.dateFormatter dateFromString:timeString];
+    }reverseBlock:^(NSDate *date){
+        return [self.dateFormatter stringFromDate:date];
     }];
+}
+
++ (NSDateFormatter *)dateFormatter {
+    
+    static NSDateFormatter *kDateFormatter = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        kDateFormatter = [[NSDateFormatter alloc] init];
+        kDateFormatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
+        kDateFormatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";  // you configure this based on the strings that your webservice uses!!
+    });
+    return kDateFormatter;
 }
 
 + (NSValueTransformer *)temperatureJSONTransformer

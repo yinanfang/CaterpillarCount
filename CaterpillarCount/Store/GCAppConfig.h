@@ -61,6 +61,7 @@ FOUNDATION_EXPORT NSString *const DevelopmentDomain;
 FOUNDATION_EXPORT NSString *const ProductionDomain;
 FOUNDATION_EXPORT NSString *const URIPathToUsersPHP;
 FOUNDATION_EXPORT NSString *const URIPathToSubmissionPHP;
+FOUNDATION_EXPORT NSString *const URLPathToImageSubmissionPHP;
 
 #pragma mark - NSUserDefaults values
 FOUNDATION_EXPORT NSString *const NSUserDefaultsKeyForDidShownTour;
