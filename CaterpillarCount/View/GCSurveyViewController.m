@@ -242,26 +242,30 @@
     NSError *error;
     DDLogVerbose(@"old name: %@; new name: %@", oldName, newName);
     
-    newName = @"value:hello World:value";
+    newName = [newName stringByReplacingOccurrencesOfString:@"domain/" withString:@""];
+    newName = [newName stringByReplacingOccurrencesOfString:@".jpg" withString:@".png"];
+    DDLogVerbose(@"new name: %@", newName);
 
-    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"(?<=v).+?(?=:value)" options:0 error:&error];
-    NSRange needleRange = [regex rangeOfFirstMatchInString:newName options:NSMatchingAnchored range:NSMakeRange(0, newName.length)];
-    NSString *needle = [newName substringWithRange:needleRange];
-    NSLog(@"regex error: %@", error);
-    DDLogVerbose(@"needle: %@", needle);
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"^[/].+[/]" options:0 error:&error];
+    NSRange needleRange = [regex rangeOfFirstMatchInString:oldName options:NSMatchingAnchored range:NSMakeRange(0, oldName.length)];
+    NSString *needle = [oldName substringWithRange:needleRange];
+    if (error) {
+        NSLog(@"regex error: %@", error);
+    }
+    newName = [NSString stringWithFormat:@"%@%@", needle, newName];
+    DDLogVerbose(@"new : %@", newName);
     
-//    NSString *txtPath = [documentsDirectory stringByAppendingPathComponent:@"txtFile.txt"];
-//    
-//    if ([fileManager fileExistsAtPath:txtPath] == YES) {
-//        [fileManager removeItemAtPath:txtPath error:&error];
-//    }
-//    
-//    NSString *resourcePath = [[NSBundle mainBundle] pathForResource:@"txtFile" ofType:@"txt"];
-//    [fileManager copyItemAtPath:resourcePath toPath:txtPath error:&error];
+    // Copy file over
+    if ([fileManager fileExistsAtPath:newName] == YES) {
+        [fileManager removeItemAtPath:newName error:&error];
+    }
+    [fileManager copyItemAtPath:oldName toPath:newName error:&error];
     
     // Add to buffer
-    [self.imageBuffer addObject:oldName];
+    [self.imageBuffer addObject:newName];
 }
+
+
 
 - (void)uploadAllImages
 {
