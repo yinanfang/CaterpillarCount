@@ -199,21 +199,18 @@
                 NSString *filepath = surveyDictionary[@"plantPhotoLocalURL"];
                 self.uploadData = [NSData dataWithContentsOfFile: filepath];
                 DDLogVerbose(@"local file: %@", filepath);
-                DDLogVerbose(@"testing FTP upload...");
-                BRRequestUpload *uploadFile = [[BRRequestUpload alloc] initWithDelegate:self];
-                uploadFile.path = @".";
-                uploadFile.hostname = @"pocketprotection.org";
-                uploadFile.username = @"caterpillars@pocketprotection.org";
-                uploadFile.password = @"password123";
-                [uploadFile start];
                 
-//                BRRequestCreateDirectory *createDir = [[BRRequestCreateDirectory alloc] initWithDelegate:self];
-//                createDir.hostname = @"pocketprotection.org";
-//                createDir.path = @"public_html/forsyth.im/caterpillars/uploadsALot";
-//                createDir.username = @"caterpillars@pocketprotection.org";
-//                createDir.password = @"password123";
-//                [createDir start];
-                
+                NSString *urlString = @"http://forsyth.im/caterpillars/uploads/upload.php";
+                AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+                manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+                [manager POST:urlString parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+                    [formData appendPartWithFileData:self.uploadData name:@"userfile" fileName:[filepath lastPathComponent] mimeType:[self mimeTypeForPath:filepath]];
+                } success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                    NSString *string = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+                    NSLog(@"Success: %@", string);
+                } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                    NSLog(@"Error: %@", error);
+                }];
                 
 //                for (GCOrder *order in ordersArray) {
 //                    parameters = @{
@@ -237,18 +234,19 @@
     }];
 }
 
-- (NSData *) requestDataToSend: (BRRequestUpload *) request
+- (NSString *)mimeTypeForPath:(NSString *)path
 {
-    //----- returns data object or nil when complete
-    //----- basically, first time we return the pointer to the NSData.
-    //----- and BR will upload the data.
-    //----- Second time we return nil which means no more data to send
-    DDLogVerbose(@"Uploading files...");
-    NSData *temp = [self.uploadData copy];                                                  // this is a shallow copy of the pointer, not a deep copy
+    // get a mime type for an extension using MobileCoreServices.framework
+    CFStringRef extension = (__bridge CFStringRef)[path pathExtension];
+    CFStringRef UTI = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, extension, NULL);
+    assert(UTI != NULL);
     
-    self.uploadData = nil;                                                           // next time around, return nil...
+    NSString *mimetype = CFBridgingRelease(UTTypeCopyPreferredTagWithClass(UTI, kUTTagClassMIMEType));
+    assert(mimetype != NULL);
     
-    return temp;
+    CFRelease(UTI);
+    
+    return mimetype;
 }
 
 - (void)startSubmissionProcess

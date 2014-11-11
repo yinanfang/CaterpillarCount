@@ -43,16 +43,6 @@
 		D4E0CCE319E81A7100500C86 /* icon_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = D4E0CCE219E81A7100500C86 /* icon_menu.png */; };
 		D4E0CCE619E82E7F00500C86 /* GCSurvey.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E0CCE519E82E7F00500C86 /* GCSurvey.m */; };
 		D4E0CCE919E82F0800500C86 /* GCOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E0CCE819E82F0800500C86 /* GCOrder.m */; };
-		D4F9F9B71A11484000BEBA67 /* BRRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F9F9A41A11484000BEBA67 /* BRRequest.m */; };
-		D4F9F9B81A11484000BEBA67 /* BRRequest+_UserData.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F9F9A61A11484000BEBA67 /* BRRequest+_UserData.m */; };
-		D4F9F9B91A11484000BEBA67 /* BRRequestCreateDirectory.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F9F9A81A11484000BEBA67 /* BRRequestCreateDirectory.m */; };
-		D4F9F9BA1A11484000BEBA67 /* BRRequestDelete.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F9F9AA1A11484000BEBA67 /* BRRequestDelete.m */; };
-		D4F9F9BB1A11484000BEBA67 /* BRRequestDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F9F9AC1A11484000BEBA67 /* BRRequestDownload.m */; };
-		D4F9F9BC1A11484000BEBA67 /* BRRequestError.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F9F9AE1A11484000BEBA67 /* BRRequestError.m */; };
-		D4F9F9BD1A11484000BEBA67 /* BRRequestListDirectory.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F9F9B01A11484000BEBA67 /* BRRequestListDirectory.m */; };
-		D4F9F9BE1A11484000BEBA67 /* BRRequestQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F9F9B21A11484000BEBA67 /* BRRequestQueue.m */; };
-		D4F9F9BF1A11484000BEBA67 /* BRRequestUpload.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F9F9B41A11484000BEBA67 /* BRRequestUpload.m */; };
-		D4F9F9C01A11484000BEBA67 /* BRStreamInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F9F9B61A11484000BEBA67 /* BRStreamInfo.m */; };
 		D4FE8E8519D702E000E50E9C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4FE8E8419D702E000E50E9C /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -136,27 +126,6 @@
 		D4E0CCE519E82E7F00500C86 /* GCSurvey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCSurvey.m; path = Model/GCSurvey.m; sourceTree = "<group>"; };
 		D4E0CCE719E82F0800500C86 /* GCOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GCOrder.h; path = Model/GCOrder.h; sourceTree = "<group>"; };
 		D4E0CCE819E82F0800500C86 /* GCOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCOrder.m; path = Model/GCOrder.m; sourceTree = "<group>"; };
-		D4F9F9A21A11484000BEBA67 /* BRGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRGlobal.h; sourceTree = "<group>"; };
-		D4F9F9A31A11484000BEBA67 /* BRRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRRequest.h; sourceTree = "<group>"; };
-		D4F9F9A41A11484000BEBA67 /* BRRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRRequest.m; sourceTree = "<group>"; };
-		D4F9F9A51A11484000BEBA67 /* BRRequest+_UserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BRRequest+_UserData.h"; sourceTree = "<group>"; };
-		D4F9F9A61A11484000BEBA67 /* BRRequest+_UserData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BRRequest+_UserData.m"; sourceTree = "<group>"; };
-		D4F9F9A71A11484000BEBA67 /* BRRequestCreateDirectory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRRequestCreateDirectory.h; sourceTree = "<group>"; };
-		D4F9F9A81A11484000BEBA67 /* BRRequestCreateDirectory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRRequestCreateDirectory.m; sourceTree = "<group>"; };
-		D4F9F9A91A11484000BEBA67 /* BRRequestDelete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRRequestDelete.h; sourceTree = "<group>"; };
-		D4F9F9AA1A11484000BEBA67 /* BRRequestDelete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRRequestDelete.m; sourceTree = "<group>"; };
-		D4F9F9AB1A11484000BEBA67 /* BRRequestDownload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRRequestDownload.h; sourceTree = "<group>"; };
-		D4F9F9AC1A11484000BEBA67 /* BRRequestDownload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRRequestDownload.m; sourceTree = "<group>"; };
-		D4F9F9AD1A11484000BEBA67 /* BRRequestError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRRequestError.h; sourceTree = "<group>"; };
-		D4F9F9AE1A11484000BEBA67 /* BRRequestError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRRequestError.m; sourceTree = "<group>"; };
-		D4F9F9AF1A11484000BEBA67 /* BRRequestListDirectory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRRequestListDirectory.h; sourceTree = "<group>"; };
-		D4F9F9B01A11484000BEBA67 /* BRRequestListDirectory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRRequestListDirectory.m; sourceTree = "<group>"; };
-		D4F9F9B11A11484000BEBA67 /* BRRequestQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRRequestQueue.h; sourceTree = "<group>"; };
-		D4F9F9B21A11484000BEBA67 /* BRRequestQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRRequestQueue.m; sourceTree = "<group>"; };
-		D4F9F9B31A11484000BEBA67 /* BRRequestUpload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRRequestUpload.h; sourceTree = "<group>"; };
-		D4F9F9B41A11484000BEBA67 /* BRRequestUpload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRRequestUpload.m; sourceTree = "<group>"; };
-		D4F9F9B51A11484000BEBA67 /* BRStreamInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRStreamInfo.h; sourceTree = "<group>"; };
-		D4F9F9B61A11484000BEBA67 /* BRStreamInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRStreamInfo.m; sourceTree = "<group>"; };
 		D4FE8E8419D702E000E50E9C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -279,7 +248,6 @@
 				D41F933D19E75BFB0078A88B /* Images */,
 				D4FE8E8419D702E000E50E9C /* Images.xcassets */,
 				D43A916919CF94D7009AA0C7 /* LaunchScreen.xib */,
-				D4F9F9A11A11481900BEBA67 /* BlackRaccoon */,
 				D43A916019CF94D7009AA0C7 /* Supporting Files */,
 			);
 			path = CaterpillarCount;
@@ -374,34 +342,6 @@
 				D43A919619CF9994009AA0C7 /* GCCustomLogFormatters.m */,
 			);
 			name = Store;
-			sourceTree = "<group>";
-		};
-		D4F9F9A11A11481900BEBA67 /* BlackRaccoon */ = {
-			isa = PBXGroup;
-			children = (
-				D4F9F9A21A11484000BEBA67 /* BRGlobal.h */,
-				D4F9F9A31A11484000BEBA67 /* BRRequest.h */,
-				D4F9F9A41A11484000BEBA67 /* BRRequest.m */,
-				D4F9F9A51A11484000BEBA67 /* BRRequest+_UserData.h */,
-				D4F9F9A61A11484000BEBA67 /* BRRequest+_UserData.m */,
-				D4F9F9A71A11484000BEBA67 /* BRRequestCreateDirectory.h */,
-				D4F9F9A81A11484000BEBA67 /* BRRequestCreateDirectory.m */,
-				D4F9F9A91A11484000BEBA67 /* BRRequestDelete.h */,
-				D4F9F9AA1A11484000BEBA67 /* BRRequestDelete.m */,
-				D4F9F9AB1A11484000BEBA67 /* BRRequestDownload.h */,
-				D4F9F9AC1A11484000BEBA67 /* BRRequestDownload.m */,
-				D4F9F9AD1A11484000BEBA67 /* BRRequestError.h */,
-				D4F9F9AE1A11484000BEBA67 /* BRRequestError.m */,
-				D4F9F9AF1A11484000BEBA67 /* BRRequestListDirectory.h */,
-				D4F9F9B01A11484000BEBA67 /* BRRequestListDirectory.m */,
-				D4F9F9B11A11484000BEBA67 /* BRRequestQueue.h */,
-				D4F9F9B21A11484000BEBA67 /* BRRequestQueue.m */,
-				D4F9F9B31A11484000BEBA67 /* BRRequestUpload.h */,
-				D4F9F9B41A11484000BEBA67 /* BRRequestUpload.m */,
-				D4F9F9B51A11484000BEBA67 /* BRStreamInfo.h */,
-				D4F9F9B61A11484000BEBA67 /* BRStreamInfo.m */,
-			);
-			name = BlackRaccoon;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -548,18 +488,10 @@
 			files = (
 				D43A919A19CF9CD2009AA0C7 /* GCConstant.m in Sources */,
 				D437C2D719EACB0E00F0A9C5 /* GCAppData.m in Sources */,
-				D4F9F9BD1A11484000BEBA67 /* BRRequestListDirectory.m in Sources */,
-				D4F9F9B91A11484000BEBA67 /* BRRequestCreateDirectory.m in Sources */,
 				D48FAA4619D83DCE0042DFC6 /* GCNewOrderScrollView.m in Sources */,
-				D4F9F9BA1A11484000BEBA67 /* BRRequestDelete.m in Sources */,
 				D430876719D99736008D92F5 /* GCRegisterScrollView.m in Sources */,
-				D4F9F9B81A11484000BEBA67 /* BRRequest+_UserData.m in Sources */,
 				D4E0CCE919E82F0800500C86 /* GCOrder.m in Sources */,
-				D4F9F9B71A11484000BEBA67 /* BRRequest.m in Sources */,
 				D43A919719CF9994009AA0C7 /* GCCustomLogFormatters.m in Sources */,
-				D4F9F9BE1A11484000BEBA67 /* BRRequestQueue.m in Sources */,
-				D4F9F9BF1A11484000BEBA67 /* BRRequestUpload.m in Sources */,
-				D4F9F9C01A11484000BEBA67 /* BRStreamInfo.m in Sources */,
 				D43A919D19CF9D49009AA0C7 /* GCCoverViewController.m in Sources */,
 				D43A918619CF964E009AA0C7 /* GCAppDelegate.m in Sources */,
 				D430876119D996FE008D92F5 /* GCRegisterViewController.m in Sources */,
@@ -568,13 +500,11 @@
 				D46E5F0C19D2E50C002FF1C1 /* GCSurveyViewController.m in Sources */,
 				D437C2DA19EACED400F0A9C5 /* GCStore.m in Sources */,
 				D4E0CCE619E82E7F00500C86 /* GCSurvey.m in Sources */,
-				D4F9F9BC1A11484000BEBA67 /* BRRequestError.m in Sources */,
 				D4748A2619E5757E000B17E2 /* GCUser.m in Sources */,
 				D4D9B3EE19E302D000547CDF /* GCAppSetup.m in Sources */,
 				D43A91A019CF9E1E009AA0C7 /* GCCoverView.m in Sources */,
 				D4B97ABD19EEC34D00F721D6 /* GCUserData.m in Sources */,
 				D430875E19D996D5008D92F5 /* GCSignInViewController.m in Sources */,
-				D4F9F9BB1A11484000BEBA67 /* BRRequestDownload.m in Sources */,
 				D4B97AB719EDF50B00F721D6 /* GCAppViewModel.m in Sources */,
 				D43A919419CF997A009AA0C7 /* GCAppConfig.m in Sources */,
 				D430876419D9971A008D92F5 /* GCSignInScrollView.m in Sources */,

@@ -10,9 +10,6 @@
 #import "GCSurveyScrollView.h"
 #import "GCNewOrderViewController.h"
 
-#import "BRRequestUpload.h"
-#import "BRRequestCreateDirectory.h"
-
 @interface GCSurveyViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDelegate, UITableViewDataSource,UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIAlertViewDelegate, BRRequestDelegate>
 
 @property (strong) GCSurveyScrollView *surveyScrollView;
