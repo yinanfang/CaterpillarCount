@@ -28,8 +28,9 @@
         self.alert_Logout =[[UIAlertView alloc ] initWithTitle:@"Warning!"
                                                          message:@"All unsaved data will be lost!"
                                                         delegate:self
-                                               cancelButtonTitle:@"Log Out"
+                                               cancelButtonTitle:@"Cancel"
                                                otherButtonTitles: nil];
+        [self.alert_Logout addButtonWithTitle:@"Log Out"];
         [self.alert_Logout show];
     }];
     
@@ -212,24 +213,26 @@
             
             // Upload Plant Picture
             NSString *filepath = surveyDictionary[@"plantPhotoLocalURL"];
-            if (![filepath isEqual:@"Capture"]) {
-                [self addToImageBufferWithFileName:filepath newName:((NSDictionary *)data)[@"leavePhoto"]];
+            [self addToImageBufferWithFileName:filepath newName:((NSDictionary *)data)[@"leavePhoto"]];
+            // Submit orders
+            for (GCOrder *order in ordersArray) {
+                parameters = @{
+                               @"type": @"order",
+                               @"userID": surveyDictionary[@"userID"],
+                               @"surveyID": surveyDictionary[@"surveyID"],
+                               @"orderArthropod": order.orderName,
+                               @"orderLength": order.length,
+                               @"orderNotes": order.note,
+                               @"orderCount": order.count,
+                               };
+                [GCNetwork requestPOSTWithURL:url_Submission parameter:parameters completion:^(BOOL succeeded, NSData *data) {
+                    DDLogVerbose(@"Submitted a order");
+                    [self addToImageBufferWithFileName:order.orderPhotoLocalURL newName:((NSDictionary *)data)[@"insectPhoto"]];
+                }];
             }
-            
-            //                for (GCOrder *order in ordersArray) {
-            //                    parameters = @{
-            //                                   @"type": @"order",
-            //                                   @"userID": surveyDictionary[@"userID"],
-            //                                   @"surveyID": surveyDictionary[@"surveyID"],
-            //                                   @"orderArthropod": order.orderName,
-            //                                   @"orderLength": order.length,
-            //                                   @"orderNotes": order.note,
-            //                                   @"orderCount": order.count,
-            //                                   };
-            //                    [GCNetwork requestPOSTWithURL:url_Submission parameter:parameters completion:^(BOOL succeeded, NSData *data) {
-            //
-            //                    }];
-            //                }
+            self.hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            self.hud.mode = MBProgressHUDModeIndeterminate;
+            self.hud.labelText = @"Submitting data";
             [self uploadAllImages];
         }
     }];
@@ -237,32 +240,35 @@
 
 - (void)addToImageBufferWithFileName:(NSString *)oldName newName:(NSString *)newName
 {
-    // Copy the file and Rename
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSError *error;
-    DDLogVerbose(@"old name: %@; new name: %@", oldName, newName);
-    
-    newName = [newName stringByReplacingOccurrencesOfString:@"domain/" withString:@""];
-    newName = [newName stringByReplacingOccurrencesOfString:@".jpg" withString:@".png"];
-    DDLogVerbose(@"new name: %@", newName);
-
-    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"^[/].+[/]" options:0 error:&error];
-    NSRange needleRange = [regex rangeOfFirstMatchInString:oldName options:NSMatchingAnchored range:NSMakeRange(0, oldName.length)];
-    NSString *needle = [oldName substringWithRange:needleRange];
-    if (error) {
-        NSLog(@"regex error: %@", error);
+    if (![oldName isEqual:@"Capture"]) {
+        // Copy the file and Rename
+        NSFileManager *fileManager = [NSFileManager defaultManager];
+        NSError *error;
+        DDLogVerbose(@"old name: %@; new name: %@", oldName, newName);
+        
+        newName = [newName stringByReplacingOccurrencesOfString:@"domain/" withString:@""];
+        newName = [newName stringByReplacingOccurrencesOfString:@".jpg" withString:@".png"];
+        DDLogVerbose(@"new name: %@", newName);
+        
+        NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"^[/].+[/]" options:0 error:&error];
+        NSRange needleRange = [regex rangeOfFirstMatchInString:oldName options:NSMatchingAnchored range:NSMakeRange(0, oldName.length)];
+        NSString *needle = [oldName substringWithRange:needleRange];
+        if (error) {
+            NSLog(@"regex error: %@", error);
+        }
+        newName = [NSString stringWithFormat:@"%@%@", needle, newName];
+        DDLogVerbose(@"new : %@", newName);
+        
+        // Copy file over
+        if ([fileManager fileExistsAtPath:newName] == YES) {
+            [fileManager removeItemAtPath:newName error:&error];
+        }
+        [fileManager copyItemAtPath:oldName toPath:newName error:&error];
+        
+        // Add to buffer
+        [self.imageBuffer addObject:newName];
+        
     }
-    newName = [NSString stringWithFormat:@"%@%@", needle, newName];
-    DDLogVerbose(@"new : %@", newName);
-    
-    // Copy file over
-    if ([fileManager fileExistsAtPath:newName] == YES) {
-        [fileManager removeItemAtPath:newName error:&error];
-    }
-    [fileManager copyItemAtPath:oldName toPath:newName error:&error];
-    
-    // Add to buffer
-    [self.imageBuffer addObject:newName];
 }
 
 
@@ -288,8 +294,20 @@
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             NSLog(@"Error: %@", error);
         }];
+    } else {
+        DDLogVerbose(@"Upload completed!");
+        self.hud.mode = MBProgressHUDModeCustomView;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            UIImage *image = [UIImage imageNamed:@"mark_check"];
+            UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+            self.hud.customView = imageView;
+            self.hud.labelText = @"Submission completed!";
+        });
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+            [self.hud hide:YES];
+        });
     }
-    DDLogVerbose(@"Upload completed!");
+    
 }
 
 - (void)uploadImageWithPath:(NSString *)path newName:(NSString *)newname
@@ -567,7 +585,9 @@
 {
     if (alertView == self.alert_Logout)
     {
-        [self.navigationController popToRootViewControllerAnimated:YES];
+        if (buttonIndex == 1) {
+            [self.navigationController popToRootViewControllerAnimated:YES];
+        }
     }
 }
 

@@ -110,6 +110,12 @@
 }
 
 #pragma mark - UIPickerView Delegate
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    [self configurePickerContent];
+    return self.pickerContent[row];
+}
+
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
     NSString *newValue = self.pickerContent[row];
@@ -133,12 +139,6 @@
 {
     [self configurePickerContent];
     return self.pickerContent.count;
-}
-
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
-{
-    [self configurePickerContent];
-    return self.pickerContent[row];
 }
 
 - (void)configurePickerContent

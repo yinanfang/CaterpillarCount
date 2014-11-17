@@ -28,9 +28,7 @@
         DDLogInfo(@"Get data successfully. Printing response JSON: %@", responseDictionary);
         
         // Check response again here. Wrong password, Invalid User, Not activated
-        
-        
-        
+    
         // Check mark HUD
         HUD.mode = MBProgressHUDModeCustomView;
         dispatch_async(dispatch_get_main_queue(), ^{

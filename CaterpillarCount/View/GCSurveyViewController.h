@@ -24,6 +24,8 @@
 
 @property AFHTTPRequestOperationManager *manager;
 @property NSMutableArray *imageBuffer;
+@property MBProgressHUD *hud;
+
 @property UIAlertView *alert_Logout;
 
 //@property StoryDisplayStyleMode storyDisplayStyleMode;

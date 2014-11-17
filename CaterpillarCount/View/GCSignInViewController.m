@@ -46,6 +46,9 @@
                                      @"password": @"asdfasdf",
                                      };
         
+        
+        
+        
         [GCNetwork twoWayJSONPOSTRequestWithViewController:self URL:url parameter:parameters HUDMessage:@"Log In" completion:^(BOOL succeeded, NSDictionary *userInfoDictionary){
             DDLogVerbose(@"Sign In succeeded.");
             
