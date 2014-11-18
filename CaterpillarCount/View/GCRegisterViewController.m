@@ -30,32 +30,78 @@
     // Register submit control
     [[self.registerScrollView.btn_Submit rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         NSLog(@"Submit registration button hit!");
+        // BOOL isValidInput = YES;
+        BOOL isValidInput = [self isValidInput];
+        if (isValidInput) {
+            DDLogVerbose(@"Input format correct! Start Login process...");
+            [self registerUser];
+        }
         
-        NSURL *url = [NSURL URLWithString:[[NSString alloc] initWithFormat:@"%@/~pocket14/forsyth.im/caterpillars/users.php", [GCAppAPI getCurrentDomain]]];
-        
-        //        NSDictionary *parameters = @{
-        //                                     @"email": self.registerScrollView.entry_Email.text,
-        //                                     @"password": [NSString stringWithFormat:@"%@",
-        //                                                   self.registerScrollView.entry_PasswordNew.text],
-        //                                     @"name": [NSString stringWithFormat:@"%@ %@",
-        //                                               self.registerScrollView.entry_NameFirst.text,
-        //                                               self.registerScrollView.entry_NameLast.text],
-        //                                     };
-        NSDictionary *parameters = @{
-                                     @"email": @"yinan_fang@hotmail.com145",
-                                     @"password": @"asdfasdf",
-                                     @"name": @"Yinan Fang"
-                                     };
-        
-        [GCNetwork twoWayJSONPOSTRequestWithViewController:self URL:url parameter:parameters HUDMessage:@"Register" completion:^(BOOL succeeded, NSDictionary *userInfoDictionary){
-            // Update User Info
-            [GCAppViewModel updateUserWithGCUser:userInfoDictionary];
-            // Push to the Survey View
-            GCSurveyViewController *surveyViewController = [[GCSurveyViewController alloc] init];
-            [self.navigationController pushViewController:surveyViewController animated:YES];
-        }];
     }];
+}
+
+- (BOOL)isValidInput
+{
+    NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
+    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
+    if ([self.registerScrollView.entry_NameFirst.text isEqualToString:@""]){
+        [self makeHUDErrorAlertWithString:@"First Name can't be empty!"];
+        return NO;
+    } else if ([self.registerScrollView.entry_NameLast.text isEqualToString:@""]) {
+        [self makeHUDErrorAlertWithString:@"Last Name can't be empty!"];
+        return NO;
+    } else if (![emailTest evaluateWithObject:self.registerScrollView.entry_Email.text]) {
+        [self makeHUDErrorAlertWithString:@"Email format wrong!"];
+        return NO;
+    } else if ([self.registerScrollView.entry_PasswordNew.text isEqualToString:@""]) {
+        [self makeHUDErrorAlertWithString:@"Password can't be empty!"];
+        return NO;
+    } else if (![self.registerScrollView.entry_PasswordConfirm.text isEqualToString:self.registerScrollView.entry_PasswordNew.text]) {
+        [self makeHUDErrorAlertWithString:@"Password mismatch!"];
+        return NO;
+    }
+    return YES;
+}
+
+- (void)makeHUDErrorAlertWithString:(NSString *)message
+{
+    self.hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    self.hud.mode = MBProgressHUDModeCustomView;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        UIImage *image = [UIImage imageNamed:@"mark_cross"];
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+        self.hud.customView = imageView;
+        self.hud.labelText = @"Error!";
+        self.hud.detailsLabelText = message;
+    });
+    [self.hud hide:YES afterDelay:3];
+}
+
+- (void)registerUser
+{
+    NSURL *url = [NSURL URLWithString:[[NSString alloc] initWithFormat:@"%@/~pocket14/forsyth.im/caterpillars/users.php", [GCAppAPI getCurrentDomain]]];
+    NSDictionary *parameters = @{
+                                 @"email": self.registerScrollView.entry_Email.text,
+                                 @"password": [NSString stringWithFormat:@"%@",
+                                               self.registerScrollView.entry_PasswordNew.text],
+                                 @"name": [NSString stringWithFormat:@"%@ %@",
+                                           self.registerScrollView.entry_NameFirst.text,
+                                           self.registerScrollView.entry_NameLast.text],
+                                 };
+//    NSDictionary *parameters = @{
+//                                 @"email": @"test@gmail.com",
+//                                 @"password": @"123456",
+//                                 @"name": @"Yinan Fang"
+//                                 };
     
+    [GCNetwork twoWayJSONPOSTRequestWithViewController:self URL:url parameter:parameters HUDMessage:@"Register" completion:^(BOOL succeeded, NSDictionary *userInfoDictionary){
+        // Update User Info
+        [GCAppViewModel updateUserWithGCUser:userInfoDictionary];
+        // Push to the Survey View
+        GCSurveyViewController *surveyViewController = [[GCSurveyViewController alloc] init];
+        [self.navigationController pushViewController:surveyViewController animated:YES];
+    }];
+
 }
 
 - (void)viewWillAppear:(BOOL)animated

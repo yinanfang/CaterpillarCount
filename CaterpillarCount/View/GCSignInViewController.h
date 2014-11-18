@@ -13,5 +13,6 @@
 
 @property GCSignInScrollView *signInScrollView;
 
+@property MBProgressHUD *hud;
 
 @end

@@ -113,6 +113,60 @@
     [[GCAppViewModel sharedInstance].currentUserData.surveys addObject:survey];
 }
 
+#pragma mark - Log In
++ (void)loginWithCredential:(NSDictionary *)credential completion:(void (^)(BOOL succeeded))completion
+{
+    DDLogVerbose(@"start to login...");
+    NSURL *url = [NSURL URLWithString:[[NSString alloc] initWithFormat:@"%@%@", [GCAppAPI getCurrentDomain], URIPathToUsersPHP]];
+    DDLogVerbose(@"url is: %@", url.absoluteString);
+    DDLogVerbose(@"parameter: %@", credential);
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    manager.securityPolicy.allowInvalidCertificates = YES;
+    [manager POST:url.absoluteString parameters:credential success:^(AFHTTPRequestOperation *operation, NSData *data) {
+        DDLogInfo(@"Get data successfully. Printing response data: %@", data);
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        DDLogWarn(@"Error: %@", error);
+        // Customize error response
+        if ([operation.response statusCode] == 409) {
+            DDLogError(@"Email has already been registered");
+        } else {
+            DDLogError(@"Here's the error");
+        }
+    }];
+    
+    
+//    [GCNetwork requestPOSTWithURL:url parameter:credential completion:^(BOOL succeeded, NSData *data) {
+//        if (succeeded) {
+//            NSDictionary *userDic = (NSDictionary *)data;
+//            if ([userDic[@"iduser"] isEqualToString:@"0"]) {
+//                DDLogVerbose(@"Rejected");
+//                completion(NO);
+//            } else {
+//                DDLogVerbose(@"Logged in successfully");
+//                // Init GCUser
+//                NSError *error = nil;
+//                GCUser *user = [MTLJSONAdapter modelOfClass:[GCUser class] fromJSONDictionary:userDic error:&error];
+//                DDLogVerbose(@"user object: %@", [user description]);
+//                if (error) {
+//                    DDLogWarn(@"Cannot generate GCUser model!!!");
+//                }
+////                [GCAppViewModel sharedInstance].appData.currentUser = user;
+//                completion(YES);
+//            }
+//        }
+//    }];
+}
+
++ (void)enterMainContainerViewController:(UIViewController *)controller
+{
+//    GCMainContainerViewController *mainContainerViewController = [[GCMainContainerViewController alloc] init];
+//    [controller.navigationController pushViewController:mainContainerViewController animated:YES];
+}
 
 @end
 

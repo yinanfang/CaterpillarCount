@@ -587,6 +587,8 @@
     {
         if (buttonIndex == 1) {
             [self.navigationController popToRootViewControllerAnimated:YES];
+            [GCAppViewModel sharedInstance].appData.didLogedIn = NO;
+            [GCAppViewModel saveAppDataToNSUserDefaults];
         }
     }
 }

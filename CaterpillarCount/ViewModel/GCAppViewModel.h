@@ -29,6 +29,9 @@
 + (void)addCurrentunsavedOrdersWithDictionary:(NSDictionary *)orderDictionary;
 + (void)addSurveyData:(GCSurvey *)survey;
 
+#pragma mark - Log In
++ (void)loginWithCredential:(NSDictionary *)credential completion:(void (^)(BOOL succeeded))completion;
++ (void)enterMainContainerViewController:(UIViewController *)controller;
 
 @end
 

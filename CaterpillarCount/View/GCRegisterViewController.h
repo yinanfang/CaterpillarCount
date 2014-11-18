@@ -13,5 +13,6 @@
 
 @property GCRegisterScrollView *registerScrollView;
 
+@property MBProgressHUD *hud;
 
 @end
