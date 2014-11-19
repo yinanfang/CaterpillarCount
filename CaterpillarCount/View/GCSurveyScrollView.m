@@ -113,6 +113,7 @@
         [self addSubview:self.label_PlantPhoto];
         // Photo thumbnail
         self.entry_PlantPhoto = [UIImageView ImageViewWithDefaultBackgroundImage:nil];
+//        self.entry_PlantPhoto.image = [UIImage imageNamed:@"cover_logo"];
         [self addSubview:self.entry_PlantPhoto];
         // Photo Place Holder
         self.btn_PhotoPlaceHolder = [UIButton ButtonWithTitle:@"Capture" inBold:NO horizontalAlign:UIControlContentHorizontalAlignmentCenter];

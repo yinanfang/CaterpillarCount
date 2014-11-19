@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    DDLogVerbose(@"GCNewOrderViewController viewDidLoad");
     // UI Navigation Bar
     [GCAppSetup configureNavigationViewController:self withNavigationTitle:@"New Arthropod Order"];
     
@@ -26,6 +26,16 @@
     self.orderScrollView.delegate = self;
     [self.orderScrollView setNeedsUpdateConstraints];
     [self.orderScrollView updateConstraintsIfNeeded];
+    
+    if (self.isModifying) {
+        GCOrder *order = (GCOrder *)[GCAppViewModel sharedInstance].currentUnsavedOrders[self.row];
+        self.orderScrollView.entry_Order.titleLabel.text = order.orderName;
+        self.orderScrollView.entry_Length.text = [NSString stringWithFormat:@"%@", order.length];
+        self.orderScrollView.entry_Count.text = [NSString stringWithFormat:@"%@", order.count];
+        self.orderScrollView.entry_Notes.text = order.note;
+        self.orderScrollView.btn_PhotoPlaceHolder.titleLabel.text = order.orderPhotoLocalURL;
+        self.orderScrollView.entry_Photo.image = [UIImage imageWithContentsOfFile:order.orderPhotoLocalURL];
+    }
     
     // Configure UITextField Delegate
     self.orderScrollView.entry_Length.delegate = self;
@@ -90,23 +100,62 @@
     // Submission Button
     [[self.orderScrollView.btn_Submit rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         NSLog(@"New Order button submit");
-        NSString *length = [self.orderScrollView.entry_Length.text isEqualToString:@""] ? @"0" : self.orderScrollView.entry_Length.text;
-        NSString *count = [self.orderScrollView.entry_Count.text isEqualToString:@""] ? @"0" : self.orderScrollView.entry_Count.text;
-        NSString *note = [self.orderScrollView.entry_Notes.text isEqualToString:@""] ? @" " : self.orderScrollView.entry_Notes.text;
+        //        BOOL isValidInput = YES;
+        BOOL isValidInput = [self isValidInput];
+        NSDictionary *newOrder;
+        if (isValidInput) {
+            NSString *length = [self.orderScrollView.entry_Length.text isEqualToString:@""] ? @"0" : self.orderScrollView.entry_Length.text;
+            NSString *count = [self.orderScrollView.entry_Count.text isEqualToString:@""] ? @"0" : self.orderScrollView.entry_Count.text;
+            NSString *note = [self.orderScrollView.entry_Notes.text isEqualToString:@""] ? @" " : self.orderScrollView.entry_Notes.text;
+            
+            newOrder = @{
+                         @"orderID": @"",
+                         @"orderName": self.orderScrollView.entry_Order.titleLabel.text,
+                         @"length": length,
+                         @"count": count,
+                         @"note": note,
+                         @"orderPhotoLocalURL": self.orderScrollView.btn_PhotoPlaceHolder.titleLabel.text,
+                         };
+            if (self.isModifying) {
+                DDLogVerbose(@"Modifying data");
+                [GCAppViewModel sharedInstance].currentUnsavedOrders[self.row] = [GCAppAPI getMantleModelWithDictionary:newOrder modelClass:[GCOrder class]];
+            } else {
+                [GCAppViewModel addCurrentunsavedOrdersWithDictionary:newOrder];
+            }
+            [self.navigationController popViewControllerAnimated:YES];
+            NSLog(@"pop...");
+        }
         
-        NSDictionary *newOrder = @{
-                                   @"orderID": @"",
-                                   @"orderName": self.orderScrollView.entry_Order.titleLabel.text,
-                                   @"length": length,
-                                   @"count": count,
-                                   @"note": note,
-                                   @"orderPhotoLocalURL": self.orderScrollView.btn_PhotoPlaceHolder.titleLabel.text,
-                                   };
-        [GCAppViewModel addCurrentunsavedOrdersWithDictionary:newOrder];
-        [self.navigationController popViewControllerAnimated:YES];
-        NSLog(@"pop...");
     }];
-    
+}
+
+- (BOOL)isValidInput
+{
+    if ([self.orderScrollView.entry_Order.titleLabel.text isEqualToString:@"Click to choose a order"]) {
+        [self makeHUDErrorAlertWithString:@"Need to choose title lable"];
+        return  NO;
+    } else if ([self.orderScrollView.entry_Length.text isEqualToString:@""]) {
+        [self makeHUDErrorAlertWithString:@"Length can't be empty"];
+        return  NO;
+    } else if ([self.orderScrollView.entry_Count.text isEqualToString:@""]) {
+        [self makeHUDErrorAlertWithString:@"Count can't be empty"];
+        return  NO;
+    }
+    return YES;
+}
+
+- (void)makeHUDErrorAlertWithString:(NSString *)message
+{
+    self.hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    self.hud.mode = MBProgressHUDModeCustomView;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        UIImage *image = [UIImage imageNamed:@"mark_cross"];
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+        self.hud.customView = imageView;
+        self.hud.labelText = @"Error!";
+        self.hud.detailsLabelText = message;
+    });
+    [self.hud hide:YES afterDelay:3];
 }
 
 #pragma mark - UIPickerView Delegate

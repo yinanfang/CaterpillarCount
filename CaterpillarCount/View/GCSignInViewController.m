@@ -85,6 +85,8 @@
                 DDLogInfo(@"Get data successfully. Printing response data: %@", userDict);
                 // Update User Info
                 [GCAppViewModel updateUserWithGCUser:userDict];
+                [GCAppViewModel sharedInstance].appData.didLogedIn = YES;
+                [GCAppViewModel saveAppDataToNSUserDefaults];
                 // Push to the Survey View
                 GCSurveyViewController *surveyViewController = [[GCSurveyViewController alloc] init];
                 [self.navigationController pushViewController:surveyViewController animated:YES];

@@ -27,5 +27,9 @@
 @property __block BOOL didShowPicker;
 @property NSMutableArray *pickerContent;
 
+@property MBProgressHUD *hud;
+
+@property BOOL isModifying;
+@property NSInteger row;
 
 @end

@@ -156,11 +156,52 @@
     [[self.surveyScrollView.btn_Submit rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         NSLog(@"hit button submit");
         
-        [self startSubmissionProcess];
-        
+        //        BOOL isValidInput = YES;
+        BOOL isValidInput = [self isValidInput];
+        if (isValidInput) {
+            [self startSubmissionProcess];
+        }
 //        [GCAppViewModel saveAppDataToNSUserDefaults];
-
     }];
+}
+
+- (BOOL)isValidInput
+{
+    if ([self.surveyScrollView.entry_Site.titleLabel.text isEqualToString:@"Click to choose a site"]) {
+//        [self makeHUDErrorAlertWithString:@"Need to choose title lable"];
+//        return  NO;
+    }
+    if ([self.surveyScrollView.entry_Circle.titleLabel.text isEqualToString:@"Click to choose a circle"]) {
+        [self makeHUDErrorAlertWithString:@"Circle can't be empty"];
+        return  NO;
+    }
+    if ([self.surveyScrollView.entry_Survey.titleLabel.text isEqualToString:@"Click to choose a survey"]) {
+        [self makeHUDErrorAlertWithString:@"Survey can't be empty"];
+        return  NO;
+    }
+    if ([self.surveyScrollView.entry_PlantSpecies.text isEqualToString:@""]) {
+        [self makeHUDErrorAlertWithString:@"Plant Species can't be empty"];
+        return  NO;
+    }
+    if ([self.surveyScrollView.entry_Herbivory.titleLabel.text isEqualToString:@"Click to choose a herbivory"]) {
+        [self makeHUDErrorAlertWithString:@"Herbivory can't be empty"];
+        return  NO;
+    }
+    return YES;
+}
+
+- (void)makeHUDErrorAlertWithString:(NSString *)message
+{
+    self.hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    self.hud.mode = MBProgressHUDModeCustomView;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        UIImage *image = [UIImage imageNamed:@"mark_cross"];
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+        self.hud.customView = imageView;
+        self.hud.labelText = @"Error!";
+        self.hud.detailsLabelText = message;
+    });
+    [self.hud hide:YES afterDelay:3];
 }
 
 - (void)startSubmissionProcess
@@ -503,8 +544,13 @@
     cell.label_Length.text = [NSString stringWithFormat:@"Length: %@", order.length];
     cell.label_Count.text = [NSString stringWithFormat:@"Count: %@", order.count];
     cell.label_Notes.text = [NSString stringWithFormat:@"Notes: %@", order.note];
-    UIImage *image = [UIImage imageWithContentsOfFile:order.orderPhotoLocalURL];
-    cell.captureImageView.image = image;
+    if ([order.orderPhotoLocalURL isEqualToString:@"Capture"]) {
+        cell.captureImageView.image = [UIImage imageNamed:@"cover_logo"];
+    } else {
+        UIImage *image = [UIImage imageWithContentsOfFile:order.orderPhotoLocalURL];
+        cell.captureImageView.image = image;
+    }
+    
     
     cell.btn_Add.tag = row;
     [cell.btn_Add addTarget:self action:@selector(addCount:) forControlEvents:UIControlEventTouchUpInside];
@@ -529,6 +575,14 @@
     order.count = [NSNumber numberWithInt:[order.count intValue]-1];
     DDLogVerbose(@"%@", [GCAppViewModel sharedInstance].currentUnsavedOrders);
     [self.surveyScrollView.orderTableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:addButton.tag inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    GCNewOrderViewController *orderViewController = [[GCNewOrderViewController alloc] init];
+    [self.navigationController pushViewController:orderViewController animated:YES];
+    orderViewController.isModifying = YES;
+    orderViewController.row = indexPath.row;
 }
 
 //- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
