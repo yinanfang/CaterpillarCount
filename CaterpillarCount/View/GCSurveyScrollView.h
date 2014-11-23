@@ -19,6 +19,7 @@
 @property UIButton *entry_Temp, *entry_Time, *entry_Date;
 // Input section
 @property UILabel *label_SiteInfo;
+@property FUIButton *btn_NewSite;
 @property UIButton *btn_Info_Site;
 @property UILabel *label_Site, *label_Circle, *label_Survey, *label_Notes;
 @property UIButton *entry_Site, *entry_Circle, *entry_Survey;

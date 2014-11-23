@@ -39,6 +39,12 @@
     [self.surveyScrollView setNeedsUpdateConstraints];
     [self.surveyScrollView updateConstraintsIfNeeded];
     
+    [[self.surveyScrollView.btn_NewSite rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+        DDLogVerbose(@"hit add site button");
+        
+        
+    }];
+    
     // UIPickerView
     self.picker_Generic = [[UIPickerView alloc] init];
     self.picker_Generic.backgroundColor = [UIColor whiteColor];
@@ -482,6 +488,15 @@
             break;
     }
 }
+
+//-(UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view
+//{
+//    GCStore *store = [GCStore sharedInstance];
+//    if (self.pickerType == PickerType_Herbivory) {
+//        return store.herbivoryViews[row];
+//    }
+//    return nil;
+//}
 
 #pragma mark - UITableView Delegate
 

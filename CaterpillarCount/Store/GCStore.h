@@ -18,6 +18,7 @@
 @property NSMutableArray *circles;
 @property NSMutableArray *surveyStrings;
 @property NSMutableArray *herbivory;
+@property NSMutableArray *herbivoryViews;
 @property NSMutableArray *arthropodOrder;
 
 @end

@@ -32,6 +32,7 @@
         self.circles = [GCStore initCircles];
         self.surveyStrings = [GCStore initSurveyStrings];
         self.herbivory = [GCStore initHerbivory];
+        self.herbivoryViews = [GCStore initHerbivoryViews];
         self.arthropodOrder = [GCStore initArthropodOrder];
     }
     return self;
@@ -87,12 +88,35 @@
 {
     NSMutableArray *herbivoryArray = [NSMutableArray new];
     herbivoryArray = [@
-                  [@"1",
-                   @"2",
-                   @"3",
-                   @"4",
+                  [@"0 - No Damage",
+                   @"1 - Minor, 0% to 5%",
+                   @"2 - Light, 5% to 10%",
+                   @"3 - Moderate, 10% to 25%",
+                   @"4 - Heavy, greater than 25%",
                    ]
                   mutableCopy];
+    return herbivoryArray;
+}
+
++ (NSMutableArray *)initHerbivoryViews
+{
+    NSMutableArray *herbivoryArray = [NSMutableArray new];
+    UIImageView *herbivory00 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"herbivory_0"]];
+    UIImageView *herbivory05 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"herbivory_5"]];
+    UIImageView *herbivory10 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"herbivory_10"]];
+    UIImageView *herbivory25 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"herbivory_25"]];
+    UIImageView *herbivory99 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"herbivory_max"]];
+    CGFloat contentHeight = 70.0f;
+    UIView *view0 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, contentHeight)];
+    UILabel *label0 = [UILabel LabelSubTitleWithString:@"0 - None" align:NSTextAlignmentLeft];
+    [view0 addSubview:label0];
+    [view0 addSubview:herbivory00];
+    [view0 addSubview:herbivory05];
+    
+    herbivoryArray = [@
+                      [view0,
+                       ]
+                      mutableCopy];
     return herbivoryArray;
 }
 

@@ -58,6 +58,8 @@
         // Site
         self.label_Site = [UILabel LabelSubTitleWithString:@"Site" align:NSTextAlignmentLeft];
         [self addSubview:self.label_Site];
+        self.btn_NewSite = [FUIButton ButtonWithTitle:@"Add" inBold:YES];
+        [self addSubview:self.btn_NewSite];
         self.entry_Site = [UIButton ButtonWithTitle:@"Click to choose a site" inBold:NO horizontalAlign:UIControlContentHorizontalAlignmentLeft];
         [self addSubview:self.entry_Site];
         // Circle
@@ -183,7 +185,18 @@
         }];
         
         // Site
-        [GCAppSetup setConstraints_PinHorizontallyWithPagePaddingAndTopWithPadding:PagePaddingSmall withView:self.label_Site superview:self upperview:self.label_SiteInfo];
+//        [GCAppSetup setConstraints_PinHorizontallyWithPagePaddingAndTopWithPadding:PagePaddingSmall withView:self.label_Site superview:self upperview:self.label_SiteInfo];
+        [self.label_Site mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.label_SiteInfo.mas_bottom).with.offset(mas_Padding_Page_Small.top);
+            make.left.equalTo(self.mas_left).with.offset(mas_Padding_Page_Large.left);
+        }];
+        [self.btn_NewSite mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.label_SiteInfo.mas_bottom).with.offset(mas_Padding_Page_Small.top);
+            make.left.equalTo(self.label_Site.mas_right).with.offset(mas_Padding_Page_Large.left);
+            make.right.equalTo(self.mas_right).with.offset(mas_Padding_Page_Large.right);
+            make.size.mas_equalTo(CGSizeMake(60, 20));
+        }];
+        
         [GCAppSetup setConstraints_PinHorizontallyWithPagePaddingAndTopWithPadding:PagePaddingSmall withView:self.entry_Site superview:self upperview:self.label_Site];
         // Circle
         [GCAppSetup setConstraints_PinHorizontallyWithPagePaddingAndTopWithPadding:PagePaddingSmall withView:self.label_Circle superview:self upperview:self.entry_Site];
