@@ -44,6 +44,7 @@
         self.alertView_addSite = [[UIAlertView alloc] initWithTitle:@"Add new site" message:nil delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Submit", nil];
         [self.alertView_addSite setAlertViewStyle:UIAlertViewStyleLoginAndPasswordInput];
         [[self.alertView_addSite textFieldAtIndex:0] setPlaceholder:@"Site ID"];
+        [self.alertView_addSite textFieldAtIndex:0].keyboardType = UIKeyboardTypeNumberPad;
         [[self.alertView_addSite textFieldAtIndex:1] setPlaceholder:@"Site Password"];
         [[self.alertView_addSite textFieldAtIndex:1] setSecureTextEntry:YES];
         [self.alertView_addSite show];
@@ -690,10 +691,14 @@
     if (alertView == self.alertView_addSite) {
         if (buttonIndex == 1) {
             NSURL *url = [NSURL URLWithString:[[NSString alloc] initWithFormat:@"%@%@", [GCAppAPI getCurrentDomain], URIPathToSitesPHP]];
+            NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
+            [f setNumberStyle:NSNumberFormatterDecimalStyle];
             NSDictionary *parameter = @{
                                         @"action": @"checkSitePassword",
-                                        @"siteID": [alertView textFieldAtIndex:0].text,
+                                        @"siteID": [f numberFromString:[alertView textFieldAtIndex:0].text],
                                         @"sitePasswordCheck": [alertView textFieldAtIndex:1].text,
+//                                        @"siteID": @10,
+//                                        @"sitePasswordCheck": @"sitePass",
                                         };
             MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
             [GCNetwork requestPOSTWithURL:url parameter:parameter completion:^(BOOL succeeded, NSData *data) {
@@ -705,7 +710,7 @@
                         hud.customView = imageView;
                         hud.labelText = [NSString stringWithFormat:@"Add site succeeded!"];
                     });
-                    [[GCAppViewModel sharedInstance].currentUserData.sites addObject:parameter[@"siteID"]];
+                    [[GCAppViewModel sharedInstance].currentUserData.sites addObject:[alertView textFieldAtIndex:0].text];
                 } else {
                     hud.mode = MBProgressHUDModeCustomView;
                     dispatch_async(dispatch_get_main_queue(), ^{
