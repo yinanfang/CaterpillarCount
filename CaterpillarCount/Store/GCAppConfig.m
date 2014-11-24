@@ -15,6 +15,7 @@
 NSString *const DevelopmentDomain = @"https://secure28.webhostinghub.com";
 NSString *const ProductionDomain = @"https://secure28.webhostinghub.com";
 NSString *const URIPathToUsersPHP = @"/~pocket14/forsyth.im/caterpillars/users.php";
+NSString *const URIPathToSitesPHP = @"/~pocket14/forsyth.im/caterpillars/sites.php";
 NSString *const URIPathToSubmissionPHP = @"/~pocket14/forsyth.im/caterpillars/submission.php";
 NSString *const URLPathToImageSubmissionPHP = @"http://forsyth.im/caterpillars/uploads/upload.php";
 

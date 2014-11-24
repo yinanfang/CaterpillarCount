@@ -41,7 +41,13 @@
     
     [[self.surveyScrollView.btn_NewSite rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         DDLogVerbose(@"hit add site button");
-        
+        self.alertView_addSite = [[UIAlertView alloc] initWithTitle:@"Add new site" message:nil delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Submit", nil];
+        [self.alertView_addSite setAlertViewStyle:UIAlertViewStyleLoginAndPasswordInput];
+        [[self.alertView_addSite textFieldAtIndex:0] setPlaceholder:@"Site ID"];
+        [[self.alertView_addSite textFieldAtIndex:1] setPlaceholder:@"Site Password"];
+        [[self.alertView_addSite textFieldAtIndex:1] setSecureTextEntry:YES];
+        [self.alertView_addSite show];
+
         
     }];
     
@@ -677,6 +683,47 @@
             [GCAppViewModel saveAppDataToNSUserDefaults];
         }
     }
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (alertView == self.alertView_addSite) {
+        if (buttonIndex == 1) {
+            NSURL *url = [NSURL URLWithString:[[NSString alloc] initWithFormat:@"%@%@", [GCAppAPI getCurrentDomain], URIPathToSitesPHP]];
+            NSDictionary *parameter = @{
+                                        @"action": @"checkSitePassword",
+                                        @"siteID": [alertView textFieldAtIndex:0].text,
+                                        @"sitePasswordCheck": [alertView textFieldAtIndex:1].text,
+                                        };
+            MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            [GCNetwork requestPOSTWithURL:url parameter:parameter completion:^(BOOL succeeded, NSData *data) {
+                if (succeeded && [((NSDictionary *)data)[@"validSitePassword"] isEqual: @1]) {
+                    hud.mode = MBProgressHUDModeCustomView;
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        UIImage *image = [UIImage imageNamed:@"mark_check"];
+                        UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+                        hud.customView = imageView;
+                        hud.labelText = [NSString stringWithFormat:@"Add site succeeded!"];
+                    });
+                    [[GCAppViewModel sharedInstance].currentUserData.sites addObject:parameter[@"siteID"]];
+                } else {
+                    hud.mode = MBProgressHUDModeCustomView;
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        UIImage *image = [UIImage imageNamed:@"mark_cross"];
+                        UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+                        hud.customView = imageView;
+                        hud.labelText = [NSString stringWithFormat:@"Add site failed!"];
+                    });
+                }
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+                    [hud hide:YES];
+                });
+            }];
+        }
+        
+    }
+    
+
 }
 
 #pragma mark - Class Instance

@@ -14,6 +14,8 @@
 
 @property (strong) GCSurveyScrollView *surveyScrollView;
 
+// Add site
+@property UIAlertView *alertView_addSite;
 
 @property UIPickerView *picker_Generic;
 @property RACCommand *firePicker;

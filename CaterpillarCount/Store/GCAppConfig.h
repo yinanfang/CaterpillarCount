@@ -60,6 +60,7 @@ static const int ddLogLevel = LOG_LEVEL_WARN;
 FOUNDATION_EXPORT NSString *const DevelopmentDomain;
 FOUNDATION_EXPORT NSString *const ProductionDomain;
 FOUNDATION_EXPORT NSString *const URIPathToUsersPHP;
+FOUNDATION_EXPORT NSString *const URIPathToSitesPHP;
 FOUNDATION_EXPORT NSString *const URIPathToSubmissionPHP;
 FOUNDATION_EXPORT NSString *const URLPathToImageSubmissionPHP;
 
