@@ -11,8 +11,14 @@
 
 @interface GCSignInViewController : UIViewController
 
+/*!
+ *  Pointer to the view container
+ */
 @property GCSignInScrollView *signInScrollView;
 
+/*!
+ *  Pointer to a progress hud
+ */
 @property MBProgressHUD *hud;
 
 @end

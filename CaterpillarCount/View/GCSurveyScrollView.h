@@ -8,17 +8,29 @@
 
 #import <UIKit/UIKit.h>
 @class GCSurveyViewController;
-
+/**
+ *  Survey Scroll View
+ */
 @interface GCSurveyScrollView : UIScrollView <UIScrollViewDelegate, UITextFieldDelegate>
-// Self
+
+/**
+ *  Pointer for the parent controller
+ */
 @property GCSurveyViewController *parentController;
+/**
+ *  Boolean for setting up constraints
+ */
 @property BOOL didSetupConstraints;
 
-// Upper section
+/**
+ *  Label and entries for upper section
+ */
 @property UILabel *label_Temp, *label_Time, *label_Date;
 @property UIButton *entry_Temp, *entry_Time, *entry_Date;
 
-// Input section
+/**
+ *  Lbael and entries for middle section
+ */
 @property UILabel *label_SiteInfo;
 @property FUIButton *btn_NewSite;
 @property UIButton *btn_Info_Site;
@@ -26,29 +38,45 @@
 @property UIButton *entry_Site, *entry_Circle, *entry_Survey;
 @property UITextField *entry_SiteNotes;
 
-// Arthropod Order Info
+/**
+ *  Arthropod Order Info
+ */
 @property UILabel *label_ArthropodOrderInfo;
 @property UIButton *btn_Info_Order;
 @property FUIButton *btn_NewOrderInfo;
 @property UITableView *orderTableView;
 @property UILabel *label_tableTips;
-// Plant Information
+/**
+ *  Plant Information
+ */
 @property UILabel *label_PlantInfo, *label_PlantSpecies, *label_Herbivory;
 @property UITextField *entry_PlantSpecies;
 @property UIButton *entry_Herbivory;
-// Plant Photo
+/**
+ *  Plant Photo
+ */
 @property UILabel *label_PlantPhoto;
 @property UIButton *btn_Info_Plant;
 @property UIImageView *entry_PlantPhoto;
 @property UIButton *btn_PhotoPlaceHolder;
-// Submit Button
+/**
+ *  Submit Button
+ */
 @property FUIButton *btn_Submit;
 
-// States
+/**
+ *  States
+ */
 @property BOOL shouldMoveUpToAdjustForKeyboard;
 @property BOOL shouldMoveDownToAdjustForKeyboard;
 
-
+/**
+ *  Initializer
+ *
+ *  @param controller Pointer to the parent controller
+ *
+ *  @return Returning a instance of this class
+ */
 - (id)initWithParentController:(GCSurveyViewController *)controller;
 
 

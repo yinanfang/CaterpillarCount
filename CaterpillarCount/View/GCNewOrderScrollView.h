@@ -10,22 +10,38 @@
 @class GCNewOrderViewController;
 
 @interface GCNewOrderScrollView : UIScrollView <UIScrollViewDelegate, FUIAlertViewDelegate>
-// Self
+
+/**
+ *  Pointer to the parent controller
+ */
 @property GCNewOrderViewController *parentController;
 @property BOOL didSetupConstraints;
 
-// Upper section
+/**
+ *  Upper section
+ */
 @property UILabel *label_Order;
 @property UIButton *entry_Order;
 @property UITextField *entry_Length, *entry_Count, *entry_Notes;
 
-// Photo
+/**
+ *  Photo
+ */
 @property UILabel *label_Photo;
 @property UIImageView *entry_Photo;
 @property UIButton *btn_PhotoPlaceHolder;
-// Submit Button
+/**
+ *  Submit Button
+ */
 @property FUIButton *btn_Submit;
 
+/**
+ *  Initializer
+ *
+ *  @param controller Pointer to parent controller
+ *
+ *  @return Return an instance
+ */
 - (id)initWithParentController:(GCNewOrderViewController *)controller;
 
 

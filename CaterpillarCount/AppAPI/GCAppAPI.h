@@ -57,22 +57,61 @@
 #import "GCNetwork.h"
 #import "GCStore.h"
 
-
+/**
+ *  App API that include all the most used header files
+ */
 @interface GCAppAPI : NSObject
 
-// Accessor for Singleton class
+/**
+ *  Accessor for Singleton class
+ *
+ *  @return Returns an shared instance
+ */
 + (GCAppAPI *)sharedInstance;
 
 #pragma mark - Basic Utilities
+/**
+ *  Get current Domain
+ *
+ *  @return Return the domain
+ */
 + (NSString *)getCurrentDomain;
+/**
+ *  Get UI Color
+ *
+ *  @param color color code in hex
+ *
+ *  @return Return UIColor
+ */
 + (UIColor *)getColorWithRGBAinHex:(NSUInteger)color;
+/**
+ *  Check if the tour is shown
+ *
+ *  @param mode BOOL
+ */
 + (void)setHasShownTour:(BOOL)mode;
+/**
+ *  Check if the app is run before
+ *
+ *  @return BOOL
+ */
 + (BOOL)didRunAppBefore;
+/**
+ *  Get full screen image view
+ */
 + (UIImageView *)getFullScreenImageView:(NSString *)name;
 + (CGPoint)getCGPointZeroWithStatusbarAndNavigationBar:(UIViewController *)controller;
 + (CGRect)getScreenBoundsDependOnOrientation;
 
 #pragma mark - Mantle
+/**
+ *  Get Mantle data model
+ *
+ *  @param dictionary Data in NSDictionry
+ *  @param modelClass Model class
+ *
+ *  @return Return data in Mantle model
+ */
 + (id)getMantleModelWithDictionary:(NSDictionary *)dictionary modelClass:(Class)modelClass;
 
 

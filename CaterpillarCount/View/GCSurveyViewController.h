@@ -10,55 +10,65 @@
 #import "GCSurveyScrollView.h"
 #import "GCNewOrderViewController.h"
 
+/**
+ *  Controller for the Survey View
+ */
 @interface GCSurveyViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDelegate, UITableViewDataSource,UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIAlertViewDelegate>
 
+/**
+ *  Pointer to the survey scroll view
+ */
 @property (strong) GCSurveyScrollView *surveyScrollView;
 
-// Add site
+/**
+ *  Aler View for adding site
+ */
 @property UIAlertView *alertView_addSite;
 
+/**
+ *  Re-usable picker for all buttons
+ */
 @property UIPickerView *picker_Generic;
+/**
+ *  RACCommand for starting a picker
+ */
 @property RACCommand *firePicker;
+/**
+ *  Picker Type
+ */
 @property PickerType pickerType;
+/**
+ *  Boolean for picker's presence
+ */
 @property __block BOOL didShowPicker;
+/**
+ *  Picker's content
+ */
 @property NSMutableArray *pickerContent;
 
+/**
+ *  Picker for start time
+ */
 @property UIDatePicker *picker_TimeStart;
 
+/**
+ *  HTTP manager
+ */
 @property AFHTTPRequestOperationManager *manager;
+/**
+ *  Outgoing image buffer
+ */
 @property NSMutableArray *imageBuffer;
+/**
+ *  Progress HUD
+ */
 @property MBProgressHUD *hud;
 
+/**
+ *  Alert for log out
+ */
 @property UIAlertView *alert_Logout;
-
-//@property StoryDisplayStyleMode storyDisplayStyleMode;
-
-
 
 
 @end
 
-
-
-
-
-//[parentController.view layoutIfNeeded];
-//[UIView animateWithDuration:0.25 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-//    // Change the controller height
-//    [parentController.view mas_updateConstraints:^(MASConstraintMaker *make){
-//        make.height.equalTo(@(newStoryImageHeight));
-//    }];
-//    // Adjust scroll view offset
-//    [storyItemViews[0] mas_updateConstraints:^(MASConstraintMaker *make){
-//        make.left.equalTo(self.mas_left).offset(1);
-//    }];
-//    // Change the image size for this scroll view. Update other when scroll to them
-//    for (GCStoryItemView *storyItemView in self.storyItemViews) {
-//        [storyItemView mas_updateConstraints:^(MASConstraintMaker *make){
-//            make.height.equalTo(@(newStoryImageHeight));
-//            make.width.equalTo(@(newStoryImageWidth));
-//        }];
-//    }
-//    [parentController.view layoutIfNeeded];
-//}completion:nil];
-//self.contentOffset = CGPointMake(numberOfStoryItemBeforeTheItemTouch*ScreenWidth, 0);

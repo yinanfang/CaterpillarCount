@@ -8,10 +8,22 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ *  Data Model for the App Data
+ */
 @interface GCAppData : MTLModel <MTLJSONSerializing>
 
+/**
+ *  Log in indicator
+ */
 @property BOOL didLogedIn;
+/**
+ *  Last user ID
+ */
 @property NSNumber *lastUserID;
+/**
+ *  All user data
+ */
 @property NSMutableDictionary *allUserData;
 
 @end

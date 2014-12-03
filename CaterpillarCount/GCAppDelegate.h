@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+/*!
+ *  Entry point of the application
+ */
 @interface GCAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;

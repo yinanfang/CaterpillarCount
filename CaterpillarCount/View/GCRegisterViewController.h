@@ -11,8 +11,14 @@
 
 @interface GCRegisterViewController : UIViewController
 
+/*!
+ *  Pointer to the scroll view object
+ */
 @property GCRegisterScrollView *registerScrollView;
 
+/**
+ *  Pointer for the hud
+ */
 @property MBProgressHUD *hud;
 
 @end

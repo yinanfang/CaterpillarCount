@@ -9,31 +9,31 @@
 #import <UIKit/UIKit.h>
 @class GCSignInViewController;
 
+/**
+ *  Sign In Scroll View
+ */
 @interface GCSignInScrollView : UIScrollView <UIScrollViewDelegate, UITextFieldDelegate>
 
-// Self
+/*!
+ *  Pointer to the parent controller
+ */
 @property GCSignInViewController *parentController;
 @property BOOL didSetupConstraints;
 
-// Log In
 /*!
- * nothing The ViewController class' car object.
+ *  Objects in the view
  */
 @property UILabel *label_Login;
-
-/**
- * @discussion The ViewController class' car object.
- */
 @property UITextField *entry_Username, *entry_Password;
 
-// Submit Button
-/*!
- * @brief The ViewController class' car object.
- */
 @property FUIButton *btn_Submit;
 
-/**
- * @brief The ViewController class' car object lallala.
+/*!
+ *  Initializer
+ *
+ *  @param controller Pointer to the parent controller
+ *
+ *  @return Instance of the class
  */
 - (id)initWithParentController:(GCSignInViewController *)controller;
 

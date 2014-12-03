@@ -22,6 +22,13 @@
 // Submit Button
 @property FUIButton *btn_Submit;
 
+/**
+ *  Initializer
+ *
+ *  @param controller Pointer
+ *
+ *  @return Return intance of this class
+ */
 - (id)initWithParentController:(GCRegisterViewController *)controller;
 
 @end

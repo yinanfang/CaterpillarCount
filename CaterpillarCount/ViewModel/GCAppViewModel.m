@@ -8,9 +8,15 @@
 
 #import "GCAppViewModel.h"
 
+
 @implementation GCAppViewModel
 
 #pragma mark - Singleton Class
+/**
+ *  Class instance
+ *
+ *  @return Return a class instance
+ */
 + (GCAppViewModel *)sharedInstance
 {
     static GCAppViewModel *shareInstance = nil;
@@ -22,6 +28,11 @@
     return shareInstance;
 }
 
+/**
+ *  Initializer
+ *
+ *  @return Return an instance
+ */
 - (id)init
 {
     DDLogVerbose(@"Initializing GCAppDataViewModel...");

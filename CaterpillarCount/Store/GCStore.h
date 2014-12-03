@@ -8,17 +8,39 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ *  Variable that stays the same through out the app
+ */
 @interface GCStore : NSObject
 
-// Accessor for Singleton class
+/**
+ *  Accessor for Singleton class
+ */
 + (GCStore *)sharedInstance;
 
-// Store Info
+/**
+ *  Temperature Ranges
+ */
 @property NSMutableArray *temperatureRanges;
+/**
+ *  Circles
+ */
 @property NSMutableArray *circles;
+/**
+ *  Survey Strings
+ */
 @property NSMutableArray *surveyStrings;
+/**
+ *  Herbivory
+ */
 @property NSMutableArray *herbivory;
+/**
+ *  Herbivory Views
+ */
 @property NSMutableArray *herbivoryViews;
+/**
+ *  Arthropod Order
+ */
 @property NSMutableArray *arthropodOrder;
 
 @end

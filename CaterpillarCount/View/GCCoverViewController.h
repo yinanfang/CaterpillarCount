@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+/*!
+ *  Controller for the Welcome view
+ */
 @interface GCCoverViewController : UIViewController
 
 

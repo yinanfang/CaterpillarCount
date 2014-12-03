@@ -10,10 +10,14 @@
 
 @interface GCOrderTableViewCell : UITableViewCell
 
-// Self
+/**
+ *  Pointer to objects in self
+ */
 @property (assign) BOOL didSetupConstraints;
 
-// Cell item
+/**
+ *  Pointer to object in Cell item
+ */
 @property (strong) UIImageView *captureImageView;
 @property (strong) UILabel *label_OrderName, *label_Length, *label_Count, *label_Notes;
 @property (strong) FUIButton *btn_Add, *btn_Minus;

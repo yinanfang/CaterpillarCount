@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "GCNewOrderScrollView.h"
 
-
+/**
+ *  New Order View Controller
+ */
 @interface GCNewOrderViewController : UIViewController
 <   UINavigationControllerDelegate,
     UIImagePickerControllerDelegate,
@@ -19,16 +21,25 @@
     UIPickerViewDataSource
 >
 
+/**
+ *  Pointer to the order scroll view
+ */
 @property GCNewOrderScrollView *orderScrollView;
 
-// View Items
+/**
+ *  View Items
+ */
 @property UIPickerView *picker_Generic;
 @property PickerType pickerType;
 @property __block BOOL didShowPicker;
 @property NSMutableArray *pickerContent;
-
+/**
+ *  Progress HUD
+ */
 @property MBProgressHUD *hud;
-
+/**
+ *  Variable for editing the order
+ */
 @property BOOL isModifying;
 @property NSInteger row;
 

@@ -10,10 +10,22 @@
 @class GCUser;
 @class GCSurvey;
 
+/**
+ *  Data model for user data
+ */
 @interface GCUserData : MTLModel <MTLJSONSerializing>
 
+/**
+ *  User object
+ */
 @property GCUser *user;
+/**
+ *  Surveys
+ */
 @property NSMutableArray *surveys;
+/**
+ *  Sites
+ */
 @property NSMutableArray *sites;
 
 
