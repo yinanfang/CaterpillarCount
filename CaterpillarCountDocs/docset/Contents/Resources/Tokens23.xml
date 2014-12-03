@@ -1,0 +1,833 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/GCSurveyViewController.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/GCSurveyViewController</TokenIdentifier>
+			<Abstract type="html">Controller for the Survey View</Abstract>
+			<DeclaredIn>GCSurveyViewController.h</DeclaredIn>
+            
+			
+			<NodeRef refid="23"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurveyViewController/setSurveyScrollView:</TokenIdentifier>
+			<Abstract type="html">Pointer to the survey scroll view</Abstract>
+			<DeclaredIn>GCSurveyViewController.h</DeclaredIn>
+			
+			<Declaration>@property (strong) GCSurveyScrollView *surveyScrollView</Declaration>
+			
+			
+			<Anchor>//api/name/surveyScrollView</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurveyViewController/surveyScrollView</TokenIdentifier>
+			<Abstract type="html">Pointer to the survey scroll view</Abstract>
+			<DeclaredIn>GCSurveyViewController.h</DeclaredIn>
+			
+			<Declaration>@property (strong) GCSurveyScrollView *surveyScrollView</Declaration>
+			
+			
+			<Anchor>//api/name/surveyScrollView</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCSurveyViewController/surveyScrollView</TokenIdentifier>
+			<Abstract type="html">Pointer to the survey scroll view</Abstract>
+			<DeclaredIn>GCSurveyViewController.h</DeclaredIn>
+			
+			<Declaration>@property (strong) GCSurveyScrollView *surveyScrollView</Declaration>
+			
+			
+			<Anchor>//api/name/surveyScrollView</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurveyViewController/setAlertView_addSite:</TokenIdentifier>
+			<Abstract type="html">Aler View for adding site</Abstract>
+			<DeclaredIn>GCSurveyViewController.h</DeclaredIn>
+			
+			<Declaration>@property UIAlertView *alertView_addSite</Declaration>
+			
+			
+			<Anchor>//api/name/alertView_addSite</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurveyViewController/alertView_addSite</TokenIdentifier>
+			<Abstract type="html">Aler View for adding site</Abstract>
+			<DeclaredIn>GCSurveyViewController.h</DeclaredIn>
+			
+			<Declaration>@property UIAlertView *alertView_addSite</Declaration>
+			
+			
+			<Anchor>//api/name/alertView_addSite</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCSurveyViewController/alertView_addSite</TokenIdentifier>
+			<Abstract type="html">Aler View for adding site</Abstract>
+			<DeclaredIn>GCSurveyViewController.h</DeclaredIn>
+			
+			<Declaration>@property UIAlertView *alertView_addSite</Declaration>
+			
+			
+			<Anchor>//api/name/alertView_addSite</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurveyViewController/setPicker_Generic:</TokenIdentifier>
+			<Abstract type="html">Re-usable picker for all buttons</Abstract>
+			<DeclaredIn>GCSurveyViewController.h</DeclaredIn>
+			
+			<Declaration>@property UIPickerView *picker_Generic</Declaration>
+			
+			
+			<Anchor>//api/name/picker_Generic</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurveyViewController/picker_Generic</TokenIdentifier>
+			<Abstract type="html">Re-usable picker for all buttons</Abstract>
+			<DeclaredIn>GCSurveyViewController.h</DeclaredIn>
+			
+			<Declaration>@property UIPickerView *picker_Generic</Declaration>
+			
+			
+			<Anchor>//api/name/picker_Generic</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCSurveyViewController/picker_Generic</TokenIdentifier>
+			<Abstract type="html">Re-usable picker for all buttons</Abstract>
+			<DeclaredIn>GCSurveyViewController.h</DeclaredIn>
+			
+			<Declaration>@property UIPickerView *picker_Generic</Declaration>
+			
+			
+			<Anchor>//api/name/picker_Generic</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurveyViewController/setFirePicker:</TokenIdentifier>
+			<Abstract type="html">RACCommand for starting a picker</Abstract>
+			<DeclaredIn>GCSurveyViewController.h</DeclaredIn>
+			
+			<Declaration>@property RACCommand *firePicker</Declaration>
+			
+			
+			<Anchor>//api/name/firePicker</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurveyViewController/firePicker</TokenIdentifier>
+			<Abstract type="html">RACCommand for starting a picker</Abstract>
+			<DeclaredIn>GCSurveyViewController.h</DeclaredIn>
+			
+			<Declaration>@property RACCommand *firePicker</Declaration>
+			
+			
+			<Anchor>//api/name/firePicker</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCSurveyViewController/firePicker</TokenIdentifier>
+			<Abstract type="html">RACCommand for starting a picker</Abstract>
+			<DeclaredIn>GCSurveyViewController.h</DeclaredIn>
+			
+			<Declaration>@property RACCommand *firePicker</Declaration>
+			
+			
+			<Anchor>//api/name/firePicker</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurveyViewController/setPickerType:</TokenIdentifier>
+			<Abstract type="html">Picker Type</Abstract>
+			<DeclaredIn>GCSurveyViewController.h</DeclaredIn>
+			
+			<Declaration>@property PickerType pickerType</Declaration>
+			
+			
+			<Anchor>//api/name/pickerType</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurveyViewController/pickerType</TokenIdentifier>
+			<Abstract type="html">Picker Type</Abstract>
+			<DeclaredIn>GCSurveyViewController.h</DeclaredIn>
+			
+			<Declaration>@property PickerType pickerType</Declaration>
+			
+			
+			<Anchor>//api/name/pickerType</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCSurveyViewController/pickerType</TokenIdentifier>
+			<Abstract type="html">Picker Type</Abstract>
+			<DeclaredIn>GCSurveyViewController.h</DeclaredIn>
+			
+			<Declaration>@property PickerType pickerType</Declaration>
+			
+			
+			<Anchor>//api/name/pickerType</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurveyViewController/setDidShowPicker:</TokenIdentifier>
+			<Abstract type="html">Boolean for picker&apos;s presence</Abstract>
+			<DeclaredIn>GCSurveyViewController.h</DeclaredIn>
+			
+			<Declaration>@property __block BOOL didShowPicker</Declaration>
+			
+			
+			<Anchor>//api/name/didShowPicker</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurveyViewController/didShowPicker</TokenIdentifier>
+			<Abstract type="html">Boolean for picker&apos;s presence</Abstract>
+			<DeclaredIn>GCSurveyViewController.h</DeclaredIn>
+			
+			<Declaration>@property __block BOOL didShowPicker</Declaration>
+			
+			
+			<Anchor>//api/name/didShowPicker</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCSurveyViewController/didShowPicker</TokenIdentifier>
+			<Abstract type="html">Boolean for picker&apos;s presence</Abstract>
+			<DeclaredIn>GCSurveyViewController.h</DeclaredIn>
+			
+			<Declaration>@property __block BOOL didShowPicker</Declaration>
+			
+			
+			<Anchor>//api/name/didShowPicker</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurveyViewController/setPickerContent:</TokenIdentifier>
+			<Abstract type="html">Picker&apos;s content</Abstract>
+			<DeclaredIn>GCSurveyViewController.h</DeclaredIn>
+			
+			<Declaration>@property NSMutableArray *pickerContent</Declaration>
+			
+			
+			<Anchor>//api/name/pickerContent</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurveyViewController/pickerContent</TokenIdentifier>
+			<Abstract type="html">Picker&apos;s content</Abstract>
+			<DeclaredIn>GCSurveyViewController.h</DeclaredIn>
+			
+			<Declaration>@property NSMutableArray *pickerContent</Declaration>
+			
+			
+			<Anchor>//api/name/pickerContent</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCSurveyViewController/pickerContent</TokenIdentifier>
+			<Abstract type="html">Picker&apos;s content</Abstract>
+			<DeclaredIn>GCSurveyViewController.h</DeclaredIn>
+			
+			<Declaration>@property NSMutableArray *pickerContent</Declaration>
+			
+			
+			<Anchor>//api/name/pickerContent</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurveyViewController/setPicker_TimeStart:</TokenIdentifier>
+			<Abstract type="html">Picker for start time</Abstract>
+			<DeclaredIn>GCSurveyViewController.h</DeclaredIn>
+			
+			<Declaration>@property UIDatePicker *picker_TimeStart</Declaration>
+			
+			
+			<Anchor>//api/name/picker_TimeStart</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurveyViewController/picker_TimeStart</TokenIdentifier>
+			<Abstract type="html">Picker for start time</Abstract>
+			<DeclaredIn>GCSurveyViewController.h</DeclaredIn>
+			
+			<Declaration>@property UIDatePicker *picker_TimeStart</Declaration>
+			
+			
+			<Anchor>//api/name/picker_TimeStart</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCSurveyViewController/picker_TimeStart</TokenIdentifier>
+			<Abstract type="html">Picker for start time</Abstract>
+			<DeclaredIn>GCSurveyViewController.h</DeclaredIn>
+			
+			<Declaration>@property UIDatePicker *picker_TimeStart</Declaration>
+			
+			
+			<Anchor>//api/name/picker_TimeStart</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurveyViewController/setManager:</TokenIdentifier>
+			<Abstract type="html">HTTP manager</Abstract>
+			<DeclaredIn>GCSurveyViewController.h</DeclaredIn>
+			
+			<Declaration>@property AFHTTPRequestOperationManager *manager</Declaration>
+			
+			
+			<Anchor>//api/name/manager</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurveyViewController/manager</TokenIdentifier>
+			<Abstract type="html">HTTP manager</Abstract>
+			<DeclaredIn>GCSurveyViewController.h</DeclaredIn>
+			
+			<Declaration>@property AFHTTPRequestOperationManager *manager</Declaration>
+			
+			
+			<Anchor>//api/name/manager</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCSurveyViewController/manager</TokenIdentifier>
+			<Abstract type="html">HTTP manager</Abstract>
+			<DeclaredIn>GCSurveyViewController.h</DeclaredIn>
+			
+			<Declaration>@property AFHTTPRequestOperationManager *manager</Declaration>
+			
+			
+			<Anchor>//api/name/manager</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurveyViewController/setImageBuffer:</TokenIdentifier>
+			<Abstract type="html">Outgoing image buffer</Abstract>
+			<DeclaredIn>GCSurveyViewController.h</DeclaredIn>
+			
+			<Declaration>@property NSMutableArray *imageBuffer</Declaration>
+			
+			
+			<Anchor>//api/name/imageBuffer</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurveyViewController/imageBuffer</TokenIdentifier>
+			<Abstract type="html">Outgoing image buffer</Abstract>
+			<DeclaredIn>GCSurveyViewController.h</DeclaredIn>
+			
+			<Declaration>@property NSMutableArray *imageBuffer</Declaration>
+			
+			
+			<Anchor>//api/name/imageBuffer</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCSurveyViewController/imageBuffer</TokenIdentifier>
+			<Abstract type="html">Outgoing image buffer</Abstract>
+			<DeclaredIn>GCSurveyViewController.h</DeclaredIn>
+			
+			<Declaration>@property NSMutableArray *imageBuffer</Declaration>
+			
+			
+			<Anchor>//api/name/imageBuffer</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurveyViewController/setHud:</TokenIdentifier>
+			<Abstract type="html">Progress HUD</Abstract>
+			<DeclaredIn>GCSurveyViewController.h</DeclaredIn>
+			
+			<Declaration>@property MBProgressHUD *hud</Declaration>
+			
+			
+			<Anchor>//api/name/hud</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurveyViewController/hud</TokenIdentifier>
+			<Abstract type="html">Progress HUD</Abstract>
+			<DeclaredIn>GCSurveyViewController.h</DeclaredIn>
+			
+			<Declaration>@property MBProgressHUD *hud</Declaration>
+			
+			
+			<Anchor>//api/name/hud</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCSurveyViewController/hud</TokenIdentifier>
+			<Abstract type="html">Progress HUD</Abstract>
+			<DeclaredIn>GCSurveyViewController.h</DeclaredIn>
+			
+			<Declaration>@property MBProgressHUD *hud</Declaration>
+			
+			
+			<Anchor>//api/name/hud</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurveyViewController/setAlert_Logout:</TokenIdentifier>
+			<Abstract type="html">Alert for log out</Abstract>
+			<DeclaredIn>GCSurveyViewController.h</DeclaredIn>
+			
+			<Declaration>@property UIAlertView *alert_Logout</Declaration>
+			
+			
+			<Anchor>//api/name/alert_Logout</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurveyViewController/alert_Logout</TokenIdentifier>
+			<Abstract type="html">Alert for log out</Abstract>
+			<DeclaredIn>GCSurveyViewController.h</DeclaredIn>
+			
+			<Declaration>@property UIAlertView *alert_Logout</Declaration>
+			
+			
+			<Anchor>//api/name/alert_Logout</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCSurveyViewController/alert_Logout</TokenIdentifier>
+			<Abstract type="html">Alert for log out</Abstract>
+			<DeclaredIn>GCSurveyViewController.h</DeclaredIn>
+			
+			<Declaration>@property UIAlertView *alert_Logout</Declaration>
+			
+			
+			<Anchor>//api/name/alert_Logout</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurveyViewController/viewDidLoad</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSurveyViewController.m</DeclaredIn>
+			
+			<Declaration>- (void)viewDidLoad</Declaration>
+			
+			
+			<Anchor>//api/name/viewDidLoad</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurveyViewController/keyboardWillShow</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSurveyViewController.m</DeclaredIn>
+			
+			<Declaration>- (void)keyboardWillShow</Declaration>
+			
+			
+			<Anchor>//api/name/keyboardWillShow</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurveyViewController/isValidInput</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSurveyViewController.m</DeclaredIn>
+			
+			<Declaration>- (BOOL)isValidInput</Declaration>
+			
+			
+			<Anchor>//api/name/isValidInput</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurveyViewController/makeHUDErrorAlertWithString:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSurveyViewController.m</DeclaredIn>
+			
+			<Declaration>- (void)makeHUDErrorAlertWithString:(NSString *)message</Declaration>
+			
+			
+			<Anchor>//api/name/makeHUDErrorAlertWithString:</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurveyViewController/startSubmissionProcess</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSurveyViewController.m</DeclaredIn>
+			
+			<Declaration>- (void)startSubmissionProcess</Declaration>
+			
+			
+			<Anchor>//api/name/startSubmissionProcess</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurveyViewController/addToImageBufferWithFileName:newName:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSurveyViewController.m</DeclaredIn>
+			
+			<Declaration>- (void)addToImageBufferWithFileName:(NSString *)oldName newName:(NSString *)newName</Declaration>
+			
+			
+			<Anchor>//api/name/addToImageBufferWithFileName:newName:</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurveyViewController/uploadAllImages</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSurveyViewController.m</DeclaredIn>
+			
+			<Declaration>- (void)uploadAllImages</Declaration>
+			
+			
+			<Anchor>//api/name/uploadAllImages</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurveyViewController/uploadImageWithPath:newName:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSurveyViewController.m</DeclaredIn>
+			
+			<Declaration>- (void)uploadImageWithPath:(NSString *)path newName:(NSString *)newname</Declaration>
+			
+			
+			<Anchor>//api/name/uploadImageWithPath:newName:</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurveyViewController/mimeTypeForPath:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSurveyViewController.m</DeclaredIn>
+			
+			<Declaration>- (NSString *)mimeTypeForPath:(NSString *)path</Declaration>
+			
+			
+			<Anchor>//api/name/mimeTypeForPath:</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurveyViewController/viewWillAppear:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSurveyViewController.m</DeclaredIn>
+			
+			<Declaration>- (void)viewWillAppear:(BOOL)animated</Declaration>
+			
+			
+			<Anchor>//api/name/viewWillAppear:</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurveyViewController/touchesBegan:withEvent:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSurveyViewController.m</DeclaredIn>
+			
+			<Declaration>- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event</Declaration>
+			
+			
+			<Anchor>//api/name/touchesBegan:withEvent:</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurveyViewController/pickerView:didSelectRow:inComponent:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSurveyViewController.m</DeclaredIn>
+			
+			<Declaration>- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component</Declaration>
+			
+			
+			<Anchor>//api/name/pickerView:didSelectRow:inComponent:</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurveyViewController/numberOfComponentsInPickerView:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSurveyViewController.m</DeclaredIn>
+			
+			<Declaration>- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView</Declaration>
+			
+			
+			<Anchor>//api/name/numberOfComponentsInPickerView:</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurveyViewController/pickerView:numberOfRowsInComponent:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSurveyViewController.m</DeclaredIn>
+			
+			<Declaration>- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component</Declaration>
+			
+			
+			<Anchor>//api/name/pickerView:numberOfRowsInComponent:</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurveyViewController/pickerView:titleForRow:forComponent:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSurveyViewController.m</DeclaredIn>
+			
+			<Declaration>- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component</Declaration>
+			
+			
+			<Anchor>//api/name/pickerView:titleForRow:forComponent:</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurveyViewController/configurePickerContent</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSurveyViewController.m</DeclaredIn>
+			
+			<Declaration>- (void)configurePickerContent</Declaration>
+			
+			
+			<Anchor>//api/name/configurePickerContent</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurveyViewController/numberOfSectionsInTableView:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSurveyViewController.m</DeclaredIn>
+			
+			<Declaration>- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView</Declaration>
+			
+			
+			<Anchor>//api/name/numberOfSectionsInTableView:</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurveyViewController/tableView:numberOfRowsInSection:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSurveyViewController.m</DeclaredIn>
+			
+			<Declaration>- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section</Declaration>
+			
+			
+			<Anchor>//api/name/tableView:numberOfRowsInSection:</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurveyViewController/tableView:cellForRowAtIndexPath:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSurveyViewController.m</DeclaredIn>
+			
+			<Declaration>- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath</Declaration>
+			
+			
+			<Anchor>//api/name/tableView:cellForRowAtIndexPath:</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurveyViewController/tableView:heightForRowAtIndexPath:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSurveyViewController.m</DeclaredIn>
+			
+			<Declaration>- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath</Declaration>
+			
+			
+			<Anchor>//api/name/tableView:heightForRowAtIndexPath:</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurveyViewController/configureCellContent:atRow:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSurveyViewController.m</DeclaredIn>
+			
+			<Declaration>- (void)configureCellContent:(GCOrderTableViewCell *)cell atRow:(NSInteger)row</Declaration>
+			
+			
+			<Anchor>//api/name/configureCellContent:atRow:</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurveyViewController/addCount:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSurveyViewController.m</DeclaredIn>
+			
+			<Declaration>- (void)addCount:(FUIButton *)addButton</Declaration>
+			
+			
+			<Anchor>//api/name/addCount:</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurveyViewController/minusCount:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSurveyViewController.m</DeclaredIn>
+			
+			<Declaration>- (void)minusCount:(FUIButton *)addButton</Declaration>
+			
+			
+			<Anchor>//api/name/minusCount:</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurveyViewController/tableView:didSelectRowAtIndexPath:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSurveyViewController.m</DeclaredIn>
+			
+			<Declaration>- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath</Declaration>
+			
+			
+			<Anchor>//api/name/tableView:didSelectRowAtIndexPath:</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurveyViewController/tableView:canEditRowAtIndexPath:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSurveyViewController.m</DeclaredIn>
+			
+			<Declaration>- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath</Declaration>
+			
+			
+			<Anchor>//api/name/tableView:canEditRowAtIndexPath:</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurveyViewController/tableView:commitEditingStyle:forRowAtIndexPath:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSurveyViewController.m</DeclaredIn>
+			
+			<Declaration>- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath</Declaration>
+			
+			
+			<Anchor>//api/name/tableView:commitEditingStyle:forRowAtIndexPath:</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurveyViewController/imagePickerController:didFinishPickingMediaWithInfo:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSurveyViewController.m</DeclaredIn>
+			
+			<Declaration>- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info</Declaration>
+			
+			
+			<Anchor>//api/name/imagePickerController:didFinishPickingMediaWithInfo:</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurveyViewController/imagePickerControllerDidCancel:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSurveyViewController.m</DeclaredIn>
+			
+			<Declaration>- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker</Declaration>
+			
+			
+			<Anchor>//api/name/imagePickerControllerDidCancel:</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurveyViewController/alertView:didDismissWithButtonIndex:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSurveyViewController.m</DeclaredIn>
+			
+			<Declaration>- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex</Declaration>
+			
+			
+			<Anchor>//api/name/alertView:didDismissWithButtonIndex:</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurveyViewController/alertView:clickedButtonAtIndex:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSurveyViewController.m</DeclaredIn>
+			
+			<Declaration>- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex</Declaration>
+			
+			
+			<Anchor>//api/name/alertView:clickedButtonAtIndex:</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCSurveyViewController/dateFormatter</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSurveyViewController.m</DeclaredIn>
+			
+			<Declaration>+ (NSDateFormatter *)dateFormatter</Declaration>
+			
+			
+			<Anchor>//api/name/dateFormatter</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurveyViewController/didReceiveMemoryWarning</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSurveyViewController.m</DeclaredIn>
+			
+			<Declaration>- (void)didReceiveMemoryWarning</Declaration>
+			
+			
+			<Anchor>//api/name/didReceiveMemoryWarning</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

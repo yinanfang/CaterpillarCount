@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/GCOrder.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/GCOrder</TokenIdentifier>
+			<Abstract type="html">Data model for order</Abstract>
+			<DeclaredIn>GCOrder.h</DeclaredIn>
+            
+			
+			<NodeRef refid="14"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCOrder/setOrderID:</TokenIdentifier>
+			<Abstract type="html">Order ID</Abstract>
+			<DeclaredIn>GCOrder.h</DeclaredIn>
+			
+			<Declaration>@property NSString *orderID</Declaration>
+			
+			
+			<Anchor>//api/name/orderID</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCOrder/orderID</TokenIdentifier>
+			<Abstract type="html">Order ID</Abstract>
+			<DeclaredIn>GCOrder.h</DeclaredIn>
+			
+			<Declaration>@property NSString *orderID</Declaration>
+			
+			
+			<Anchor>//api/name/orderID</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCOrder/orderID</TokenIdentifier>
+			<Abstract type="html">Order ID</Abstract>
+			<DeclaredIn>GCOrder.h</DeclaredIn>
+			
+			<Declaration>@property NSString *orderID</Declaration>
+			
+			
+			<Anchor>//api/name/orderID</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCOrder/setOrderName:</TokenIdentifier>
+			<Abstract type="html">Order Name</Abstract>
+			<DeclaredIn>GCOrder.h</DeclaredIn>
+			
+			<Declaration>@property NSString *orderName</Declaration>
+			
+			
+			<Anchor>//api/name/orderName</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCOrder/orderName</TokenIdentifier>
+			<Abstract type="html">Order Name</Abstract>
+			<DeclaredIn>GCOrder.h</DeclaredIn>
+			
+			<Declaration>@property NSString *orderName</Declaration>
+			
+			
+			<Anchor>//api/name/orderName</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCOrder/orderName</TokenIdentifier>
+			<Abstract type="html">Order Name</Abstract>
+			<DeclaredIn>GCOrder.h</DeclaredIn>
+			
+			<Declaration>@property NSString *orderName</Declaration>
+			
+			
+			<Anchor>//api/name/orderName</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCOrder/setLength:</TokenIdentifier>
+			<Abstract type="html">Length</Abstract>
+			<DeclaredIn>GCOrder.h</DeclaredIn>
+			
+			<Declaration>@property NSNumber *length</Declaration>
+			
+			
+			<Anchor>//api/name/length</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCOrder/length</TokenIdentifier>
+			<Abstract type="html">Length</Abstract>
+			<DeclaredIn>GCOrder.h</DeclaredIn>
+			
+			<Declaration>@property NSNumber *length</Declaration>
+			
+			
+			<Anchor>//api/name/length</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCOrder/length</TokenIdentifier>
+			<Abstract type="html">Length</Abstract>
+			<DeclaredIn>GCOrder.h</DeclaredIn>
+			
+			<Declaration>@property NSNumber *length</Declaration>
+			
+			
+			<Anchor>//api/name/length</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCOrder/setCount:</TokenIdentifier>
+			<Abstract type="html">Count</Abstract>
+			<DeclaredIn>GCOrder.h</DeclaredIn>
+			
+			<Declaration>@property NSNumber *count</Declaration>
+			
+			
+			<Anchor>//api/name/count</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCOrder/count</TokenIdentifier>
+			<Abstract type="html">Count</Abstract>
+			<DeclaredIn>GCOrder.h</DeclaredIn>
+			
+			<Declaration>@property NSNumber *count</Declaration>
+			
+			
+			<Anchor>//api/name/count</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCOrder/count</TokenIdentifier>
+			<Abstract type="html">Count</Abstract>
+			<DeclaredIn>GCOrder.h</DeclaredIn>
+			
+			<Declaration>@property NSNumber *count</Declaration>
+			
+			
+			<Anchor>//api/name/count</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCOrder/setNote:</TokenIdentifier>
+			<Abstract type="html">Note</Abstract>
+			<DeclaredIn>GCOrder.h</DeclaredIn>
+			
+			<Declaration>@property NSString *note</Declaration>
+			
+			
+			<Anchor>//api/name/note</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCOrder/note</TokenIdentifier>
+			<Abstract type="html">Note</Abstract>
+			<DeclaredIn>GCOrder.h</DeclaredIn>
+			
+			<Declaration>@property NSString *note</Declaration>
+			
+			
+			<Anchor>//api/name/note</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCOrder/note</TokenIdentifier>
+			<Abstract type="html">Note</Abstract>
+			<DeclaredIn>GCOrder.h</DeclaredIn>
+			
+			<Declaration>@property NSString *note</Declaration>
+			
+			
+			<Anchor>//api/name/note</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCOrder/setOrderPhotoLocalURL:</TokenIdentifier>
+			<Abstract type="html">URL for order photo in local disk</Abstract>
+			<DeclaredIn>GCOrder.h</DeclaredIn>
+			
+			<Declaration>@property NSString *orderPhotoLocalURL</Declaration>
+			
+			
+			<Anchor>//api/name/orderPhotoLocalURL</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCOrder/orderPhotoLocalURL</TokenIdentifier>
+			<Abstract type="html">URL for order photo in local disk</Abstract>
+			<DeclaredIn>GCOrder.h</DeclaredIn>
+			
+			<Declaration>@property NSString *orderPhotoLocalURL</Declaration>
+			
+			
+			<Anchor>//api/name/orderPhotoLocalURL</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCOrder/orderPhotoLocalURL</TokenIdentifier>
+			<Abstract type="html">URL for order photo in local disk</Abstract>
+			<DeclaredIn>GCOrder.h</DeclaredIn>
+			
+			<Declaration>@property NSString *orderPhotoLocalURL</Declaration>
+			
+			
+			<Anchor>//api/name/orderPhotoLocalURL</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCOrder/JSONKeyPathsByPropertyKey</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCOrder.m</DeclaredIn>
+			
+			<Declaration>+ (NSDictionary *)JSONKeyPathsByPropertyKey</Declaration>
+			
+			
+			<Anchor>//api/name/JSONKeyPathsByPropertyKey</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCOrder/orderIDJSONTransformer</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCOrder.m</DeclaredIn>
+			
+			<Declaration>+ (NSValueTransformer *)orderIDJSONTransformer</Declaration>
+			
+			
+			<Anchor>//api/name/orderIDJSONTransformer</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCOrder/orderNameJSONTransformer</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCOrder.m</DeclaredIn>
+			
+			<Declaration>+ (NSValueTransformer *)orderNameJSONTransformer</Declaration>
+			
+			
+			<Anchor>//api/name/orderNameJSONTransformer</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCOrder/lengthJSONTransformer</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCOrder.m</DeclaredIn>
+			
+			<Declaration>+ (NSValueTransformer *)lengthJSONTransformer</Declaration>
+			
+			
+			<Anchor>//api/name/lengthJSONTransformer</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCOrder/countJSONTransformer</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCOrder.m</DeclaredIn>
+			
+			<Declaration>+ (NSValueTransformer *)countJSONTransformer</Declaration>
+			
+			
+			<Anchor>//api/name/countJSONTransformer</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCOrder/noteJSONTransformer</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCOrder.m</DeclaredIn>
+			
+			<Declaration>+ (NSValueTransformer *)noteJSONTransformer</Declaration>
+			
+			
+			<Anchor>//api/name/noteJSONTransformer</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCOrder/orderPhotoURLJSONTransformer</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCOrder.m</DeclaredIn>
+			
+			<Declaration>+ (NSValueTransformer *)orderPhotoURLJSONTransformer</Declaration>
+			
+			
+			<Anchor>//api/name/orderPhotoURLJSONTransformer</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCOrder/initWithDictionary:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCOrder.m</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithDictionary:(NSDictionary *)dictionaryValue error:(NSError *__autoreleasing *)error</Declaration>
+			
+			
+			<Anchor>//api/name/initWithDictionary:error:</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

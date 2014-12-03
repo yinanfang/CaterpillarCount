@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/GCAppData.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/GCAppData</TokenIdentifier>
+			<Abstract type="html">Data Model for the App Data</Abstract>
+			<DeclaredIn>GCAppData.h</DeclaredIn>
+            
+			
+			<NodeRef refid="4"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCAppData/setDidLogedIn:</TokenIdentifier>
+			<Abstract type="html">Log in indicator</Abstract>
+			<DeclaredIn>GCAppData.h</DeclaredIn>
+			
+			<Declaration>@property BOOL didLogedIn</Declaration>
+			
+			
+			<Anchor>//api/name/didLogedIn</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCAppData/didLogedIn</TokenIdentifier>
+			<Abstract type="html">Log in indicator</Abstract>
+			<DeclaredIn>GCAppData.h</DeclaredIn>
+			
+			<Declaration>@property BOOL didLogedIn</Declaration>
+			
+			
+			<Anchor>//api/name/didLogedIn</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCAppData/didLogedIn</TokenIdentifier>
+			<Abstract type="html">Log in indicator</Abstract>
+			<DeclaredIn>GCAppData.h</DeclaredIn>
+			
+			<Declaration>@property BOOL didLogedIn</Declaration>
+			
+			
+			<Anchor>//api/name/didLogedIn</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCAppData/setLastUserID:</TokenIdentifier>
+			<Abstract type="html">Last user ID</Abstract>
+			<DeclaredIn>GCAppData.h</DeclaredIn>
+			
+			<Declaration>@property NSNumber *lastUserID</Declaration>
+			
+			
+			<Anchor>//api/name/lastUserID</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCAppData/lastUserID</TokenIdentifier>
+			<Abstract type="html">Last user ID</Abstract>
+			<DeclaredIn>GCAppData.h</DeclaredIn>
+			
+			<Declaration>@property NSNumber *lastUserID</Declaration>
+			
+			
+			<Anchor>//api/name/lastUserID</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCAppData/lastUserID</TokenIdentifier>
+			<Abstract type="html">Last user ID</Abstract>
+			<DeclaredIn>GCAppData.h</DeclaredIn>
+			
+			<Declaration>@property NSNumber *lastUserID</Declaration>
+			
+			
+			<Anchor>//api/name/lastUserID</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCAppData/setAllUserData:</TokenIdentifier>
+			<Abstract type="html">All user data</Abstract>
+			<DeclaredIn>GCAppData.h</DeclaredIn>
+			
+			<Declaration>@property NSMutableDictionary *allUserData</Declaration>
+			
+			
+			<Anchor>//api/name/allUserData</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCAppData/allUserData</TokenIdentifier>
+			<Abstract type="html">All user data</Abstract>
+			<DeclaredIn>GCAppData.h</DeclaredIn>
+			
+			<Declaration>@property NSMutableDictionary *allUserData</Declaration>
+			
+			
+			<Anchor>//api/name/allUserData</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCAppData/allUserData</TokenIdentifier>
+			<Abstract type="html">All user data</Abstract>
+			<DeclaredIn>GCAppData.h</DeclaredIn>
+			
+			<Declaration>@property NSMutableDictionary *allUserData</Declaration>
+			
+			
+			<Anchor>//api/name/allUserData</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCAppData/init</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCAppData.m</DeclaredIn>
+			
+			<Declaration>- (id)init</Declaration>
+			
+			
+			<Anchor>//api/name/init</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCAppData/JSONKeyPathsByPropertyKey</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCAppData.m</DeclaredIn>
+			
+			<Declaration>+ (NSDictionary *)JSONKeyPathsByPropertyKey</Declaration>
+			
+			
+			<Anchor>//api/name/JSONKeyPathsByPropertyKey</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCAppData/didLogedInJSONTransformer</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCAppData.m</DeclaredIn>
+			
+			<Declaration>+ (NSValueTransformer *)didLogedInJSONTransformer</Declaration>
+			
+			
+			<Anchor>//api/name/didLogedInJSONTransformer</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCAppData/lastUserIDJSONTransformer</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCAppData.m</DeclaredIn>
+			
+			<Declaration>+ (NSValueTransformer *)lastUserIDJSONTransformer</Declaration>
+			
+			
+			<Anchor>//api/name/lastUserIDJSONTransformer</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCAppData/allUserDataJSONTransformer</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCAppData.m</DeclaredIn>
+			
+			<Declaration>+ (NSValueTransformer *)allUserDataJSONTransformer</Declaration>
+			
+			
+			<Anchor>//api/name/allUserDataJSONTransformer</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCAppData/initWithDictionary:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCAppData.m</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithDictionary:(NSDictionary *)dictionaryValue error:(NSError *__autoreleasing *)error</Declaration>
+			
+			
+			<Anchor>//api/name/initWithDictionary:error:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/GCRegisterViewController.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/GCRegisterViewController</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCRegisterViewController.h</DeclaredIn>
+            
+			
+			<NodeRef refid="17"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCRegisterViewController/setRegisterScrollView:</TokenIdentifier>
+			<Abstract type="html">Pointer to the scroll view object</Abstract>
+			<DeclaredIn>GCRegisterViewController.h</DeclaredIn>
+			
+			<Declaration>@property GCRegisterScrollView *registerScrollView</Declaration>
+			
+			
+			<Anchor>//api/name/registerScrollView</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCRegisterViewController/registerScrollView</TokenIdentifier>
+			<Abstract type="html">Pointer to the scroll view object</Abstract>
+			<DeclaredIn>GCRegisterViewController.h</DeclaredIn>
+			
+			<Declaration>@property GCRegisterScrollView *registerScrollView</Declaration>
+			
+			
+			<Anchor>//api/name/registerScrollView</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCRegisterViewController/registerScrollView</TokenIdentifier>
+			<Abstract type="html">Pointer to the scroll view object</Abstract>
+			<DeclaredIn>GCRegisterViewController.h</DeclaredIn>
+			
+			<Declaration>@property GCRegisterScrollView *registerScrollView</Declaration>
+			
+			
+			<Anchor>//api/name/registerScrollView</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCRegisterViewController/setHud:</TokenIdentifier>
+			<Abstract type="html">Pointer for the hud</Abstract>
+			<DeclaredIn>GCRegisterViewController.h</DeclaredIn>
+			
+			<Declaration>@property MBProgressHUD *hud</Declaration>
+			
+			
+			<Anchor>//api/name/hud</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCRegisterViewController/hud</TokenIdentifier>
+			<Abstract type="html">Pointer for the hud</Abstract>
+			<DeclaredIn>GCRegisterViewController.h</DeclaredIn>
+			
+			<Declaration>@property MBProgressHUD *hud</Declaration>
+			
+			
+			<Anchor>//api/name/hud</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCRegisterViewController/hud</TokenIdentifier>
+			<Abstract type="html">Pointer for the hud</Abstract>
+			<DeclaredIn>GCRegisterViewController.h</DeclaredIn>
+			
+			<Declaration>@property MBProgressHUD *hud</Declaration>
+			
+			
+			<Anchor>//api/name/hud</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCRegisterViewController/viewDidLoad</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCRegisterViewController.m</DeclaredIn>
+			
+			<Declaration>- (void)viewDidLoad</Declaration>
+			
+			
+			<Anchor>//api/name/viewDidLoad</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCRegisterViewController/isValidInput</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCRegisterViewController.m</DeclaredIn>
+			
+			<Declaration>- (BOOL)isValidInput</Declaration>
+			
+			
+			<Anchor>//api/name/isValidInput</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCRegisterViewController/makeHUDErrorAlertWithString:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCRegisterViewController.m</DeclaredIn>
+			
+			<Declaration>- (void)makeHUDErrorAlertWithString:(NSString *)message</Declaration>
+			
+			
+			<Anchor>//api/name/makeHUDErrorAlertWithString:</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCRegisterViewController/registerUser</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCRegisterViewController.m</DeclaredIn>
+			
+			<Declaration>- (void)registerUser</Declaration>
+			
+			
+			<Anchor>//api/name/registerUser</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCRegisterViewController/viewWillAppear:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCRegisterViewController.m</DeclaredIn>
+			
+			<Declaration>- (void)viewWillAppear:(BOOL)animated</Declaration>
+			
+			
+			<Anchor>//api/name/viewWillAppear:</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCRegisterViewController/didReceiveMemoryWarning</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCRegisterViewController.m</DeclaredIn>
+			
+			<Declaration>- (void)didReceiveMemoryWarning</Declaration>
+			
+			
+			<Anchor>//api/name/didReceiveMemoryWarning</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

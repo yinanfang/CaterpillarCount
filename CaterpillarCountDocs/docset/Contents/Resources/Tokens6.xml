@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/GCAppSetup.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/GCAppSetup</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCAppSetup.h</DeclaredIn>
+            
+			
+			<NodeRef refid="6"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCAppSetup/setupApplicationWithProductionMode:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCAppSetup.h</DeclaredIn>
+			
+			<Declaration>+ (void)setupApplicationWithProductionMode:(BOOL)mode</Declaration>
+			
+			
+			<Anchor>//api/name/setupApplicationWithProductionMode:</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCAppSetup/configureNavigationViewController:withNavigationTitle:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCAppSetup.h</DeclaredIn>
+			
+			<Declaration>+ (void)configureNavigationViewController:(UIViewController *)viewcontroller withNavigationTitle:(NSString *)title</Declaration>
+			
+			
+			<Anchor>//api/name/configureNavigationViewController:withNavigationTitle:</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCAppSetup/configureBackButtonOfNavigationViewController:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCAppSetup.h</DeclaredIn>
+			
+			<Declaration>+ (void)configureBackButtonOfNavigationViewController:(UIViewController *)viewcontroller</Declaration>
+			
+			
+			<Anchor>//api/name/configureBackButtonOfNavigationViewController:</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCAppSetup/configureRightButtonOfNavigationViewController:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCAppSetup.h</DeclaredIn>
+			
+			<Declaration>+ (UIButton *)configureRightButtonOfNavigationViewController:(UIViewController *)viewcontroller</Declaration>
+			
+			
+			<Anchor>//api/name/configureRightButtonOfNavigationViewController:</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCAppSetup/setConstraints_FillFullScreenWithView:superview:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCAppSetup.h</DeclaredIn>
+			
+			<Declaration>+ (void)setConstraints_FillFullScreenWithView:(UIView *)view superview:(UIView *)superview</Declaration>
+			
+			
+			<Anchor>//api/name/setConstraints_FillFullScreenWithView:superview:</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCAppSetup/setConstraints_PinHorizontallyWithPagePaddingAndTopWithPadding:withView:superview:upperview:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCAppSetup.h</DeclaredIn>
+			
+			<Declaration>+ (void)setConstraints_PinHorizontallyWithPagePaddingAndTopWithPadding:(PagePaddingOption)paddingOption withView:(UIView *)view superview:(UIView *)superview upperview:(UIView *)upperview</Declaration>
+			
+			
+			<Anchor>//api/name/setConstraints_PinHorizontallyWithPagePaddingAndTopWithPadding:withView:superview:upperview:</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCAppSetup/setCachePolicy</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCAppSetup.m</DeclaredIn>
+			
+			<Declaration>+ (void)setCachePolicy</Declaration>
+			
+			
+			<Anchor>//api/name/setCachePolicy</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCAppSetup/setupLogging</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCAppSetup.m</DeclaredIn>
+			
+			<Declaration>+ (void)setupLogging</Declaration>
+			
+			
+			<Anchor>//api/name/setupLogging</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

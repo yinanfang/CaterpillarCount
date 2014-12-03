@@ -380,6 +380,7 @@
 				D43A915A19CF94D7009AA0C7 /* Frameworks */,
 				D43A915B19CF94D7009AA0C7 /* Resources */,
 				DCFD80AAB86A430895E769BD /* Copy Pods Resources */,
+				D4C974081A2F66710072BF84 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -493,6 +494,19 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
+		};
+		D4C974081A2F66710072BF84 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#if [ ${CONFIGURATION} == \"Release\" ]; then\nPATH=$PATH:/usr/local/bin\nAPPLEDOC_PATH=`which appledoc`\nif [ -n \"$APPLEDOC_PATH\" -a -x \"$APPLEDOC_PATH\" ]; then\n$APPLEDOC_PATH \\\n--project-name ${PRODUCT_NAME} \\\n--project-company \"Your Name\" \\\n--company-id \"com.yourcompany\" \\\n--output ${PRODUCT_NAME}Docs \\\n--keep-undocumented-objects \\\n--keep-undocumented-members \\\n--keep-intermediate-files \\\n--no-repeat-first-par \\\n--no-warn-invalid-crossref \\\n--exit-threshold 2 \\\n${PROJECT_DIR}/${PRODUCT_NAME}\nfi;\n#fi;";
 		};
 		DCFD80AAB86A430895E769BD /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;

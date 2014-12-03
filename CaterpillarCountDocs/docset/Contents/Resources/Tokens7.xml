@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/GCAppViewModel.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/GCAppViewModel</TokenIdentifier>
+			<Abstract type="html">View model that store all data for the app</Abstract>
+			<DeclaredIn>GCAppViewModel.h</DeclaredIn>
+            
+			
+			<NodeRef refid="7"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCAppViewModel/setAppData:</TokenIdentifier>
+			<Abstract type="html">App Data</Abstract>
+			<DeclaredIn>GCAppViewModel.h</DeclaredIn>
+			
+			<Declaration>@property GCAppData *appData</Declaration>
+			
+			
+			<Anchor>//api/name/appData</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCAppViewModel/appData</TokenIdentifier>
+			<Abstract type="html">App Data</Abstract>
+			<DeclaredIn>GCAppViewModel.h</DeclaredIn>
+			
+			<Declaration>@property GCAppData *appData</Declaration>
+			
+			
+			<Anchor>//api/name/appData</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCAppViewModel/appData</TokenIdentifier>
+			<Abstract type="html">App Data</Abstract>
+			<DeclaredIn>GCAppViewModel.h</DeclaredIn>
+			
+			<Declaration>@property GCAppData *appData</Declaration>
+			
+			
+			<Anchor>//api/name/appData</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCAppViewModel/setCurrentUserData:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCAppViewModel.h</DeclaredIn>
+			
+			<Declaration>@property GCUserData *currentUserData</Declaration>
+			
+			
+			<Anchor>//api/name/currentUserData</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCAppViewModel/currentUserData</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCAppViewModel.h</DeclaredIn>
+			
+			<Declaration>@property GCUserData *currentUserData</Declaration>
+			
+			
+			<Anchor>//api/name/currentUserData</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCAppViewModel/currentUserData</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCAppViewModel.h</DeclaredIn>
+			
+			<Declaration>@property GCUserData *currentUserData</Declaration>
+			
+			
+			<Anchor>//api/name/currentUserData</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCAppViewModel/setCurrentUnsavedOrders:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCAppViewModel.h</DeclaredIn>
+			
+			<Declaration>@property NSMutableArray *currentUnsavedOrders</Declaration>
+			
+			
+			<Anchor>//api/name/currentUnsavedOrders</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCAppViewModel/currentUnsavedOrders</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCAppViewModel.h</DeclaredIn>
+			
+			<Declaration>@property NSMutableArray *currentUnsavedOrders</Declaration>
+			
+			
+			<Anchor>//api/name/currentUnsavedOrders</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCAppViewModel/currentUnsavedOrders</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCAppViewModel.h</DeclaredIn>
+			
+			<Declaration>@property NSMutableArray *currentUnsavedOrders</Declaration>
+			
+			
+			<Anchor>//api/name/currentUnsavedOrders</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCAppViewModel/sharedInstance</TokenIdentifier>
+			<Abstract type="html">Accessor for Singleton class</Abstract>
+			<DeclaredIn>GCAppViewModel.h</DeclaredIn>
+			
+			<Declaration>+ (GCAppViewModel *)sharedInstance</Declaration>
+			
+			<ReturnValue><Abstract type="html">Return an pointer to the class object</Abstract></ReturnValue>
+			<Anchor>//api/name/sharedInstance</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCAppViewModel/getAppDataFromNSUserDefaultsAndUpdateViewModel</TokenIdentifier>
+			<Abstract type="html">Get app data from the disk</Abstract>
+			<DeclaredIn>GCAppViewModel.h</DeclaredIn>
+			
+			<Declaration>+ (void)getAppDataFromNSUserDefaultsAndUpdateViewModel</Declaration>
+			
+			
+			<Anchor>//api/name/getAppDataFromNSUserDefaultsAndUpdateViewModel</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCAppViewModel/saveAppDataToNSUserDefaults</TokenIdentifier>
+			<Abstract type="html">Save data to the disk</Abstract>
+			<DeclaredIn>GCAppViewModel.h</DeclaredIn>
+			
+			<Declaration>+ (void)saveAppDataToNSUserDefaults</Declaration>
+			
+			
+			<Anchor>//api/name/saveAppDataToNSUserDefaults</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCAppViewModel/updateUserWithGCUser:</TokenIdentifier>
+			<Abstract type="html">Update user info</Abstract>
+			<DeclaredIn>GCAppViewModel.h</DeclaredIn>
+			
+			<Declaration>+ (void)updateUserWithGCUser:(NSDictionary *)userDictionary</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>userDictionary</Name>
+					<Abstract type="html">User info in NSDictionary</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/updateUserWithGCUser:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCAppViewModel/addCurrentunsavedOrdersWithDictionary:</TokenIdentifier>
+			<Abstract type="html">Add an new order</Abstract>
+			<DeclaredIn>GCAppViewModel.h</DeclaredIn>
+			
+			<Declaration>+ (void)addCurrentunsavedOrdersWithDictionary:(NSDictionary *)orderDictionary</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>orderDictionary</Name>
+					<Abstract type="html">order in NSDictionary</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addCurrentunsavedOrdersWithDictionary:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCAppViewModel/addSurveyData:</TokenIdentifier>
+			<Abstract type="html">Add survey data</Abstract>
+			<DeclaredIn>GCAppViewModel.h</DeclaredIn>
+			
+			<Declaration>+ (void)addSurveyData:(GCSurvey *)survey</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>survey</Name>
+					<Abstract type="html">survey data in GCSurvey</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addSurveyData:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCAppViewModel/loginWithCredential:completion:</TokenIdentifier>
+			<Abstract type="html">Login with credential</Abstract>
+			<DeclaredIn>GCAppViewModel.h</DeclaredIn>
+			
+			<Declaration>+ (void)loginWithCredential:(NSDictionary *)credential completion:(void ( ^ ) ( BOOL succeeded ))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>credential</Name>
+					<Abstract type="html">credential in NSDictionary</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion block</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/loginWithCredential:completion:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCAppViewModel/enterMainContainerViewController:</TokenIdentifier>
+			<Abstract type="html">Enter main container view controller</Abstract>
+			<DeclaredIn>GCAppViewModel.h</DeclaredIn>
+			
+			<Declaration>+ (void)enterMainContainerViewController:(UIViewController *)controller</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>controller</Name>
+					<Abstract type="html">Pointer to the parent controller</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/enterMainContainerViewController:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCAppViewModel/init</TokenIdentifier>
+			<Abstract type="html">Initializer</Abstract>
+			<DeclaredIn>GCAppViewModel.m</DeclaredIn>
+			
+			<Declaration>- (id)init</Declaration>
+			
+			<ReturnValue><Abstract type="html">Return an instance</Abstract></ReturnValue>
+			<Anchor>//api/name/init</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/GCRegisterScrollView.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/GCRegisterScrollView</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCRegisterScrollView.h</DeclaredIn>
+            
+			
+			<NodeRef refid="16"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCRegisterScrollView/setParentController:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCRegisterScrollView.h</DeclaredIn>
+			
+			<Declaration>@property GCRegisterViewController *parentController</Declaration>
+			
+			
+			<Anchor>//api/name/parentController</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCRegisterScrollView/parentController</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCRegisterScrollView.h</DeclaredIn>
+			
+			<Declaration>@property GCRegisterViewController *parentController</Declaration>
+			
+			
+			<Anchor>//api/name/parentController</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCRegisterScrollView/parentController</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCRegisterScrollView.h</DeclaredIn>
+			
+			<Declaration>@property GCRegisterViewController *parentController</Declaration>
+			
+			
+			<Anchor>//api/name/parentController</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCRegisterScrollView/setDidSetupConstraints:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCRegisterScrollView.h</DeclaredIn>
+			
+			<Declaration>@property BOOL didSetupConstraints</Declaration>
+			
+			
+			<Anchor>//api/name/didSetupConstraints</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCRegisterScrollView/didSetupConstraints</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCRegisterScrollView.h</DeclaredIn>
+			
+			<Declaration>@property BOOL didSetupConstraints</Declaration>
+			
+			
+			<Anchor>//api/name/didSetupConstraints</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCRegisterScrollView/didSetupConstraints</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCRegisterScrollView.h</DeclaredIn>
+			
+			<Declaration>@property BOOL didSetupConstraints</Declaration>
+			
+			
+			<Anchor>//api/name/didSetupConstraints</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCRegisterScrollView/setLabel_Register:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCRegisterScrollView.h</DeclaredIn>
+			
+			<Declaration>@property UILabel *label_Register</Declaration>
+			
+			
+			<Anchor>//api/name/label_Register</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCRegisterScrollView/label_Register</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCRegisterScrollView.h</DeclaredIn>
+			
+			<Declaration>@property UILabel *label_Register</Declaration>
+			
+			
+			<Anchor>//api/name/label_Register</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCRegisterScrollView/label_Register</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCRegisterScrollView.h</DeclaredIn>
+			
+			<Declaration>@property UILabel *label_Register</Declaration>
+			
+			
+			<Anchor>//api/name/label_Register</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCRegisterScrollView/setEntry_PasswordConfirm:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCRegisterScrollView.h</DeclaredIn>
+			
+			<Declaration>@property UITextField *, *, *, *, *entry_PasswordConfirm</Declaration>
+			
+			
+			<Anchor>//api/name/entry_PasswordConfirm</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCRegisterScrollView/entry_PasswordConfirm</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCRegisterScrollView.h</DeclaredIn>
+			
+			<Declaration>@property UITextField *, *, *, *, *entry_PasswordConfirm</Declaration>
+			
+			
+			<Anchor>//api/name/entry_PasswordConfirm</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCRegisterScrollView/entry_PasswordConfirm</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCRegisterScrollView.h</DeclaredIn>
+			
+			<Declaration>@property UITextField *, *, *, *, *entry_PasswordConfirm</Declaration>
+			
+			
+			<Anchor>//api/name/entry_PasswordConfirm</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCRegisterScrollView/setBtn_Submit:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCRegisterScrollView.h</DeclaredIn>
+			
+			<Declaration>@property FUIButton *btn_Submit</Declaration>
+			
+			
+			<Anchor>//api/name/btn_Submit</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCRegisterScrollView/btn_Submit</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCRegisterScrollView.h</DeclaredIn>
+			
+			<Declaration>@property FUIButton *btn_Submit</Declaration>
+			
+			
+			<Anchor>//api/name/btn_Submit</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCRegisterScrollView/btn_Submit</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCRegisterScrollView.h</DeclaredIn>
+			
+			<Declaration>@property FUIButton *btn_Submit</Declaration>
+			
+			
+			<Anchor>//api/name/btn_Submit</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCRegisterScrollView/initWithParentController:</TokenIdentifier>
+			<Abstract type="html">Initializer</Abstract>
+			<DeclaredIn>GCRegisterScrollView.h</DeclaredIn>
+			
+			<Declaration>- (id)initWithParentController:(GCRegisterViewController *)controller</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>controller</Name>
+					<Abstract type="html">Pointer</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Return intance of this class</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithParentController:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCRegisterScrollView/updateConstraints</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCRegisterScrollView.m</DeclaredIn>
+			
+			<Declaration>- (void)updateConstraints</Declaration>
+			
+			
+			<Anchor>//api/name/updateConstraints</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCRegisterScrollView/textFieldShouldReturn:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCRegisterScrollView.m</DeclaredIn>
+			
+			<Declaration>- (BOOL)textFieldShouldReturn:(UITextField *)textField</Declaration>
+			
+			
+			<Anchor>//api/name/textFieldShouldReturn:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

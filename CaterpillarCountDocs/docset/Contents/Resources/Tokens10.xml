@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/GCCoverViewController.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/GCCoverViewController</TokenIdentifier>
+			<Abstract type="html">Controller for the Welcome view</Abstract>
+			<DeclaredIn>GCCoverViewController.h</DeclaredIn>
+            
+			
+			<NodeRef refid="10"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCCoverViewController/viewDidLoad</TokenIdentifier>
+			<Abstract type="html">test doc</Abstract>
+			<DeclaredIn>GCCoverViewController.m</DeclaredIn>
+			
+			<Declaration>- (void)viewDidLoad</Declaration>
+			
+			
+			<Anchor>//api/name/viewDidLoad</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCCoverViewController/viewWillAppear:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCCoverViewController.m</DeclaredIn>
+			
+			<Declaration>- (void)viewWillAppear:(BOOL)animated</Declaration>
+			
+			
+			<Anchor>//api/name/viewWillAppear:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCCoverViewController/prefersStatusBarHidden</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCCoverViewController.m</DeclaredIn>
+			
+			<Declaration>- (BOOL)prefersStatusBarHidden</Declaration>
+			
+			
+			<Anchor>//api/name/prefersStatusBarHidden</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCCoverViewController/didReceiveMemoryWarning</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCCoverViewController.m</DeclaredIn>
+			
+			<Declaration>- (void)didReceiveMemoryWarning</Declaration>
+			
+			
+			<Anchor>//api/name/didReceiveMemoryWarning</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCCoverViewController/setCoverView:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCCoverViewController.m</DeclaredIn>
+			
+			<Declaration>@property GCCoverView *coverView</Declaration>
+			
+			
+			<Anchor>//api/name/coverView</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCCoverViewController/coverView</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCCoverViewController.m</DeclaredIn>
+			
+			<Declaration>@property GCCoverView *coverView</Declaration>
+			
+			
+			<Anchor>//api/name/coverView</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCCoverViewController/coverView</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCCoverViewController.m</DeclaredIn>
+			
+			<Declaration>@property GCCoverView *coverView</Declaration>
+			
+			
+			<Anchor>//api/name/coverView</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

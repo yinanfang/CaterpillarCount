@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/GCSurvey.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/GCSurvey</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSurvey.h</DeclaredIn>
+            
+			
+			<NodeRef refid="21"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurvey/setUserID:</TokenIdentifier>
+			<Abstract type="html">User ID</Abstract>
+			<DeclaredIn>GCSurvey.h</DeclaredIn>
+			
+			<Declaration>@property NSNumber *userID</Declaration>
+			
+			
+			<Anchor>//api/name/userID</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurvey/userID</TokenIdentifier>
+			<Abstract type="html">User ID</Abstract>
+			<DeclaredIn>GCSurvey.h</DeclaredIn>
+			
+			<Declaration>@property NSNumber *userID</Declaration>
+			
+			
+			<Anchor>//api/name/userID</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCSurvey/userID</TokenIdentifier>
+			<Abstract type="html">User ID</Abstract>
+			<DeclaredIn>GCSurvey.h</DeclaredIn>
+			
+			<Declaration>@property NSNumber *userID</Declaration>
+			
+			
+			<Anchor>//api/name/userID</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurvey/setSurveyID:</TokenIdentifier>
+			<Abstract type="html">Survey ID</Abstract>
+			<DeclaredIn>GCSurvey.h</DeclaredIn>
+			
+			<Declaration>@property NSNumber *surveyID</Declaration>
+			
+			
+			<Anchor>//api/name/surveyID</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurvey/surveyID</TokenIdentifier>
+			<Abstract type="html">Survey ID</Abstract>
+			<DeclaredIn>GCSurvey.h</DeclaredIn>
+			
+			<Declaration>@property NSNumber *surveyID</Declaration>
+			
+			
+			<Anchor>//api/name/surveyID</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCSurvey/surveyID</TokenIdentifier>
+			<Abstract type="html">Survey ID</Abstract>
+			<DeclaredIn>GCSurvey.h</DeclaredIn>
+			
+			<Declaration>@property NSNumber *surveyID</Declaration>
+			
+			
+			<Anchor>//api/name/surveyID</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurvey/setSiteName:</TokenIdentifier>
+			<Abstract type="html">Site Name</Abstract>
+			<DeclaredIn>GCSurvey.h</DeclaredIn>
+			
+			<Declaration>@property NSString *siteName</Declaration>
+			
+			
+			<Anchor>//api/name/siteName</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurvey/siteName</TokenIdentifier>
+			<Abstract type="html">Site Name</Abstract>
+			<DeclaredIn>GCSurvey.h</DeclaredIn>
+			
+			<Declaration>@property NSString *siteName</Declaration>
+			
+			
+			<Anchor>//api/name/siteName</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCSurvey/siteName</TokenIdentifier>
+			<Abstract type="html">Site Name</Abstract>
+			<DeclaredIn>GCSurvey.h</DeclaredIn>
+			
+			<Declaration>@property NSString *siteName</Declaration>
+			
+			
+			<Anchor>//api/name/siteName</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurvey/setCircleNumber:</TokenIdentifier>
+			<Abstract type="html">Circle Number</Abstract>
+			<DeclaredIn>GCSurvey.h</DeclaredIn>
+			
+			<Declaration>@property NSNumber *circleNumber</Declaration>
+			
+			
+			<Anchor>//api/name/circleNumber</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurvey/circleNumber</TokenIdentifier>
+			<Abstract type="html">Circle Number</Abstract>
+			<DeclaredIn>GCSurvey.h</DeclaredIn>
+			
+			<Declaration>@property NSNumber *circleNumber</Declaration>
+			
+			
+			<Anchor>//api/name/circleNumber</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCSurvey/circleNumber</TokenIdentifier>
+			<Abstract type="html">Circle Number</Abstract>
+			<DeclaredIn>GCSurvey.h</DeclaredIn>
+			
+			<Declaration>@property NSNumber *circleNumber</Declaration>
+			
+			
+			<Anchor>//api/name/circleNumber</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurvey/setSurveyString:</TokenIdentifier>
+			<Abstract type="html">Survey String</Abstract>
+			<DeclaredIn>GCSurvey.h</DeclaredIn>
+			
+			<Declaration>@property NSString *surveyString</Declaration>
+			
+			
+			<Anchor>//api/name/surveyString</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurvey/surveyString</TokenIdentifier>
+			<Abstract type="html">Survey String</Abstract>
+			<DeclaredIn>GCSurvey.h</DeclaredIn>
+			
+			<Declaration>@property NSString *surveyString</Declaration>
+			
+			
+			<Anchor>//api/name/surveyString</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCSurvey/surveyString</TokenIdentifier>
+			<Abstract type="html">Survey String</Abstract>
+			<DeclaredIn>GCSurvey.h</DeclaredIn>
+			
+			<Declaration>@property NSString *surveyString</Declaration>
+			
+			
+			<Anchor>//api/name/surveyString</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurvey/setTimeSubmitted:</TokenIdentifier>
+			<Abstract type="html">Submission time</Abstract>
+			<DeclaredIn>GCSurvey.h</DeclaredIn>
+			
+			<Declaration>@property NSDate *timeSubmitted</Declaration>
+			
+			
+			<Anchor>//api/name/timeSubmitted</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurvey/timeSubmitted</TokenIdentifier>
+			<Abstract type="html">Submission time</Abstract>
+			<DeclaredIn>GCSurvey.h</DeclaredIn>
+			
+			<Declaration>@property NSDate *timeSubmitted</Declaration>
+			
+			
+			<Anchor>//api/name/timeSubmitted</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCSurvey/timeSubmitted</TokenIdentifier>
+			<Abstract type="html">Submission time</Abstract>
+			<DeclaredIn>GCSurvey.h</DeclaredIn>
+			
+			<Declaration>@property NSDate *timeSubmitted</Declaration>
+			
+			
+			<Anchor>//api/name/timeSubmitted</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurvey/setTemperature:</TokenIdentifier>
+			<Abstract type="html">Temperature</Abstract>
+			<DeclaredIn>GCSurvey.h</DeclaredIn>
+			
+			<Declaration>@property NSString *temperature</Declaration>
+			
+			
+			<Anchor>//api/name/temperature</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurvey/temperature</TokenIdentifier>
+			<Abstract type="html">Temperature</Abstract>
+			<DeclaredIn>GCSurvey.h</DeclaredIn>
+			
+			<Declaration>@property NSString *temperature</Declaration>
+			
+			
+			<Anchor>//api/name/temperature</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCSurvey/temperature</TokenIdentifier>
+			<Abstract type="html">Temperature</Abstract>
+			<DeclaredIn>GCSurvey.h</DeclaredIn>
+			
+			<Declaration>@property NSString *temperature</Declaration>
+			
+			
+			<Anchor>//api/name/temperature</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurvey/setSiteNotes:</TokenIdentifier>
+			<Abstract type="html">Notes for the site</Abstract>
+			<DeclaredIn>GCSurvey.h</DeclaredIn>
+			
+			<Declaration>@property NSString *siteNotes</Declaration>
+			
+			
+			<Anchor>//api/name/siteNotes</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurvey/siteNotes</TokenIdentifier>
+			<Abstract type="html">Notes for the site</Abstract>
+			<DeclaredIn>GCSurvey.h</DeclaredIn>
+			
+			<Declaration>@property NSString *siteNotes</Declaration>
+			
+			
+			<Anchor>//api/name/siteNotes</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCSurvey/siteNotes</TokenIdentifier>
+			<Abstract type="html">Notes for the site</Abstract>
+			<DeclaredIn>GCSurvey.h</DeclaredIn>
+			
+			<Declaration>@property NSString *siteNotes</Declaration>
+			
+			
+			<Anchor>//api/name/siteNotes</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurvey/setOrdersArray:</TokenIdentifier>
+			<Abstract type="html">Order array</Abstract>
+			<DeclaredIn>GCSurvey.h</DeclaredIn>
+			
+			<Declaration>@property NSMutableArray *ordersArray</Declaration>
+			
+			
+			<Anchor>//api/name/ordersArray</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurvey/ordersArray</TokenIdentifier>
+			<Abstract type="html">Order array</Abstract>
+			<DeclaredIn>GCSurvey.h</DeclaredIn>
+			
+			<Declaration>@property NSMutableArray *ordersArray</Declaration>
+			
+			
+			<Anchor>//api/name/ordersArray</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCSurvey/ordersArray</TokenIdentifier>
+			<Abstract type="html">Order array</Abstract>
+			<DeclaredIn>GCSurvey.h</DeclaredIn>
+			
+			<Declaration>@property NSMutableArray *ordersArray</Declaration>
+			
+			
+			<Anchor>//api/name/ordersArray</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurvey/setPlantSpecies:</TokenIdentifier>
+			<Abstract type="html">Plant species</Abstract>
+			<DeclaredIn>GCSurvey.h</DeclaredIn>
+			
+			<Declaration>@property NSString *plantSpecies</Declaration>
+			
+			
+			<Anchor>//api/name/plantSpecies</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurvey/plantSpecies</TokenIdentifier>
+			<Abstract type="html">Plant species</Abstract>
+			<DeclaredIn>GCSurvey.h</DeclaredIn>
+			
+			<Declaration>@property NSString *plantSpecies</Declaration>
+			
+			
+			<Anchor>//api/name/plantSpecies</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCSurvey/plantSpecies</TokenIdentifier>
+			<Abstract type="html">Plant species</Abstract>
+			<DeclaredIn>GCSurvey.h</DeclaredIn>
+			
+			<Declaration>@property NSString *plantSpecies</Declaration>
+			
+			
+			<Anchor>//api/name/plantSpecies</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurvey/setHerbivory:</TokenIdentifier>
+			<Abstract type="html">Herbivory</Abstract>
+			<DeclaredIn>GCSurvey.h</DeclaredIn>
+			
+			<Declaration>@property NSNumber *herbivory</Declaration>
+			
+			
+			<Anchor>//api/name/herbivory</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurvey/herbivory</TokenIdentifier>
+			<Abstract type="html">Herbivory</Abstract>
+			<DeclaredIn>GCSurvey.h</DeclaredIn>
+			
+			<Declaration>@property NSNumber *herbivory</Declaration>
+			
+			
+			<Anchor>//api/name/herbivory</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCSurvey/herbivory</TokenIdentifier>
+			<Abstract type="html">Herbivory</Abstract>
+			<DeclaredIn>GCSurvey.h</DeclaredIn>
+			
+			<Declaration>@property NSNumber *herbivory</Declaration>
+			
+			
+			<Anchor>//api/name/herbivory</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurvey/setPlantPhotoLocalURL:</TokenIdentifier>
+			<Abstract type="html">URL for plant photo in local</Abstract>
+			<DeclaredIn>GCSurvey.h</DeclaredIn>
+			
+			<Declaration>@property NSString *plantPhotoLocalURL</Declaration>
+			
+			
+			<Anchor>//api/name/plantPhotoLocalURL</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurvey/plantPhotoLocalURL</TokenIdentifier>
+			<Abstract type="html">URL for plant photo in local</Abstract>
+			<DeclaredIn>GCSurvey.h</DeclaredIn>
+			
+			<Declaration>@property NSString *plantPhotoLocalURL</Declaration>
+			
+			
+			<Anchor>//api/name/plantPhotoLocalURL</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCSurvey/plantPhotoLocalURL</TokenIdentifier>
+			<Abstract type="html">URL for plant photo in local</Abstract>
+			<DeclaredIn>GCSurvey.h</DeclaredIn>
+			
+			<Declaration>@property NSString *plantPhotoLocalURL</Declaration>
+			
+			
+			<Anchor>//api/name/plantPhotoLocalURL</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurvey/setPlantPhotoServerURL:</TokenIdentifier>
+			<Abstract type="html">URL for plant photo in server</Abstract>
+			<DeclaredIn>GCSurvey.h</DeclaredIn>
+			
+			<Declaration>@property NSString *plantPhotoServerURL</Declaration>
+			
+			
+			<Anchor>//api/name/plantPhotoServerURL</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurvey/plantPhotoServerURL</TokenIdentifier>
+			<Abstract type="html">URL for plant photo in server</Abstract>
+			<DeclaredIn>GCSurvey.h</DeclaredIn>
+			
+			<Declaration>@property NSString *plantPhotoServerURL</Declaration>
+			
+			
+			<Anchor>//api/name/plantPhotoServerURL</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCSurvey/plantPhotoServerURL</TokenIdentifier>
+			<Abstract type="html">URL for plant photo in server</Abstract>
+			<DeclaredIn>GCSurvey.h</DeclaredIn>
+			
+			<Declaration>@property NSString *plantPhotoServerURL</Declaration>
+			
+			
+			<Anchor>//api/name/plantPhotoServerURL</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCSurvey/JSONKeyPathsByPropertyKey</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSurvey.m</DeclaredIn>
+			
+			<Declaration>+ (NSDictionary *)JSONKeyPathsByPropertyKey</Declaration>
+			
+			
+			<Anchor>//api/name/JSONKeyPathsByPropertyKey</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCSurvey/userIDJSONTransformer</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSurvey.m</DeclaredIn>
+			
+			<Declaration>+ (NSValueTransformer *)userIDJSONTransformer</Declaration>
+			
+			
+			<Anchor>//api/name/userIDJSONTransformer</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCSurvey/surveyIDJSONTransformer</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSurvey.m</DeclaredIn>
+			
+			<Declaration>+ (NSValueTransformer *)surveyIDJSONTransformer</Declaration>
+			
+			
+			<Anchor>//api/name/surveyIDJSONTransformer</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCSurvey/siteNameJSONTransformer</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSurvey.m</DeclaredIn>
+			
+			<Declaration>+ (NSValueTransformer *)siteNameJSONTransformer</Declaration>
+			
+			
+			<Anchor>//api/name/siteNameJSONTransformer</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCSurvey/circleNumberJSONTransformer</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSurvey.m</DeclaredIn>
+			
+			<Declaration>+ (NSValueTransformer *)circleNumberJSONTransformer</Declaration>
+			
+			
+			<Anchor>//api/name/circleNumberJSONTransformer</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCSurvey/surveyStringJSONTransformer</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSurvey.m</DeclaredIn>
+			
+			<Declaration>+ (NSValueTransformer *)surveyStringJSONTransformer</Declaration>
+			
+			
+			<Anchor>//api/name/surveyStringJSONTransformer</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCSurvey/timeSubmittedJSONTransformer</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSurvey.m</DeclaredIn>
+			
+			<Declaration>+ (NSValueTransformer *)timeSubmittedJSONTransformer</Declaration>
+			
+			
+			<Anchor>//api/name/timeSubmittedJSONTransformer</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCSurvey/dateFormatter</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSurvey.m</DeclaredIn>
+			
+			<Declaration>+ (NSDateFormatter *)dateFormatter</Declaration>
+			
+			
+			<Anchor>//api/name/dateFormatter</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCSurvey/temperatureJSONTransformer</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSurvey.m</DeclaredIn>
+			
+			<Declaration>+ (NSValueTransformer *)temperatureJSONTransformer</Declaration>
+			
+			
+			<Anchor>//api/name/temperatureJSONTransformer</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCSurvey/siteNotesJSONTransformer</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSurvey.m</DeclaredIn>
+			
+			<Declaration>+ (NSValueTransformer *)siteNotesJSONTransformer</Declaration>
+			
+			
+			<Anchor>//api/name/siteNotesJSONTransformer</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCSurvey/ordersArrayJSONTransformer</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSurvey.m</DeclaredIn>
+			
+			<Declaration>+ (NSValueTransformer *)ordersArrayJSONTransformer</Declaration>
+			
+			
+			<Anchor>//api/name/ordersArrayJSONTransformer</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCSurvey/plantSpeciesJSONTransformer</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSurvey.m</DeclaredIn>
+			
+			<Declaration>+ (NSValueTransformer *)plantSpeciesJSONTransformer</Declaration>
+			
+			
+			<Anchor>//api/name/plantSpeciesJSONTransformer</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCSurvey/herbivoryJSONTransformer</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSurvey.m</DeclaredIn>
+			
+			<Declaration>+ (NSValueTransformer *)herbivoryJSONTransformer</Declaration>
+			
+			
+			<Anchor>//api/name/herbivoryJSONTransformer</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCSurvey/plantPhotoUrlJSONTransformer</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSurvey.m</DeclaredIn>
+			
+			<Declaration>+ (NSValueTransformer *)plantPhotoUrlJSONTransformer</Declaration>
+			
+			
+			<Anchor>//api/name/plantPhotoUrlJSONTransformer</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSurvey/initWithDictionary:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSurvey.m</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithDictionary:(NSDictionary *)dictionaryValue error:(NSError *__autoreleasing *)error</Declaration>
+			
+			
+			<Anchor>//api/name/initWithDictionary:error:</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

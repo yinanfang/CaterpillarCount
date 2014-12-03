@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/GCNewOrderViewController.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/GCNewOrderViewController</TokenIdentifier>
+			<Abstract type="html">New Order View Controller</Abstract>
+			<DeclaredIn>GCNewOrderViewController.h</DeclaredIn>
+            
+			
+			<NodeRef refid="13"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCNewOrderViewController/setOrderScrollView:</TokenIdentifier>
+			<Abstract type="html">Pointer to the order scroll view</Abstract>
+			<DeclaredIn>GCNewOrderViewController.h</DeclaredIn>
+			
+			<Declaration>@property GCNewOrderScrollView *orderScrollView</Declaration>
+			
+			
+			<Anchor>//api/name/orderScrollView</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCNewOrderViewController/orderScrollView</TokenIdentifier>
+			<Abstract type="html">Pointer to the order scroll view</Abstract>
+			<DeclaredIn>GCNewOrderViewController.h</DeclaredIn>
+			
+			<Declaration>@property GCNewOrderScrollView *orderScrollView</Declaration>
+			
+			
+			<Anchor>//api/name/orderScrollView</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCNewOrderViewController/orderScrollView</TokenIdentifier>
+			<Abstract type="html">Pointer to the order scroll view</Abstract>
+			<DeclaredIn>GCNewOrderViewController.h</DeclaredIn>
+			
+			<Declaration>@property GCNewOrderScrollView *orderScrollView</Declaration>
+			
+			
+			<Anchor>//api/name/orderScrollView</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCNewOrderViewController/setPicker_Generic:</TokenIdentifier>
+			<Abstract type="html">View Items</Abstract>
+			<DeclaredIn>GCNewOrderViewController.h</DeclaredIn>
+			
+			<Declaration>@property UIPickerView *picker_Generic</Declaration>
+			
+			
+			<Anchor>//api/name/picker_Generic</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCNewOrderViewController/picker_Generic</TokenIdentifier>
+			<Abstract type="html">View Items</Abstract>
+			<DeclaredIn>GCNewOrderViewController.h</DeclaredIn>
+			
+			<Declaration>@property UIPickerView *picker_Generic</Declaration>
+			
+			
+			<Anchor>//api/name/picker_Generic</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCNewOrderViewController/picker_Generic</TokenIdentifier>
+			<Abstract type="html">View Items</Abstract>
+			<DeclaredIn>GCNewOrderViewController.h</DeclaredIn>
+			
+			<Declaration>@property UIPickerView *picker_Generic</Declaration>
+			
+			
+			<Anchor>//api/name/picker_Generic</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCNewOrderViewController/setPickerType:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCNewOrderViewController.h</DeclaredIn>
+			
+			<Declaration>@property PickerType pickerType</Declaration>
+			
+			
+			<Anchor>//api/name/pickerType</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCNewOrderViewController/pickerType</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCNewOrderViewController.h</DeclaredIn>
+			
+			<Declaration>@property PickerType pickerType</Declaration>
+			
+			
+			<Anchor>//api/name/pickerType</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCNewOrderViewController/pickerType</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCNewOrderViewController.h</DeclaredIn>
+			
+			<Declaration>@property PickerType pickerType</Declaration>
+			
+			
+			<Anchor>//api/name/pickerType</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCNewOrderViewController/setDidShowPicker:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCNewOrderViewController.h</DeclaredIn>
+			
+			<Declaration>@property __block BOOL didShowPicker</Declaration>
+			
+			
+			<Anchor>//api/name/didShowPicker</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCNewOrderViewController/didShowPicker</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCNewOrderViewController.h</DeclaredIn>
+			
+			<Declaration>@property __block BOOL didShowPicker</Declaration>
+			
+			
+			<Anchor>//api/name/didShowPicker</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCNewOrderViewController/didShowPicker</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCNewOrderViewController.h</DeclaredIn>
+			
+			<Declaration>@property __block BOOL didShowPicker</Declaration>
+			
+			
+			<Anchor>//api/name/didShowPicker</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCNewOrderViewController/setPickerContent:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCNewOrderViewController.h</DeclaredIn>
+			
+			<Declaration>@property NSMutableArray *pickerContent</Declaration>
+			
+			
+			<Anchor>//api/name/pickerContent</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCNewOrderViewController/pickerContent</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCNewOrderViewController.h</DeclaredIn>
+			
+			<Declaration>@property NSMutableArray *pickerContent</Declaration>
+			
+			
+			<Anchor>//api/name/pickerContent</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCNewOrderViewController/pickerContent</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCNewOrderViewController.h</DeclaredIn>
+			
+			<Declaration>@property NSMutableArray *pickerContent</Declaration>
+			
+			
+			<Anchor>//api/name/pickerContent</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCNewOrderViewController/setHud:</TokenIdentifier>
+			<Abstract type="html">Progress HUD</Abstract>
+			<DeclaredIn>GCNewOrderViewController.h</DeclaredIn>
+			
+			<Declaration>@property MBProgressHUD *hud</Declaration>
+			
+			
+			<Anchor>//api/name/hud</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCNewOrderViewController/hud</TokenIdentifier>
+			<Abstract type="html">Progress HUD</Abstract>
+			<DeclaredIn>GCNewOrderViewController.h</DeclaredIn>
+			
+			<Declaration>@property MBProgressHUD *hud</Declaration>
+			
+			
+			<Anchor>//api/name/hud</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCNewOrderViewController/hud</TokenIdentifier>
+			<Abstract type="html">Progress HUD</Abstract>
+			<DeclaredIn>GCNewOrderViewController.h</DeclaredIn>
+			
+			<Declaration>@property MBProgressHUD *hud</Declaration>
+			
+			
+			<Anchor>//api/name/hud</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCNewOrderViewController/setIsModifying:</TokenIdentifier>
+			<Abstract type="html">Variable for editing the order</Abstract>
+			<DeclaredIn>GCNewOrderViewController.h</DeclaredIn>
+			
+			<Declaration>@property BOOL isModifying</Declaration>
+			
+			
+			<Anchor>//api/name/isModifying</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCNewOrderViewController/isModifying</TokenIdentifier>
+			<Abstract type="html">Variable for editing the order</Abstract>
+			<DeclaredIn>GCNewOrderViewController.h</DeclaredIn>
+			
+			<Declaration>@property BOOL isModifying</Declaration>
+			
+			
+			<Anchor>//api/name/isModifying</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCNewOrderViewController/isModifying</TokenIdentifier>
+			<Abstract type="html">Variable for editing the order</Abstract>
+			<DeclaredIn>GCNewOrderViewController.h</DeclaredIn>
+			
+			<Declaration>@property BOOL isModifying</Declaration>
+			
+			
+			<Anchor>//api/name/isModifying</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCNewOrderViewController/setRow:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCNewOrderViewController.h</DeclaredIn>
+			
+			<Declaration>@property NSInteger row</Declaration>
+			
+			
+			<Anchor>//api/name/row</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCNewOrderViewController/row</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCNewOrderViewController.h</DeclaredIn>
+			
+			<Declaration>@property NSInteger row</Declaration>
+			
+			
+			<Anchor>//api/name/row</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCNewOrderViewController/row</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCNewOrderViewController.h</DeclaredIn>
+			
+			<Declaration>@property NSInteger row</Declaration>
+			
+			
+			<Anchor>//api/name/row</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCNewOrderViewController/viewDidLoad</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCNewOrderViewController.m</DeclaredIn>
+			
+			<Declaration>- (void)viewDidLoad</Declaration>
+			
+			
+			<Anchor>//api/name/viewDidLoad</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCNewOrderViewController/isValidInput</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCNewOrderViewController.m</DeclaredIn>
+			
+			<Declaration>- (BOOL)isValidInput</Declaration>
+			
+			
+			<Anchor>//api/name/isValidInput</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCNewOrderViewController/makeHUDErrorAlertWithString:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCNewOrderViewController.m</DeclaredIn>
+			
+			<Declaration>- (void)makeHUDErrorAlertWithString:(NSString *)message</Declaration>
+			
+			
+			<Anchor>//api/name/makeHUDErrorAlertWithString:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCNewOrderViewController/keyboardWillShow</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCNewOrderViewController.m</DeclaredIn>
+			
+			<Declaration>- (void)keyboardWillShow</Declaration>
+			
+			
+			<Anchor>//api/name/keyboardWillShow</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCNewOrderViewController/pickerView:titleForRow:forComponent:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCNewOrderViewController.m</DeclaredIn>
+			
+			<Declaration>- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component</Declaration>
+			
+			
+			<Anchor>//api/name/pickerView:titleForRow:forComponent:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCNewOrderViewController/pickerView:didSelectRow:inComponent:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCNewOrderViewController.m</DeclaredIn>
+			
+			<Declaration>- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component</Declaration>
+			
+			
+			<Anchor>//api/name/pickerView:didSelectRow:inComponent:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCNewOrderViewController/numberOfComponentsInPickerView:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCNewOrderViewController.m</DeclaredIn>
+			
+			<Declaration>- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView</Declaration>
+			
+			
+			<Anchor>//api/name/numberOfComponentsInPickerView:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCNewOrderViewController/pickerView:numberOfRowsInComponent:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCNewOrderViewController.m</DeclaredIn>
+			
+			<Declaration>- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component</Declaration>
+			
+			
+			<Anchor>//api/name/pickerView:numberOfRowsInComponent:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCNewOrderViewController/configurePickerContent</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCNewOrderViewController.m</DeclaredIn>
+			
+			<Declaration>- (void)configurePickerContent</Declaration>
+			
+			
+			<Anchor>//api/name/configurePickerContent</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCNewOrderViewController/textFieldShouldReturn:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCNewOrderViewController.m</DeclaredIn>
+			
+			<Declaration>- (BOOL)textFieldShouldReturn:(UITextField *)textField</Declaration>
+			
+			
+			<Anchor>//api/name/textFieldShouldReturn:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCNewOrderViewController/touchesBegan:withEvent:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCNewOrderViewController.m</DeclaredIn>
+			
+			<Declaration>- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event</Declaration>
+			
+			
+			<Anchor>//api/name/touchesBegan:withEvent:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCNewOrderViewController/addAccessaryViewToTextField:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCNewOrderViewController.m</DeclaredIn>
+			
+			<Declaration>- (void)addAccessaryViewToTextField:(UITextField *)textField</Declaration>
+			
+			
+			<Anchor>//api/name/addAccessaryViewToTextField:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCNewOrderViewController/cancelNumberPad</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCNewOrderViewController.m</DeclaredIn>
+			
+			<Declaration>- (void)cancelNumberPad</Declaration>
+			
+			
+			<Anchor>//api/name/cancelNumberPad</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCNewOrderViewController/doneWithNumberPad</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCNewOrderViewController.m</DeclaredIn>
+			
+			<Declaration>- (void)doneWithNumberPad</Declaration>
+			
+			
+			<Anchor>//api/name/doneWithNumberPad</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCNewOrderViewController/imagePickerController:didFinishPickingMediaWithInfo:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCNewOrderViewController.m</DeclaredIn>
+			
+			<Declaration>- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info</Declaration>
+			
+			
+			<Anchor>//api/name/imagePickerController:didFinishPickingMediaWithInfo:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCNewOrderViewController/imagePickerControllerDidCancel:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCNewOrderViewController.m</DeclaredIn>
+			
+			<Declaration>- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker</Declaration>
+			
+			
+			<Anchor>//api/name/imagePickerControllerDidCancel:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCNewOrderViewController/didReceiveMemoryWarning</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCNewOrderViewController.m</DeclaredIn>
+			
+			<Declaration>- (void)didReceiveMemoryWarning</Declaration>
+			
+			
+			<Anchor>//api/name/didReceiveMemoryWarning</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

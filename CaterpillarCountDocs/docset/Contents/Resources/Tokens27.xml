@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Categories/FUIButton+AdvancedInitialization.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cat/FUIButton(AdvancedInitialization)</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCAppSetup.h</DeclaredIn>
+            
+			
+			<NodeRef refid="27"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FUIButton/ButtonWithTitle:inBold:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCAppSetup.h</DeclaredIn>
+			
+			<Declaration>+ (FUIButton *)ButtonWithTitle:(NSString *)title inBold:(BOOL)IsBold</Declaration>
+			
+			
+			<Anchor>//api/name/ButtonWithTitle:inBold:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

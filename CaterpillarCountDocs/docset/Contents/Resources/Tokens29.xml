@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Categories/UIImageView+AdvancedInitialization.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cat/UIImageView(AdvancedInitialization)</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCAppSetup.h</DeclaredIn>
+            
+			
+			<NodeRef refid="29"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UIImageView/ImageViewWithDefaultBackgroundImage:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCAppSetup.h</DeclaredIn>
+			
+			<Declaration>+ (UIImageView *)ImageViewWithDefaultBackgroundImage:(UIImage *)image</Declaration>
+			
+			
+			<Anchor>//api/name/ImageViewWithDefaultBackgroundImage:</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

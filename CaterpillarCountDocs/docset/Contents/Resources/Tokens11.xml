@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/GCNetwork.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/GCNetwork</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCNetwork.h</DeclaredIn>
+            
+			
+			<NodeRef refid="11"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCNetwork/twoWayJSONPOSTRequestWithViewController:URL:parameter:HUDMessage:completion:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCNetwork.h</DeclaredIn>
+			
+			<Declaration>+ (void)twoWayJSONPOSTRequestWithViewController:(UIViewController *)controller URL:(NSURL *)url parameter:(NSDictionary *)parameter HUDMessage:(NSString *)message completion:(void ( ^ ) ( BOOL succeeded , NSDictionary *responseDictionary ))completionBlock</Declaration>
+			
+			
+			<Anchor>//api/name/twoWayJSONPOSTRequestWithViewController:URL:parameter:HUDMessage:completion:</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCNetwork/requestPOSTWithURL:parameter:completion:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCNetwork.h</DeclaredIn>
+			
+			<Declaration>+ (void)requestPOSTWithURL:(NSURL *)url parameter:(NSDictionary *)parameter completion:(void ( ^ ) ( BOOL succeeded , NSData *data ))completionBlock</Declaration>
+			
+			
+			<Anchor>//api/name/requestPOSTWithURL:parameter:completion:</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

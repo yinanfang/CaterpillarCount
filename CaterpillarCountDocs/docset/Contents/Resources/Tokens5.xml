@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/GCAppDelegate.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/GCAppDelegate</TokenIdentifier>
+			<Abstract type="html">Entry point of the application</Abstract>
+			<DeclaredIn>GCAppDelegate.h</DeclaredIn>
+            
+			
+			<NodeRef refid="5"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCAppDelegate/setWindow:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCAppDelegate.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic) UIWindow *window</Declaration>
+			
+			
+			<Anchor>//api/name/window</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCAppDelegate/window</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCAppDelegate.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic) UIWindow *window</Declaration>
+			
+			
+			<Anchor>//api/name/window</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCAppDelegate/window</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCAppDelegate.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic) UIWindow *window</Declaration>
+			
+			
+			<Anchor>//api/name/window</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCAppDelegate/application:didFinishLaunchingWithOptions:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCAppDelegate.m</DeclaredIn>
+			
+			<Declaration>- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions</Declaration>
+			
+			
+			<Anchor>//api/name/application:didFinishLaunchingWithOptions:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCAppDelegate/application:supportedInterfaceOrientationsForWindow:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCAppDelegate.m</DeclaredIn>
+			
+			<Declaration>- (NSUInteger)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window</Declaration>
+			
+			
+			<Anchor>//api/name/application:supportedInterfaceOrientationsForWindow:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCAppDelegate/applicationWillResignActive:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCAppDelegate.m</DeclaredIn>
+			
+			<Declaration>- (void)applicationWillResignActive:(UIApplication *)application</Declaration>
+			
+			
+			<Anchor>//api/name/applicationWillResignActive:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCAppDelegate/applicationDidEnterBackground:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCAppDelegate.m</DeclaredIn>
+			
+			<Declaration>- (void)applicationDidEnterBackground:(UIApplication *)application</Declaration>
+			
+			
+			<Anchor>//api/name/applicationDidEnterBackground:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCAppDelegate/applicationWillEnterForeground:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCAppDelegate.m</DeclaredIn>
+			
+			<Declaration>- (void)applicationWillEnterForeground:(UIApplication *)application</Declaration>
+			
+			
+			<Anchor>//api/name/applicationWillEnterForeground:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCAppDelegate/applicationDidBecomeActive:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCAppDelegate.m</DeclaredIn>
+			
+			<Declaration>- (void)applicationDidBecomeActive:(UIApplication *)application</Declaration>
+			
+			
+			<Anchor>//api/name/applicationDidBecomeActive:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCAppDelegate/applicationWillTerminate:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCAppDelegate.m</DeclaredIn>
+			
+			<Declaration>- (void)applicationWillTerminate:(UIApplication *)application</Declaration>
+			
+			
+			<Anchor>//api/name/applicationWillTerminate:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/GCSignInScrollView.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/GCSignInScrollView</TokenIdentifier>
+			<Abstract type="html">Sign In Scroll View</Abstract>
+			<DeclaredIn>GCSignInScrollView.h</DeclaredIn>
+            
+			
+			<NodeRef refid="18"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSignInScrollView/setParentController:</TokenIdentifier>
+			<Abstract type="html">Pointer to the parent controller</Abstract>
+			<DeclaredIn>GCSignInScrollView.h</DeclaredIn>
+			
+			<Declaration>@property GCSignInViewController *parentController</Declaration>
+			
+			
+			<Anchor>//api/name/parentController</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSignInScrollView/parentController</TokenIdentifier>
+			<Abstract type="html">Pointer to the parent controller</Abstract>
+			<DeclaredIn>GCSignInScrollView.h</DeclaredIn>
+			
+			<Declaration>@property GCSignInViewController *parentController</Declaration>
+			
+			
+			<Anchor>//api/name/parentController</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCSignInScrollView/parentController</TokenIdentifier>
+			<Abstract type="html">Pointer to the parent controller</Abstract>
+			<DeclaredIn>GCSignInScrollView.h</DeclaredIn>
+			
+			<Declaration>@property GCSignInViewController *parentController</Declaration>
+			
+			
+			<Anchor>//api/name/parentController</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSignInScrollView/setDidSetupConstraints:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSignInScrollView.h</DeclaredIn>
+			
+			<Declaration>@property BOOL didSetupConstraints</Declaration>
+			
+			
+			<Anchor>//api/name/didSetupConstraints</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSignInScrollView/didSetupConstraints</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSignInScrollView.h</DeclaredIn>
+			
+			<Declaration>@property BOOL didSetupConstraints</Declaration>
+			
+			
+			<Anchor>//api/name/didSetupConstraints</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCSignInScrollView/didSetupConstraints</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSignInScrollView.h</DeclaredIn>
+			
+			<Declaration>@property BOOL didSetupConstraints</Declaration>
+			
+			
+			<Anchor>//api/name/didSetupConstraints</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSignInScrollView/setLabel_Login:</TokenIdentifier>
+			<Abstract type="html">Objects in the view</Abstract>
+			<DeclaredIn>GCSignInScrollView.h</DeclaredIn>
+			
+			<Declaration>@property UILabel *label_Login</Declaration>
+			
+			
+			<Anchor>//api/name/label_Login</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSignInScrollView/label_Login</TokenIdentifier>
+			<Abstract type="html">Objects in the view</Abstract>
+			<DeclaredIn>GCSignInScrollView.h</DeclaredIn>
+			
+			<Declaration>@property UILabel *label_Login</Declaration>
+			
+			
+			<Anchor>//api/name/label_Login</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCSignInScrollView/label_Login</TokenIdentifier>
+			<Abstract type="html">Objects in the view</Abstract>
+			<DeclaredIn>GCSignInScrollView.h</DeclaredIn>
+			
+			<Declaration>@property UILabel *label_Login</Declaration>
+			
+			
+			<Anchor>//api/name/label_Login</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSignInScrollView/setEntry_Password:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSignInScrollView.h</DeclaredIn>
+			
+			<Declaration>@property UITextField *, *entry_Password</Declaration>
+			
+			
+			<Anchor>//api/name/entry_Password</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSignInScrollView/entry_Password</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSignInScrollView.h</DeclaredIn>
+			
+			<Declaration>@property UITextField *, *entry_Password</Declaration>
+			
+			
+			<Anchor>//api/name/entry_Password</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCSignInScrollView/entry_Password</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSignInScrollView.h</DeclaredIn>
+			
+			<Declaration>@property UITextField *, *entry_Password</Declaration>
+			
+			
+			<Anchor>//api/name/entry_Password</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSignInScrollView/setBtn_Submit:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSignInScrollView.h</DeclaredIn>
+			
+			<Declaration>@property FUIButton *btn_Submit</Declaration>
+			
+			
+			<Anchor>//api/name/btn_Submit</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSignInScrollView/btn_Submit</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSignInScrollView.h</DeclaredIn>
+			
+			<Declaration>@property FUIButton *btn_Submit</Declaration>
+			
+			
+			<Anchor>//api/name/btn_Submit</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCSignInScrollView/btn_Submit</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSignInScrollView.h</DeclaredIn>
+			
+			<Declaration>@property FUIButton *btn_Submit</Declaration>
+			
+			
+			<Anchor>//api/name/btn_Submit</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSignInScrollView/initWithParentController:</TokenIdentifier>
+			<Abstract type="html">Initializer</Abstract>
+			<DeclaredIn>GCSignInScrollView.h</DeclaredIn>
+			
+			<Declaration>- (id)initWithParentController:(GCSignInViewController *)controller</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>controller</Name>
+					<Abstract type="html">Pointer to the parent controller</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Instance of the class</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithParentController:</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSignInScrollView/updateConstraints</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSignInScrollView.m</DeclaredIn>
+			
+			<Declaration>- (void)updateConstraints</Declaration>
+			
+			
+			<Anchor>//api/name/updateConstraints</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSignInScrollView/textFieldShouldReturn:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSignInScrollView.m</DeclaredIn>
+			
+			<Declaration>- (BOOL)textFieldShouldReturn:(UITextField *)textField</Declaration>
+			
+			
+			<Anchor>//api/name/textFieldShouldReturn:</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

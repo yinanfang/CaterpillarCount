@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/GCNewOrderScrollView.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/GCNewOrderScrollView</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCNewOrderScrollView.h</DeclaredIn>
+            
+			
+			<NodeRef refid="12"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCNewOrderScrollView/setParentController:</TokenIdentifier>
+			<Abstract type="html">Pointer to the parent controller</Abstract>
+			<DeclaredIn>GCNewOrderScrollView.h</DeclaredIn>
+			
+			<Declaration>@property GCNewOrderViewController *parentController</Declaration>
+			
+			
+			<Anchor>//api/name/parentController</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCNewOrderScrollView/parentController</TokenIdentifier>
+			<Abstract type="html">Pointer to the parent controller</Abstract>
+			<DeclaredIn>GCNewOrderScrollView.h</DeclaredIn>
+			
+			<Declaration>@property GCNewOrderViewController *parentController</Declaration>
+			
+			
+			<Anchor>//api/name/parentController</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCNewOrderScrollView/parentController</TokenIdentifier>
+			<Abstract type="html">Pointer to the parent controller</Abstract>
+			<DeclaredIn>GCNewOrderScrollView.h</DeclaredIn>
+			
+			<Declaration>@property GCNewOrderViewController *parentController</Declaration>
+			
+			
+			<Anchor>//api/name/parentController</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCNewOrderScrollView/setDidSetupConstraints:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCNewOrderScrollView.h</DeclaredIn>
+			
+			<Declaration>@property BOOL didSetupConstraints</Declaration>
+			
+			
+			<Anchor>//api/name/didSetupConstraints</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCNewOrderScrollView/didSetupConstraints</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCNewOrderScrollView.h</DeclaredIn>
+			
+			<Declaration>@property BOOL didSetupConstraints</Declaration>
+			
+			
+			<Anchor>//api/name/didSetupConstraints</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCNewOrderScrollView/didSetupConstraints</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCNewOrderScrollView.h</DeclaredIn>
+			
+			<Declaration>@property BOOL didSetupConstraints</Declaration>
+			
+			
+			<Anchor>//api/name/didSetupConstraints</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCNewOrderScrollView/setLabel_Order:</TokenIdentifier>
+			<Abstract type="html">Upper section</Abstract>
+			<DeclaredIn>GCNewOrderScrollView.h</DeclaredIn>
+			
+			<Declaration>@property UILabel *label_Order</Declaration>
+			
+			
+			<Anchor>//api/name/label_Order</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCNewOrderScrollView/label_Order</TokenIdentifier>
+			<Abstract type="html">Upper section</Abstract>
+			<DeclaredIn>GCNewOrderScrollView.h</DeclaredIn>
+			
+			<Declaration>@property UILabel *label_Order</Declaration>
+			
+			
+			<Anchor>//api/name/label_Order</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCNewOrderScrollView/label_Order</TokenIdentifier>
+			<Abstract type="html">Upper section</Abstract>
+			<DeclaredIn>GCNewOrderScrollView.h</DeclaredIn>
+			
+			<Declaration>@property UILabel *label_Order</Declaration>
+			
+			
+			<Anchor>//api/name/label_Order</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCNewOrderScrollView/setEntry_Order:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCNewOrderScrollView.h</DeclaredIn>
+			
+			<Declaration>@property UIButton *entry_Order</Declaration>
+			
+			
+			<Anchor>//api/name/entry_Order</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCNewOrderScrollView/entry_Order</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCNewOrderScrollView.h</DeclaredIn>
+			
+			<Declaration>@property UIButton *entry_Order</Declaration>
+			
+			
+			<Anchor>//api/name/entry_Order</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCNewOrderScrollView/entry_Order</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCNewOrderScrollView.h</DeclaredIn>
+			
+			<Declaration>@property UIButton *entry_Order</Declaration>
+			
+			
+			<Anchor>//api/name/entry_Order</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCNewOrderScrollView/setEntry_Notes:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCNewOrderScrollView.h</DeclaredIn>
+			
+			<Declaration>@property UITextField *, *, *entry_Notes</Declaration>
+			
+			
+			<Anchor>//api/name/entry_Notes</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCNewOrderScrollView/entry_Notes</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCNewOrderScrollView.h</DeclaredIn>
+			
+			<Declaration>@property UITextField *, *, *entry_Notes</Declaration>
+			
+			
+			<Anchor>//api/name/entry_Notes</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCNewOrderScrollView/entry_Notes</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCNewOrderScrollView.h</DeclaredIn>
+			
+			<Declaration>@property UITextField *, *, *entry_Notes</Declaration>
+			
+			
+			<Anchor>//api/name/entry_Notes</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCNewOrderScrollView/setLabel_Photo:</TokenIdentifier>
+			<Abstract type="html">Photo</Abstract>
+			<DeclaredIn>GCNewOrderScrollView.h</DeclaredIn>
+			
+			<Declaration>@property UILabel *label_Photo</Declaration>
+			
+			
+			<Anchor>//api/name/label_Photo</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCNewOrderScrollView/label_Photo</TokenIdentifier>
+			<Abstract type="html">Photo</Abstract>
+			<DeclaredIn>GCNewOrderScrollView.h</DeclaredIn>
+			
+			<Declaration>@property UILabel *label_Photo</Declaration>
+			
+			
+			<Anchor>//api/name/label_Photo</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCNewOrderScrollView/label_Photo</TokenIdentifier>
+			<Abstract type="html">Photo</Abstract>
+			<DeclaredIn>GCNewOrderScrollView.h</DeclaredIn>
+			
+			<Declaration>@property UILabel *label_Photo</Declaration>
+			
+			
+			<Anchor>//api/name/label_Photo</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCNewOrderScrollView/setEntry_Photo:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCNewOrderScrollView.h</DeclaredIn>
+			
+			<Declaration>@property UIImageView *entry_Photo</Declaration>
+			
+			
+			<Anchor>//api/name/entry_Photo</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCNewOrderScrollView/entry_Photo</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCNewOrderScrollView.h</DeclaredIn>
+			
+			<Declaration>@property UIImageView *entry_Photo</Declaration>
+			
+			
+			<Anchor>//api/name/entry_Photo</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCNewOrderScrollView/entry_Photo</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCNewOrderScrollView.h</DeclaredIn>
+			
+			<Declaration>@property UIImageView *entry_Photo</Declaration>
+			
+			
+			<Anchor>//api/name/entry_Photo</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCNewOrderScrollView/setBtn_PhotoPlaceHolder:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCNewOrderScrollView.h</DeclaredIn>
+			
+			<Declaration>@property UIButton *btn_PhotoPlaceHolder</Declaration>
+			
+			
+			<Anchor>//api/name/btn_PhotoPlaceHolder</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCNewOrderScrollView/btn_PhotoPlaceHolder</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCNewOrderScrollView.h</DeclaredIn>
+			
+			<Declaration>@property UIButton *btn_PhotoPlaceHolder</Declaration>
+			
+			
+			<Anchor>//api/name/btn_PhotoPlaceHolder</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCNewOrderScrollView/btn_PhotoPlaceHolder</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCNewOrderScrollView.h</DeclaredIn>
+			
+			<Declaration>@property UIButton *btn_PhotoPlaceHolder</Declaration>
+			
+			
+			<Anchor>//api/name/btn_PhotoPlaceHolder</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCNewOrderScrollView/setBtn_Submit:</TokenIdentifier>
+			<Abstract type="html">Submit Button</Abstract>
+			<DeclaredIn>GCNewOrderScrollView.h</DeclaredIn>
+			
+			<Declaration>@property FUIButton *btn_Submit</Declaration>
+			
+			
+			<Anchor>//api/name/btn_Submit</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCNewOrderScrollView/btn_Submit</TokenIdentifier>
+			<Abstract type="html">Submit Button</Abstract>
+			<DeclaredIn>GCNewOrderScrollView.h</DeclaredIn>
+			
+			<Declaration>@property FUIButton *btn_Submit</Declaration>
+			
+			
+			<Anchor>//api/name/btn_Submit</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCNewOrderScrollView/btn_Submit</TokenIdentifier>
+			<Abstract type="html">Submit Button</Abstract>
+			<DeclaredIn>GCNewOrderScrollView.h</DeclaredIn>
+			
+			<Declaration>@property FUIButton *btn_Submit</Declaration>
+			
+			
+			<Anchor>//api/name/btn_Submit</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCNewOrderScrollView/initWithParentController:</TokenIdentifier>
+			<Abstract type="html">Initializer</Abstract>
+			<DeclaredIn>GCNewOrderScrollView.h</DeclaredIn>
+			
+			<Declaration>- (id)initWithParentController:(GCNewOrderViewController *)controller</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>controller</Name>
+					<Abstract type="html">Pointer to parent controller</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Return an instance</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithParentController:</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCNewOrderScrollView/updateConstraints</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCNewOrderScrollView.m</DeclaredIn>
+			
+			<Declaration>- (void)updateConstraints</Declaration>
+			
+			
+			<Anchor>//api/name/updateConstraints</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCNewOrderScrollView/touchesBegan:withEvent:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCNewOrderScrollView.m</DeclaredIn>
+			
+			<Declaration>- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event</Declaration>
+			
+			
+			<Anchor>//api/name/touchesBegan:withEvent:</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

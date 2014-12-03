@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/GCAppConfig.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/GCAppConfig</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCAppConfig.h</DeclaredIn>
+            
+			
+			<NodeRef refid="3"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCAppConfig/setPixelAdjustForHorizontalGap:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCAppConfig.h</DeclaredIn>
+			
+			<Declaration>@property CGFloat PixelAdjustForHorizontalGap</Declaration>
+			
+			
+			<Anchor>//api/name/PixelAdjustForHorizontalGap</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCAppConfig/PixelAdjustForHorizontalGap</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCAppConfig.h</DeclaredIn>
+			
+			<Declaration>@property CGFloat PixelAdjustForHorizontalGap</Declaration>
+			
+			
+			<Anchor>//api/name/PixelAdjustForHorizontalGap</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCAppConfig/PixelAdjustForHorizontalGap</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCAppConfig.h</DeclaredIn>
+			
+			<Declaration>@property CGFloat PixelAdjustForHorizontalGap</Declaration>
+			
+			
+			<Anchor>//api/name/PixelAdjustForHorizontalGap</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCAppConfig/sharedInstance</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCAppConfig.m</DeclaredIn>
+			
+			<Declaration>+ (GCAppConfig *)sharedInstance</Declaration>
+			
+			
+			<Anchor>//api/name/sharedInstance</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCAppConfig/init</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCAppConfig.m</DeclaredIn>
+			
+			<Declaration>- (id)init</Declaration>
+			
+			
+			<Anchor>//api/name/init</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

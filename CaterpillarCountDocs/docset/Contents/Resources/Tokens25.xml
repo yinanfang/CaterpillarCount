@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/GCUserData.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/GCUserData</TokenIdentifier>
+			<Abstract type="html">Data model for user data</Abstract>
+			<DeclaredIn>GCUserData.h</DeclaredIn>
+            
+			
+			<NodeRef refid="25"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCUserData/setUser:</TokenIdentifier>
+			<Abstract type="html">User object</Abstract>
+			<DeclaredIn>GCUserData.h</DeclaredIn>
+			
+			<Declaration>@property GCUser *user</Declaration>
+			
+			
+			<Anchor>//api/name/user</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCUserData/user</TokenIdentifier>
+			<Abstract type="html">User object</Abstract>
+			<DeclaredIn>GCUserData.h</DeclaredIn>
+			
+			<Declaration>@property GCUser *user</Declaration>
+			
+			
+			<Anchor>//api/name/user</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCUserData/user</TokenIdentifier>
+			<Abstract type="html">User object</Abstract>
+			<DeclaredIn>GCUserData.h</DeclaredIn>
+			
+			<Declaration>@property GCUser *user</Declaration>
+			
+			
+			<Anchor>//api/name/user</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCUserData/setSurveys:</TokenIdentifier>
+			<Abstract type="html">Surveys</Abstract>
+			<DeclaredIn>GCUserData.h</DeclaredIn>
+			
+			<Declaration>@property NSMutableArray *surveys</Declaration>
+			
+			
+			<Anchor>//api/name/surveys</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCUserData/surveys</TokenIdentifier>
+			<Abstract type="html">Surveys</Abstract>
+			<DeclaredIn>GCUserData.h</DeclaredIn>
+			
+			<Declaration>@property NSMutableArray *surveys</Declaration>
+			
+			
+			<Anchor>//api/name/surveys</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCUserData/surveys</TokenIdentifier>
+			<Abstract type="html">Surveys</Abstract>
+			<DeclaredIn>GCUserData.h</DeclaredIn>
+			
+			<Declaration>@property NSMutableArray *surveys</Declaration>
+			
+			
+			<Anchor>//api/name/surveys</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCUserData/setSites:</TokenIdentifier>
+			<Abstract type="html">Sites</Abstract>
+			<DeclaredIn>GCUserData.h</DeclaredIn>
+			
+			<Declaration>@property NSMutableArray *sites</Declaration>
+			
+			
+			<Anchor>//api/name/sites</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCUserData/sites</TokenIdentifier>
+			<Abstract type="html">Sites</Abstract>
+			<DeclaredIn>GCUserData.h</DeclaredIn>
+			
+			<Declaration>@property NSMutableArray *sites</Declaration>
+			
+			
+			<Anchor>//api/name/sites</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCUserData/sites</TokenIdentifier>
+			<Abstract type="html">Sites</Abstract>
+			<DeclaredIn>GCUserData.h</DeclaredIn>
+			
+			<Declaration>@property NSMutableArray *sites</Declaration>
+			
+			
+			<Anchor>//api/name/sites</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCUserData/init</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCUserData.m</DeclaredIn>
+			
+			<Declaration>- (id)init</Declaration>
+			
+			
+			<Anchor>//api/name/init</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCUserData/JSONKeyPathsByPropertyKey</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCUserData.m</DeclaredIn>
+			
+			<Declaration>+ (NSDictionary *)JSONKeyPathsByPropertyKey</Declaration>
+			
+			
+			<Anchor>//api/name/JSONKeyPathsByPropertyKey</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCUserData/userJSONTransformer</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCUserData.m</DeclaredIn>
+			
+			<Declaration>+ (NSValueTransformer *)userJSONTransformer</Declaration>
+			
+			
+			<Anchor>//api/name/userJSONTransformer</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCUserData/surveysJSONTransformer</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCUserData.m</DeclaredIn>
+			
+			<Declaration>+ (NSValueTransformer *)surveysJSONTransformer</Declaration>
+			
+			
+			<Anchor>//api/name/surveysJSONTransformer</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCUserData/initWithDictionary:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCUserData.m</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithDictionary:(NSDictionary *)dictionaryValue error:(NSError *__autoreleasing *)error</Declaration>
+			
+			
+			<Anchor>//api/name/initWithDictionary:error:</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

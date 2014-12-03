@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Categories/UIButton+AdvancedInitialization.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cat/UIButton(AdvancedInitialization)</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCAppSetup.h</DeclaredIn>
+            
+			
+			<NodeRef refid="28"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UIButton/ButtonWithTitle:inBold:horizontalAlign:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCAppSetup.h</DeclaredIn>
+			
+			<Declaration>+ (UIButton *)ButtonWithTitle:(NSString *)title inBold:(BOOL)IsBold horizontalAlign:(UIControlContentHorizontalAlignment)horizontalAlign</Declaration>
+			
+			
+			<Anchor>//api/name/ButtonWithTitle:inBold:horizontalAlign:</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

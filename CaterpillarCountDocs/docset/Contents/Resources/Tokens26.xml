@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/SurveyViewController.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/SurveyViewController</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>SurveyViewController.h</DeclaredIn>
+            
+			
+			<NodeRef refid="26"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SurveyViewController/viewDidLoad</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>SurveyViewController.m</DeclaredIn>
+			
+			<Declaration>- (void)viewDidLoad</Declaration>
+			
+			
+			<Anchor>//api/name/viewDidLoad</Anchor>
+            <NodeRef refid="26"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SurveyViewController/didReceiveMemoryWarning</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>SurveyViewController.m</DeclaredIn>
+			
+			<Declaration>- (void)didReceiveMemoryWarning</Declaration>
+			
+			
+			<Anchor>//api/name/didReceiveMemoryWarning</Anchor>
+            <NodeRef refid="26"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

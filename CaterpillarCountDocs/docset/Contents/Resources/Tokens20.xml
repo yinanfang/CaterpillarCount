@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/GCStore.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/GCStore</TokenIdentifier>
+			<Abstract type="html">Variable that stays the same through out the app</Abstract>
+			<DeclaredIn>GCStore.h</DeclaredIn>
+            
+			
+			<NodeRef refid="20"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCStore/sharedInstance</TokenIdentifier>
+			<Abstract type="html">Accessor for Singleton class</Abstract>
+			<DeclaredIn>GCStore.h</DeclaredIn>
+			
+			<Declaration>+ (GCStore *)sharedInstance</Declaration>
+			
+			
+			<Anchor>//api/name/sharedInstance</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCStore/setTemperatureRanges:</TokenIdentifier>
+			<Abstract type="html">Temperature Ranges</Abstract>
+			<DeclaredIn>GCStore.h</DeclaredIn>
+			
+			<Declaration>@property NSMutableArray *temperatureRanges</Declaration>
+			
+			
+			<Anchor>//api/name/temperatureRanges</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCStore/temperatureRanges</TokenIdentifier>
+			<Abstract type="html">Temperature Ranges</Abstract>
+			<DeclaredIn>GCStore.h</DeclaredIn>
+			
+			<Declaration>@property NSMutableArray *temperatureRanges</Declaration>
+			
+			
+			<Anchor>//api/name/temperatureRanges</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCStore/temperatureRanges</TokenIdentifier>
+			<Abstract type="html">Temperature Ranges</Abstract>
+			<DeclaredIn>GCStore.h</DeclaredIn>
+			
+			<Declaration>@property NSMutableArray *temperatureRanges</Declaration>
+			
+			
+			<Anchor>//api/name/temperatureRanges</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCStore/setCircles:</TokenIdentifier>
+			<Abstract type="html">Circles</Abstract>
+			<DeclaredIn>GCStore.h</DeclaredIn>
+			
+			<Declaration>@property NSMutableArray *circles</Declaration>
+			
+			
+			<Anchor>//api/name/circles</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCStore/circles</TokenIdentifier>
+			<Abstract type="html">Circles</Abstract>
+			<DeclaredIn>GCStore.h</DeclaredIn>
+			
+			<Declaration>@property NSMutableArray *circles</Declaration>
+			
+			
+			<Anchor>//api/name/circles</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCStore/circles</TokenIdentifier>
+			<Abstract type="html">Circles</Abstract>
+			<DeclaredIn>GCStore.h</DeclaredIn>
+			
+			<Declaration>@property NSMutableArray *circles</Declaration>
+			
+			
+			<Anchor>//api/name/circles</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCStore/setSurveyStrings:</TokenIdentifier>
+			<Abstract type="html">Survey Strings</Abstract>
+			<DeclaredIn>GCStore.h</DeclaredIn>
+			
+			<Declaration>@property NSMutableArray *surveyStrings</Declaration>
+			
+			
+			<Anchor>//api/name/surveyStrings</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCStore/surveyStrings</TokenIdentifier>
+			<Abstract type="html">Survey Strings</Abstract>
+			<DeclaredIn>GCStore.h</DeclaredIn>
+			
+			<Declaration>@property NSMutableArray *surveyStrings</Declaration>
+			
+			
+			<Anchor>//api/name/surveyStrings</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCStore/surveyStrings</TokenIdentifier>
+			<Abstract type="html">Survey Strings</Abstract>
+			<DeclaredIn>GCStore.h</DeclaredIn>
+			
+			<Declaration>@property NSMutableArray *surveyStrings</Declaration>
+			
+			
+			<Anchor>//api/name/surveyStrings</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCStore/setHerbivory:</TokenIdentifier>
+			<Abstract type="html">Herbivory</Abstract>
+			<DeclaredIn>GCStore.h</DeclaredIn>
+			
+			<Declaration>@property NSMutableArray *herbivory</Declaration>
+			
+			
+			<Anchor>//api/name/herbivory</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCStore/herbivory</TokenIdentifier>
+			<Abstract type="html">Herbivory</Abstract>
+			<DeclaredIn>GCStore.h</DeclaredIn>
+			
+			<Declaration>@property NSMutableArray *herbivory</Declaration>
+			
+			
+			<Anchor>//api/name/herbivory</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCStore/herbivory</TokenIdentifier>
+			<Abstract type="html">Herbivory</Abstract>
+			<DeclaredIn>GCStore.h</DeclaredIn>
+			
+			<Declaration>@property NSMutableArray *herbivory</Declaration>
+			
+			
+			<Anchor>//api/name/herbivory</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCStore/setHerbivoryViews:</TokenIdentifier>
+			<Abstract type="html">Herbivory Views</Abstract>
+			<DeclaredIn>GCStore.h</DeclaredIn>
+			
+			<Declaration>@property NSMutableArray *herbivoryViews</Declaration>
+			
+			
+			<Anchor>//api/name/herbivoryViews</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCStore/herbivoryViews</TokenIdentifier>
+			<Abstract type="html">Herbivory Views</Abstract>
+			<DeclaredIn>GCStore.h</DeclaredIn>
+			
+			<Declaration>@property NSMutableArray *herbivoryViews</Declaration>
+			
+			
+			<Anchor>//api/name/herbivoryViews</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCStore/herbivoryViews</TokenIdentifier>
+			<Abstract type="html">Herbivory Views</Abstract>
+			<DeclaredIn>GCStore.h</DeclaredIn>
+			
+			<Declaration>@property NSMutableArray *herbivoryViews</Declaration>
+			
+			
+			<Anchor>//api/name/herbivoryViews</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCStore/setArthropodOrder:</TokenIdentifier>
+			<Abstract type="html">Arthropod Order</Abstract>
+			<DeclaredIn>GCStore.h</DeclaredIn>
+			
+			<Declaration>@property NSMutableArray *arthropodOrder</Declaration>
+			
+			
+			<Anchor>//api/name/arthropodOrder</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCStore/arthropodOrder</TokenIdentifier>
+			<Abstract type="html">Arthropod Order</Abstract>
+			<DeclaredIn>GCStore.h</DeclaredIn>
+			
+			<Declaration>@property NSMutableArray *arthropodOrder</Declaration>
+			
+			
+			<Anchor>//api/name/arthropodOrder</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCStore/arthropodOrder</TokenIdentifier>
+			<Abstract type="html">Arthropod Order</Abstract>
+			<DeclaredIn>GCStore.h</DeclaredIn>
+			
+			<Declaration>@property NSMutableArray *arthropodOrder</Declaration>
+			
+			
+			<Anchor>//api/name/arthropodOrder</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCStore/init</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCStore.m</DeclaredIn>
+			
+			<Declaration>- (id)init</Declaration>
+			
+			
+			<Anchor>//api/name/init</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCStore/initTemperatureRanges</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCStore.m</DeclaredIn>
+			
+			<Declaration>+ (NSMutableArray *)initTemperatureRanges</Declaration>
+			
+			
+			<Anchor>//api/name/initTemperatureRanges</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCStore/initCircles</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCStore.m</DeclaredIn>
+			
+			<Declaration>+ (NSMutableArray *)initCircles</Declaration>
+			
+			
+			<Anchor>//api/name/initCircles</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCStore/initSurveyStrings</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCStore.m</DeclaredIn>
+			
+			<Declaration>+ (NSMutableArray *)initSurveyStrings</Declaration>
+			
+			
+			<Anchor>//api/name/initSurveyStrings</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCStore/initHerbivory</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCStore.m</DeclaredIn>
+			
+			<Declaration>+ (NSMutableArray *)initHerbivory</Declaration>
+			
+			
+			<Anchor>//api/name/initHerbivory</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCStore/initHerbivoryViews</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCStore.m</DeclaredIn>
+			
+			<Declaration>+ (NSMutableArray *)initHerbivoryViews</Declaration>
+			
+			
+			<Anchor>//api/name/initHerbivoryViews</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCStore/initArthropodOrder</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCStore.m</DeclaredIn>
+			
+			<Declaration>+ (NSMutableArray *)initArthropodOrder</Declaration>
+			
+			
+			<Anchor>//api/name/initArthropodOrder</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

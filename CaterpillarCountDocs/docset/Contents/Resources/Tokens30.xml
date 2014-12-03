@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Categories/UILabel+AdvancedInitialization.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cat/UILabel(AdvancedInitialization)</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCAppSetup.h</DeclaredIn>
+            
+			
+			<NodeRef refid="30"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UILabel/LabelTitleWithString:align:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCAppSetup.h</DeclaredIn>
+			
+			<Declaration>+ (UILabel *)LabelTitleWithString:(NSString *)title align:(NSTextAlignment)alignment</Declaration>
+			
+			
+			<Anchor>//api/name/LabelTitleWithString:align:</Anchor>
+            <NodeRef refid="30"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UILabel/LabelSubTitleWithString:align:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCAppSetup.h</DeclaredIn>
+			
+			<Declaration>+ (UILabel *)LabelSubTitleWithString:(NSString *)title align:(NSTextAlignment)alignment</Declaration>
+			
+			
+			<Anchor>//api/name/LabelSubTitleWithString:align:</Anchor>
+            <NodeRef refid="30"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

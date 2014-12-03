@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/GCUser.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/GCUser</TokenIdentifier>
+			<Abstract type="html">Data Model for the user</Abstract>
+			<DeclaredIn>GCUser.h</DeclaredIn>
+            
+			
+			<NodeRef refid="24"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCUser/setUserID:</TokenIdentifier>
+			<Abstract type="html">User ID</Abstract>
+			<DeclaredIn>GCUser.h</DeclaredIn>
+			
+			<Declaration>@property NSNumber *userID</Declaration>
+			
+			
+			<Anchor>//api/name/userID</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCUser/userID</TokenIdentifier>
+			<Abstract type="html">User ID</Abstract>
+			<DeclaredIn>GCUser.h</DeclaredIn>
+			
+			<Declaration>@property NSNumber *userID</Declaration>
+			
+			
+			<Anchor>//api/name/userID</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCUser/userID</TokenIdentifier>
+			<Abstract type="html">User ID</Abstract>
+			<DeclaredIn>GCUser.h</DeclaredIn>
+			
+			<Declaration>@property NSNumber *userID</Declaration>
+			
+			
+			<Anchor>//api/name/userID</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCUser/setEmail:</TokenIdentifier>
+			<Abstract type="html">Email Address</Abstract>
+			<DeclaredIn>GCUser.h</DeclaredIn>
+			
+			<Declaration>@property NSString *email</Declaration>
+			
+			
+			<Anchor>//api/name/email</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCUser/email</TokenIdentifier>
+			<Abstract type="html">Email Address</Abstract>
+			<DeclaredIn>GCUser.h</DeclaredIn>
+			
+			<Declaration>@property NSString *email</Declaration>
+			
+			
+			<Anchor>//api/name/email</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCUser/email</TokenIdentifier>
+			<Abstract type="html">Email Address</Abstract>
+			<DeclaredIn>GCUser.h</DeclaredIn>
+			
+			<Declaration>@property NSString *email</Declaration>
+			
+			
+			<Anchor>//api/name/email</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCUser/setUserName:</TokenIdentifier>
+			<Abstract type="html">User Name</Abstract>
+			<DeclaredIn>GCUser.h</DeclaredIn>
+			
+			<Declaration>@property NSString *userName</Declaration>
+			
+			
+			<Anchor>//api/name/userName</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCUser/userName</TokenIdentifier>
+			<Abstract type="html">User Name</Abstract>
+			<DeclaredIn>GCUser.h</DeclaredIn>
+			
+			<Declaration>@property NSString *userName</Declaration>
+			
+			
+			<Anchor>//api/name/userName</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCUser/userName</TokenIdentifier>
+			<Abstract type="html">User Name</Abstract>
+			<DeclaredIn>GCUser.h</DeclaredIn>
+			
+			<Declaration>@property NSString *userName</Declaration>
+			
+			
+			<Anchor>//api/name/userName</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCUser/setIsValidUser:</TokenIdentifier>
+			<Abstract type="html">Valid User indicator</Abstract>
+			<DeclaredIn>GCUser.h</DeclaredIn>
+			
+			<Declaration>@property BOOL isValidUser</Declaration>
+			
+			
+			<Anchor>//api/name/isValidUser</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCUser/isValidUser</TokenIdentifier>
+			<Abstract type="html">Valid User indicator</Abstract>
+			<DeclaredIn>GCUser.h</DeclaredIn>
+			
+			<Declaration>@property BOOL isValidUser</Declaration>
+			
+			
+			<Anchor>//api/name/isValidUser</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCUser/isValidUser</TokenIdentifier>
+			<Abstract type="html">Valid User indicator</Abstract>
+			<DeclaredIn>GCUser.h</DeclaredIn>
+			
+			<Declaration>@property BOOL isValidUser</Declaration>
+			
+			
+			<Anchor>//api/name/isValidUser</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCUser/setIsActive:</TokenIdentifier>
+			<Abstract type="html">Active indicator</Abstract>
+			<DeclaredIn>GCUser.h</DeclaredIn>
+			
+			<Declaration>@property BOOL isActive</Declaration>
+			
+			
+			<Anchor>//api/name/isActive</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCUser/isActive</TokenIdentifier>
+			<Abstract type="html">Active indicator</Abstract>
+			<DeclaredIn>GCUser.h</DeclaredIn>
+			
+			<Declaration>@property BOOL isActive</Declaration>
+			
+			
+			<Anchor>//api/name/isActive</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCUser/isActive</TokenIdentifier>
+			<Abstract type="html">Active indicator</Abstract>
+			<DeclaredIn>GCUser.h</DeclaredIn>
+			
+			<Declaration>@property BOOL isActive</Declaration>
+			
+			
+			<Anchor>//api/name/isActive</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCUser/JSONKeyPathsByPropertyKey</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCUser.m</DeclaredIn>
+			
+			<Declaration>+ (NSDictionary *)JSONKeyPathsByPropertyKey</Declaration>
+			
+			
+			<Anchor>//api/name/JSONKeyPathsByPropertyKey</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCUser/userIDJSONTransformer</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCUser.m</DeclaredIn>
+			
+			<Declaration>+ (NSValueTransformer *)userIDJSONTransformer</Declaration>
+			
+			
+			<Anchor>//api/name/userIDJSONTransformer</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCUser/emailJSONTransformer</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCUser.m</DeclaredIn>
+			
+			<Declaration>+ (NSValueTransformer *)emailJSONTransformer</Declaration>
+			
+			
+			<Anchor>//api/name/emailJSONTransformer</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCUser/userNameJSONTransformer</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCUser.m</DeclaredIn>
+			
+			<Declaration>+ (NSValueTransformer *)userNameJSONTransformer</Declaration>
+			
+			
+			<Anchor>//api/name/userNameJSONTransformer</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCUser/isValidUserJSONTransformer</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCUser.m</DeclaredIn>
+			
+			<Declaration>+ (NSValueTransformer *)isValidUserJSONTransformer</Declaration>
+			
+			
+			<Anchor>//api/name/isValidUserJSONTransformer</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCUser/isActiveJSONTransformer</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCUser.m</DeclaredIn>
+			
+			<Declaration>+ (NSValueTransformer *)isActiveJSONTransformer</Declaration>
+			
+			
+			<Anchor>//api/name/isActiveJSONTransformer</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCUser/initWithDictionary:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCUser.m</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithDictionary:(NSDictionary *)dictionaryValue error:(NSError *__autoreleasing *)error</Declaration>
+			
+			
+			<Anchor>//api/name/initWithDictionary:error:</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

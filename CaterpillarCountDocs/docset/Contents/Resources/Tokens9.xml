@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/GCCoverView.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/GCCoverView</TokenIdentifier>
+			<Abstract type="html">View Container for the Cover View</Abstract>
+			<DeclaredIn>GCCoverView.h</DeclaredIn>
+            
+			
+			<NodeRef refid="9"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCCoverView/setParentController:</TokenIdentifier>
+			<Abstract type="html">Pointer to the objects in parent controller</Abstract>
+			<DeclaredIn>GCCoverView.h</DeclaredIn>
+			
+			<Declaration>@property GCCoverViewController *parentController</Declaration>
+			
+			
+			<Anchor>//api/name/parentController</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCCoverView/parentController</TokenIdentifier>
+			<Abstract type="html">Pointer to the objects in parent controller</Abstract>
+			<DeclaredIn>GCCoverView.h</DeclaredIn>
+			
+			<Declaration>@property GCCoverViewController *parentController</Declaration>
+			
+			
+			<Anchor>//api/name/parentController</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCCoverView/parentController</TokenIdentifier>
+			<Abstract type="html">Pointer to the objects in parent controller</Abstract>
+			<DeclaredIn>GCCoverView.h</DeclaredIn>
+			
+			<Declaration>@property GCCoverViewController *parentController</Declaration>
+			
+			
+			<Anchor>//api/name/parentController</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCCoverView/setDidSetupConstraints:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCCoverView.h</DeclaredIn>
+			
+			<Declaration>@property BOOL didSetupConstraints</Declaration>
+			
+			
+			<Anchor>//api/name/didSetupConstraints</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCCoverView/didSetupConstraints</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCCoverView.h</DeclaredIn>
+			
+			<Declaration>@property BOOL didSetupConstraints</Declaration>
+			
+			
+			<Anchor>//api/name/didSetupConstraints</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCCoverView/didSetupConstraints</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCCoverView.h</DeclaredIn>
+			
+			<Declaration>@property BOOL didSetupConstraints</Declaration>
+			
+			
+			<Anchor>//api/name/didSetupConstraints</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCCoverView/setLabel_Title:</TokenIdentifier>
+			<Abstract type="html">Pointer to the objects in this view</Abstract>
+			<DeclaredIn>GCCoverView.h</DeclaredIn>
+			
+			<Declaration>@property UILabel *label_Title</Declaration>
+			
+			
+			<Anchor>//api/name/label_Title</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCCoverView/label_Title</TokenIdentifier>
+			<Abstract type="html">Pointer to the objects in this view</Abstract>
+			<DeclaredIn>GCCoverView.h</DeclaredIn>
+			
+			<Declaration>@property UILabel *label_Title</Declaration>
+			
+			
+			<Anchor>//api/name/label_Title</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCCoverView/label_Title</TokenIdentifier>
+			<Abstract type="html">Pointer to the objects in this view</Abstract>
+			<DeclaredIn>GCCoverView.h</DeclaredIn>
+			
+			<Declaration>@property UILabel *label_Title</Declaration>
+			
+			
+			<Anchor>//api/name/label_Title</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCCoverView/setImageView_Logo:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCCoverView.h</DeclaredIn>
+			
+			<Declaration>@property UIImageView *imageView_Logo</Declaration>
+			
+			
+			<Anchor>//api/name/imageView_Logo</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCCoverView/imageView_Logo</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCCoverView.h</DeclaredIn>
+			
+			<Declaration>@property UIImageView *imageView_Logo</Declaration>
+			
+			
+			<Anchor>//api/name/imageView_Logo</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCCoverView/imageView_Logo</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCCoverView.h</DeclaredIn>
+			
+			<Declaration>@property UIImageView *imageView_Logo</Declaration>
+			
+			
+			<Anchor>//api/name/imageView_Logo</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCCoverView/setBtn_Register:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCCoverView.h</DeclaredIn>
+			
+			<Declaration>@property FUIButton *, *btn_Register</Declaration>
+			
+			
+			<Anchor>//api/name/btn_Register</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCCoverView/btn_Register</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCCoverView.h</DeclaredIn>
+			
+			<Declaration>@property FUIButton *, *btn_Register</Declaration>
+			
+			
+			<Anchor>//api/name/btn_Register</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCCoverView/btn_Register</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCCoverView.h</DeclaredIn>
+			
+			<Declaration>@property FUIButton *, *btn_Register</Declaration>
+			
+			
+			<Anchor>//api/name/btn_Register</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCCoverView/initWithParentController:</TokenIdentifier>
+			<Abstract type="html">Initializer</Abstract>
+			<DeclaredIn>GCCoverView.h</DeclaredIn>
+			
+			<Declaration>- (id)initWithParentController:(GCCoverViewController *)controller</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>controller</Name>
+					<Abstract type="html">Pointer to the parent controller</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Instance of this class</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithParentController:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCCoverView/updateConstraints</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCCoverView.m</DeclaredIn>
+			
+			<Declaration>- (void)updateConstraints</Declaration>
+			
+			
+			<Anchor>//api/name/updateConstraints</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCCoverView/ButtonWithTitle:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCCoverView.m</DeclaredIn>
+			
+			<Declaration>+ (FUIButton *)ButtonWithTitle:(NSString *)title</Declaration>
+			
+			
+			<Anchor>//api/name/ButtonWithTitle:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

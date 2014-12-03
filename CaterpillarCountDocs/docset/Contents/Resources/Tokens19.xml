@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/GCSignInViewController.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/GCSignInViewController</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSignInViewController.h</DeclaredIn>
+            
+			
+			<NodeRef refid="19"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSignInViewController/setSignInScrollView:</TokenIdentifier>
+			<Abstract type="html">Pointer to the view container</Abstract>
+			<DeclaredIn>GCSignInViewController.h</DeclaredIn>
+			
+			<Declaration>@property GCSignInScrollView *signInScrollView</Declaration>
+			
+			
+			<Anchor>//api/name/signInScrollView</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSignInViewController/signInScrollView</TokenIdentifier>
+			<Abstract type="html">Pointer to the view container</Abstract>
+			<DeclaredIn>GCSignInViewController.h</DeclaredIn>
+			
+			<Declaration>@property GCSignInScrollView *signInScrollView</Declaration>
+			
+			
+			<Anchor>//api/name/signInScrollView</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCSignInViewController/signInScrollView</TokenIdentifier>
+			<Abstract type="html">Pointer to the view container</Abstract>
+			<DeclaredIn>GCSignInViewController.h</DeclaredIn>
+			
+			<Declaration>@property GCSignInScrollView *signInScrollView</Declaration>
+			
+			
+			<Anchor>//api/name/signInScrollView</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSignInViewController/setHud:</TokenIdentifier>
+			<Abstract type="html">Pointer to a progress hud</Abstract>
+			<DeclaredIn>GCSignInViewController.h</DeclaredIn>
+			
+			<Declaration>@property MBProgressHUD *hud</Declaration>
+			
+			
+			<Anchor>//api/name/hud</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSignInViewController/hud</TokenIdentifier>
+			<Abstract type="html">Pointer to a progress hud</Abstract>
+			<DeclaredIn>GCSignInViewController.h</DeclaredIn>
+			
+			<Declaration>@property MBProgressHUD *hud</Declaration>
+			
+			
+			<Anchor>//api/name/hud</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCSignInViewController/hud</TokenIdentifier>
+			<Abstract type="html">Pointer to a progress hud</Abstract>
+			<DeclaredIn>GCSignInViewController.h</DeclaredIn>
+			
+			<Declaration>@property MBProgressHUD *hud</Declaration>
+			
+			
+			<Anchor>//api/name/hud</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSignInViewController/viewDidLoad</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSignInViewController.m</DeclaredIn>
+			
+			<Declaration>- (void)viewDidLoad</Declaration>
+			
+			
+			<Anchor>//api/name/viewDidLoad</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSignInViewController/isValidInput</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSignInViewController.m</DeclaredIn>
+			
+			<Declaration>- (BOOL)isValidInput</Declaration>
+			
+			
+			<Anchor>//api/name/isValidInput</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSignInViewController/signIn</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSignInViewController.m</DeclaredIn>
+			
+			<Declaration>- (void)signIn</Declaration>
+			
+			
+			<Anchor>//api/name/signIn</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSignInViewController/makeHUDProgressWithString:</TokenIdentifier>
+			<Abstract type="html">/            self.signInView.label_ErrorMessage.text = @&quot;Incorrect email or password&quot;;
+/            [self restoreLoginPageLayout];</Abstract>
+			<DeclaredIn>GCSignInViewController.m</DeclaredIn>
+			
+			<Declaration>- (void)makeHUDProgressWithString:(NSString *)message</Declaration>
+			
+			
+			<Anchor>//api/name/makeHUDProgressWithString:</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSignInViewController/makeHUDErrorAlertWithString:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSignInViewController.m</DeclaredIn>
+			
+			<Declaration>- (void)makeHUDErrorAlertWithString:(NSString *)message</Declaration>
+			
+			
+			<Anchor>//api/name/makeHUDErrorAlertWithString:</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSignInViewController/makeHUDSuccessWithString:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSignInViewController.m</DeclaredIn>
+			
+			<Declaration>- (void)makeHUDSuccessWithString:(NSString *)message</Declaration>
+			
+			
+			<Anchor>//api/name/makeHUDSuccessWithString:</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSignInViewController/viewWillAppear:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSignInViewController.m</DeclaredIn>
+			
+			<Declaration>- (void)viewWillAppear:(BOOL)animated</Declaration>
+			
+			
+			<Anchor>//api/name/viewWillAppear:</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCSignInViewController/didReceiveMemoryWarning</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCSignInViewController.m</DeclaredIn>
+			
+			<Declaration>- (void)didReceiveMemoryWarning</Declaration>
+			
+			
+			<Anchor>//api/name/didReceiveMemoryWarning</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

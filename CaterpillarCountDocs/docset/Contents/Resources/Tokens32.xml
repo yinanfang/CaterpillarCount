@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Categories/UITextField+AdvancedInitialization.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cat/UITextField(AdvancedInitialization)</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCAppSetup.h</DeclaredIn>
+            
+			
+			<NodeRef refid="32"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UITextField/TextFieldWithPlaceHolder:keyboardType:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCAppSetup.h</DeclaredIn>
+			
+			<Declaration>+ (UITextField *)TextFieldWithPlaceHolder:(NSString *)placeHolder keyboardType:(UIKeyboardType)keyboardType</Declaration>
+			
+			
+			<Anchor>//api/name/TextFieldWithPlaceHolder:keyboardType:</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

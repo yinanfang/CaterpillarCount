@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/GCAppAPI.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/GCAppAPI</TokenIdentifier>
+			<Abstract type="html">App API that include all the most used header files</Abstract>
+			<DeclaredIn>GCAppAPI.h</DeclaredIn>
+            
+			
+			<NodeRef refid="2"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCAppAPI/sharedInstance</TokenIdentifier>
+			<Abstract type="html">Accessor for Singleton class</Abstract>
+			<DeclaredIn>GCAppAPI.h</DeclaredIn>
+			
+			<Declaration>+ (GCAppAPI *)sharedInstance</Declaration>
+			
+			<ReturnValue><Abstract type="html">Returns an shared instance</Abstract></ReturnValue>
+			<Anchor>//api/name/sharedInstance</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCAppAPI/getCurrentDomain</TokenIdentifier>
+			<Abstract type="html">Get current Domain</Abstract>
+			<DeclaredIn>GCAppAPI.h</DeclaredIn>
+			
+			<Declaration>+ (NSString *)getCurrentDomain</Declaration>
+			
+			<ReturnValue><Abstract type="html">Return the domain</Abstract></ReturnValue>
+			<Anchor>//api/name/getCurrentDomain</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCAppAPI/getColorWithRGBAinHex:</TokenIdentifier>
+			<Abstract type="html">Get UI Color</Abstract>
+			<DeclaredIn>GCAppAPI.h</DeclaredIn>
+			
+			<Declaration>+ (UIColor *)getColorWithRGBAinHex:(NSUInteger)color</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>color</Name>
+					<Abstract type="html">color code in hex</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Return UIColor</Abstract></ReturnValue>
+			<Anchor>//api/name/getColorWithRGBAinHex:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCAppAPI/setHasShownTour:</TokenIdentifier>
+			<Abstract type="html">Check if the tour is shown</Abstract>
+			<DeclaredIn>GCAppAPI.h</DeclaredIn>
+			
+			<Declaration>+ (void)setHasShownTour:(BOOL)mode</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>mode</Name>
+					<Abstract type="html">BOOL</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setHasShownTour:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCAppAPI/didRunAppBefore</TokenIdentifier>
+			<Abstract type="html">Check if the app is run before</Abstract>
+			<DeclaredIn>GCAppAPI.h</DeclaredIn>
+			
+			<Declaration>+ (BOOL)didRunAppBefore</Declaration>
+			
+			<ReturnValue><Abstract type="html">BOOL</Abstract></ReturnValue>
+			<Anchor>//api/name/didRunAppBefore</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCAppAPI/getFullScreenImageView:</TokenIdentifier>
+			<Abstract type="html">Get full screen image view</Abstract>
+			<DeclaredIn>GCAppAPI.h</DeclaredIn>
+			
+			<Declaration>+ (UIImageView *)getFullScreenImageView:(NSString *)name</Declaration>
+			
+			
+			<Anchor>//api/name/getFullScreenImageView:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCAppAPI/getCGPointZeroWithStatusbarAndNavigationBar:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCAppAPI.h</DeclaredIn>
+			
+			<Declaration>+ (CGPoint)getCGPointZeroWithStatusbarAndNavigationBar:(UIViewController *)controller</Declaration>
+			
+			
+			<Anchor>//api/name/getCGPointZeroWithStatusbarAndNavigationBar:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCAppAPI/getScreenBoundsDependOnOrientation</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCAppAPI.h</DeclaredIn>
+			
+			<Declaration>+ (CGRect)getScreenBoundsDependOnOrientation</Declaration>
+			
+			
+			<Anchor>//api/name/getScreenBoundsDependOnOrientation</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GCAppAPI/getMantleModelWithDictionary:modelClass:</TokenIdentifier>
+			<Abstract type="html">Get Mantle data model</Abstract>
+			<DeclaredIn>GCAppAPI.h</DeclaredIn>
+			
+			<Declaration>+ (id)getMantleModelWithDictionary:(NSDictionary *)dictionary modelClass:(Class)modelClass</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>dictionary</Name>
+					<Abstract type="html">Data in NSDictionry</Abstract>
+				</Parameter><Parameter>
+					<Name>modelClass</Name>
+					<Abstract type="html">Model class</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Return data in Mantle model</Abstract></ReturnValue>
+			<Anchor>//api/name/getMantleModelWithDictionary:modelClass:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCAppAPI/init</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCAppAPI.m</DeclaredIn>
+			
+			<Declaration>- (id)init</Declaration>
+			
+			
+			<Anchor>//api/name/init</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

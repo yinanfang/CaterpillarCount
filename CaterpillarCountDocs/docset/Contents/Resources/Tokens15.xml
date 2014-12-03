@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/GCOrderTableViewCell.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/GCOrderTableViewCell</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCOrderTableViewCell.h</DeclaredIn>
+            
+			
+			<NodeRef refid="15"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCOrderTableViewCell/setDidSetupConstraints:</TokenIdentifier>
+			<Abstract type="html">Pointer to objects in self</Abstract>
+			<DeclaredIn>GCOrderTableViewCell.h</DeclaredIn>
+			
+			<Declaration>@property (assign) BOOL didSetupConstraints</Declaration>
+			
+			
+			<Anchor>//api/name/didSetupConstraints</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCOrderTableViewCell/didSetupConstraints</TokenIdentifier>
+			<Abstract type="html">Pointer to objects in self</Abstract>
+			<DeclaredIn>GCOrderTableViewCell.h</DeclaredIn>
+			
+			<Declaration>@property (assign) BOOL didSetupConstraints</Declaration>
+			
+			
+			<Anchor>//api/name/didSetupConstraints</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCOrderTableViewCell/didSetupConstraints</TokenIdentifier>
+			<Abstract type="html">Pointer to objects in self</Abstract>
+			<DeclaredIn>GCOrderTableViewCell.h</DeclaredIn>
+			
+			<Declaration>@property (assign) BOOL didSetupConstraints</Declaration>
+			
+			
+			<Anchor>//api/name/didSetupConstraints</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCOrderTableViewCell/setCaptureImageView:</TokenIdentifier>
+			<Abstract type="html">Pointer to object in Cell item</Abstract>
+			<DeclaredIn>GCOrderTableViewCell.h</DeclaredIn>
+			
+			<Declaration>@property (strong) UIImageView *captureImageView</Declaration>
+			
+			
+			<Anchor>//api/name/captureImageView</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCOrderTableViewCell/captureImageView</TokenIdentifier>
+			<Abstract type="html">Pointer to object in Cell item</Abstract>
+			<DeclaredIn>GCOrderTableViewCell.h</DeclaredIn>
+			
+			<Declaration>@property (strong) UIImageView *captureImageView</Declaration>
+			
+			
+			<Anchor>//api/name/captureImageView</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCOrderTableViewCell/captureImageView</TokenIdentifier>
+			<Abstract type="html">Pointer to object in Cell item</Abstract>
+			<DeclaredIn>GCOrderTableViewCell.h</DeclaredIn>
+			
+			<Declaration>@property (strong) UIImageView *captureImageView</Declaration>
+			
+			
+			<Anchor>//api/name/captureImageView</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCOrderTableViewCell/setLabel_Notes:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCOrderTableViewCell.h</DeclaredIn>
+			
+			<Declaration>@property (strong) UILabel *, *, *, *label_Notes</Declaration>
+			
+			
+			<Anchor>//api/name/label_Notes</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCOrderTableViewCell/label_Notes</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCOrderTableViewCell.h</DeclaredIn>
+			
+			<Declaration>@property (strong) UILabel *, *, *, *label_Notes</Declaration>
+			
+			
+			<Anchor>//api/name/label_Notes</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCOrderTableViewCell/label_Notes</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCOrderTableViewCell.h</DeclaredIn>
+			
+			<Declaration>@property (strong) UILabel *, *, *, *label_Notes</Declaration>
+			
+			
+			<Anchor>//api/name/label_Notes</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCOrderTableViewCell/setBtn_Minus:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCOrderTableViewCell.h</DeclaredIn>
+			
+			<Declaration>@property (strong) FUIButton *, *btn_Minus</Declaration>
+			
+			
+			<Anchor>//api/name/btn_Minus</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCOrderTableViewCell/btn_Minus</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCOrderTableViewCell.h</DeclaredIn>
+			
+			<Declaration>@property (strong) FUIButton *, *btn_Minus</Declaration>
+			
+			
+			<Anchor>//api/name/btn_Minus</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GCOrderTableViewCell/btn_Minus</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCOrderTableViewCell.h</DeclaredIn>
+			
+			<Declaration>@property (strong) FUIButton *, *btn_Minus</Declaration>
+			
+			
+			<Anchor>//api/name/btn_Minus</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCOrderTableViewCell/initWithStyle:reuseIdentifier:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCOrderTableViewCell.m</DeclaredIn>
+			
+			<Declaration>- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier</Declaration>
+			
+			
+			<Anchor>//api/name/initWithStyle:reuseIdentifier:</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCOrderTableViewCell/updateConstraints</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCOrderTableViewCell.m</DeclaredIn>
+			
+			<Declaration>- (void)updateConstraints</Declaration>
+			
+			
+			<Anchor>//api/name/updateConstraints</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCOrderTableViewCell/layoutSubviews</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCOrderTableViewCell.m</DeclaredIn>
+			
+			<Declaration>- (void)layoutSubviews</Declaration>
+			
+			
+			<Anchor>//api/name/layoutSubviews</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCOrderTableViewCell/awakeFromNib</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCOrderTableViewCell.m</DeclaredIn>
+			
+			<Declaration>- (void)awakeFromNib</Declaration>
+			
+			
+			<Anchor>//api/name/awakeFromNib</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GCOrderTableViewCell/setSelected:animated:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>GCOrderTableViewCell.m</DeclaredIn>
+			
+			<Declaration>- (void)setSelected:(BOOL)selected animated:(BOOL)animated</Declaration>
+			
+			
+			<Anchor>//api/name/setSelected:animated:</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>
