@@ -17,6 +17,7 @@
 // Upper section
 @property UILabel *label_Temp, *label_Time, *label_Date;
 @property UIButton *entry_Temp, *entry_Time, *entry_Date;
+
 // Input section
 @property UILabel *label_SiteInfo;
 @property FUIButton *btn_NewSite;
@@ -30,6 +31,7 @@
 @property UIButton *btn_Info_Order;
 @property FUIButton *btn_NewOrderInfo;
 @property UITableView *orderTableView;
+@property UILabel *label_tableTips;
 // Plant Information
 @property UILabel *label_PlantInfo, *label_PlantSpecies, *label_Herbivory;
 @property UITextField *entry_PlantSpecies;

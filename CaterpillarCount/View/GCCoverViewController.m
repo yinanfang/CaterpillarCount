@@ -16,7 +16,9 @@
 @end
 
 @implementation GCCoverViewController
-
+/**
+ *  test doc
+ */
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.coverView = [[GCCoverView alloc] initWithParentController:self];

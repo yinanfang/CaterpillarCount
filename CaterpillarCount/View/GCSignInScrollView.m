@@ -35,6 +35,7 @@
         [self addSubview:self.entry_Username];
         // Entry Length
         self.entry_Password = [UITextField TextFieldWithPlaceHolder:@"Password" keyboardType:UIKeyboardTypeDefault];
+        self.entry_Password.secureTextEntry = YES;
         self.entry_Password.delegate = self;
         [self addSubview:self.entry_Password];
 

@@ -97,6 +97,11 @@
         [self presentViewController:camera animated:YES completion:nil];
     }];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillShow)
+                                                 name:UIKeyboardWillShowNotification
+                                               object:nil];
+    
     // Submission Button
     [[self.orderScrollView.btn_Submit rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         NSLog(@"New Order button submit");
@@ -156,6 +161,18 @@
         self.hud.detailsLabelText = message;
     });
     [self.hud hide:YES afterDelay:3];
+}
+
+- (void)keyboardWillShow
+{
+    DDLogVerbose(@"Hiding picker");
+    [self.view layoutIfNeeded];
+    [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        [self.picker_Generic mas_updateConstraints:^(MASConstraintMaker *make){
+            make.bottom.equalTo(self.view.mas_bottom).with.offset(self.picker_Generic.frame.size.height);
+        }];
+        [self.view layoutIfNeeded];
+    }completion:nil];
 }
 
 #pragma mark - UIPickerView Delegate

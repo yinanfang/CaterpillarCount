@@ -22,7 +22,8 @@
 @property PickerType pickerType;
 @property __block BOOL didShowPicker;
 @property NSMutableArray *pickerContent;
-//@property NSMutableArray *pickerContentArray;
+
+@property UIDatePicker *picker_TimeStart;
 
 @property AFHTTPRequestOperationManager *manager;
 @property NSMutableArray *imageBuffer;

@@ -92,6 +92,9 @@
         self.orderTableView = [[UITableView alloc] init];
         self.orderTableView.separatorInset = UIEdgeInsetsZero;
         [self addSubview:self.orderTableView];
+        self.label_tableTips = [UILabel LabelSubTitleWithString:@"Tap NEW to add Arthopod Orders! If no arthropod order were observed, continue to Plant Information" align:NSTextAlignmentCenter];
+        self.label_tableTips.numberOfLines = 0;
+        [self addSubview:self.label_tableTips];
         
         // Plant Information
         self.label_PlantInfo = [UILabel LabelTitleWithString:@"Plant Information" align:NSTextAlignmentLeft];
@@ -233,6 +236,12 @@
             make.left.equalTo(self.mas_left).with.offset(mas_Padding_Page_Large.left);   // wrong offset??
             make.right.equalTo(self.mas_right).with.offset(mas_Padding_Page_Large.right);
             make.height.mas_equalTo(300);
+        }];
+        [self.label_tableTips mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.label_ArthropodOrderInfo.mas_bottom).with.offset(mas_Padding_Page_Default.top);
+            make.left.equalTo(self.mas_left).with.offset(mas_Padding_Page_Large.left);   // wrong offset??
+            make.right.equalTo(self.mas_right).with.offset(mas_Padding_Page_Large.right);
+            make.height.mas_equalTo(80);
         }];
         
         // Plant Information

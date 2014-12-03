@@ -16,12 +16,25 @@
 @property BOOL didSetupConstraints;
 
 // Log In
+/*!
+ * nothing The ViewController class' car object.
+ */
 @property UILabel *label_Login;
+
+/**
+ * @discussion The ViewController class' car object.
+ */
 @property UITextField *entry_Username, *entry_Password;
 
 // Submit Button
+/*!
+ * @brief The ViewController class' car object.
+ */
 @property FUIButton *btn_Submit;
 
+/**
+ * @brief The ViewController class' car object lallala.
+ */
 - (id)initWithParentController:(GCSignInViewController *)controller;
 
 @end

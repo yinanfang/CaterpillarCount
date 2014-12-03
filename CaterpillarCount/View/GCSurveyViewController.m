@@ -19,6 +19,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.view.backgroundColor = [UIColor whiteColor];
+    
     // UI Navigation Bar
     [GCAppSetup configureNavigationViewController:self withNavigationTitle:@"Caterpillars Count"];
     self.navigationItem.hidesBackButton = YES;
@@ -110,6 +112,11 @@
     self.surveyScrollView.entry_Survey.rac_command = self.firePicker;
     self.surveyScrollView.entry_Herbivory.rac_command = self.firePicker;
     
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillShow)
+                                                 name:UIKeyboardWillShowNotification
+                                               object:nil];
+    
     // Info Button Control
     [[self.surveyScrollView.btn_Info_Site rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         NSLog(@"Info button for Site tapped!");
@@ -179,6 +186,18 @@
     }];
 }
 
+- (void)keyboardWillShow
+{
+//    DDLogVerbose(@"Hiding picker");
+//    [self.view layoutIfNeeded];
+//    [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+//        [self.picker_Generic mas_updateConstraints:^(MASConstraintMaker *make){
+//            make.bottom.equalTo(self.view.mas_bottom).with.offset(self.picker_Generic.frame.size.height);
+//        }];
+//        [self.view layoutIfNeeded];
+//    }completion:nil];
+}
+
 - (BOOL)isValidInput
 {
     if ([self.surveyScrollView.entry_Site.titleLabel.text isEqualToString:@"Click to choose a site"]) {
@@ -224,7 +243,7 @@
     GCUserData *userData = [GCAppViewModel sharedInstance].currentUserData;
     GCSurvey *survey = [[GCSurvey alloc] init];
     survey.userID = userData.user.userID;
-    survey.siteName = self.surveyScrollView.entry_Site.titleLabel.text;
+    survey.siteName = [self.surveyScrollView.entry_Site.titleLabel.text isEqualToString:@"No site"] ? @"5" : self.surveyScrollView.entry_Site.titleLabel.text;
     survey.circleNumber = [[[NSNumberFormatter alloc] init] numberFromString:self.surveyScrollView.entry_Circle.titleLabel.text];
     survey.circleNumber = (survey.circleNumber) ? : @1;
     survey.surveyString = self.surveyScrollView.entry_Survey.titleLabel.text;
@@ -243,7 +262,7 @@
     __block NSURL *url_Submission = [NSURL URLWithString:[[NSString alloc] initWithFormat:@"%@/~pocket14/forsyth.im/caterpillars/submission_full.php", [GCAppAPI getCurrentDomain]]];
     __block NSDictionary *parameters = @{
                                          @"type": @"survey",
-                                         @"siteID": @"5",
+                                         @"siteID": surveyDictionary[@"siteName"],
                                          @"userID": surveyDictionary[@"userID"],
                                          
                                          @"circle": surveyDictionary[@"circleNumber"],
@@ -301,7 +320,7 @@
         NSError *error;
         DDLogVerbose(@"old name: %@; new name: %@", oldName, newName);
         
-        newName = [newName stringByReplacingOccurrencesOfString:@"domain/" withString:@""];
+        newName = [newName stringByReplacingOccurrencesOfString:@"uploads/" withString:@""];
         newName = [newName stringByReplacingOccurrencesOfString:@".jpg" withString:@".png"];
         DDLogVerbose(@"new name: %@", newName);
         
@@ -325,8 +344,6 @@
         
     }
 }
-
-
 
 - (void)uploadAllImages
 {
@@ -411,6 +428,14 @@
     // Reload table view
     NSLog(@"reload..");
     [self.surveyScrollView.orderTableView reloadData];
+    
+    if ([[GCAppViewModel sharedInstance].currentUnsavedOrders count]==0) {
+        self.surveyScrollView.orderTableView.hidden = YES;
+        self.surveyScrollView.label_tableTips.hidden = NO;
+    } else {
+        self.surveyScrollView.orderTableView.hidden = NO;
+        self.surveyScrollView.label_tableTips.hidden = YES;
+    }
     
     [super viewWillAppear:animated];
 }

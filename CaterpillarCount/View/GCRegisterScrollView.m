@@ -38,10 +38,12 @@
         [self addSubview:self.entry_Email];
         // Password
         self.entry_PasswordNew = [UITextField TextFieldWithPlaceHolder:@"Password" keyboardType:UIKeyboardTypeDefault];
+        self.entry_PasswordNew.secureTextEntry = YES;
         self.entry_PasswordNew.delegate = self;
         [self addSubview:self.entry_PasswordNew];
         // Confirm Password
         self.entry_PasswordConfirm = [UITextField TextFieldWithPlaceHolder:@"Confirm Password" keyboardType:UIKeyboardTypeDefault];
+        self.entry_PasswordConfirm.secureTextEntry = YES;
         self.entry_PasswordConfirm.delegate = self;
         [self addSubview:self.entry_PasswordConfirm];
         
