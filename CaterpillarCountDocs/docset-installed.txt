@@ -1,4 +1,4 @@
 Documentation set was installed to Xcode!
 
 Path: /Users/compass/Library/Developer/Shared/Documentation/DocSets/com.yourcompany.CaterpillarCount.docset
-Time: 2014-12-03 15:45:44 +0000
+Time: 2014-12-06 15:24:19 +0000
